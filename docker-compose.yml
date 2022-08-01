@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  app:
+    image: node:14-alpine
+    command: npm run start
+    volumes:
+      - ./:/ws
+    working_dir: /ws
+    environment:
+      PORT: 8080
+    ports:
+      - 8080:8080
+
+
