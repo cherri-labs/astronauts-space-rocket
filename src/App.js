@@ -87,7 +87,7 @@ export default function App() {
                 <a className="colors" href="#astrobank">
                   Astro Bank
                 </a>{" "}
-                mint rewards. Check out <a href="https://github.com/cherri-labs/astrobank">our article</a> to read more.
+                mint rewards. Check out <a target="_blank" href="https://github.com/cherri-labs/astrobank">our Github</a> to read more.
               </p>
             </div>
             <img className="nft" src="img/astronaut.png" />
@@ -101,22 +101,22 @@ export default function App() {
               <h1 className="colors">Astro Bank</h1>
               <p>
                 <b>Thank you!</b> We're only here because of you. Which is why
-                owners are granted a portion of the <a href="https://github.com/cherri-labs/astrobank">mint
+                owners are granted a portion of the <a target="_blank" href="https://github.com/cherri-labs/astrobank">mint
                 rewards</a>.
               </p>
               <p>
                 Candy Machines allocate funds to the Astro Bank during mint, with a
                 lock period for users to claim their rewards{" "}
-                <a href="https://github.com/cherri-labs/astrobank">before we can even access them</a>.
+                <a target="_blank" href="https://github.com/cherri-labs/astrobank">before we can even access them</a>.
               </p>
               <p>
                 <a className="colors" href="#astrobank">
                   Astro Bank
                 </a>{" "}
-                is open source and can be found <a href="https://github.com/cherri-labs/astrobank">on GitHub</a>.
+                is open source and can be found <a target="_blank" href="https://github.com/cherri-labs/astrobank">on GitHub</a>.
               </p>
             </div>
-            <form className="bank">
+            <div className="bank">
               <div className="textbox">
                 <input type="number" id="amount"/>
                 <label htmlFor="amount">◎</label>
@@ -125,7 +125,7 @@ export default function App() {
               <label>Available: 0 ◎</label>
               <label>Balance: 0 ◎</label>
               <WithdrawButton />
-            </form>
+            </div>
           </div>
         </div>
       </div>
@@ -138,7 +138,7 @@ export default function App() {
                 There are no strangers in the Cyberverse. NFTs are your
                 all-access pass. They allow you to freely explore all new
                 features and released products. Collectors can also expect
-                access to exclusive airdrops as well as <a href="https://github.com/cherri-labs/astrobank">their share of
+                access to exclusive airdrops as well as <a target="_blank" href="https://github.com/cherri-labs/astrobank">their share of
                 reward fees</a> through the{" "}
                 <a className="colors" href="#astrobank">
                   Astro Bank
