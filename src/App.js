@@ -19,7 +19,7 @@ export default function App() {
               ☰
             </button>
             <button className="nav" onClick={function(){dropdown('#astronauts')}}>
-              Astronauts
+              Lonely Astronauts
             </button>
             <button
               className="nav"
@@ -53,7 +53,7 @@ export default function App() {
         <div id="container">
           <div id="content">
             <div className="text">
-              <h1 className="colors">Lonely Astro||nauts</h1>
+              <h1 className="colors">Lonely<br/>Astro||nauts</h1>
               <p>
                 8192 generative Lonely Astronaut NFTs inspired
 			          by vaporwave and cyberpunk aesthetics, the
