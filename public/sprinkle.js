@@ -1,25 +1,29 @@
 window.onload = sprinkle;
 
 function sprinkle() {
-    const colors = document.querySelectorAll(".colors");
-    [...colors].forEach(function (p) {
-        const text = p.innerHTML;
-        const words = text.split("|||");
-        p.innerHTML = "";
+  const colors = document.querySelectorAll(".colors");
+  [...colors].forEach(function (p) {
+    const text = p.innerHTML;
+    const lines = text.split("|||");
+    p.innerHTML = "";
 
-        for (const w of words) {
-            const chars = w.split("");
-            for (const c of chars) {
-                if (c == " ") {
-                    p.innerHTML += c;
-                } else if (c != "") {
-                    p.innerHTML += "<span>" + c + "</span>";
-                }
-            }
+    for (const l of lines) {
+      const words = l.split("||");
 
-            p.innerHTML += "</h1><br><h1 class='colors'>";
+      for (const w of words) {
+        const chars = w.split("");
+        for (const c of chars) {
+          if (c == " ") {
+            p.innerHTML += c;
+          } else if (c != "") {
+            p.innerHTML += "<span>" + c + "</span>";
+          }
         }
 
-        p.innerHTML = p.innerHTML.replace("||", "<wbr>");
-    });
+        p.innerHTML += "</h1><wbr><h1 class='colors'>";
+      }
+
+      p.innerHTML += "</h1><br><h1 class='colors'>";
+    }
+  });
 }
