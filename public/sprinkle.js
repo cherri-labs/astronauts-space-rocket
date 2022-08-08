@@ -1,6 +1,6 @@
 window.onload = sprinkle;
 
-function replace(text, s, ss)
+function replace(text, s, ss) {
     const words = text.split(s);
     var value = "";
 
