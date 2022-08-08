@@ -53,9 +53,9 @@ export default function App() {
         <div id="container">
           <div id="content">
             <div className="text">
-              <h1 className="colors">Astro||nauts</h1>
+              <h1 className="colors">Lonely Astro||nauts</h1>
               <p>
-                Astronauts are a collection of 8192 generative NFTs inspired
+                8192 generative Lonely Astronaut NFTs inspired
 			          by vaporwave and cyberpunk aesthetics, the
 			          demoscene and pop culture from the 80's and the 90's and
                 powered by the desire to leverage blockchain technology to
@@ -169,7 +169,7 @@ export default function App() {
     <a target="_blank" href="https://discord.gg/R7bY7DQAWz">
     <img src="img/icons/discord.svg" />
     </a>
-    <a target="_blank" href="https://twitter.com/AstronautsAreUs">
+    <a target="_blank" href="https://twitter.com/spacerocketnfts">
     <img src="img/icons/twitter.svg" />
     </a>
     <a target="_blank" href="https://github.com/cherri-labs">
