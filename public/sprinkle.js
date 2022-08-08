@@ -23,7 +23,8 @@ function sprinkle() {
         p.innerHTML += "</h1><wbr><h1 class='colors'>";
       }
 
-      p.innerHTML += "</h1><br><h1 class='colors'>";
+      if (lines.slice(0,-1).includes(l))
+        p.innerHTML += "</h1><br><h1 class='colors'>";
     }
   });
 }

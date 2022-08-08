@@ -132,6 +132,7 @@ export default function App() {
       <div className="page" id="cyberverse">
         <div id="container">
           <div id="content">
+            <img className="nft" src="img/cyberverse.png" />
             <div className="text">
               <h1 className="colors">Cyber||verse</h1>
               <p>
