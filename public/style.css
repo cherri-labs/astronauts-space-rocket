@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    background-image: url("img/bg_rack.png");
+    background-image: url("img/bg.png");
     background-color: #000000;
     background-size: 50%;
     animation: bg-scroll 0.2s infinite linear;
