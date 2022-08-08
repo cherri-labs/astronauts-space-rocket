@@ -1,10 +1,5 @@
 window.onload = sprinkle;
 
-
-
-"|||": "<br>"
-"||": "<wbr>"
-
 function sprinkle() {
     const colors = document.querySelectorAll(".colors");
     [...colors].forEach(function (p) {
