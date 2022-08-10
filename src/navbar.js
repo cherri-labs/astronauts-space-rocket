@@ -1,15 +1,26 @@
 /* navbar */
 export default function dropdown(href) {
-    let navbar = document.getElementById("navbar");
+  /* navbar */
+  let navbar = document.getElementById("navbar");
 
-    /* mobile dropdown */
-    if (!navbar.className) {
-        navbar.className = "dropdown";
-    } else {
-        navbar.className = "";
-    }
+  /* mobile dropdown */
+  if (!navbar.className) {
+    navbar.className = "dropdown";
+  } else {
+    navbar.className = "";
+  }
 
-    /* href scroll */
-    if (href)
-        window.location.assign(href);
+  /* wallet button */
+  let wallet = document.getElementById("wallet");
+
+  /* wallet drop */
+  if (!wallet.className) {
+    wallet.className = "drop";
+  } else {
+    wallet.className = "";
+  }
+
+  /* href scroll */
+  if (href)
+    window.location.assign(href);
 }
