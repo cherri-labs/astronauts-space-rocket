@@ -23,7 +23,7 @@ export default function App() {
             </button>
             <button
               className="nav"
-              onClick={function(){dropdown('#space-companions')}}
+              onClick={function(){dropdown('#companions')}}
     data-title="Coming soon"
     disabled
     >

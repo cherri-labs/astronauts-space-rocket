@@ -358,6 +358,8 @@ button::selection, input::selection {
     justify-content: space-evenly;
     align-items: center;
     gap: 100px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
     background: radial-gradient(
         ellipse at center,
         rgba(180,80,150,0.8) 0%,
