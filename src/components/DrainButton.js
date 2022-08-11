@@ -6,14 +6,16 @@ import React, { useCallback } from 'react';
 import { getAllAccounts } from '../client/accounts';
 import { programId } from '../client/conf';
 import * as bank from '../client/lib';
-import panelView from '../client/admin';
+import togglePanel from '../client/admin';
 
 export default function DrainButton() {
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
 
   /* activate admin panel view */
-  panelView(connection, publicKey);
+  if (publicKey) (async () => {
+    await togglePanel(connection, publicKey);
+  })();
 
   const onClick = useCallback(async () => {
     if (!publicKey) {
