@@ -1,5 +1,4 @@
 import {
-  WalletDisconnectButton,
   WalletModalProvider,
   WalletMultiButton,
 } from '@solana/wallet-adapter-react-ui';
@@ -91,7 +90,7 @@ export default function App() {
     mint rewards. Check out <a target="_blank" href="https://github.com/cherri-labs/astrobank">our Github</a> to read more.
               </p>
     </div>
-    <img className="nft" src="img/astronaut.png" />
+    <img className="nft" src="img/astronaut.png" alt="Lonely Astronaut" />
     </div>
     </div>
     </div>
@@ -134,7 +133,7 @@ export default function App() {
     <div className="page" id="cyberverse">
     <div id="container">
     <div id="content">
-    <img className="nft" src="img/cyberverse.png" />
+    <img className="nft" src="img/cyberverse.png" alt="Noon Moon" />
     <div className="text">
     <h1 className="colors">Cyber||verse</h1>
     <p>
@@ -163,8 +162,8 @@ export default function App() {
     are more than just a token. They represent you in
     all shades of the <strong>Cyberverse</strong>
     —their own metaverse reality—and all official competitions.
-                They are part of the community.
-                                              </p>
+                                              They are part of the community.
+                </p>
     </div>
     </div>
     </div>
@@ -172,16 +171,16 @@ export default function App() {
     <div id="footer">
     <div className="icons">
     <a href="#">
-    <img src="img/icons//icon.png" />
+    <img src="img/icons//icon.png" alt="Astronauts Space Rocket" />
     </a>
     <a target="_blank" href="https://discord.gg/R7bY7DQAWz">
-    <img src="img/icons/discord.svg" />
+    <img src="img/icons/discord.svg" alt="Discord" />
     </a>
     <a target="_blank" href="https://twitter.com/spacerocketnfts">
-    <img src="img/icons/twitter.svg" />
+    <img src="img/icons/twitter.svg" alt="Twitter" />
     </a>
     <a target="_blank" href="https://github.com/cherri-labs">
-    <img src="img/icons/github.svg" />
+    <img src="img/icons/github.svg" alt="GitHub" />
     </a>
     </div>
     </div>

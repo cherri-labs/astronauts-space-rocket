@@ -359,7 +359,7 @@ button::selection, input::selection {
     align-items: center;
     gap: 100px;
     overflow-wrap: break-word;
-    word-wrap: break-word;
+    word-wrap: break-word; /* backward compatibility */
     background: radial-gradient(
         ellipse at center,
         rgba(180,80,150,0.8) 0%,
@@ -390,6 +390,8 @@ button::selection, input::selection {
 #content p a {
     color: #fff;
     font-weight: 900;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* backward compatibility */
     text-shadow: 1px 0px 8px rgba(96,9,121,1),
                  3px 3px 5px rgba(0,0,40,0.3);
     box-shadow: 0px 0px 250px 3px rgba(155,15,120,0.5);
