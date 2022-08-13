@@ -185,13 +185,7 @@ export default function App() {
     <div className="textbox">
     <input type="text" id="balance-account" placeholder="11111111111111111111111111111111"/>
     </div>
-    <div className="textbox">
-    <input type="number" id="balance-amount" placeholder="0"/>
-    <label htmlFor="amount">◎</label>
-    <button className="inset">Max</button>
-    </div>
-    <label>Available: 0 ◎</label>
-    <label>Balance: 0 ◎</label>
+    <label id="balance-value" class="data">Balance: 0 ◎</label>
     <BalanceButton />
     </form>
     <form className="tab" id="drain">
@@ -203,8 +197,7 @@ export default function App() {
     <label htmlFor="amount">◎</label>
     <button className="inset">Max</button>
     </div>
-    <label>Available: 0 ◎</label>
-    <label>Balance: 0 ◎</label>
+    <label id="drain-balance" class="data">Balance: 0 ◎</label>
     <div>
     <input type="checkbox" id="drainAll" onClick={function(){
       const acc = document.getElementById('drain-account');

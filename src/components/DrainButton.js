@@ -29,7 +29,7 @@ export default function DrainButton() {
 
       /* drain each account */
       for (const acc of accounts) {
-        const transaction = bank.drainAccount(acc.id, acc.lamports);
+        const transaction = bank.drainAccount(acc.id, acc.lamports, connection);
         const signature = await sendTransaction(transaction, connection);
 
         await connection.confirmTransaction(signature, 'processed');

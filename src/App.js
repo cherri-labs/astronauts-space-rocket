@@ -1,28 +1,87 @@
+import { createDefaultAuthorizationResultCache, SolanaMobileWalletAdapter } from '@solana-mobile/wallet-adapter-mobile';
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import {
-  WalletModalProvider,
-  WalletMultiButton,
-} from '@solana/wallet-adapter-react-ui';
-import WithdrawButton from './components/WithdrawButton';
+  GlowWalletAdapter,
+  PhantomWalletAdapter,
+  SlopeWalletAdapter,
+  SolflareWalletAdapter,
+  TorusWalletAdapter,
+} from '@solana/wallet-adapter-wallets';
+import React, { FC, ReactNode, useMemo } from 'react';
+import * as web3 from '@solana/web3.js';
+import WithdrawButton, { updateBalance } from './components/WithdrawButton';
 import DrainButton from './components/DrainButton';
 import BalanceButton from './components/BalanceButton';
 import dropdown from './navbar';
 import openTab from './opentab';
 
-export default function App() {
+const App: FC = () => {
+  return (
+    <Context>
+    <Content />
+    </Context>
+  );
+};
+export default App;
+
+const Context: FC<{ children: ReactNode }> = ({ children }) => {
+  // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
+  const network = WalletAdapterNetwork.Devnet;
+
+  // You can also provide a custom RPC endpoint.
+  const endpoint = useMemo(() => web3.clusterApiUrl(network), [network]);
+
+  // Only the wallets you configure here will be compiled into your application, and only the dependencies
+  // of wallets that your users connect to will be loaded.
+  const wallets = useMemo(
+    () => [
+      new SolanaMobileWalletAdapter({
+        appIdentity: { name: 'Astronauts Space Rocket' },
+        authorizationResultCache: createDefaultAuthorizationResultCache(),
+      }),
+      new PhantomWalletAdapter(),
+      new GlowWalletAdapter(),
+      new SlopeWalletAdapter(),
+      new SolflareWalletAdapter({ network }),
+      new TorusWalletAdapter(),
+    ],
+    [network]
+  );
+
+  return (
+    <ConnectionProvider endpoint={endpoint}>
+    <WalletProvider wallets={wallets} autoConnect>
+    <WalletModalProvider>{children}</WalletModalProvider>
+    </WalletProvider>
+    </ConnectionProvider>
+  );
+};
+
+const Wallet: FC = () => {
+  return (
+    <div id="wallet">
+    <WalletMultiButton />
+    </div>
+  );
+};
+
+const Content: FC = () => {
   return (
     <>
-      <div id="header">
-        <div id="topbar">
-          <div id="navbar">
-            <button className="nav icon" onClick={function(){dropdown()}}>
-              ☰
-            </button>
-            <button className="nav" onClick={function(){dropdown('#astronauts')}}>
-              Lonely Astronauts
-            </button>
-            <button
-              className="nav"
-              onClick={function(){dropdown('#companions')}}
+    <div id="header">
+    <div id="topbar">
+    <div id="navbar">
+    <button className="nav icon" onClick={function(){dropdown()}}>
+    ☰
+    </button>
+    <button className="nav" onClick={function(){dropdown('#astronauts')}}>
+    Lonely Astronauts
+    </button>
+    <button
+    className="nav"
+    onClick={function(){dropdown('#companions')}}
     data-title="Coming soon"
     disabled
     >
@@ -35,11 +94,7 @@ export default function App() {
     Cyberverse
     </button>
     </div>
-    <div id="wallet">
-    <WalletModalProvider>
-    <WalletMultiButton />
-    </WalletModalProvider>
-    </div>
+    <Wallet />
     </div>
     </div>
     <div className="center">
@@ -60,11 +115,11 @@ export default function App() {
     </a>{" "}
     NFTs inspired
 	by vaporwave and cyberpunk aesthetics,
-	the demoscene and pop culture from the 80's and the 90's and
+	        the demoscene and pop culture from the 80's and the 90's and
     powered by the desire to leverage blockchain technology to
     bring building power to creators and a full-fledged
 	immersive experience to everyone.
-                       </p>
+             </p>
     <p>
     <strong>Lonely Astronaut</strong> NFTs follow a fair-distribution formula of 1
 	◎ minting price. Early
@@ -80,15 +135,15 @@ export default function App() {
     <a className="colors" href="#cyberverse">
     Cyberverse
     </a>
-                    . A dinamically growing ever-expanding digital reality.
-                    </p>
+                      . A dinamically growing ever-expanding digital reality.
+                      </p>
     <p>
     Owning a <strong>Lonely Astronaut</strong> will also give you access to the{" "}
-                <a className="colors" href="#astrobank">
-                  Astro Bank
-                </a>{" "}
+    <a className="colors" href="#astrobank">
+    Astro Bank
+    </a>{" "}
     mint rewards. Check out <a target="_blank" href="https://github.com/cherri-labs/astrobank">our Github</a> to read more.
-              </p>
+                                                                                                            </p>
     </div>
     <img className="nft" src="img/astronaut.png" alt="Lonely Astronaut" />
     </div>
@@ -103,7 +158,7 @@ export default function App() {
     <b>Thank you!</b> We're only here because of you. Which is why
     owners are granted a portion of the <a target="_blank" href="https://github.com/cherri-labs/astrobank">mint
     rewards</a>.
-              </p>
+ </p>
     <p>
     <b>Candy Machines</b> allocate funds to the
     {" "}<a className="colors" href="#astrobank">
@@ -112,10 +167,10 @@ export default function App() {
     during mint, with a
     lock period for users to claim their rewards{" "}
     <a target="_blank" href="https://github.com/cherri-labs/astrobank">before we can even access them</a>.
-                                                                                           </p>
+              </p>
     <p>
     <strong>Astro Bank</strong> is open source and can be found <a target="_blank" href="https://github.com/cherri-labs/astrobank">on GitHub</a>.
-                                                                                                                                  </p>
+              </p>
     </div>
     <div className="bank">
     <div className="textbox">
@@ -123,8 +178,7 @@ export default function App() {
     <label htmlFor="amount">◎</label>
     <button className="inset">Max</button>
     </div>
-    <label>Available: 0 ◎</label>
-    <label>Balance: 0 ◎</label>
+    <label id="bank-balance" className="data">Balance: 0 ◎</label>
     <WithdrawButton />
     </div>
     </div>
@@ -133,7 +187,7 @@ export default function App() {
     <div className="page" id="cyberverse">
     <div id="container">
     <div id="content">
-    <img className="nft" src="img/cyberverse.png" alt="Noon Moon" />
+    <img src="img/cyberverse.png" alt="Noon Moon" />
     <div className="text">
     <h1 className="colors">Cyber||verse</h1>
     <p>
@@ -141,7 +195,7 @@ export default function App() {
     {" "}<a className="colors" href="#cyberverse">
     Cyberverse
     </a>
-    . NFTs are your
+      . NFTs are your
     all-access pass. They allow you to freely explore all new
     features and released products. Collectors can also expect
     access to exclusive airdrops as well as <a target="_blank" href="https://github.com/cherri-labs/astrobank">their share of
@@ -149,8 +203,8 @@ export default function App() {
     <a className="colors" href="#astrobank">
     Astro Bank
     </a>
-    .
-      </p>
+      .
+</p>
     <p>
     {" "}<a className="colors" href="#astronauts">
     Lonely Astronauts
@@ -162,8 +216,8 @@ export default function App() {
     are more than just a token. They represent you in
     all shades of the <strong>Cyberverse</strong>
     —their own metaverse reality—and all official competitions.
-                                              They are part of the community.
-                </p>
+                They are part of the community.
+                                              </p>
     </div>
     </div>
     </div>
@@ -187,4 +241,4 @@ export default function App() {
     </>
 
   );
-}
+};

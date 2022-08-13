@@ -4,6 +4,7 @@ import * as borsh from 'borsh';
 import { getBalance, getAllAccounts } from './accounts';
 import { ClientAccount, TransferRequest } from './schemes';
 import { entrypoint } from './entrypoint';
+import { ownerTokenAccountKey } from './admin';
 import { programId, seed } from './conf';
 
 /* returns instruction to create *
@@ -38,53 +39,6 @@ export async function createAccount(userKey, connection) {
   return createProgramAccount;
 }
 
-/* returns transaction to add balance *
- * to account owned by `userKey`      */
-export async function addBalance(userKey, amount, connection) {
-  const client = new ClientAccount({
-    id: userKey.toBuffer(),
-    balance: amount,
-  });
-
-  const data = borsh.serialize(ClientAccount.schema, client);
-  const dataForTransaction = new Uint8Array([entrypoint.addBalance, ... data]);
-
-  const accountPubkey = await web3.PublicKey.createWithSeed(
-    userKey,
-    seed,
-    programId
-  );
-
-  const instruction = new web3.TransactionInstruction({
-    keys: [
-      { pubkey: accountPubkey, isSigner: false, isWritable: true },
-      { pubkey: userKey, isSigner: true, isWritable: false },
-    ],
-    programId: programId,
-    data: dataForTransaction,
-  });
-
-  /* create new transaction object */
-  const transaction = new web3.Transaction();
-
-  const allAccounts = await getAllAccounts(connection, programId);
-  const account = allAccounts.some(a => a.id === userKey);
-
-  /* check if account already exists */
-  if (!account) {
-    /* create new account */
-    transaction.add(
-      createAccount(userKey, connection)
-    );
-  }
-
-  transaction.add(
-    instruction
-  );
-
-  return transaction;
-}
-
 /* returns transaction to request withdrawal *
  * from account owned by `userKey`           */
 export async function requestWithdrawal(publicKey, amount) {
@@ -117,12 +71,14 @@ export async function requestWithdrawal(publicKey, amount) {
 
 /* returns transaction to drain *
  * account owned by `userKey`   */
-export async function drainAccount(userKey, amount) {
+export async function drainAccount(userKey, amount, connection) {
   const accountPubkey = await web3.PublicKey.createWithSeed(
     userKey,
     seed,
     programId
   );
+
+  const tokenAccountKey = ownerTokenAccountKey(connection, userKey);
 
   let request = new TransferRequest({ amount: amount });
   let data = borsh.serialize(TransferRequest.schema, request);
@@ -132,6 +88,7 @@ export async function drainAccount(userKey, amount) {
     keys: [
       { pubkey: accountPubkey, isSigner: false, isWritable: true },
       { pubkey: userKey, isSigner: true, isWritable: false },
+      { pubkey: tokenAccountKey, isSigner: false, isWritable: false },
     ],
     programId: programId,
     data: dataForTransaction,

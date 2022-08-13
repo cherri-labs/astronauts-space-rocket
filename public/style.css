@@ -132,6 +132,11 @@ button::selection, input::selection {
     transform: translate(-50%, -50%);
 }
 
+img.nft {
+    border: 1px solid #b06;
+    border-radius: 50px;
+}
+
 /* desktop */
 @media screen and (min-width: 600px) {
     h1 {
@@ -164,7 +169,7 @@ button::selection, input::selection {
         flex-flow: row nowrap;
     }
 
-    img.nft {
+    #content img, img.nft {
         min-width: 350px;
     }
 }
@@ -243,7 +248,7 @@ button::selection, input::selection {
         flex-flow: row wrap;
     }
 
-    img.nft {
+    #content img, img.nft {
         order: 1;
         min-width: 100%;
     }
@@ -458,6 +463,35 @@ button::selection, input::selection {
                  1px 1px 5px rgba(86,49,181,1),
                  3px 3px 5px rgba(0,0,0,0.8);
     box-shadow: 0px 0px 250px 3px rgba(155,15,120,1);
+}
+
+#content .data {
+    padding: 10px;
+
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: .2rem;
+    word-spacing: 10px;
+
+    text-shadow: 1px 1px 1px #b9a;
+    background:
+        linear-gradient(
+            to right,
+            rgba(255,130,0,1),
+            rgba(196,255,221,1),
+            rgba(0,100,200,1) 99%,
+            #867
+        );
+
+    background-size: 100% 100%;
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    border: 1px solid #867;
+    border-radius: 5px;
 }
 
 #content .bank {
@@ -700,7 +734,35 @@ h1 .colors span {
                  0px 0px 50px rgba(227,120,184,1),
                  0px 0px 10px rgba(227,120,184,1),
                  0px 0px 25px rgba(227,120,184,1),
-                 5px 5px 15px rgba(227,160,184,1);
+                 5px 5px 15px rgba(227,160,184,1),
+                 4px 4px 3px #ccdd00,
+                 5px 5px 1px #00ccdd,
+                 6px 6px 5px #000000,
+                 6px 6px 3px #ccdd00,
+                 7px 7px 1px #00ccdd,
+                 8px 8px 5px #000000,
+                 8px 8px 3px #ccdd00,
+                 9px 9px 1px #00ccdd,
+                 10px 10px 5px #000000,
+
+                 4px 4px 15px #ccdd00,
+                 5px 5px 5px #00ccdd,
+                 6px 6px 25px #000000,
+                 8px 8px 3px #ccdd00,
+                 9px 9px 5px #00ccdd,
+                 10px 10px 2px #000000,
+                 8px 8px 30px #ccdd00,
+                 9px 9px 10px #00ccdd,
+                 10px 10px 50px #000000,
+
+                 12px 12px 3px #ccdd00,
+                 13px 13px 1px #00ccdd,
+                 14px 14px 2px #000000,
+                 15px 15px 3px #ccdd00,
+                 17px 17px 1px #00ccdd,
+                 16px 16px 5px #000000,
+                 15px 15px 10px #ccdd00,
+                 16px 16px 15px rgba(227,160,0,1);
 }
 
 p a.colors {

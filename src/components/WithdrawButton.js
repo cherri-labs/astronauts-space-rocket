@@ -1,13 +1,26 @@
 import { WalletNotConnectedError } from '@solana/wallet-adapter-base';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import * as web3 from '@solana/web3.js';
-import React, { useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 
 import * as bank from '../client/lib';
+import { getBalance } from '../client/accounts';
 
 export default function WithdrawButton() {
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
+
+  useEffect(() => {
+    updateBalance();
+  }, []);
+
+  const updateBalance = async () => {
+    if (publicKey && connection) {
+      const label = document.getElementById('bank-balance');
+      const balance = await getBalance(connection, publicKey);
+      label.innerHTML = "Balance: " + balance + " ◎";
+    }
+  }
 
   const onClick = useCallback(async () => {
     if (!publicKey) {
@@ -23,6 +36,7 @@ export default function WithdrawButton() {
       const signature = await sendTransaction(transaction, connection);
 
       await connection.confirmTransaction(signature, 'processed');
+      await updateBalance();
     }
   }, [publicKey, sendTransaction, connection]);
 

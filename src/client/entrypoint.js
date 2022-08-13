@@ -4,8 +4,7 @@
 
 module.exports = {
     entrypoint: {
-        addBalance: 0,
-        requestWithdrawal: 1,
-        drainAccount: 2,
+        requestWithdrawal: 0,
+        drainAccount: 1,
     },
 };
