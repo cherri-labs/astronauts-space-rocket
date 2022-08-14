@@ -187,7 +187,7 @@ const Content: FC = () => {
     <div className="page" id="cyberverse">
     <div id="container">
     <div id="content">
-    <img src="img/cyberverse.png" alt="Noon Moon" />
+    <img src="img/cyberverse.png" className="moon" alt="Noon Moon" />
     <div className="text">
     <h1 className="colors">Cyber||verse</h1>
     <p>

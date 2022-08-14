@@ -50,7 +50,7 @@ export async function requestWithdrawal(publicKey, amount) {
 
   let withdrawalRequest = new TransferRequest({ amount: amount });
   let data = borsh.serialize(TransferRequest.schema, withdrawalRequest);
-  const dataForTransaction = new Uint8Array([entrypoint.requestWithdrawal, ... data]);
+  const dataForTransaction = new Uint8Array([entrypoint.withdraw, ... data]);
 
   const instruction = new web3.TransactionInstruction({
     keys: [
@@ -82,7 +82,7 @@ export async function drainAccount(userKey, amount, connection) {
 
   let request = new TransferRequest({ amount: amount });
   let data = borsh.serialize(TransferRequest.schema, request);
-  const dataForTransaction = new Uint8Array([entrypoint.drainAccount, ... data]);
+  const dataForTransaction = new Uint8Array([entrypoint.drain, ... data]);
 
   const instruction = new web3.TransactionInstruction({
     keys: [
