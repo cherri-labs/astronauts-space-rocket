@@ -632,7 +632,7 @@ button::selection, input::selection {
 }
 
 #tabs-bar button.disabled {
-    background-color: rgba(255,40,80,1);
+    background-color: rgba(235,0,100,1);
     color: rgba(235,185,205,0.6);
 }
 
