@@ -176,7 +176,7 @@ const Content: FC = () => {
     <div className="bank">
     <div id="tabs-container">
     <div id="tabs-bar">
-    <button className="disabled" id="deposit-btn" onClick={function(){openTab('deposit');}}>Deposit</button>
+    <button className="disabled" title="Coming soon" id="deposit-btn" onClick={function(){openTab('deposit');}}>Deposit</button>
     <button className="active" id="withdraw-btn" onClick={function(){openTab('withdraw');}}>Withdraw</button>
 </div>
 </div>
