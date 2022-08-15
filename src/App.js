@@ -128,7 +128,7 @@ const Content: FC = () => {
 	phase.
 				   </p>
 	<p>
-	You own the NFT. All ownership and commercial rights are
+	<b>You own the NFT.</b> All ownership and commercial rights are
 	passed over the NFT.
                    </p>
     <p>
@@ -144,7 +144,7 @@ const Content: FC = () => {
     Astro Bank
     </a>{" "}
     mint rewards. Check out <a target="_blank" href="https://github.com/cherri-labs/astrobank">our Github</a> to read more.
-              </p>
+                                                                                                            </p>
     </div>
     <img className="nft" src="img/astronaut.png" alt="Lonely Astronaut" />
     </div>
@@ -176,8 +176,8 @@ const Content: FC = () => {
     <div className="bank">
     <div id="tabs-container">
     <div id="tabs-bar">
-    <button className="disabled" title="Coming soon" id="deposit-btn" onClick={function(){openTab('deposit');}}>Deposit</button>
-    <button className="active" id="withdraw-btn" onClick={function(){openTab('withdraw');}}>Withdraw</button>
+    <button className="disabled" id="deposit-btn" onClick={function(){openTab('deposit');}}><span>Deposit</span></button>
+    <button className="active" id="withdraw-btn" onClick={function(){openTab('withdraw');}}><span>Withdraw</span></button>
 </div>
 </div>
 <form className="tab" id="deposit">
@@ -214,7 +214,7 @@ There are no strangers in the
 {" "}<a className="colors" href="#cyberverse">
 Cyberverse
 </a>
-                                                  . NFTs are your
+                                                    . NFTs are your
 all-access pass. They allow you to freely explore all new
 features and released products. Collectors can also expect
 access to exclusive airdrops as well as <a target="_blank" href="https://github.com/cherri-labs/astrobank">their share of
@@ -222,8 +222,8 @@ reward fees</a> through the{" "}
 <a className="colors" href="#astrobank">
 Astro Bank
 </a>
-                                                  .
-                      </p>
+                                                    .
+                              </p>
 <p>
 {" "}<a className="colors" href="#astronauts">
 Lonely Astronauts
