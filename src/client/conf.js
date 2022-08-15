@@ -10,8 +10,8 @@ const {
 
 const KEYPAIR = '../../program/rust/target/deploy/rust-keypair.json';
 const CLUSTER_ID = 'devnet';
-const PROGRAM_ID = 'EByfzzWCZU5hKfvvsp4NJUPtei7KzFfmGrHSSBvaiEKK';
-const MINT = new PublicKey("CVEzUhRyUwbxwjDWP6RhZqjGPiVnLtxc2oNDBJck8chn");
+const PROGRAM_ID = new PublicKey('EByfzzWCZU5hKfvvsp4NJUPtei7KzFfmGrHSSBvaiEKK');
+const MINT = new PublicKey('CVEzUhRyUwbxwjDWP6RhZqjGPiVnLtxc2oNDBJck8chn');
 const MIN_AMOUNT = 1;
 
 const clusterUrl = clusterApiUrl(CLUSTER_ID);

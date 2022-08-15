@@ -13,8 +13,7 @@ export class ClientAccount {
                             {
                               kind: 'struct',
                               fields: [
-                                ['id', [32]],
-                                ['balance', 'u64'],
+                                ['creation', 'i64'],
                               ]
   }]]);
 }

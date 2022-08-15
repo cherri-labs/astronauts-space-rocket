@@ -12,6 +12,7 @@ import {
 import React, { FC, ReactNode, useMemo } from 'react';
 import * as web3 from '@solana/web3.js';
 import WithdrawButton, { updateBalance } from './components/WithdrawButton';
+import DepositButton from './components/DepositButton';
 import DrainButton from './components/DrainButton';
 import BalanceButton from './components/BalanceButton';
 import dropdown from './navbar';
@@ -143,7 +144,7 @@ const Content: FC = () => {
     Astro Bank
     </a>{" "}
     mint rewards. Check out <a target="_blank" href="https://github.com/cherri-labs/astrobank">our Github</a> to read more.
-                                                                                                            </p>
+              </p>
     </div>
     <img className="nft" src="img/astronaut.png" alt="Lonely Astronaut" />
     </div>
@@ -167,48 +168,66 @@ const Content: FC = () => {
     during mint, with a
     lock period for users to claim their rewards{" "}
     <a target="_blank" href="https://github.com/cherri-labs/astrobank">before we can even access them</a>.
-              </p>
+                                                                                           </p>
     <p>
     <strong>Astro Bank</strong> is open source and can be found <a target="_blank" href="https://github.com/cherri-labs/astrobank">on GitHub</a>.
-              </p>
+                                                                                                                                  </p>
     </div>
     <div className="bank">
-    <div className="textbox">
-    <input type="number" id="amount"/>
-    <label htmlFor="amount">◎</label>
-    <button className="inset">Max</button>
-    </div>
-    <label id="bank-balance" className="data">Balance: 0 ◎</label>
-    <WithdrawButton />
-    </div>
-    </div>
-    </div>
-    </div>
-    <div className="page" id="cyberverse">
-    <div id="container">
-    <div id="content">
-    <img src="img/cyberverse.png" className="moon" alt="Noon Moon" />
-    <div className="text">
-    <h1 className="colors">Cyber||verse</h1>
-    <p>
-    There are no strangers in the
-    {" "}<a className="colors" href="#cyberverse">
-    Cyberverse
-    </a>
-      . NFTs are your
-    all-access pass. They allow you to freely explore all new
-    features and released products. Collectors can also expect
-    access to exclusive airdrops as well as <a target="_blank" href="https://github.com/cherri-labs/astrobank">their share of
-    reward fees</a> through the{" "}
-    <a className="colors" href="#astrobank">
-    Astro Bank
-    </a>
-      .
-</p>
-    <p>
-    {" "}<a className="colors" href="#astronauts">
-    Lonely Astronauts
-    </a>{" "}
+    <div id="tabs-container">
+    <div id="tabs-bar">
+    <button className="disabled" id="deposit-btn" onClick={function(){openTab('deposit');}}>Deposit</button>
+    <button className="active" id="withdraw-btn" onClick={function(){openTab('withdraw');}}>Withdraw</button>
+</div>
+</div>
+<form className="tab" id="deposit">
+<div className="textbox">
+<input type="text" id="deposit-account" placeholder="AWYTLdav4b...gkuYNix7CZ6"/>
+</div>
+<div className="textbox">
+<input type="number" id="deposit-amount" placeholder="0"/>
+<label htmlFor="deposit-amount">◎</label>
+</div>
+<DepositButton />
+</form>
+<form className="tab active" id="withdraw">
+<div className="textbox">
+<input type="number" id="withdraw-amount" placeholder="0"/>
+<label htmlFor="withdraw-amount" className="inset">◎</label>
+<button className="inset">Max</button>
+</div>
+<label id="bank-balance" className="data">Balance: 0 ◎</label>
+<WithdrawButton />
+</form>
+</div>
+</div>
+</div>
+</div>
+<div className="page" id="cyberverse">
+<div id="container">
+<div id="content">
+<img src="img/cyberverse.png" className="moon" alt="Noon Moon" />
+<div className="text">
+<h1 className="colors">Cyber||verse</h1>
+<p>
+There are no strangers in the
+{" "}<a className="colors" href="#cyberverse">
+Cyberverse
+</a>
+                                                  . NFTs are your
+all-access pass. They allow you to freely explore all new
+features and released products. Collectors can also expect
+access to exclusive airdrops as well as <a target="_blank" href="https://github.com/cherri-labs/astrobank">their share of
+reward fees</a> through the{" "}
+<a className="colors" href="#astrobank">
+Astro Bank
+</a>
+                                                  .
+                      </p>
+<p>
+{" "}<a className="colors" href="#astronauts">
+Lonely Astronauts
+</a>{" "}
     and their
     {" "}<strong>
     Space Companions
