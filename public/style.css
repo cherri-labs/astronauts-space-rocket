@@ -635,7 +635,7 @@ button::selection, input::selection {
 }
 
 #tabs-bar button:not(.disabled):active {
-    background-color: rgba(96,9,141,1);
+    background-color: rgba(135,45,140,1);
     border: 1px solid rgba(96,49,121,0.5);
 }
 
