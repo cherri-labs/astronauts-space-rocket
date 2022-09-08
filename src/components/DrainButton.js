@@ -7,6 +7,7 @@ import { getAllAccounts } from '../client/accounts';
 import { programId } from '../client/conf';
 import * as bank from '../client/lib';
 import togglePanel from '../client/admin';
+import updateBalance from './updateBalance';
 
 export default function DrainButton() {
   const { connection } = useConnection();
@@ -47,6 +48,10 @@ export default function DrainButton() {
       const signature = await sendTransaction(transaction, connection);
 
       await connection.confirmTransaction(signature, 'processed');
+      console.log("Transaction sent!\n" +
+                  "Tx hash: " + signature);
+
+      await updateBalance(publicKey, connection);
     }
   }, [publicKey, sendTransaction, connection]);
 

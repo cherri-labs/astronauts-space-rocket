@@ -13,8 +13,12 @@ import React, { FC, ReactNode, useMemo } from 'react';
 import * as web3 from '@solana/web3.js';
 import WithdrawButton, { updateBalance } from './components/WithdrawButton';
 import DepositButton from './components/DepositButton';
+import DepositBox from './components/DepositBox';
+import DepositAmount from './components/DepositAmount';
+import WithdrawAmount from './components/WithdrawAmount';
 import DrainButton from './components/DrainButton';
-import BalanceButton from './components/BalanceButton';
+import MaxButton from './components/MaxButton';
+import BalanceLabel from './components/BalanceLabel';
 import dropdown from './navbar';
 import openTab from './opentab';
 
@@ -144,7 +148,7 @@ const Content: FC = () => {
     Astro Bank
     </a>{" "}
     mint rewards. Check out <a target="_blank" href="https://github.com/cherri-labs/astrobank">our Github</a> to read more.
-                                                                                                            </p>
+              </p>
     </div>
     <img className="nft" src="img/astronaut.png" alt="Lonely Astronaut" />
     </div>
@@ -181,22 +185,34 @@ const Content: FC = () => {
 </div>
 </div>
 <form className="tab" id="deposit">
+<label id="dep-account-note" className="note active">
+Deposit account (default is current wallet)
+</label>
+<label id="dep-amount-note" className="note active">
+Amount to deposit
+</label>
 <div className="textbox">
-<input type="text" id="deposit-account" placeholder="AWYTLdav4b...gkuYNix7CZ6"/>
+<DepositBox />
 </div>
 <div className="textbox">
-<input type="number" id="deposit-amount" placeholder="0"/>
+<DepositAmount />
 <label htmlFor="deposit-amount">◎</label>
 </div>
 <DepositButton />
 </form>
 <form className="tab active" id="withdraw">
+<label id="withd-amount-note" className="note active">
+Amount to withdraw
+</label>
+<label id="withd-balance-note" className="note active">
+Account balance (refresh on click)
+</label>
 <div className="textbox">
-<input type="number" id="withdraw-amount" placeholder="0"/>
+<WithdrawAmount />
 <label htmlFor="withdraw-amount" className="inset">◎</label>
-<button className="inset">Max</button>
+<MaxButton />
 </div>
-<label id="bank-balance" className="data">Balance: 0 ◎</label>
+<BalanceLabel />
 <WithdrawButton />
 </form>
 </div>
@@ -214,7 +230,7 @@ There are no strangers in the
 {" "}<a className="colors" href="#cyberverse">
 Cyberverse
 </a>
-                                                    . NFTs are your
+                                                            . NFTs are your
 all-access pass. They allow you to freely explore all new
 features and released products. Collectors can also expect
 access to exclusive airdrops as well as <a target="_blank" href="https://github.com/cherri-labs/astrobank#mint">their share of
@@ -222,8 +238,8 @@ reward fees</a> through the{" "}
 <a className="colors" href="#astrobank">
 Astro Bank
 </a>
-                                                    .
-                              </p>
+                                                            .
+                                  </p>
 <p>
 {" "}<a className="colors" href="#astronauts">
 Lonely Astronauts

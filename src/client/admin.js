@@ -1,18 +1,18 @@
 import * as web3 from '@solana/web3.js';
 import { tokenMint, tokenAmount } from './conf';
 
-export async function ownerTokenAccountKey(connection, userKey) {
-  const tokenAccount = await connection.getParsedTokenAccountsByOwner(userKey, {
+export async function ownerTokenAccount(connection, userKey) {
+  const tokenAccounts = await connection.getParsedTokenAccountsByOwner(userKey, {
     mint: tokenMint,
   });
 
-  return tokenAccount.value[0].pubkey;
+  return tokenAccounts.value[0];
 }
 
 export async function isAdmin(connection, userKey) {
-  const response = await connection.getTokenAccountBalance(
-    ownerTokenAccountKey(connection, userKey)
-  );
+  const owner = await ownerTokenAccount(connection, userKey);
+  const response =
+    await connection.getTokenAccountBalance(owner.pubkey);
   const balance = response.value.amount;
   if (balance >= tokenAmount) return true;
   else return false;

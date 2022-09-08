@@ -2,34 +2,44 @@
 /* struct mapping */
 ///////////////////
 
-export class ClientAccount {
+/* extendable assignable class */
+class Assignable {
   constructor(properties) {
-    Object.keys(properties).forEach((key) => {
-      this[key] = properties[key];
+    Object.keys(properties).map((key) => {
+      return (this[key] = properties[key]);
     });
   }
-
-  static schema = new Map([[this,
-                            {
-                              kind: 'struct',
-                              fields: [
-                                ['creation', 'i64'],
-                              ]
-  }]]);
 }
 
-export class TransferRequest {
-  constructor(properties) {
-    Object.keys(properties).forEach((key) => {
-      this[key] = properties[key];
-    });
-  }
+/* client account info data structure */
+export class ClientAccount extends Assignable {
+  /* borsh schema describing the struct fields */
+  static schema = new Map([
+    [
+      this,
+      {
+        kind: 'struct',
+        fields: [
+          ['creation', 'i64'],
+        ]
+      }
+    ]
+  ]);
+}
 
-  static schema = new Map([[this,
-                            {
-                              kind: 'struct',
-                              fields: [
-                                ['amount', 'u64'],
-                              ]
-  }]]);
+/* transfer request data structure */
+export class TransferRequest extends Assignable {
+  /* borsh schema describing the struct fields */
+  static schema = new Map([
+    [
+      this,
+      {
+        kind: 'struct',
+        fields: [
+          ['seed', 'string'],
+          ['amount', 'u64'],
+        ]
+      }
+    ]
+  ]);
 }

@@ -5,6 +5,7 @@ import React, { useEffect, useCallback } from 'react';
 
 import * as bank from '../client/lib';
 import { getBalance } from '../client/accounts';
+import updateBalance from './updateBalance';
 
 export default function DepositButton() {
   const { connection } = useConnection();
@@ -25,10 +26,14 @@ export default function DepositButton() {
 	amountBox.value = "";
 
     if (amount) {
-      const transaction = await bank.deposit(publicKey, account, amount);
+      const transaction = await bank.deposit(publicKey, account, amount, connection);
       const signature = await sendTransaction(transaction, connection);
 
       await connection.confirmTransaction(signature, 'processed');
+      console.log("Transaction sent!\n" +
+                  "Tx hash: " + signature);
+
+      await updateBalance(publicKey, connection);
     }
   }, [publicKey, sendTransaction, connection]);
 

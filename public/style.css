@@ -143,7 +143,7 @@ button::selection, input::selection {
 }
 
 /* desktop */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) {
     h1 {
         font-size: 72px;
         font-weight: bold;
@@ -186,9 +186,22 @@ button::selection, input::selection {
 }
 
 /* mobile */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
+    /* horizontal */
+    @media screen and (orientation: landscape) {
+        h1 {
+            font-size: 10vw;
+        }
+    }
+
+    /* vertical */
+    @media screen and (orientation: portrait) {
+        h1 {
+            font-size: 15vw;
+        }
+    }
+
     h1 {
-        font-size: 15vw;
         font-weight: bold;
     }
 
@@ -633,8 +646,9 @@ button::selection, input::selection {
 }
 
 #tabs-bar button:not(.active) {
-    background-color: rgba(100,10,150,1);
-    border: 1px solid rgba(136,10,121,0.5);
+    background-color: rgba(235,40,100,0.4);
+    color: rgba(235,185,205,0.6);
+    border: 1px solid rgba(135,10,255,0.2);
 }
 
 #tabs-bar button:not(.disabled).active {
@@ -642,12 +656,12 @@ button::selection, input::selection {
 }
 
 #tabs-bar button:not(.disabled):active {
-    background-color: rgba(135,45,140,1);
-    border: 1px solid rgba(96,49,121,0.5);
+    background-color: rgba(15,0,60,0);
+    border: 1px solid transparent;
 }
 
+
 #tabs-bar button.disabled {
-    background-color: rgba(235,40,100,0.4);
     color: rgba(235,185,205,0.6);
 }
 
@@ -666,6 +680,52 @@ button::selection, input::selection {
     position: relative;
     top: 16px;
     padding: 0px 5px;
+}
+
+.tab .note {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    line-height: 1em;
+}
+
+.tab .note:not(.note.active) {
+    color: rgba(180,80,150,0.8);
+    text-shadow: 1px 1px 1px rgba(80,0,50,0.5);
+    opacity: 0.5;
+}
+
+.tab .note:hover, .note.active {
+    color: rgba(180,100,160,1);
+    text-shadow: 1px 1px 1px rgba(30,0,30,1);
+    opacity: 1;
+}
+
+#dep-account-note,
+#dep-amount-note,
+#withd-balance-note,
+#withd-amount-note {
+    visibility: hidden;
+}
+
+#content .note {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 107%;
+    height: 2em;
+    margin: -14% -6%;
+    padding: 5px;
+    font-size: .7em;
+    letter-spacing: 1px;
+    background: rgba(155,100,125,0.8);
+    border: 1px solid rgba(130,80,100,1);
+    transition: background-color .1s, color 3s ease 1s;
+}
+
+#content input[type=text]:not(:focus),
+#content input[type=number]:not(:focus) {
+    cursor: default;
 }
 
 #team #content h1, #team #content p {
@@ -732,7 +792,7 @@ img.moon {
                 0px 0px 50px 25px rgba(156,36,106),
                 0px 0px 35px 35px rgba(216,66,106,0.5);
     border: 1px solid #980;
-    border-radius: 250px;
+    border-radius: 500px;
 }
 
 /* footer */

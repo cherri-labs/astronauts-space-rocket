@@ -19,14 +19,13 @@ const connection = new Connection(
   clusterUrl,
   'confirmed',
 );
-const programId = new PublicKey(PROGRAM_ID);
 const seed = 'bank';
 
 module.exports = {
   cluster: clusterUrl,
   connection: connection,
-  programId: programId,
-  seed: Uint8Array.from(seed),
+  programId: PROGRAM_ID,
+  seed: seed,
   tokenMint: MINT,
   tokenAmount: MIN_AMOUNT,
 };

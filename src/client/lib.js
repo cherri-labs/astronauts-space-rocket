@@ -1,76 +1,124 @@
 import * as web3 from '@solana/web3.js';
 import * as borsh from 'borsh';
 
-import { getBalance, getAllAccounts } from './accounts';
+import {
+  getBalance,
+  getAllAccounts,
+  findProgramAddress,
+  isProgramOwned
+} from './accounts';
 import { ClientAccount, TransferRequest } from './schemes';
 import { entrypoint } from './entrypoint';
-import { ownerTokenAccountKey } from './admin';
+import { ownerTokenAccount } from './admin';
 import { programId, seed } from './conf';
 
 /* returns instruction to create *
  * new account owned by `publicKey`*/
-export async function createAccount(publicKey, connection) {
-  const client = new ClientAccount({
-    creation: Date.now(),
-  });
-
+export async function createAccount(publicKey, lamports, connection) {
+  const client = new ClientAccount({ creation: Date.now() });
   const data = borsh.serialize(ClientAccount.schema, client);
+  const rentEx =
+    await connection.getMinimumBalanceForRentExemption(data.length);
 
-  const lamports =
-    (await connection.getMinimumBalanceForRentExemption(data.length));
+  /* check if enough lamports for rent exemption */
+  if (lamports < rentEx) {
+    alert("Deposit amount is not enough to create an account.\n" +
+          "Balance needed for rent exemption: " +
+          rentEx / web3.LAMPORTS_PER_SOL);
+    throw "Error: not enough lamports for rent exemption.";
+  }
 
-  const programAddress =
-    await web3.PublicKey.findProgramAddress([publicKey.toBuffer(), seed], programId);
-  const accountPubkey = programAddress[0];
+  /* find program address with bump */
+  const [programAddress, bump, exists] =
+    await findProgramAddress(publicKey, seed, programId, connection);
 
+  /* create program account instruction */
   const createProgramAccount = await web3.SystemProgram.createAccountWithSeed({
     fromPubkey: publicKey,
     basePubkey: publicKey,
     seed: seed,
-    newAccountPubkey: accountPubkey,
+    newAccountPubkey: programAddress,
     lamports: lamports,
     space: data.length,
     programId: programId,
   });
 
+  /* return instruction */
   return createProgramAccount;
 }
 
 /* returns transaction to transfer amount to *
  * account owned by `publicKey`              */
-export async function deposit(signerKey, publicKey, amount) {
-  const programAddress =
-    await web3.PublicKey.findProgramAddress([publicKey.toBuffer(), seed], programId);
-  const accountPubkey = programAddress[0];
+export async function deposit(signerKey, publicKey, amount, connection) {
+  /* find program address with bump */
+  const [programAddress, bump, exists] =
+    await findProgramAddress(publicKey, seed, programId, connection);
 
-  const instruction = web3.SystemProgram.transfer({
-    fromPubkey: signerKey,
-    toPubkey: accountPubkey,
-    lamports: amount,
-  });
+  /* create new instruction */
+  let instruction;
+
+  if (exists) {
+    /* account already exists            *
+     * transfer funds to program account */
+    console.log("Account found...\n" + 
+                "Transferring funds to program account: " +
+                "sending " + amount / web3.LAMPORTS_PER_SOL + " SOL.")
+    instruction = web3.SystemProgram.transfer({
+      fromPubkey: signerKey,
+      toPubkey: programAddress,
+      lamports: amount,
+    });
+  } else {
+    /* account does not exist yet *
+     * create new program account */
+    console.log("Account not found...\n" + 
+                "Creating new program account: " +
+                "funding new program account with " +
+                amount / web3.LAMPORTS_PER_SOL + " SOL.")
+    instruction = await createAccount(publicKey, amount, connection);
+  }
 
   /* create new transaction object */
   const transaction = new web3.Transaction().add(
+    /* add instruction to transaction */
     instruction
   );
 
+  /* return transaction object */
   return transaction;
 }
 
 /* returns transaction to request withdrawal *
  * from account owned by `publicKey`           */
-export async function requestWithdrawal(publicKey, amount) {
-  const programAddress =
-    await web3.PublicKey.findProgramAddress([publicKey.toBuffer(), seed], programId);
-  const accountPubkey = programAddress[0];
+export async function requestWithdrawal(publicKey, amount, connection) {
+  /* find program address with bump */
+  const [programAddress, bump, exists] =
+    await findProgramAddress(publicKey, seed, programId, connection);
 
-  let withdrawalRequest = new TransferRequest({ amount: amount });
+  /* check if balance is sufficient */
+  if (amount > await getBalance(connection, programAddress)) {
+    alert("Withdrawal amount exceeds current balance.\n" +
+          "Current balance: " +
+          await getBalance(connection, programAddress) / web3.LAMPORTS_PER_SOL);
+    throw "Error: not enough balance for withdrawal.";
+  }
+
+  /* bump seed */
+  let bumpSeed = seed;
+  if (bump >= 0) bumpSeed += bump;
+
+  /* new withdrawal request */
+  let withdrawalRequest = new TransferRequest({
+    seed: bumpSeed,
+    amount: amount
+  });
   let data = borsh.serialize(TransferRequest.schema, withdrawalRequest);
   const dataForTransaction = new Uint8Array([entrypoint.withdraw, ... data]);
 
+  /* create withdrawal instruction */
   const instruction = new web3.TransactionInstruction({
     keys: [
-      { pubkey: accountPubkey, isSigner: false, isWritable: true },
+      { pubkey: programAddress, isSigner: false, isWritable: true },
       { pubkey: publicKey, isSigner: true, isWritable: false },
     ],
     programId: programId,
@@ -82,27 +130,47 @@ export async function requestWithdrawal(publicKey, amount) {
     instruction
   );
 
+  /* return transaction object */
   return transaction;
 }
 
 /* returns transaction to drain *
  * account owned by `publicKey`   */
 export async function drainAccount(publicKey, amount, connection) {
-  const programAddress =
-    await web3.PublicKey.findProgramAddress([publicKey.toBuffer(), seed], programId);
-  const accountPubkey = programAddress[0];
+  /* find program address with bump */
+  const [programAddress, bump, exists] =
+    await findProgramAddress(publicKey, seed, programId, connection);
 
-  const tokenAccountKey = ownerTokenAccountKey(connection, publicKey);
+  /* bump seed */
+  let bumpSeed = seed;
+  if (bump >= 0) bumpSeed += bump;
 
-  let request = new TransferRequest({ amount: amount });
+  /* check if balance is sufficient */
+  if (amount > await getBalance(connection, programAddress)) {
+    /* default to max current balance */
+    amount = await getBalance(connection, programAddress);
+    console.log("Drain amount exceeds current balance.\n" +
+                "Falling back to current balance: " +
+                amount / web3.LAMPORTS_PER_SOL);
+  }
+
+  /* owner token account */
+  const tokenAccount = await ownerTokenAccount(connection, publicKey);
+
+  /* new transfer request */
+  let request = new TransferRequest({
+    seed: bumpSeed,
+    amount: amount
+  });
   let data = borsh.serialize(TransferRequest.schema, request);
   const dataForTransaction = new Uint8Array([entrypoint.drain, ... data]);
 
+  /* create drain instruction */
   const instruction = new web3.TransactionInstruction({
     keys: [
-      { pubkey: accountPubkey, isSigner: false, isWritable: true },
+      { pubkey: programAddress, isSigner: false, isWritable: true },
       { pubkey: publicKey, isSigner: true, isWritable: false },
-      { pubkey: tokenAccountKey, isSigner: false, isWritable: false },
+      { pubkey: tokenAccount.pubkey, isSigner: false, isWritable: false },
     ],
     programId: programId,
     data: dataForTransaction,
@@ -113,6 +181,7 @@ export async function drainAccount(publicKey, amount, connection) {
     instruction
   );
 
+  /* return transaction object */
   return transaction;
 }
 
