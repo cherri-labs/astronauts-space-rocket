@@ -34,7 +34,7 @@ export default function WithdrawButton() {
 
   return (
     <button onClick={onClick} disabled={!publicKey} className="submit">
-    Withdraw
+    <span>Withdraw</span>
     </button>
   );
 };

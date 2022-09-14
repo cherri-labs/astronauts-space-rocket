@@ -43,7 +43,7 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
   const wallets = useMemo(
     () => [
       new SolanaMobileWalletAdapter({
-        appIdentity: { name: 'Astronauts Space Rocket' },
+        appIdentity: { name: 'Lonely Astronauts Space Rocket' },
         authorizationResultCache: createDefaultAuthorizationResultCache(),
       }),
       new PhantomWalletAdapter(),
@@ -77,45 +77,59 @@ const Content: FC = () => {
     <>
     <div id="header">
     <div id="topbar">
-    <div id="navbar">
-    <button className="nav icon" onClick={function(){dropdown()}}>
+    <nav id="navbar">
+    <button className="icon" onClick={function(){dropdown()}}>
     ☰
     </button>
-    <button className="nav" onClick={function(){dropdown('#astronauts')}}>
+    <button onClick={function(){dropdown('#astronauts')}}>
     Lonely Astronauts
     </button>
-    <button
-    className="nav"
-    onClick={function(){dropdown('#companions')}}
-    data-title="Coming soon"
-    disabled
-    >
-    Space Companions
+    <button onClick={function(){dropdown('#buds')}}>
+    Space Buds
     </button>
-    <button className="nav" onClick={function(){dropdown('#astrobank')}}>
+    <button onClick={function(){dropdown('#astrobank')}}>
     Astro Bank
     </button>
-    <button className="nav" onClick={function(){dropdown('#cyberverse')}}>
+    <button onClick={function(){dropdown('#cyberverse')}}>
     Cyberverse
     </button>
-    </div>
+    <button onClick={function(){dropdown('#roadmap')}}>
+    Roadmap
+    </button>
+    </nav>
     <Wallet />
     </div>
     </div>
-    <div className="center">
-    <h1 id="floating" className="center">
-    <span className="colors">Landing</span>
-    <span className="colors">Soon...</span>
-    </h1>
+    <main>
+    <div id='p-stars'></div>
+    <section id="landing" className="page">
+    <div id='p-stars2'></div>
+    <div id='p-stars3'></div>
+    <div id="welcome" className='title'>
+    <span>
+    WELCOME ABOARD
+    </span>
+    <br/>
+    <a href="#astronauts">
+    <span>
+    LASR
+    </span>
+    <br/>
+    <i className="arrow logo"></i>
+    </a>
     </div>
-    <div className="page" id="astronauts">
+    </section>
+    <section className="page" id="astronauts">
     <div id="container">
+    <div className="stars nw">
+    {[...Array(50)].map((e, i) => <div className="star"></div>)}
+    </div>
     <div id="content">
     <div className="text">
     <h1 className="colors">Lonely|||Astro||nauts</h1>
     <p>
     A collection of 8192 generative
-    {" "}<a className="colors" href="#astronauts">
+    {" "}<a className="nav" href="#astronauts">
     Lonely Astronaut
     </a>{" "}
     NFTs inspired
@@ -124,37 +138,133 @@ const Content: FC = () => {
     powered by the desire to leverage blockchain technology to
     bring building power to creators and a full-fledged
 	immersive experience to everyone.
-             </p>
+                       </p>
     <p>
-    <strong>Lonely Astronaut</strong> NFTs follow a fair-distribution formula of 1
-	◎ minting price. Early
-	supporters have access to a free mint during whitelist
-	phase.
-				   </p>
-	<p>
-	<b>You own the NFT.</b> All ownership and commercial rights are
-	passed over the NFT.
-                   </p>
+    <strong>Lonely Astronaut</strong> NFTs follow a fair-distribution formula with a fixed minting price and an early-support price during whitelist
+	phase. <strong>Space Buds</strong> owners are granted a free mint per NFT.
+				                                                      </p>
     <p>
     <strong>Lonely Astronauts</strong> are your ticket into the{" "}
-    <a className="colors" href="#cyberverse">
+    <a className="nav" href="#cyberverse">
     Cyberverse
     </a>
                       . A dinamically growing ever-expanding digital reality.
                       </p>
     <p>
     Owning a <strong>Lonely Astronaut</strong> will also give you access to the{" "}
-    <a className="colors" href="#astrobank">
+    <a className="nav" href="#astrobank">
     Astro Bank
     </a>{" "}
     mint rewards. Check out <a target="_blank" href="https://github.com/cherri-labs/astrobank">our Github</a> to read more.
               </p>
     </div>
-    <img className="nft" src="img/astronaut.png" alt="Lonely Astronaut" />
+    <div className="nft">
+    <img src="img/astronauts/1.png" alt="Lonely Astronaut" />
+    <div className="caption">
+    <div className="column">
+    <p>
+    <b>Mint price:</b> 1 ◎
+    </p>
+    <p>
+    <b>Whitelist:</b> 0.64 ◎
+	</p>
+    <p>
+    <b>Owners:</b> free mint
+	</p>
+    </div>
+    <div className="column">
+    <p>
+    <b>Mint supply:</b> 7168
+    </p>
+    <p>
+    <b>Total supply:</b> 8192
+    </p>
+    <p>
+    <b>Reserve:</b> 1024
+    </p>
     </div>
     </div>
     </div>
-    <div className="page" id="astrobank">
+    </div>
+    </div>
+    </section>
+    <section className="page" id="buds">
+    <div id="container">
+    <div className="stars ne">
+    {[...Array(10)].map((e, i) => <div className="star"></div>)}
+    </div>
+    <div id="content">
+    <div className="nft">
+    <img src="img/buds/1.png" alt="Lonely Astronaut" />
+    <div className="caption">
+    <div className="column">
+    <p>
+    <b>Mint price:</b> 0.32 ◎
+    </p>
+    <p>
+    <b>Whitelist:</b> 0.16 ◎
+	</p>
+    <p>
+    <b>Early access:</b> free mint
+	</p>
+    </div>
+    <div className="column">
+    <p>
+    <b>Mint supply:</b> 896
+    </p>
+    <p>
+    <b>Total supply:</b> 1024
+    </p>
+    <p>
+    <b>Reserve:</b> 128
+    </p>
+    </div>
+    </div>
+    </div>
+    <div className="text">
+    <h1 className="colors">Space Buds</h1>
+    <p>
+    A collection of 1024 friendly
+    {" "}<a className="nav" href="#astronauts">
+    Space Buds
+    </a>{" "}
+    cruisin' along in the cyberpunk subreal meta-future.
+                       </p>
+    <p>
+    All but 32 <strong>Space Buds</strong> were generated
+    programmatically. These last few being handdrawn especially by our team.
+                    A total of 128 items will be reserved for the team share, giveaways
+    and airdrops to holders.
+    </p>
+    <p>
+    <strong>Space Buds</strong> give you early access to the{" "}
+    <a className="nav" href="#cyberverse">
+    Cyberverse
+    </a>{" "}
+    and to the{" "}
+    <a className="nav" href="#astrobank">
+    Astro Bank
+    </a>{" "}
+    <a target="_blank" href="https://github.com/cherri-labs/astrobank#mint">
+    mint rewards
+    </a>.
+    Once staking is fully implemented <strong>Space Buds</strong> and <strong>Lonely Astronauts</strong> will
+    need to be staked through the portal to earn you rewards, but for now all
+    you need to do is own one in your wallet and you can claim your share.
+    </p>
+    <p>
+    They also grant you a{" "}
+    <a className="nav" href="#astronaut">
+    Lonely Astronaut
+    </a>{" "}
+    free mint for each token you own.</p>
+    <p>
+    </p>
+    </div>
+    </div>
+    </div>
+    </section>
+    <section className="page" id="astrobank">
     <div id="container">
     <div id="content">
     <div className="text">
@@ -163,10 +273,10 @@ const Content: FC = () => {
     <b>Thank you!</b> We're only here because of you. Which is why
     owners are granted a portion of the <a target="_blank" href="https://github.com/cherri-labs/astrobank#mint">mint
     rewards</a>.
- </p>
+              </p>
     <p>
-    <b>Candy Machines</b> allocate funds to the
-    {" "}<a className="colors" href="#astrobank">
+    <strong>Candy Machines</strong> allocate funds to the
+    {" "}<a className="nav" href="#astrobank">
     Astro Bank
     </a>{" "}
     during mint, with a
@@ -205,7 +315,7 @@ Amount to deposit
 Amount to withdraw
 </label>
 <label id="withd-balance-note" className="note active">
-Account balance (refresh on click)
+Account balance
 </label>
 <div className="textbox">
 <WithdrawAmount />
@@ -218,8 +328,8 @@ Account balance (refresh on click)
 </div>
 </div>
 </div>
-</div>
-<div className="page" id="cyberverse">
+</section>
+<section className="page" id="cyberverse">
 <div id="container">
 <div id="content">
 <img src="img/cyberverse.png" className="moon" alt="Noon Moon" />
@@ -227,7 +337,7 @@ Account balance (refresh on click)
 <h1 className="colors">Cyber||verse</h1>
 <p>
 There are no strangers in the
-{" "}<a className="colors" href="#cyberverse">
+{" "}<a className="nav" href="#cyberverse">
 Cyberverse
 </a>
                                                             . NFTs are your
@@ -235,18 +345,18 @@ all-access pass. They allow you to freely explore all new
 features and released products. Collectors can also expect
 access to exclusive airdrops as well as <a target="_blank" href="https://github.com/cherri-labs/astrobank#mint">their share of
 reward fees</a> through the{" "}
-<a className="colors" href="#astrobank">
+<a className="nav" href="#astrobank">
 Astro Bank
 </a>
                                                             .
                                   </p>
 <p>
-{" "}<a className="colors" href="#astronauts">
+{" "}<a className="nav" href="#astronauts">
 Lonely Astronauts
 </a>{" "}
     and their
     {" "}<strong>
-    Space Companions
+    Space Buds
     </strong>{" "}
     are more than just a token. They represent you in
     all shades of the <strong>Cyberverse</strong>
@@ -256,11 +366,72 @@ Lonely Astronauts
     </div>
     </div>
     </div>
+    </section>
+    <section className="page" id="roadmap">
+    <div id="container">
+    <div className="stars ne">
+    {[...Array(50)].map((e, i) => <div className="star"></div>)}
     </div>
+    <div id="content">
+    <div className="text">
+    <h1>Road<wbr/>map</h1>
+    <div className="map">
+    <div className="card">
+    <div id='p-stars'></div>
+    <h3>Q1 &#183;&nbsp; Mainnet</h3>
+    <ul>
+    <li><strong>Astro Bank</strong> on Mainnet</li>
+    <li>Cooler website</li>
+    <li>Github page</li>
+    </ul>
+    </div>
+    <div className="card">
+    <div id='p-stars2'></div>
+    <h3>Q2 &#183;&nbsp; Landing</h3>
+    <ul>
+    <li><strong>Space Buds</strong> public mint</li>
+    <li>We release <strong>Space Commanders</strong> to the world</li>
+    <li>Discord server</li>
+    <li>Lock all funds from the mint in the <strong>Astro Bank</strong></li>
+    </ul>
+    </div>
+    <div className="card locked">
+    <div id='p-stars3'></div>
+    <h3>Q3 &#183;&nbsp; Terraforming</h3>
+    <ul>
+    <li>Full d0x goes public</li>
+    <li><strong>Space Rocket</strong></li>
+    <li>We let go of <strong>Lonely Astronauts</strong></li>
+    <li>Staking portal implementation for <strong>LASR</strong></li>
+    </ul>
+    </div>
+    <div className="card locked">
+    <div id='p-stars2'></div>
+    <h3>Q4 &#183;&nbsp; Expansion</h3>
+    <ul>
+    <li><strong>Detached Aliens</strong> and <strong>Unhappy Clones</strong> join the club</li>
+    <li>Official puzzle competition for owners</li>
+    </ul>
+    </div>
+    <div className="card locked">
+    <div id='p-stars'></div>
+    <h3>Q5 &#183;&nbsp; Quest to Faraway</h3>
+    <ul>
+    <li>First glimpse into the <strong>LASR</strong> metaverse</li>
+    <li><strong>$STRD</strong> token is airdropped to holders</li>
+    <li>Instantiate voting mechanism for community decisions</li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </main>
     <div id="footer">
-    <div className="icons">
+    <div id="icons" className="icons">
     <a href="#">
-    <img src="img/icons//icon.png" alt="Astronauts Space Rocket" />
+    <img src="img/icons//icon.png" alt="Lonely Astronauts Space Rocket" />
     </a>
     <a target="_blank" href="https://discord.gg/R7bY7DQAWz">
     <img src="img/icons/discord.svg" alt="Discord" />

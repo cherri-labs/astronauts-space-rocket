@@ -1,26 +1,16 @@
 import { WalletNotConnectedError } from '@solana/wallet-adapter-base';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import { mouseOver, mouseLeave, setText } from './noteDisplay';
+import { mouseOver, mouseLeave } from './noteDisplay';
 
 function onOver() {
   /* view note */
   mouseOver(document.getElementById('dep-account-note'));
-
-  /* null placeholder */
-  setText(document.getElementById('deposit-account'), "");
 }
 
 export default function DepositAccount() {
   const { publicKey } = useWallet();
-
-  /* init placeholder */
-  useEffect(() => {
-    if (publicKey) {
-      setText(document.getElementById('deposit-account'), publicKey);
-    }
-  }, []);
 
   function onLeave() {
     /* hide note */
@@ -30,9 +20,6 @@ export default function DepositAccount() {
     if (!publicKey) {
       throw new WalletNotConnectedError();
     }
-
-    /* set placeholder */
-    setText(document.getElementById('deposit-account'), publicKey);
   }
 
   return (

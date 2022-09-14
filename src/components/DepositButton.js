@@ -39,7 +39,7 @@ export default function DepositButton() {
 
   return (
     <button onClick={onClick} disabled={!publicKey} className="submit">
-    Deposit
+    <span>Deposit</span>
     </button>
   );
 };
