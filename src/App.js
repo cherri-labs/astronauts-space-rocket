@@ -100,9 +100,9 @@ const Content: FC = () => {
     <Wallet />
     </div>
     </div>
-    <main>
+    <div id="fullpage">
     <div id='p-stars'></div>
-    <section id="landing" className="page">
+    <div className="section page" id="landing">
     <div id='p-stars2'></div>
     <div id='p-stars3'></div>
     <div id="welcome" className='title'>
@@ -118,8 +118,8 @@ const Content: FC = () => {
     <i className="arrow logo"></i>
     </a>
     </div>
-    </section>
-    <section className="page" id="astronauts">
+    </div>
+    <div className="section page" id="astronauts">
     <div id="container">
     <div className="stars nw">
     {[...Array(50)].map((e, i) => <div className="star"></div>)}
@@ -128,34 +128,32 @@ const Content: FC = () => {
     <div className="text">
     <h1 className="colors">Lonely|||Astro||nauts</h1>
     <p>
-    A collection of 8192 generative
+    A collection of 8192
     {" "}<a className="nav" href="#astronauts">
     Lonely Astronaut
     </a>{" "}
     NFTs inspired
-	by vaporwave and cyberpunk aesthetics,
+	by <s>vaporwave</s> <b>cyberpunk</b> aesthetics,
 	        the demoscene and pop culture from the 80's and the 90's and
     powered by the desire to leverage blockchain technology to
     bring building power to creators and a full-fledged
 	immersive experience to everyone.
                        </p>
     <p>
-    <strong>Lonely Astronaut</strong> NFTs follow a fair-distribution formula with a fixed minting price and an early-support price during whitelist
+    <strong>Lonely Astronauts</strong> follow a fair-distribution formula with an early-support price during whitelist
 	phase. <strong>Space Buds</strong> owners are granted a free mint per NFT.
 				                                                      </p>
     <p>
-    <strong>Lonely Astronauts</strong> are your ticket into the{" "}
+    <strong>Astronauts</strong> are your ticket into the{" "}
     <a className="nav" href="#cyberverse">
     Cyberverse
     </a>
-                      . A dinamically growing ever-expanding digital reality.
-                      </p>
-    <p>
-    Owning a <strong>Lonely Astronaut</strong> will also give you access to the{" "}
+          , a dinamically growing ever-expanding
+    digital reality—as well as to the{" "}
     <a className="nav" href="#astrobank">
     Astro Bank
     </a>{" "}
-    mint rewards. Check out <a target="_blank" href="https://github.com/cherri-labs/astrobank">our Github</a> to read more.
+    <a target="_blank" href="https://github.com/cherri-labs/astrobank#mint">mint rewards</a>.
               </p>
     </div>
     <div className="nft">
@@ -187,8 +185,8 @@ const Content: FC = () => {
     </div>
     </div>
     </div>
-    </section>
-    <section className="page" id="buds">
+    </div>
+    <div className="section page" id="buds">
     <div id="container">
     <div className="stars ne">
     {[...Array(10)].map((e, i) => <div className="star"></div>)}
@@ -224,18 +222,18 @@ const Content: FC = () => {
     <div className="text">
     <h1 className="colors">Space Buds</h1>
     <p>
-    A collection of 1024 friendly
+    1024 friendly
     {" "}<a className="nav" href="#astronauts">
     Space Buds
     </a>{" "}
-    cruisin' along in the cyberpunk subreal meta-future.
-                       </p>
+    cruisin' thru the cyberpunk subreal meta-reality.
+                             </p>
     <p>
     All but 32 <strong>Space Buds</strong> were generated
     programmatically. These last few being handdrawn especially by our team.
-                    A total of 128 items will be reserved for the team share, giveaways
+                    A total of 128 items will be reserved for team share, giveaways
     and airdrops to holders.
-    </p>
+                       </p>
     <p>
     <strong>Space Buds</strong> give you early access to the{" "}
     <a className="nav" href="#cyberverse">
@@ -244,14 +242,14 @@ const Content: FC = () => {
     and to the{" "}
     <a className="nav" href="#astrobank">
     Astro Bank
-    </a>{" "}
-    <a target="_blank" href="https://github.com/cherri-labs/astrobank#mint">
-    mint rewards
     </a>.
-    Once staking is fully implemented <strong>Space Buds</strong> and <strong>Lonely Astronauts</strong> will
-    need to be staked through the portal to earn you rewards, but for now all
-    you need to do is own one in your wallet and you can claim your share.
-    </p>
+         Once staking is fully implemented a staked <strong>Space Buds</strong> or <strong>Lonely Astronauts</strong>
+    will be required to participate in the
+    <a target="_blank" href="https://github.com/cherri-labs/astrobank#mint">
+    bank rewards
+    </a>, but for now all
+    you need is one in your wallet to claim your share.
+                                                                     </p>
     <p>
     They also grant you a{" "}
     <a className="nav" href="#astronaut">
@@ -263,8 +261,8 @@ const Content: FC = () => {
     </div>
     </div>
     </div>
-    </section>
-    <section className="page" id="astrobank">
+    </div>
+    <div className="section page" id="astrobank">
     <div id="container">
     <div id="content">
     <div className="text">
@@ -328,8 +326,8 @@ Account balance
 </div>
 </div>
 </div>
-</section>
-<section className="page" id="cyberverse">
+</div>
+<div className="section page" id="cyberverse">
 <div id="container">
 <div id="content">
 <img src="img/cyberverse.png" className="moon" alt="Noon Moon" />
@@ -366,8 +364,8 @@ Lonely Astronauts
     </div>
     </div>
     </div>
-    </section>
-    <section className="page" id="roadmap">
+    </div>
+    <div className="section page" id="roadmap">
     <div id="container">
     <div className="stars ne">
     {[...Array(50)].map((e, i) => <div className="star"></div>)}
@@ -426,8 +424,8 @@ Lonely Astronauts
     </div>
     </div>
     </div>
-    </section>
-    </main>
+    </div>
+    </div>
     <div id="footer">
     <div id="icons" className="icons">
     <a href="#">
@@ -445,6 +443,5 @@ Lonely Astronauts
     </div>
     </div>
     </>
-
   );
 };

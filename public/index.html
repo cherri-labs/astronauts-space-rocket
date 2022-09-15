@@ -16,11 +16,22 @@
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="stars.css"/>
     <link rel="stylesheet" href="parallax-star.css"/>
-    <script src="sprinkle.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.css" integrity="sha512-TzpAFfzjJAI0CY7w33tQEEIflTR3zB4kaQcCXcr+V4HmoQmXSMsQpX6z+c3lNC3XV0BeXQ6ZNb5X+sKeLP3cKA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <script src="scroll.js"></script>
+    <script src="sprinkle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.js" integrity="sha512-I15DlK8qDL0FQMl9ilYw38xMZbUSFULAWdJidRu5qEdqhC5An1EjKofGZSAPKFQoHJ8+p5D4V/21O+5bl1Asyg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
     <noscript>With JavaScript it's different.</noscript>
     <div id="root"></div>
+    <script type="text/javascript">
+      new fullpage('#fullpage', {
+        //options here
+          autoScrolling:true,
+          scrollHorizontally: true,
+          licenseKey: 'gplv3-license'
+      });
+    </script>
   </body>
 </html>
