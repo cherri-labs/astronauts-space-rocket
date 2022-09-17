@@ -1,10 +1,10 @@
-export default function openTab(tabId) {
-  if (document.getElementById(tabId + '-btn').className != "disabled") {
+export default function tab(tabId) {
+  if (document.getElementById(tabId + '-btn').className !== "disabled") {
     /* button */
-    const btn = document.getElementById('tabs-bar').
-                         getElementsByTagName('button');
+    const btn = document.getElementById('tabs-bar')
+                        .getElementsByTagName('button');
     [...btn].forEach(function (b) {
-      if (b.className != "disabled")
+      if (b.className !== "disabled")
         b.className = "";
     });
     document.getElementById(tabId + '-btn').className = "active";

@@ -1,8 +1,8 @@
 import { WalletNotConnectedError } from '@solana/wallet-adapter-base';
-import { useConnection, useWallet } from '@solana/wallet-adapter-react';
+import { useWallet } from '@solana/wallet-adapter-react';
 import React from 'react';
 
-import { mouseOver, mouseLeave } from './noteDisplay';
+import { mouseOver, mouseLeave } from '../Labels/noteDisplay';
 
 function onOver() {
   /* view note */

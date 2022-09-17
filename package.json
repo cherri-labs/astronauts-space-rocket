@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.28",
     "@solana-mobile/wallet-adapter-mobile": "0.0.1-alpha.5",
     "@solana/wallet-adapter-base": "^0.9.9",
     "@solana/wallet-adapter-react": "^0.15.8",
@@ -14,6 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "child_process": "^1.0.2",
     "crypto-browserify": "^3.12.0",
+    "fullpage": "^1.5.1",
     "react": "^18.2.0",
     "react-app-rewired": "^2.2.1",
     "react-dom": "^18.2.0",

@@ -3,9 +3,7 @@ import * as borsh from 'borsh';
 
 import {
   getBalance,
-  getAllAccounts,
-  findProgramAddress,
-  isProgramOwned
+  findProgramAddress
 } from './accounts';
 import { ClientAccount, TransferRequest } from './schemes';
 import { entrypoint } from './entrypoint';
@@ -25,11 +23,11 @@ export async function createAccount(publicKey, lamports, connection) {
     alert("Deposit amount is not enough to create an account.\n" +
           "Balance needed for rent exemption: " +
           rentEx / web3.LAMPORTS_PER_SOL);
-    throw "Error: not enough lamports for rent exemption.";
+    throw new Error("Error: not enough lamports for rent exemption.");
   }
 
   /* find program address with bump */
-  const [programAddress, bump, exists] =
+  const [programAddress, _bump, _exists] =
     await findProgramAddress(publicKey, seed, programId, connection);
 
   /* create program account instruction */
@@ -51,7 +49,7 @@ export async function createAccount(publicKey, lamports, connection) {
  * account owned by `publicKey`              */
 export async function deposit(signerKey, publicKey, amount, connection) {
   /* find program address with bump */
-  const [programAddress, bump, exists] =
+  const [programAddress, _bump, exists] =
     await findProgramAddress(publicKey, seed, programId, connection);
 
   /* create new instruction */
@@ -92,7 +90,7 @@ export async function deposit(signerKey, publicKey, amount, connection) {
  * from account owned by `publicKey`           */
 export async function requestWithdrawal(publicKey, amount, connection) {
   /* find program address with bump */
-  const [programAddress, bump, exists] =
+  const [programAddress, bump, _exists] =
     await findProgramAddress(publicKey, seed, programId, connection);
 
   /* check if balance is sufficient */
@@ -100,7 +98,7 @@ export async function requestWithdrawal(publicKey, amount, connection) {
     alert("Withdrawal amount exceeds current balance.\n" +
           "Current balance: " +
           await getBalance(connection, programAddress) / web3.LAMPORTS_PER_SOL);
-    throw "Error: not enough balance for withdrawal.";
+    throw new Error("Error: not enough balance for withdrawal.");
   }
 
   /* bump seed */
@@ -113,7 +111,7 @@ export async function requestWithdrawal(publicKey, amount, connection) {
     amount: amount
   });
   let data = borsh.serialize(TransferRequest.schema, withdrawalRequest);
-  const dataForTransaction = new Uint8Array([entrypoint.withdraw, ... data]);
+  const dataForTransaction = new Uint8Array([entrypoint.withdraw, ...data]);
 
   /* create withdrawal instruction */
   const instruction = new web3.TransactionInstruction({
@@ -138,7 +136,7 @@ export async function requestWithdrawal(publicKey, amount, connection) {
  * account owned by `publicKey`   */
 export async function drainAccount(publicKey, amount, connection) {
   /* find program address with bump */
-  const [programAddress, bump, exists] =
+  const [programAddress, bump, _exists] =
     await findProgramAddress(publicKey, seed, programId, connection);
 
   /* bump seed */
@@ -163,7 +161,7 @@ export async function drainAccount(publicKey, amount, connection) {
     amount: amount
   });
   let data = borsh.serialize(TransferRequest.schema, request);
-  const dataForTransaction = new Uint8Array([entrypoint.drain, ... data]);
+  const dataForTransaction = new Uint8Array([entrypoint.drain, ...data]);
 
   /* create drain instruction */
   const instruction = new web3.TransactionInstruction({

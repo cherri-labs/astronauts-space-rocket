@@ -1,13 +1,13 @@
 import * as web3 from '@solana/web3.js';
 
-import { getBalance, findProgramAddress } from '../client/accounts';
-import { seed, programId } from '../client/conf';
+import { getBalance, findProgramAddress } from '../../client/accounts';
+import { seed, programId } from '../../client/conf';
 
 export default async function updateBalance(publicKey, connection) {
   if (publicKey && connection) {
     const label = document.getElementById('bank-balance');
 
-    const [programAddress, bump, exists] =
+    const [programAddress, _bump, _exists] =
       await findProgramAddress(publicKey, seed, programId, connection);
 
     const balance =

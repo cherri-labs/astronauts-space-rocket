@@ -13,11 +13,7 @@ import {
   // SolletWalletAdapter,
   TorusWalletAdapter,
 } from '@solana/wallet-adapter-wallets';
-import {
-  WalletModalProvider,
-  WalletDisconnectButton,
-  WalletMultiButton,
-} from '@solana/wallet-adapter-react-ui';
+import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
 import {
   createDefaultAuthorizationResultCache,

@@ -5,8 +5,7 @@
 import * as web3 from '@solana/web3.js';
 import * as borsh from 'borsh';
 
-import { ClientAccount, TransferRequest } from './schemes';
-import { entrypoint } from './entrypoint';
+import { ClientAccount } from './schemes';
 
 /* return lamports balance from account *
  * associated with `accountId` */
@@ -26,7 +25,7 @@ export async function isProgramOwned(accountId, programId, connection) {
   /* account doesn't exist */
   if (!info) return 0;
   /* converting to string to avoid unknown inconsistency */
-  if (info.owner.toString() == programId.toString())
+  if (info.owner.toString() === programId.toString())
     return 1; else return 0;
 }
 
@@ -40,7 +39,7 @@ export async function getAllAccounts(connection, programId) {
       const acc = a.account;
 
       /* check if data length is correct */
-      if (acc.data.length == 40) {
+      if (acc.data.length === 40) {
         const client = borsh.deserialize(ClientAccount.schema, ClientAccount, acc.data);
         accounts.push({
           key: a.pubkey,

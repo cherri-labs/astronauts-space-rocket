@@ -3,8 +3,8 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import * as web3 from '@solana/web3.js';
 import React, { useCallback } from 'react';
 
-import { getBalance, findProgramAddress } from '../client/accounts';
-import { seed, programId } from '../client/conf';
+import { getBalance, findProgramAddress } from '../../client/accounts';
+import { seed, programId } from '../../client/conf';
 
 export default function MaxBalance() {
   const { connection } = useConnection();
@@ -17,7 +17,7 @@ export default function MaxBalance() {
     }
 
     /* find program address */
-    const [programAddress, bump, exists] =
+    const [programAddress, _bump, _exists] =
       await findProgramAddress(publicKey, seed, programId, connection);
 
     /* update amount textbox with current balance */

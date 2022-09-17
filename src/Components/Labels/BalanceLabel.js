@@ -2,9 +2,7 @@ import { WalletNotConnectedError } from '@solana/wallet-adapter-base';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import React, { useEffect, useCallback } from 'react';
 
-import { getBalance, findProgramAddress } from '../client/accounts';
-import { seed, programId } from '../client/conf';
-import updateBalance from './updateBalance';
+import updateBalance from '../Buttons/updateBalance';
 import { mouseOver, mouseLeave } from './noteDisplay';
 
 function onOver() {

@@ -3,8 +3,7 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import * as web3 from '@solana/web3.js';
 import React, { useCallback } from 'react';
 
-import * as bank from '../client/lib';
-import { getBalance } from '../client/accounts';
+import * as bank from '../../client/lib';
 import updateBalance from './updateBalance';
 
 export default function WithdrawButton() {
@@ -38,3 +37,12 @@ export default function WithdrawButton() {
     </button>
   );
 };
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-.stars {
+.shooting-stars {
   z-index: -1;
   position: relative;
   top: 0;
@@ -7,11 +7,11 @@
   height: 120%;
 }
 
-.stars.nw {
+.shooting-stars.nw {
   transform: rotate(225deg);
 }
 
-.stars.ne {
+.shooting-stars.ne {
   transform: rotate(-45deg);
 }
 
@@ -354,7 +354,7 @@
   height: 100%;
   background: linear-gradient(45deg, transparent, currentColor, transparent);
   border-radius: inherit;
-  animation: blink 2s linear infinite;
+  animation: star-blink 2s linear infinite;
 }
 .star::before {
   transform: rotate(45deg);
@@ -382,7 +382,7 @@
     opacity: 0;
   }
 }
-@keyframes blink {
+@keyframes star-blink {
   50% {
     opacity: 0.6;
   }

@@ -1,4 +1,3 @@
-import * as web3 from '@solana/web3.js';
 import { tokenMint, tokenAmount } from './conf';
 
 export async function ownerTokenAccount(connection, userKey) {

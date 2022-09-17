@@ -1,10 +1,9 @@
 import { WalletNotConnectedError } from '@solana/wallet-adapter-base';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import * as web3 from '@solana/web3.js';
-import React, { useEffect, useCallback } from 'react';
+import React, { useCallback } from 'react';
 
-import * as bank from '../client/lib';
-import { getBalance } from '../client/accounts';
+import * as bank from '../../client/lib';
 import updateBalance from './updateBalance';
 
 export default function DepositButton() {

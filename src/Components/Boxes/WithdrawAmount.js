@@ -1,4 +1,4 @@
-import { mouseOver, mouseLeave } from './noteDisplay';
+import { mouseOver, mouseLeave } from '../Labels/noteDisplay';
 
 function onOver() {
   /* view note */
