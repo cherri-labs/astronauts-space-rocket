@@ -4,8 +4,10 @@ export default function Cyberverse() {
   return (
     <div className="section page" id="roadmap">
     <div id="container">
+    <div className="relativity-starfield">
     <div className="shooting-stars ne">
     {[...Array(50)].map((e, i) => <div className="star"></div>)}
+    </div>
     </div>
     <div id="content">
     <div className="text">

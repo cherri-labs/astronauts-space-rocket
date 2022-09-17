@@ -5,8 +5,10 @@ export default function Buds() {
     <div className="section page" id="space-buds">
     <div class="fp-bg"></div>
     <div id="container">
+    <div className="relativity-starfield">
     <div className="shooting-stars ne">
     {[...Array(10)].map((e, i) => <div className="star"></div>)}
+    </div>
     </div>
     <div id="content">
     <div className="nft">
@@ -20,7 +22,7 @@ export default function Buds() {
     <b>Whitelist:</b> 0.16 ◎
 	</p>
     <p>
-    <b>Early access:</b> free mint
+    <b>Early bird:</b> free mint
 	</p>
     </div>
     <div className="column">
@@ -37,7 +39,7 @@ export default function Buds() {
     </div>
     </div>
     <div className="text">
-    <h1 className="colors">Space Buds</h1>
+    <h1>Space Buds</h1>
     <article>
     <div className="slide">
     <p>
@@ -46,10 +48,10 @@ export default function Buds() {
     Space Buds
     </a>{" "}
     cruisin' thru the <i>cybergalaxy</i>.
-    All but 32 generated programmatically — these last few being
+                                    All but 32 generated programmatically — these last few being
     handdrawn especially by our team. A total of 128 items will be
     reserved for team share, giveaways and airdrops to holders.
-                       </p>
+                                       </p>
     </div>
     </article>
     <article>

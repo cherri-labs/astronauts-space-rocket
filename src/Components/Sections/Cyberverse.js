@@ -5,9 +5,13 @@ export default function Cyberverse() {
     <div className="section page" id="cyberverse">
     <div id="container">
     <div id="content">
-    <img src="img/cyberverse.png" className="moon" alt="Noon Moon" />
+    <div className="lasr">
+    <a href="#home">
+    <i className="arrow logo full showcase"></i>
+    </a>
+    </div>
     <div className="text">
-    <h1 className="colors">Cyberverse</h1>
+    <h1>Cyberverse</h1>
     <article>
     <div className="slide">
     <p>

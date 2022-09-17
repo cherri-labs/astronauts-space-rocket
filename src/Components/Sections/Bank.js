@@ -16,7 +16,7 @@ export default function Bank() {
     <div id="container">
     <div id="content">
     <div className="text">
-    <h1 className="colors">Astro Bank</h1>
+    <h1>Astro Bank</h1>
     <article>
     <div className="slide">
     <p>

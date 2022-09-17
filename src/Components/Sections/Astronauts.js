@@ -5,8 +5,10 @@ export default function Astronauts() {
     <div className="section page" id="lonely-astronauts">
     <div class="fp-bg"></div>
     <div id="container">
+    <div className="relativity-starfield">
     <div className="shooting-stars nw">
     {[...Array(50)].map((e, i) => <div className="star"></div>)}
+    </div>
     </div>
     <div id="content">
     <div className="text">
@@ -37,7 +39,7 @@ export default function Astronauts() {
     <p>
     <b>Free mint.</b>{" "}
     <strong>Space Buds</strong> owners are granted a free mint per NFT.
-				   </p>
+				                                               </p>
     </div>
     </article>
     <article>

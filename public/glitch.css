@@ -49,36 +49,15 @@
 }
 
 @keyframes glitch {
-    0% {
+    0%, 50%, 56% {
         text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
         transform: translate(var(--glitch-translate));
     }
-    2% {
+    2%, 52%, 58% {
         text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
     }
-    4%,
-    100% {
+    4%, 54%, 60%, 100% {
         transform: none;
 
         text-shadow: none;
-}
-
-@keyframes neon-glitch {
-    0% {
-        text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
-        transform: translate(var(--glitch-translate));
-    }
-    2% {
-        text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
-    }
-    4%,
-    100% {
-        transform: none;
-
-        text-shadow:
-            0px 0 10px violet,
-            0px 0 10px #0ff,
-            0px 0 10px violet,
-            0px 0 300px #0ff;
-    }
 }
