@@ -8,6 +8,8 @@ import Bank from './Bank';
 import Cyberverse from './Cyberverse';
 import Roadmap from './Roadmap';
 
+import pageScroll from './pageScroll';
+
 export default function Fullpage() {
   const Fullpage = () => (
     <ReactFullpage
@@ -27,6 +29,30 @@ export default function Fullpage() {
       percentage: 62,
       property: 'transform'
     }}
+
+	onLeave = {function(origin, destination, direction, trigger) {
+	  /* leaving */
+	  if (origin.anchor == 'bank') {
+        if (direction == 'up')
+		  pageScroll.leaveUp();
+        else
+		  pageScroll.leaveDown();
+	  }
+
+      if (destination.anchor == 'bank') {
+        if (direction == 'up')
+		  pageScroll.enterUp();
+        else
+		  pageScroll.enterDown();
+      }
+	}}
+
+	afterLoad = {function(origin, destination, direction, trigger) {
+	  /* coming */
+	  if (destination.anchor == 'bank') {
+		pageScroll.show('wallet');
+	  }
+	}}
 
     render = { ({ state, fullpageApi }) => {
       return (

@@ -5,7 +5,7 @@ export default function Footer() {
     <div id="footer">
     <div id="icons" className="icons">
     <a href="#">
-    <img src="img/icons//icon.png" alt="Lonely Astronauts Space Rocket" />
+    <i className="arrow logo tiny dark"></i>
     </a>
     <a target="_blank" href="https://discord.gg/R7bY7DQAWz">
     <img src="img/icons/discord.svg" alt="Discord" />

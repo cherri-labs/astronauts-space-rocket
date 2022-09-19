@@ -13,35 +13,39 @@ export default function Cyberverse() {
     <div className="card">
     <h3>A New World</h3>
     <p>
-    Emerging from a mist of dense degraded
-    circuitry and gradient twilight lights, we
-    glimpse a horizon where shadow obstructs and clutters
-    with uneven machinery the metropolises' skylines at dusk.
+    A new world is emerging from the soil of dense integrated
+    circuits and gradient skies of composite layer. We are
+    approaching a limit where the view inside our own
+    cybernetic space will be obstructed and cluttered with
+    skyline horizons of targeted advertisement and uneven
+    machinery.
                                                   </p>
-    <p>
-    Through the <strong>Rebels</strong>' uncorrupted eye we see
-    mechanisms rotten to the core rule on every street, school,
-    park, motel room, nightclub, rest home and gambling den in town.
-                                                  </p>
-    <p>
-    As the night lurks in the <strong>Underground</strong> awakes,
-    and a thousand windows, cars, air conditioners and neon signs
-    light up all at the same time.
-                             </p>
     <p>
     Our world used to be one of a kind. A distinctive mark
     in an otherwise unholy chaos of wishful thinking and
-    abstract themes. Now, we have to adapt.
-                                          </p>
+    abstract schemes of thought. Now we have to adapt,
+    leaving space to the offchance we are not alone in this.
+                                                  </p>
     <p>
-    We have to take what we can and leave out the rest.
-            </p>
-    <p>
-    Our choices <i>pave</i> the way before us.
+    Our universe does not travel in a straight line. At each
+    turning point, our choices <i>pave</i> the way before us.
+                                                        But it's not just one path; in fact, it's all of them.
     </p>
     <p>
-    Change doesn't happen overnight, but one giant step
-    each day.
+    There is a theory that states how all possible choices
+    and events are concomitant to the <i>real world</i>.
+                                                  </p>
+    <p>
+    The destination clear less and less, and yet, it appears
+    as though we know where we go with our every movement,
+    even though we can't gauge the dimension of it.
+                                                        </p>
+    <p>
+    For this reason we don't rush things to go anywhere.
+                                                   For change doesn't happen overnight, but one tiny step
+    each day. We're not afraid to take bold gestures, and we're
+    not afraid to take a small step back. We believe in what we
+    do, that's why we put our heart and soul into it.
                                                     </p>
     </div>
     </div>
@@ -54,18 +58,18 @@ export default function Cyberverse() {
     <h3>Long and Winding Road</h3>
     <p>
     That's what we plan to go through, with all of you.
-    </p>
+                                                  </p>
     <p>
     And through all the universes that are about to
     spawn—through the generation that will state once and for
     all what identity is and how we can define it—we are going
     to stick through whatever turning point in the long and
     winding road ahead.
-                  </p>
+    </p>
     <p>
     And as messy as that is, we will try our best to get the
     way down clear and linear for you to travel upon.
-               </p>
+                                     </p>
     <p>
     That's why we believe in <b>minimalism</b>. Whenever we provide
     you with information, software, interfaces, we try to keep
@@ -88,7 +92,7 @@ export default function Cyberverse() {
     <p>
     It's the <b>end of an era</b>, but
     the beginning of a different one.
-    </p>
+                                </p>
     </div>
     </div>
     </div>

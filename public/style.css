@@ -187,6 +187,16 @@ button::selection, input::selection {
     border-radius: 50%;
 }
 
+.arrow.logo.dark {
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+}
+
+.arrow.logo.tiny {
+    border-width: 0 4px 4px 0;
+    border-radius: 250%;
+}
+
 .arrow.logo.full {
     width: 80%;
     height: 80%;
@@ -253,6 +263,10 @@ a:hover .arrow.logo.full {
         position: absolute;
         right: 15px;
         padding: 6px;
+    }
+
+    #content .card {
+        max-width: 50%;
     }
 
     #content .team {
@@ -382,8 +396,7 @@ a:hover .arrow.logo.full {
     top: -100px;
     padding: 2vh;
     opacity: 0.8;
-    background-color: #2d3236;
-    transition: top .4s, opacity .4s;
+    transition: top .4s, opacity .2s;
 }
 
 #topbar {
@@ -413,6 +426,8 @@ a:hover .arrow.logo.full {
     overflow: auto;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+
+    visibility: hidden;
 }
 
 #navbar .icon {
@@ -692,6 +707,11 @@ a:hover .arrow.logo.full {
     cursor: default;
 }
 
+#content .more {
+    line-height: 1em;
+    border-bottom: 1px dotted #333;
+}
+
 #content label.data {
     padding: 12px;
 
@@ -871,8 +891,7 @@ a:hover .arrow.logo.full {
 }
 
 #lonely-astronauts h1 {
-    color: transparent;
-    background: linear-gradient(#fff0 0%, #b4f4eedd 10%, #3ad, #112 80%);
+    background: linear-gradient(#fff5 0%, #b4f4eedd 10%, #3ad, #112, #3ad 80%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
@@ -899,14 +918,15 @@ a:hover .arrow.logo.full {
 }
 
 #space-buds h1 {
-    color: #ad3;
+background: linear-gradient(135deg, #FAACA8AA 0%, #FAACA8 40%,  #DDD6F3 60%, #DDD6F399 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 
 /* --< bank >-- */
 
 #astrobank h1 {
-    color: transparent;
-    background: linear-gradient(#fff0 0%, #b4f4eedd 20%, #38495a22);
+    background: linear-gradient(178deg, #fff0 0%, #b4f4eebb 20%, #38495a22);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
@@ -1002,9 +1022,7 @@ a:hover .arrow.logo.full {
 }
 
 #cyberverse h1 {
-    color: rgba(156,36,106);
-    color: transparent;
-    background: linear-gradient(to top, rgba(156,36,106,.8) 0%, #fff2 20%, rgba(156,36,106));
+    background: linear-gradient(12deg, #fff2 10%, #b4f4ee44 38%, rgba(156,36,106));
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
@@ -1052,6 +1070,7 @@ a:hover .arrow.logo.full {
     align-items: center;
 }
 
+#content .card-wrap,
 #content .card,
 #content .card ul {
     display: flex;
@@ -1061,9 +1080,8 @@ a:hover .arrow.logo.full {
     gap: 20px;
 }
 
-#content .card {
+#content .card-wrap {
     position: relative;
-
     padding: 20px 10px;
     overflow: hidden;
 }
@@ -1078,6 +1096,7 @@ a:hover .arrow.logo.full {
     width: 80%;
     text-align: center;
     border-bottom: 1px solid #631d33;
+    animation: border-blink 4s infinite;
 }
 
 #content .card ul {
@@ -1154,8 +1173,6 @@ a:hover .arrow.logo.full {
     bottom: -100px;
     height: 45px;
     opacity: 0.8;
-    border-top: 1px solid #b4f4ee;
-    background-color: #2d3236;
     transition: bottom .3s, opacity .6s;
 }
 
@@ -1169,18 +1186,30 @@ a:hover .arrow.logo.full {
     transition: bottom .5s, opacity .3s ease .5s, visibility .1s;
 }
 
+.icons img,
+.icons i {
+    box-shadow: 0px 0px 0px 0px #84a4ce;
+    opacity: 0.8;
+    transition: filter .2s, opacity .3s;
+}
+
 .icons img {
     width: 22px;
     margin: 2px;
     padding: 3px;
     border-radius: 50px;
-    box-shadow: 0px 0px 0px 0px #84a4ce;
-    opacity: 0.8;
-    transition: box-shadow .1s, opacity .3s;
 }
 
-.icons a:hover img {
-    box-shadow: 0px 0px 3px 1px #b4f4ee;
+.icons i {
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: 7px 6px;
+}
+
+.icons a:hover img,
+.icons a:hover i {
+    filter: invert(99%) sepia(99%) saturate(2%) hue-rotate(226deg) brightness(106%) contrast(100%);
     opacity: 1;
 }
 
@@ -1188,6 +1217,10 @@ a:hover .arrow.logo.full {
 
 @keyframes blink {
     50% {opacity: 0;}
+}
+
+@keyframes border-blink {
+    50% {border-color: transparent;}
 }
 
 @keyframes lasr-ring {
