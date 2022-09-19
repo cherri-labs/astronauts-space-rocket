@@ -3,11 +3,13 @@ import React from 'react';
 export default function Cyberverse() {
   return (
     <div className="section page" id="cyberverse">
-    <div id="container">
+    <div className="pc-wrap" id="container">
+    <div id='p-stars2'></div>
+    <div id='p-stars3'></div>
     <div id="content">
     <div className="lasr">
     <a href="#home">
-    <i className="arrow logo full showcase"></i>
+    <i className="arrow logo full"></i>
     </a>
     </div>
     <div className="text">
@@ -48,6 +50,8 @@ export default function Cyberverse() {
     </article>
     </div>
     </div>
+    <div className='top-plane'></div>
+    <div className='bottom-plane'></div>
     </div>
     </div>
   );

@@ -5,10 +5,8 @@ export default function Astronauts() {
     <div className="section page" id="lonely-astronauts">
     <div class="fp-bg"></div>
     <div id="container">
-    <div className="relativity-starfield">
-    <div className="shooting-stars nw">
-    {[...Array(50)].map((e, i) => <div className="star"></div>)}
-    </div>
+    <div className="shooting-stars ne">
+    {[...Array(10)].map((e, i) => <div className="star"></div>)}
     </div>
     <div id="content">
     <div className="text">
@@ -37,7 +35,6 @@ export default function Astronauts() {
     <article>
     <div className="slide">
     <p>
-    <b>Free mint.</b>{" "}
     <strong>Space Buds</strong> owners are granted a free mint per NFT.
 				                                               </p>
     </div>
@@ -55,7 +52,7 @@ export default function Astronauts() {
     Astro Bank
     </a>{" "}
     <a target="_blank" href="https://github.com/cherri-labs/astrobank#mint">mint rewards</a>.
-              </p>
+                                                                              </p>
     </div>
     </article>
     </div>

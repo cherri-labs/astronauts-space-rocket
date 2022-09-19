@@ -5,10 +5,8 @@ export default function Buds() {
     <div className="section page" id="space-buds">
     <div class="fp-bg"></div>
     <div id="container">
-    <div className="relativity-starfield">
-    <div className="shooting-stars ne">
+    <div className="shooting-stars nw">
     {[...Array(10)].map((e, i) => <div className="star"></div>)}
-    </div>
     </div>
     <div id="content">
     <div className="nft">
