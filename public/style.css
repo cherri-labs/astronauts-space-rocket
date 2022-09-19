@@ -804,7 +804,6 @@ a:hover .arrow.logo.full {
 
 #tabs-bar button.disabled:active {
     color: #2d3236;
-    background-color: #b4f4eedd;
 }
 
 .tab:not(.active) {
@@ -1058,6 +1057,8 @@ background: linear-gradient(135deg, #FAACA8AA 0%, #FAACA8 40%,  #DDD6F3 60%, #DD
 
     margin-top: 25px;
     width: 100%;
+
+    font-family: lato, dm sans, gill sans, arial, sans-serif;
 }
 
 #content .map article {
@@ -1076,8 +1077,16 @@ background: linear-gradient(135deg, #FAACA8AA 0%, #FAACA8 40%,  #DDD6F3 60%, #DD
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
-    align-items: center;
     gap: 20px;
+}
+
+#content .card-wrap,
+#content .card {
+    align-items: center;
+}
+
+#content .card ul {
+    align-items: left;
 }
 
 #content .card-wrap {
@@ -1108,8 +1117,9 @@ background: linear-gradient(135deg, #FAACA8AA 0%, #FAACA8 40%,  #DDD6F3 60%, #DD
 #content .card p,
 #content .card li {
     margin: 0;
+    width: 100%;
     line-height: 1.5em;
-    text-align: center;
+    text-align: justify;
 }
 
 /* --< team >-- */

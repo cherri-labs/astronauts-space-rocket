@@ -31,13 +31,13 @@ pageScroll.leaveDown = function() {
 /* enter going up */
 pageScroll.enterUp = function() {
   document.getElementById("header").style.opacity = "0";
-  document.getElementById("header").style.top = "10px";
+  document.getElementById("header").style.top = "1px";
 }
 
 /* enter going down */
 pageScroll.enterDown = function() {
   document.getElementById("header").style.opacity = "0";
-  document.getElementById("header").style.top = "10px";
+  document.getElementById("header").style.top = "1px";
 }
 
 /* show elements */
