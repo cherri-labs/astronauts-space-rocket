@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Gill+Sans:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono:400');
+@import url('http://fonts.cdnfonts.com/css/helvetica-neue-9');
 
 html {
     scroll-behavior: smooth;
@@ -477,7 +479,7 @@ a:hover .arrow.logo.full {
 .page .title {
     display: inline-block;
     color: #fff;
-    font-family: "lato", sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 300;
     letter-spacing: 10px;
     cursor: default;
@@ -1042,10 +1044,10 @@ background: linear-gradient(135deg, #FAACA8AA 0%, #FAACA8 40%,  #DDD6F3 60%, #DD
 
     background: radial-gradient(
         ellipse at bottom,
-        #0d1d31,
-        #112,
-        #0c0d13,
-        #0d1d31
+        #0d1d3133,
+        #1123,
+        #0c0d1333,
+        #0d1d3133
     );
 }
 
@@ -1058,7 +1060,7 @@ background: linear-gradient(135deg, #FAACA8AA 0%, #FAACA8 40%,  #DDD6F3 60%, #DD
     margin-top: 25px;
     width: 100%;
 
-    font-family: lato, dm sans, gill sans, arial, sans-serif;
+    font-family: "Lato", "DM Sans", "Gill Sans", "Arial", sans-serif;
 }
 
 #content .map article {
@@ -1077,16 +1079,10 @@ background: linear-gradient(135deg, #FAACA8AA 0%, #FAACA8 40%,  #DDD6F3 60%, #DD
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
-    gap: 20px;
-}
-
-#content .card-wrap,
-#content .card {
     align-items: center;
-}
+    gap: 20px;
 
-#content .card ul {
-    align-items: left;
+    min-width: 35vw;
 }
 
 #content .card-wrap {
@@ -1102,16 +1098,29 @@ background: linear-gradient(135deg, #FAACA8AA 0%, #FAACA8 40%,  #DDD6F3 60%, #DD
 #content .card h3 {
     margin: 0;
     padding-bottom: 10px;
-    width: 80%;
+    width: 90%;
+
     text-align: center;
-    border-bottom: 1px solid #631d33;
-    animation: border-blink 4s infinite;
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: #000;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans;
+
+    border-bottom: 2px solid #111c;
 }
 
 #content .card ul {
+    width: 100%;
     margin: 0;
     padding: 6px 18px;
     list-style-type: none;
+}
+
+.map strong,
+#content .card strong {
+    color: #942d33;
 }
 
 #content .card p,
@@ -1120,6 +1129,11 @@ background: linear-gradient(135deg, #FAACA8AA 0%, #FAACA8 40%,  #DDD6F3 60%, #DD
     width: 100%;
     line-height: 1.5em;
     text-align: justify;
+
+    color: #ccc;
+    font-size: 14px;
+    font-family: "pixelfont", "JetBrains Mono", "Roboto Mono", "Lato",
+                 "Helvetica Neue", "Helvetica", "Arial", sans;
 }
 
 /* --< team >-- */
@@ -1230,7 +1244,9 @@ background: linear-gradient(135deg, #FAACA8AA 0%, #FAACA8 40%,  #DDD6F3 60%, #DD
 }
 
 @keyframes border-blink {
-    50% {border-color: transparent;}
+    0%, 100%, 15%, 85% {border-color: #111c;}
+    49%, 50.2% {border-color: #442d3355;}
+    50% {border-color: #942d3300;}
 }
 
 @keyframes lasr-ring {
