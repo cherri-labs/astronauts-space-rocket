@@ -1,0 +1,201 @@
+Info 0    [10:14:08.890] Starting TS Server
+Info 1    [10:14:08.891] Version: 4.7.4
+Info 2    [10:14:08.891] Arguments: /usr/bin/node /usr/lib/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --cancellationPipeName /tmp/038643a99109461486c471f14dba031b/tscancellation* --logFile /home/noize/bnd/hacking/nft/moonlight/website/www/.log/tsserver.log --logVerbosity info --locale en --validateDefaultNpmLocation --useNodeIpc
+Info 3    [10:14:08.891] Platform: linux NodeVersion: 18 CaseSensitive: true
+Info 4    [10:14:08.891] ServerMode: undefined syntaxOnly: false hasUnknownServerMode: undefined
+Info 5    [10:14:08.935] Format host information updated
+Info 6    [10:14:09.024] Search path: /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections
+Info 7    [10:14:09.026] For info: /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js :: No config files found.
+Info 8    [10:14:09.034] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 9    [10:14:16.677] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 7642.128718003631ms
+Info 10   [10:14:16.677] Project '/dev/null/inferredProject1*' (Inferred)
+Info 11   [10:14:16.677] 	Files (227)
+
+Info 12   [10:14:16.677] -----------------------------------------------
+Info 13   [10:14:16.719] AutoImportProviderProject: attempted to add more than 10 dependencies. Aborting.
+Info 14   [10:14:18.413] Format host information updated
+Info 15   [10:14:19.509] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 16   [10:14:23.515] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: true structureIsReused:: Not Elapsed: 4005.6125219911337ms
+Info 17   [10:14:23.515] Project '/dev/null/inferredProject1*' (Inferred)
+Info 18   [10:14:23.515] 	Files (418)
+
+Info 19   [10:14:23.515] -----------------------------------------------
+Info 20   [10:14:23.536] Before ensureProjectForOpenFiles:
+Info 21   [10:14:23.543] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 22   [10:14:23.636] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 3 structureChanged: false structureIsReused:: Completely Elapsed: 93.30178600549698ms
+Info 23   [10:14:23.636] Different program with same set of files
+Info 24   [10:14:23.637] After ensureProjectForOpenFiles:
+Info 25   [10:14:23.637] got projects updated in background, updating diagnostics for /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js
+Info 26   [10:21:09.470] DirectoryWatcher:: Triggered with /usr/lib/node_modules :: WatchInfo: /usr/lib/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 27   [10:21:09.761] Elapsed:: 92.34043100476265ms DirectoryWatcher:: Triggered with /usr/lib/node_modules :: WatchInfo: /usr/lib/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 28   [10:21:13.674] DirectoryWatcher:: Triggered with /usr/lib/node_modules :: WatchInfo: /usr/lib/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 29   [10:21:13.676] Elapsed:: 0.9148280024528503ms DirectoryWatcher:: Triggered with /usr/lib/node_modules :: WatchInfo: /usr/lib/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 30   [10:23:08.815] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/@eslint/eslintrc :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 31   [10:23:08.827] Elapsed:: 0.5441090017557144ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/@eslint/eslintrc :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 32   [10:23:08.827] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/@eslint/eslintrc :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 33   [10:23:08.828] Elapsed:: 0.5264059901237488ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/@eslint/eslintrc :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 34   [10:23:08.866] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/acorn-jsx :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 35   [10:23:08.867] Elapsed:: 0.32603999972343445ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/acorn-jsx :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 36   [10:23:08.867] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/acorn-jsx :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 37   [10:23:08.867] Elapsed:: 0.2899239957332611ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/acorn-jsx :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 38   [10:23:08.868] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/eslint :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 39   [10:23:08.868] Elapsed:: 0.25956499576568604ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/eslint :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 40   [10:23:08.868] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/eslint :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 41   [10:23:08.868] Elapsed:: 0.049136996269226074ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/eslint :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 42   [10:23:08.873] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/eslint-plugin-react :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 43   [10:23:08.874] Elapsed:: 0.34878599643707275ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/eslint-plugin-react :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 44   [10:23:08.874] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/eslint-plugin-react :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 45   [10:23:08.874] Elapsed:: 0.07428500056266785ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/eslint-plugin-react :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 46   [10:23:08.876] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/v8-compile-cache :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 47   [10:23:08.876] Elapsed:: 0.30961500108242035ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/v8-compile-cache :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 48   [10:23:08.876] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/v8-compile-cache :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 49   [10:23:08.876] Elapsed:: 0.06084299087524414ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/v8-compile-cache :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 50   [10:23:08.878] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/espree :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 51   [10:23:08.878] Elapsed:: 0.30686500668525696ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/espree :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 52   [10:23:08.878] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/espree :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 53   [10:23:08.878] Elapsed:: 0.058535993099212646ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/espree :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 54   [10:23:08.881] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/@humanwhocodes/config-array :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 55   [10:23:08.882] Elapsed:: 0.32886599004268646ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/@humanwhocodes/config-array :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 56   [10:23:08.882] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/@humanwhocodes/config-array :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 57   [10:23:08.882] Elapsed:: 0.034696996212005615ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/@humanwhocodes/config-array :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 58   [10:23:08.884] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/@humanwhocodes/object-schema :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 59   [10:23:08.884] Elapsed:: 0.3224390000104904ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/@humanwhocodes/object-schema :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 60   [10:23:08.884] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/@humanwhocodes/object-schema :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 61   [10:23:08.884] Elapsed:: 0.0329279899597168ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules/@humanwhocodes/object-schema :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 62   [10:23:10.149] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 63   [10:23:16.573] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 4 structureChanged: true structureIsReused:: SafeModules Elapsed: 6424.047440007329ms
+Info 64   [10:23:16.574] Different program with same set of files
+Info 65   [10:23:16.575] FileWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/package.json 1:: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/package.json 250 undefined WatchType: package.json file
+Info 66   [10:23:16.576] Elapsed:: 1.0756269991397858ms FileWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/package.json 1:: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/package.json 250 undefined WatchType: package.json file
+Info 67   [10:23:16.577] Before ensureProjectForOpenFiles:
+Info 68   [10:23:16.577] After ensureProjectForOpenFiles:
+Info 69   [10:23:16.577] got projects updated in background, updating diagnostics for /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js
+Info 70   [10:23:17.700] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 71   [10:23:23.091] Elapsed:: 5390.810565009713ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 72   [10:23:23.091] DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 73   [10:23:23.092] Elapsed:: 0.14167900383472443ms DirectoryWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules :: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 74   [10:23:23.101] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 75   [10:23:28.339] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 5 structureChanged: true structureIsReused:: SafeModules Elapsed: 5237.637043997645ms
+Info 76   [10:23:28.339] Different program with same set of files
+Info 77   [10:23:28.837] Before ensureProjectForOpenFiles:
+Info 78   [10:23:28.837] After ensureProjectForOpenFiles:
+Info 79   [10:23:28.837] got projects updated in background, updating diagnostics for /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js
+Info 80   [10:23:34.347] DirectoryWatcher:: Triggered with /home/noize/.cache/typescript/4.7/node_modules :: WatchInfo: /home/noize/.cache/typescript/4.7/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 81   [10:23:34.348] Elapsed:: 0.12944799661636353ms DirectoryWatcher:: Triggered with /home/noize/.cache/typescript/4.7/node_modules :: WatchInfo: /home/noize/.cache/typescript/4.7/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 82   [10:23:34.470] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 83   [10:23:34.985] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 6 structureChanged: true structureIsReused:: Not Elapsed: 513.0021449923515ms
+Info 84   [10:23:34.985] Project '/dev/null/inferredProject1*' (Inferred)
+Info 85   [10:23:34.985] 	Files (422)
+
+Info 86   [10:23:34.985] -----------------------------------------------
+Info 87   [10:23:36.971] Before ensureProjectForOpenFiles:
+Info 88   [10:23:36.971] After ensureProjectForOpenFiles:
+Info 89   [10:23:36.971] got projects updated in background, updating diagnostics for /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js
+Info 90   [10:23:41.844] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 91   [10:23:41.943] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 7 structureChanged: false structureIsReused:: Completely Elapsed: 99.01832200586796ms
+Info 92   [10:23:41.943] Different program with same set of files
+Info 93   [10:23:45.459] Format host information updated
+Info 94   [10:23:45.925] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 95   [10:23:46.141] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 8 structureChanged: false structureIsReused:: Completely Elapsed: 214.8746729940176ms
+Info 96   [10:23:46.141] Different program with same set of files
+Info 97   [10:23:48.975] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 98   [10:23:49.060] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 9 structureChanged: false structureIsReused:: Completely Elapsed: 84.99859599769115ms
+Info 99   [10:23:49.061] Different program with same set of files
+Info 100  [10:23:54.137] getCompletionData: Get current token: 0.024480000138282776
+Info 101  [10:23:54.137] getCompletionData: Is inside comment: 0.008472993969917297
+Info 102  [10:23:54.137] getCompletionData: Get previous token: 0.14691700041294098
+Info 103  [10:23:54.138] getCompletionsAtPosition: isCompletionListBlocker: 0.4576060026884079
+Info 104  [10:23:54.778] AutoImportProviderProject: found 8 root files in 8 dependencies in 627.4375910013914 ms
+Info 105  [10:24:10.791] Starting updateGraphWorker: Project: /dev/null/autoImportProviderProject1*
+Info 106  [10:24:13.944] Finishing updateGraphWorker: Project: /dev/null/autoImportProviderProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 3153.001081004739ms
+Info 107  [10:24:13.944] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 108  [10:24:13.944] 	Files (195)
+
+Info 109  [10:24:13.944] -----------------------------------------------
+Info 110  [10:24:13.947] getExportInfoMap: cache miss or empty; calculating new results
+Info 111  [10:24:14.429] forEachExternalModuleToImportFrom autoImportProvider: 275.077270001173
+Info 112  [10:24:14.429] getExportInfoMap: done in 20280.29813799262 ms
+Info 113  [10:24:14.995] collectAutoImports: resolved 100 module specifiers, plus 78 ambient and 730 from cache (352.7% hit rate)
+Info 114  [10:24:14.995] collectAutoImports: response is incomplete
+Info 115  [10:24:14.995] collectAutoImports: 564.2659659981728
+Info 116  [10:24:14.995] getCompletionData: Semantic work: 20856.63727299869
+Info 117  [10:24:15.196] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 198.94704799354076
+Info 118  [10:24:15.239] getCompletionData: Get current token: 0.021060004830360413
+Info 119  [10:24:15.239] getCompletionData: Is inside comment: 0.008086994290351868
+Info 120  [10:24:15.239] getCompletionData: Get previous token: 0.0985109955072403
+Info 121  [10:24:15.240] getCompletionsAtPosition: isCompletionListBlocker: 0.00680600106716156
+Info 122  [10:24:15.257] getExportInfoMap: cache hit
+Info 123  [10:24:15.877] collectAutoImports: resolved 67 module specifiers, plus 78 ambient and 765 from cache
+Info 124  [10:24:15.877] collectAutoImports: response is complete
+Info 125  [10:24:15.877] collectAutoImports: 619.4243389964104
+Info 126  [10:24:15.877] getCompletionData: Semantic work: 637.3277169913054
+Info 127  [10:24:16.091] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 213.3465530127287
+Info 128  [10:24:16.157] getCompletionData: Get current token: 0.020400002598762512
+Info 129  [10:24:16.157] getCompletionData: Is inside comment: 0.008332997560501099
+Info 130  [10:24:16.157] getCompletionData: Get previous token: 0.0434579998254776
+Info 131  [10:24:16.157] getCompletionsAtPosition: isCompletionListBlocker: 0.006702005863189697
+Info 132  [10:24:16.194] getExportInfoMap: cache hit
+Info 133  [10:24:16.584] collectAutoImports: resolved 0 module specifiers, plus 78 ambient and 832 from cache
+Info 134  [10:24:16.584] collectAutoImports: response is complete
+Info 135  [10:24:16.584] collectAutoImports: 389.23171700537205
+Info 136  [10:24:16.584] getCompletionData: Semantic work: 426.3015009909868
+Info 137  [10:24:16.749] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 165.26718600094318
+Info 138  [10:24:41.180] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 139  [10:24:41.863] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 10 structureChanged: false structureIsReused:: Completely Elapsed: 560.7171220034361ms
+Info 140  [10:24:41.863] Different program with same set of files
+Info 141  [10:24:42.763] Format host information updated
+Info 142  [10:24:43.295] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 143  [10:24:43.417] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 11 structureChanged: false structureIsReused:: Completely Elapsed: 121.10160700976849ms
+Info 144  [10:24:43.417] Different program with same set of files
+Info 145  [10:24:47.473] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 146  [10:24:47.544] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 12 structureChanged: false structureIsReused:: Completely Elapsed: 70.37622499465942ms
+Info 147  [10:24:47.544] Different program with same set of files
+Info 148  [10:24:48.054] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 149  [10:24:48.148] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 13 structureChanged: false structureIsReused:: Completely Elapsed: 94.18230800330639ms
+Info 150  [10:24:48.148] Different program with same set of files
+Info 151  [10:24:48.657] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 152  [10:24:48.738] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 14 structureChanged: false structureIsReused:: Completely Elapsed: 81.3220349997282ms
+Info 153  [10:24:48.738] Different program with same set of files
+Info 154  [10:24:48.740] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 155  [10:24:48.808] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 15 structureChanged: false structureIsReused:: Completely Elapsed: 67.11254699528217ms
+Info 156  [10:24:48.808] Different program with same set of files
+Info 157  [10:24:49.204] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 158  [10:24:49.277] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 16 structureChanged: false structureIsReused:: Completely Elapsed: 72.92173400521278ms
+Info 159  [10:24:49.277] Different program with same set of files
+Info 160  [10:24:49.625] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 161  [10:24:49.709] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 17 structureChanged: false structureIsReused:: Completely Elapsed: 82.99201500415802ms
+Info 162  [10:24:49.709] Different program with same set of files
+Info 163  [10:24:50.492] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 164  [10:24:50.556] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 18 structureChanged: false structureIsReused:: Completely Elapsed: 63.82801701128483ms
+Info 165  [10:24:50.556] Different program with same set of files
+Info 166  [10:24:51.829] getCompletionData: Get current token: 0.03611299395561218
+Info 167  [10:24:51.829] getCompletionData: Is inside comment: 0.007847994565963745
+Info 168  [10:24:51.829] getCompletionData: Get previous token: 0.08694899082183838
+Info 169  [10:24:51.829] getCompletionsAtPosition: isCompletionListBlocker: 0.19251799583435059
+Info 170  [10:24:51.836] getExportInfoMap: cache hit
+Info 171  [10:24:52.043] collectAutoImports: resolved 0 module specifiers, plus 78 ambient and 832 from cache
+Info 172  [10:24:52.043] collectAutoImports: response is complete
+Info 173  [10:24:52.043] collectAutoImports: 205.64835900068283
+Info 174  [10:24:52.043] getCompletionData: Semantic work: 213.63128000497818
+Info 175  [10:24:52.224] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 176.08144000172615
+Info 176  [10:24:55.098] Format host information updated
+Info 177  [10:24:55.524] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 178  [10:24:55.597] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 19 structureChanged: false structureIsReused:: Completely Elapsed: 72.48375999927521ms
+Info 179  [10:24:55.597] Different program with same set of files
+Info 180  [10:24:58.831] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 181  [10:24:58.898] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 20 structureChanged: false structureIsReused:: Completely Elapsed: 67.00322300195694ms
+Info 182  [10:24:58.898] Different program with same set of files
+Info 183  [10:24:59.877] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 184  [10:24:59.937] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 21 structureChanged: false structureIsReused:: Completely Elapsed: 59.66413401067257ms
+Info 185  [10:24:59.937] Different program with same set of files
+Info 186  [10:25:02.052] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 187  [10:25:02.121] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 22 structureChanged: false structureIsReused:: Completely Elapsed: 69.12036100029945ms
+Info 188  [10:25:02.122] Different program with same set of files
+Info 189  [10:27:23.501] FileWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 1:: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 500 undefined WatchType: Closed Script info
+Info 190  [10:27:23.502] Elapsed:: 0.7866300046443939ms FileWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 1:: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 500 undefined WatchType: Closed Script info
+Info 191  [10:29:55.556] FileWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 1:: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 500 undefined WatchType: Closed Script info
+Info 192  [10:29:55.559] Elapsed:: 0.03708699345588684ms FileWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 1:: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 500 undefined WatchType: Closed Script info
+Info 193  [10:31:23.598] FileWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 1:: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 500 undefined WatchType: Closed Script info
+Info 194  [10:31:23.598] Elapsed:: 0.04236200451850891ms FileWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 1:: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 500 undefined WatchType: Closed Script info
+Info 195  [10:34:17.660] FileWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 1:: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 500 undefined WatchType: Closed Script info
+Info 196  [10:34:17.660] Elapsed:: 0.04158499836921692ms FileWatcher:: Triggered with /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 1:: WatchInfo: /home/noize/bnd/hacking/nft/moonlight/website/www/src/Components/Sections/Roadmap.js 500 undefined WatchType: Closed Script info

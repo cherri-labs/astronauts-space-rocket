@@ -3,7 +3,7 @@ import React from 'react';
 export default function Astronauts() {
   return (
     <div className="section page" id="lonely-astronauts">
-    <div class="fp-bg"></div>
+    <div className="fp-bg"></div>
     <div id="container">
     <div className="shooting-stars ne">
     {[...Array(10)].map((e, i) => <div className="star"></div>)}
@@ -19,11 +19,11 @@ export default function Astronauts() {
     Lonely Astronaut
     </a>{" "}
     NFTs inspired by <span className="neon more">vaporwave</span> and
-    {" "}<div className="stack" style={{"--stacks": 3}}>
+    {" "}<span className="stack" style={{"--stacks": 3}}>
     <span className="more" style={{"--index": 0}}>cyberpunk</span>
     <span className="more" style={{"--index": 1}}>cyberpunk</span>
     <span className="more" style={{"--index": 2}}>cyberpunk</span>
-    </div>{" "}
+    </span>{" "}
     aesthetics,
 	the demoscene and pop culture from the 90's and
     powered by the desire to leverage blockchain technology to

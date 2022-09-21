@@ -3,7 +3,7 @@ import React from 'react';
 export default function Buds() {
   return (
     <div className="section page" id="space-buds">
-    <div class="fp-bg"></div>
+    <div className="fp-bg"></div>
     <div id="container">
     <div className="shooting-stars nw">
     {[...Array(10)].map((e, i) => <div className="star"></div>)}
