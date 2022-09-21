@@ -23,9 +23,7 @@ import {
 // Default styles that can be overridden by your app
 require('@solana/wallet-adapter-react-ui/styles.css');
 
-export default function ConnectionWalletProvider({
-  children,
-}) {
+export default function ConnectionWalletProvider({ children }) {
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
   const network = WalletAdapterNetwork.Devnet;
 
@@ -54,4 +52,4 @@ export default function ConnectionWalletProvider({
           </WalletProvider>
       </ConnectionProvider>
   );
-};
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 const Wallet: FC = () => {

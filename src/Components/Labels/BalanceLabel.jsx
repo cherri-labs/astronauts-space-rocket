@@ -43,4 +43,4 @@ export default function BalanceLabel() {
     Balance: 0 ◎
     </label>
   );
-};
+}

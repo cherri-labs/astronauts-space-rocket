@@ -1,5 +1,8 @@
-import Context from './Components/Wallet/Context';
+/* eslint-disable react/no-unescaped-entities */
 
+import React, { FC } from 'react';
+
+import Context from './Components/Wallet/Context';
 import Header from './Components/Sections/Header';
 import Fullpage from './Components/Sections/Fullpage';
 import Footer from './Components/Sections/Footer';

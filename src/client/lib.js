@@ -27,7 +27,7 @@ export async function createAccount(publicKey, lamports, connection) {
   }
 
   /* find program address with bump */
-  const [programAddress, _bump, _exists] =
+  const [programAddress] =
     await findProgramAddress(publicKey, seed, programId, connection);
 
   /* create program account instruction */
@@ -49,7 +49,7 @@ export async function createAccount(publicKey, lamports, connection) {
  * account owned by `publicKey`              */
 export async function deposit(signerKey, publicKey, amount, connection) {
   /* find program address with bump */
-  const [programAddress, _bump, exists] =
+  const [programAddress, , exists] =
     await findProgramAddress(publicKey, seed, programId, connection);
 
   /* create new instruction */
@@ -90,7 +90,7 @@ export async function deposit(signerKey, publicKey, amount, connection) {
  * from account owned by `publicKey`           */
 export async function requestWithdrawal(publicKey, amount, connection) {
   /* find program address with bump */
-  const [programAddress, bump, _exists] =
+  const [programAddress, bump] =
     await findProgramAddress(publicKey, seed, programId, connection);
 
   /* check if balance is sufficient */
@@ -136,7 +136,7 @@ export async function requestWithdrawal(publicKey, amount, connection) {
  * account owned by `publicKey`   */
 export async function drainAccount(publicKey, amount, connection) {
   /* find program address with bump */
-  const [programAddress, bump, _exists] =
+  const [programAddress, bump] =
     await findProgramAddress(publicKey, seed, programId, connection);
 
   /* bump seed */
@@ -184,6 +184,8 @@ export async function drainAccount(publicKey, amount, connection) {
 }
 
 /* drain all accounts */
+/*
 export async function drainAll(connection) {
 
 }
+*/

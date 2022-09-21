@@ -7,7 +7,7 @@ export default async function updateBalance(publicKey, connection) {
   if (publicKey && connection) {
     const label = document.getElementById('bank-balance');
 
-    const [programAddress, _bump, _exists] =
+    const [programAddress] =
       await findProgramAddress(publicKey, seed, programId, connection);
 
     const balance =

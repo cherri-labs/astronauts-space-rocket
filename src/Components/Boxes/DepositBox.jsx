@@ -29,4 +29,4 @@ export default function DepositAccount() {
     onFocus={onLeave}
     placeholder={publicKey}/>
   );
-};
+}

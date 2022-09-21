@@ -24,7 +24,7 @@ class MapMenu extends React.Component {
 
       /* button */
       const buttons = document.getElementById('map-menu')
-                              .getElementsByTagName('button');
+            .getElementsByTagName('button');
 
       /* reinitialize buttons */
       [...buttons].forEach(function(b) {
@@ -34,7 +34,7 @@ class MapMenu extends React.Component {
 
       /* activate button */
       btn.classList.add('active');
-    }
+    };
 
     /* switch menu element */
     menu.switch = function(mapSection) {
@@ -80,34 +80,34 @@ class MapMenu extends React.Component {
 
   render() {
     return (
-      <div id="map-menu" className="menu left">
-      <button className="sticky active"
-      id="map-button-world-active"
-      onClick={function(){menu.switch('world')}}>
-      World
-      </button>
-      <button className="sticky"
-      id="map-button-vision-active"
-      onClick={function(){menu.switch('vision')}}>
-      Vision & Goals
-      </button>
-      <button className="sticky"
-      id="map-button-path-active"
-      onClick={function(){menu.switch('path')}}>
-      Path
-      </button>
-      <button id="map-button-world"
-      onClick={function(){menu.switch('world')}}>
-      World
-      </button>
-      <button id="map-button-vision"
-      onClick={function(){menu.switch('vision')}}>
-      Vision & Goals
-      </button>
-      <button id="map-button-path"
-      onClick={function(){menu.switch('path')}}>
-      Path
-      </button>
+      <div id="map-menu" className="menu left hidden">
+        <button className="sticky active"
+                id="map-button-world-active"
+                onClick={function(){menu.switch('world')}}>
+          World
+        </button>
+        <button className="sticky"
+                id="map-button-vision-active"
+                onClick={function(){menu.switch('vision')}}>
+          Vision & Goals
+        </button>
+        <button className="sticky"
+                id="map-button-path-active"
+                onClick={function(){menu.switch('path')}}>
+          Path
+        </button>
+        <button id="map-button-world"
+                onClick={function(){menu.switch('world')}}>
+          World
+        </button>
+        <button id="map-button-vision"
+                onClick={function(){menu.switch('vision')}}>
+          Vision & Goals
+        </button>
+        <button id="map-button-path"
+                onClick={function(){menu.switch('path')}}>
+          Path
+        </button>
       </div>
     );
   }

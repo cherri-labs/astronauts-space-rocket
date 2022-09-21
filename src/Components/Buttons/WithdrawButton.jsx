@@ -36,13 +36,4 @@ export default function WithdrawButton() {
     <span>Withdraw</span>
     </button>
   );
-};
-
-
-
-
-
-
-
-
-
+}

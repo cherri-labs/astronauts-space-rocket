@@ -9,112 +9,109 @@ import Cyberverse from './Cyberverse';
 import Roadmap from './Roadmap';
 
 import pageScroll from './pageScroll';
-import { menu } from './MapMenu';
+import { menu } from './Map/Menu';
+
+/* fullpage sections anchor-data */
+const anchorList = ['home',
+                    'astronauts',
+                    'buds',
+                    'bank',
+                    'cyber',
+                    'map'];
+
+/* returns arrow html for direction */
+function arrowHtml(dir) {
+  return '<div class="arrow nav ' + dir + '"></div>';
+}
 
 export default function Fullpage() {
-  const pluginWrapper = () => {
-    require('./statics/fullpage.scrollHorizontally.min');
-  };
-
   const Fullpage = () => (
     <ReactFullpage
-    pluginWrapper={pluginWrapper}
-
     /* fullpage options */
-    licenseKey={'gplv3-license'}
-    anchors={['home', 'astronauts', 'buds', 'bank', 'cyber', 'map']}
-    scrollingSpeed={1000}
-    dragAndMove={true}
-    scrollHorizontallyKey={'gplv3-license'}
-    scrollHorizontally={true}
-    continuousHorizontal={true}
-    controlArrowsHTML={['<div class="arrow nav left"></div>', '<div class="arrow nav right"></div>']}
-    parallaxKey={'gplv3-license'}
-    parallax={true}
-    parallaxOptions={{
-      type: 'reveal',
-      percentage: 62,
-      property: 'transform'
-    }}
+      licenseKey = {'gplv3-license'}
+      anchors = { anchorList }
+      scrollingSpeed = {1000}
+      controlArrowsHTML = {[arrowHtml('left'), arrowHtml('right')]}
 
-    onLeave={function (origin, destination, direction, trigger) {
-      /* leaving */
-      if (origin.anchor == 'bank') {
-        if (direction == 'up')
-          pageScroll.leaveUp();
-        else
-          pageScroll.leaveDown();
-      }
+      onLeave = {function(origin, destination, direction) {
+        /* leaving */
+        if (origin.anchor == 'bank') {
+          if (direction == 'up')
+            pageScroll.leaveUp();
+          else
+            pageScroll.leaveDown();
+        }
 
-      if (destination.anchor == 'bank') {
-        if (direction == 'up')
-          pageScroll.enterUp();
-        else
-          pageScroll.enterDown();
-      }
-    }}
+        if (destination.anchor == 'bank') {
+          if (direction == 'up')
+            pageScroll.enterUp();
+          else
+            pageScroll.enterDown();
+        }
+      }}
 
-    afterLoad={function (origin, destination, direction, trigger) {
-      /* entering */
-      if (destination.anchor == 'bank') {
-        pageScroll.show('wallet');
-      }
-    }}
+      afterLoad = {function(origin, destination) {
+        /* entering */
+        if (destination.anchor == 'bank') {
+          pageScroll.show('wallet');
+        }
+      }}
 
-    onSlideLeave={function (section, origin, destination, direction, trigger) {
-      if (destination.index == 0) { /* on the first slide */
-        /* activate respective button */
-        menu.activateBtn(menu.anchors[0]);
-      } else if (menu.anchors.includes(destination.anchor)) { /* on the start of a section */
-        /* activate respective button */
-        menu.activateBtn(destination.anchor);
-      } else { /* in the middle of a section */
-        if (origin.index == 0 &&
-            direction == 'left') { /* wrapping around from first slide */
+      onSlideLeave = {function(section, origin, destination, direction) {
+        if (destination.index == 0) { /* on the first slide */
           /* activate respective button */
-          menu.activateBtn(menu.anchors.slice(-1)[0]);
-        } else {
-          /* for map menu slide sections */
-          for (const index in menu.anchors) {
-            if (origin.anchor == menu.anchors[index] &&
-                direction == 'left') { /* going to previous section */
-              /* activate respective button */
-              menu.activateBtn(menu.anchors[index - 1]);
-              break;
+          menu.activateBtn(menu.anchors[0]);
+        } else if (menu.anchors.includes(destination.anchor)) { /* on the start of a section */
+          /* activate respective button */
+          menu.activateBtn(destination.anchor);
+        } else { /* in the middle of a section */
+          if (origin.index == 0 &&
+              direction == 'left') { /* wrapping around from first slide */
+            /* activate respective button */
+            menu.activateBtn(menu.anchors.slice(-1)[0]);
+          } else {
+            /* for map menu slide sections */
+            for (const index in menu.anchors) {
+              if (origin.anchor == menu.anchors[index] &&
+                  direction == 'left') { /* going to previous section */
+                /* activate respective button */
+                menu.activateBtn(menu.anchors[index - 1]);
+                break;
+              }
             }
           }
         }
-      }
-    }}
+      }}
 
-    onSlideLoad={function (section, origin, destination, direction, trigger) {
-      for (let i = destination.index; i >= 0; i--) {
+      afterSlideLoad = {function(section, origin, destination) {
+        /* first slide fullpage bug workaround */
+        if (destination.index === 0)
+          destination.anchor = 'world';
 
-      }
+        /* destination is menu section */
+        if (menu.anchors.includes(destination.anchor))
+          /* activate respective button */
+          menu.activateBtn(destination.anchor);
+        else /* anchor not on menu */
+          window.fullpage_api.moveSlideLeft();
+      }}
 
-
-      /* if we land on a menu section */
-      if (menu.anchors.includes(destination.anchor))
-        /* activate respective button */
-        menu.activateBtn(destination.anchor);
-    }}
-
-    render={({ state, fullpageApi }) => {
-      return (
-        <ReactFullpage.Wrapper>
-        <Home />
-        <Astronauts />
-        <Buds />
-        <Bank />
-        <Cyberverse />
-        <Roadmap />
-        </ReactFullpage.Wrapper>
-      );
-    }}
+      render = { () => {
+        return (
+          <ReactFullpage.Wrapper>
+            <Home />
+            <Astronauts />
+            <Buds />
+            <Bank />
+            <Cyberverse />
+            <Roadmap />
+          </ReactFullpage.Wrapper>
+        );
+      }}
     />
   );
 
   return (
     <Fullpage />
   );
-};
+}

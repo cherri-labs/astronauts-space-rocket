@@ -1,3 +1,4 @@
+import React from 'react';
 import { mouseOver, mouseLeave } from '../Labels/noteDisplay';
 
 function onOver() {
@@ -18,4 +19,4 @@ export default function DepositAmount() {
     onFocus={onLeave}
     placeholder="0"/>
   );
-};
+}

@@ -17,7 +17,7 @@ export default function MaxBalance() {
     }
 
     /* find program address */
-    const [programAddress, _bump, _exists] =
+    const [programAddress] =
       await findProgramAddress(publicKey, seed, programId, connection);
 
     /* update amount textbox with current balance */
@@ -31,4 +31,4 @@ export default function MaxBalance() {
     Max
     </button>
   );
-};
+}

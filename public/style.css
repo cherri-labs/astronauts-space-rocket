@@ -727,30 +727,37 @@ a:hover .arrow.logo.full {
     border-radius: 5px;
 }
 
-/* menu */
+/* menu bar */
 
 .menu {
-    position: absolute;
+    --menu-width: 50vw;
+    --menu-padding-y: 2.5vw;
+    --menu-padding-x: 2.5vw;
+    --menu-sticky-button-margin: 20px;
+    --menu-tot-width: calc(var(--menu-width) + (var(--menu-padding-x)*2));
+
     z-index: 5;
+    position: absolute;
+    padding: var(--menu-padding-y) var(--menu-padding-x);
+    width: var(--menu-width);
+    height: 100vh;
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     gap: 15px;
 
-    padding: 2.5vw;
-    height: 100vh;
     background: #2d3236;
 }
 
 .menu.left {
-    left: 0;
+    margin-left: 0;
     align-items: left;
-    transition: left 1s;
+    transition: left 1s, margin 1s;
 }
 
 .menu.left.hidden {
-    left: -300px;
+    margin-left: calc(-100vw - var(--menu-tot-width));
 }
 
 .menu button {
@@ -773,11 +780,11 @@ a:hover .arrow.logo.full {
 }
 
 .menu.left.hidden button.sticky.active {
-    left: 320px;
+    left: calc(var(--menu-tot-width) + var(--menu-sticky-button-margin));
 }
 
 .menu.left:not(.hidden) button.sticky.active {
-    left: -320px;
+    left: calc(-1*(var(--menu-tot-width)));
 }
 
 .menu button:hover {
@@ -1111,6 +1118,10 @@ background: linear-gradient(135deg, #FAACA8AA 0%, #FAACA8 40%,  #DDD6F3 60%, #DD
         #0c0d1333,
         #0d1d3133
     );
+}
+
+#roadmap #container {
+    padding: 0;
 }
 
 #content .map {
