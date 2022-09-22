@@ -231,6 +231,14 @@ a:hover .arrow.logo.full {
         padding: 60px;
     }
 
+    #content {
+        gap: 5vw;
+    }
+
+    #content .nft.mobile {
+        display: none;
+    }
+
     #content .caption {
         flex-flow: row nowrap;
         align-items: flex-start;
@@ -337,17 +345,39 @@ a:hover .arrow.logo.full {
     }
 
     #content {
-        flex-flow: row wrap;
+        flex-flow: column nowrap;
+    }
+
+    #content h1 {
+        margin: 0;
     }
 
     #content .text {
         order: -1;
     }
 
+    #content p {
+        line-height: 5px;
+    }
+
     #content img, .nft {
         order: 1;
         max-width: 100%;
         max-height: 100vh;
+    }
+
+    #content img, .nft {
+        position: relative;
+        top: 5px;
+    }
+
+    .slide p {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    #content .nft.desktop {
+        display: none;
     }
 
     #content .caption {
@@ -377,6 +407,10 @@ a:hover .arrow.logo.full {
         position: absolute;
         right: 14px;
         padding: 5px;
+    }
+
+    #roadmap .map .card-wrap {
+        padding: 35px;
     }
 
     #content .team {
@@ -555,7 +589,6 @@ a:hover .arrow.logo.full {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 100px;
 
     margin: 0 3vw;
     padding: 0 3vw;
@@ -730,9 +763,10 @@ a:hover .arrow.logo.full {
 /* menu bar */
 
 .menu {
-    --menu-width: 50vw;
+    --menu-width: 90vw;
+    --menu-height: 100vh;
     --menu-padding-y: 2.5vw;
-    --menu-padding-x: 2.5vw;
+    --menu-padding-x: 12.5vw;
     --menu-sticky-button-margin: 20px;
     --menu-tot-width: calc(var(--menu-width) + (var(--menu-padding-x)*2));
 
@@ -740,7 +774,7 @@ a:hover .arrow.logo.full {
     position: absolute;
     padding: var(--menu-padding-y) var(--menu-padding-x);
     width: var(--menu-width);
-    height: 100vh;
+    height: var(--menu-height);
 
     display: flex;
     flex-flow: column nowrap;
@@ -750,14 +784,10 @@ a:hover .arrow.logo.full {
     background: #2d3236;
 }
 
-.menu.left {
-    margin-left: 0;
-    align-items: left;
-    transition: left 1s, margin 1s;
-}
-
-.menu.left.hidden {
-    margin-left: calc(-100vw - var(--menu-tot-width));
+.menu.hidden {
+    left: 0;
+    padding: 0;
+    width: 0;
 }
 
 .menu button {
@@ -767,24 +797,36 @@ a:hover .arrow.logo.full {
     border: 1px solid #942d33;
 }
 
+.menu.hidden .icon,
 .menu button.sticky:not(.active) {
     display: none;
 }
 
+.menu:not(.hidden) .icon,
 .menu button.sticky.active {
     display: block;
     position: absolute;
-    top: 50px;
+    top: 15px;
+    left: 15px;
+}
+
+.menu:not(.hidden) .icon {
+    min-width: 5vw;
+    padding: 20px 25px;
+    margin: 3vw 8vw;
+}
+
+.menu button.sticky.active {
     min-width: 10vw;
     white-space: nowrap;
 }
 
-.menu.left.hidden button.sticky.active {
-    left: calc(var(--menu-tot-width) + var(--menu-sticky-button-margin));
+.menu.hidden button:not(.sticky) {
+    display: none;
 }
 
-.menu.left:not(.hidden) button.sticky.active {
-    left: calc(-1*(var(--menu-tot-width)));
+.menu:not(.hidden) button.sticky {
+    display: none;
 }
 
 .menu button:hover {
@@ -854,7 +896,9 @@ a:hover .arrow.logo.full {
 
 .nft, .caption {
     display: flex;
-    align-items: flex-start;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .nft {

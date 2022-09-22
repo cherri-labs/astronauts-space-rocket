@@ -80,7 +80,10 @@ class MapMenu extends React.Component {
 
   render() {
     return (
-      <div id="map-menu" className="menu left hidden">
+      <div id="map-menu" className="menu hidden">
+        <button className="icon" onClick={menu.hide}>
+          ☰
+        </button>
         <button className="sticky active"
                 id="map-button-world-active"
                 onClick={function(){menu.switch('world')}}>

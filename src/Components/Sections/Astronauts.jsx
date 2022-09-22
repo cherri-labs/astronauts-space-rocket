@@ -1,5 +1,9 @@
 import React from 'react';
 
+function AstronautImg() {
+  return <img src="img/astronauts/1.png" alt="Lonely Astronaut" />;
+}
+
 export default function Astronauts() {
   return (
     <div className="section page" id="lonely-astronauts">
@@ -35,13 +39,6 @@ export default function Astronauts() {
             <article>
               <div className="slide">
                 <p>
-                  <strong>Space Buds</strong> owners are granted a free mint per NFT.
-				</p>
-              </div>
-            </article>
-            <article>
-              <div className="slide">
-                <p>
                   <strong>Astronauts</strong> are your ticket into the{" "}
                   <a className="nav" href="#cyberverse">
                     Cyberverse
@@ -55,9 +52,14 @@ export default function Astronauts() {
                 </p>
               </div>
             </article>
+            <article>
+              <div className="slide nft mobile">
+                <AstronautImg />
+              </div>
+            </article>
           </div>
-          <div className="nft">
-            <img src="img/astronauts/1.png" alt="Lonely Astronaut" />
+          <div className="nft desktop">
+            <AstronautImg />
             <div className="caption">
               <div className="column">
                 <p>

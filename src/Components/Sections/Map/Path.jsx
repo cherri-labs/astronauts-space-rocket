@@ -17,10 +17,17 @@ export default function Path() {
                 winners, together with the remaining portion of <strong>Space
                                                                                                                Buds</strong> NFTs.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="slide" data-anchor="path">
+          <div className="card-wrap">
+            <div className="card">
+              <h3>Landing</h3>
               <p>
-                All funds from the mint will be immediately locked into
-                the <strong>Astro Bank</strong> where users will be
-                able to claim their reward right away.
+                All funds from the mint will are locked immediately into
+                the <strong>Astro Bank</strong> where users are
+                able to claim their rewards right away.
               </p>
             </div>
           </div>
@@ -32,21 +39,33 @@ export default function Path() {
             <div className="card locked">
               <h3>Terraforming</h3>
               <p>
-                We work everyday to extend the current
-                documentation about the project, which we plan to
-                release during <b>Terraforming</b>.
+                We're working everyday to extend the current
+                documentation about the project. We plan to
+                release that during <b>Terraforming</b>.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="slide" data-anchor="terraforming">
+          <div className="card-wrap">
+            <div className="card locked">
+              <h3>Terraforming</h3>
               <p>
                 We will also be opening a <strong>Space Club</strong> for
                 owners, where they can hop in for a chat, drink or
-                just to buy stuff.
+                just to buy dope stuff.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="slide" data-anchor="terraforming">
+          <div className="card-wrap">
+            <div className="card locked">
+              <h3>Terraforming</h3>
               <p>
                 After <strong>Lonely Astronauts</strong> mint we implement
                 the staking portal and <strong>$STRD</strong> tokens are
                 airdropped to owners only.
-              </p>
-              <p>
               </p>
             </div>
           </div>

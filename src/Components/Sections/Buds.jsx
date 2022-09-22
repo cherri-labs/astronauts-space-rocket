@@ -1,5 +1,9 @@
 import React from 'react';
 
+function BudImg() {
+  return <img src="img/buds/1.png" alt="Lonely Astronaut" />;
+}
+
 export default function Buds() {
   return (
     <div className="section page" id="space-buds">
@@ -9,7 +13,7 @@ export default function Buds() {
           {[...Array(10)].map((e,i) => <div key={i} className="star"></div>)}
         </div>
         <div id="content">
-          <div className="nft">
+          <div className="nft desktop">
             <img src="img/buds/1.png" alt="Lonely Astronaut" />
             <div className="caption">
               <div className="column">
@@ -80,6 +84,11 @@ export default function Buds() {
                     Lonely Astronaut
                   </a>{" "}
                   free mint for each token you own.</p>
+              </div>
+            </article>
+            <article>
+              <div className="slide nft mobile">
+                <BudImg />
               </div>
             </article>
           </div>

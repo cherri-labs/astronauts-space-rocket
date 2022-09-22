@@ -15,16 +15,37 @@ export default function World() {
                 world where shadow obstructs and clutters with uneven
                 machinery the metropolises' skyline.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="slide" data-anchor="world">
+          <div className="card-wrap">
+            <div className="card">
+              <h3>A New World</h3>
               <p>
                 They call them <strong>Mechas</strong>, and they're
                 programmed to watch over the citizens' peace and prosperity.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="slide" data-anchor="world">
+          <div className="card-wrap">
+            <div className="card">
+              <h3>A New World</h3>
               <p>
                 But through the <strong>Rebels</strong>' uncorrupted eye we see
                 rotten mechanisms rule on every street,
                 merry-go-round, brothel, strip show, motel room and gambling den
                 in town.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="slide" data-anchor="world">
+          <div className="card-wrap">
+            <div className="card">
+              <h3>A New World</h3>
               <p>
                 As the night lurks in the <strong>Underground</strong> awakes,
                 and a thousand windows, <strong>Phantoms</strong>, motherboards
@@ -54,6 +75,13 @@ export default function World() {
                 Because we all need something
                 to believe in.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="slide" data-anchor="a-digital-realm">
+          <div className="card-wrap">
+            <div className="card">
+              <h3>A Digital Realm</h3>
               <p>
                 The next generation is coming and it will state once and for
                 all what identity is and how it is defined. And as messy as
