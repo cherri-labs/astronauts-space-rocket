@@ -513,7 +513,7 @@ a:hover .arrow.logo.full {
 .page .title {
     display: inline-block;
     color: #fff;
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', 'DM Sans', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 300;
     letter-spacing: 10px;
     cursor: default;
@@ -642,6 +642,8 @@ a:hover .arrow.logo.full {
 }
 
 #content h1 {
+    margin: 15px;
+    text-align: center;
     white-space: nowrap;
 }
 
@@ -724,11 +726,6 @@ a:hover .arrow.logo.full {
     color: rgba(0,120,90,1);
     cursor: default;
     transition: all .1s;
-}
-
-#content .text {
-    min-width: min-content;
-    max-width: 1000px;
 }
 
 #content strong {
@@ -1177,7 +1174,7 @@ background: linear-gradient(135deg, #FAACA8AA 0%, #FAACA8 40%,  #DDD6F3 60%, #DD
     margin-top: 25px;
     width: 100%;
 
-    font-family: "Lato", "DM Sans", "Gill Sans", "Arial", sans-serif;
+    font-family: 'Lato', 'DM Sans', 'Gill Sans', 'Arial', sans-serif;
 }
 
 #content .map article {
