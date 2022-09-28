@@ -1029,7 +1029,7 @@ a:hover .arrow.logo.full {
 }
 
 #space-buds h1 {
-background: linear-gradient(135deg, #FAACA8AA 0%, #FAACA8 40%,  #DDD6F3 60%, #DDD6F399 100%);
+background: linear-gradient(135deg, #FAFFDFAA 0%, #F3BD90 40%,  #DDD6F3 60%, #FDD6F399 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }

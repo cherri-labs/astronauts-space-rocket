@@ -1,7 +1,7 @@
 import React from 'react';
 
 function AstronautImg() {
-  return <img src="img/astronauts/1.png" alt="Lonely Astronaut" />;
+  return <img src="img/astronauts/1.gif" alt="Lonely Astronaut" />;
 }
 
 export default function Astronauts() {
