@@ -22,17 +22,19 @@
   --blend-color-5: #af4949;
 }
 
-.glitch {
+.glitch__img {
   width: 100vw;
   height: 100vh;
   max-width: 100%;
+  max-height: 350px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
-.glitch .glitch__item {
+
+.glitch__img .glitch__item {
   background: url("./img/buds/1.png") no-repeat 50% 50%/cover;
   height: 100%;
   width: 100%;
@@ -40,29 +42,29 @@
   left: 0;
   position: absolute;
 }
-.glitch .glitch__item:nth-child(n+2) {
+.glitch__img .glitch__item:nth-child(n+2) {
   opacity: 0;
   animation-duration: var(--time-anim);
   animation-delay: var(--delay-anim);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
-.glitch .glitch__item:nth-child(2) {
+.glitch__img .glitch__item:nth-child(2) {
   background-color: var(--blend-color-2);
   background-blend-mode: var(--blend-mode-2);
   animation-name: glitch-anim-2;
 }
-.glitch .glitch__item:nth-child(2) {
+.glitch__img .glitch__item:nth-child(2) {
   background-color: var(--blend-color-3);
   background-blend-mode: var(--blend-mode-3);
   animation-name: glitch-anim-3;
 }
-.glitch .glitch__item:nth-child(4) {
+.glitch__img .glitch__item:nth-child(4) {
   background-color: var(--blend-color-4);
   background-blend-mode: var(--blend-mode-4);
   animation-name: glitch-anim-4;
 }
-.glitch .glitch__item:nth-child(5) {
+.glitch__img .glitch__item:nth-child(5) {
   background-color: var(--blend-color-5);
   background-blend-mode: var(--blend-mode-5);
   animation-name: glitch-anim-flash;
@@ -78,7 +80,7 @@
   }
 }
 
-.glitch .glitch__text {
+.glitch__img .glitch__text {
   position: absolute;
   bottom: 0;
   text-transform: uppercase;

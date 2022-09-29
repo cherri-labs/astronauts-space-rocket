@@ -2,7 +2,7 @@ import React from 'react';
 
 function BudCaption() {
   return (
-    <div className="caption glitch__text">
+    <div className="caption">
       <div className="column">
         <p>
           <b>Mint price:</b> 0.37 ◎
@@ -30,20 +30,19 @@ function BudCaption() {
 }
 
 function BudImg() {
-  /*
   return (
-    <div className="glitch">
+    <div className="glitch__img">
       <div className="glitch__item"></div>
       <div className="glitch__item"></div>
       <div className="glitch__item"></div>
       <div className="glitch__item"></div>
       <div className="glitch__item"></div>
-      <BudCaption />
     </div>
   );
-  */
 
+/*
   return <img src="img/buds/1.png" alt="Space Bud" />;
+*/
 }
 
 export default function Buds() {

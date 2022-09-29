@@ -71,7 +71,8 @@ class MapMenu extends React.Component {
 
     window.addEventListener('click', function(e) {
       /* click outside map menu */
-      if (!menu.div.contains(e.target)) {
+      if (!menu.div.contains(e.target) ||
+         e.target.tagName.toLowerCase() !== 'button') {
         /* hide div */
         menu.hide();
       }
