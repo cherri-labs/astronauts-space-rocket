@@ -21,7 +21,7 @@ export default function Cyberverse() {
                   <a className="nav" href="#cyberverse">
                     Cyberverse
                   </a>
-                  <i className="arrow nav right"></i>
+                  <i className="arrow right"></i>
                   a dinamically growing ever-expanding
                   digital reality. <strong>LASR NFTs</strong> are your
                   all-access pass. They allow you to freely explore all new

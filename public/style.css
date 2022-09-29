@@ -190,6 +190,11 @@ p .arrow:not(.nav) {
     margin: 0 10px 0 5px;
 }
 
+p .arrow:not(.nav) {
+    position: relative;
+    bottom: .1em;
+}
+
 p .arrow.nav {
     position: relative;
     bottom: -0.7em;
