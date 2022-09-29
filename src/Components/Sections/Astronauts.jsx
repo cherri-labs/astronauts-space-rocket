@@ -6,12 +6,15 @@ function AstronautImg() {
 
 export default function Astronauts() {
   return (
-    <div className="section page" id="lonely-astronauts">
+    <div className="section page retro" id="lonely-astronauts">
       <div className="fp-bg"></div>
+      <div id='p-stars'></div>
       <div id="container">
         <div className="shooting-stars ne">
           {[...Array(10)].map((e,i) => <div key={i} className="star"></div>)}
         </div>
+        <div id='p-stars2'></div>
+        <div id='p-stars3'></div>
         <div id="content">
           <div className="text">
             <h1>Lonely<br/>Astronauts</h1>

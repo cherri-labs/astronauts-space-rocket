@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Cyberverse() {
   return (
-    <div className="section page" id="cyberverse">
+    <div className="section page retro" id="cyberverse">
       <div className="pc-wrap" id="container">
         <div id='p-stars2'></div>
         <div id='p-stars3'></div>

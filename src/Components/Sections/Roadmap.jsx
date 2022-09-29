@@ -10,6 +10,7 @@ export default function Roadmap() {
     <div className="section page" id="roadmap">
       <div id="container">
         <MapMenu />
+        <div id='p-stars3'></div>
         <div id="content">
           <div className="text">
             <div className="map">

@@ -12,7 +12,7 @@ import tab from '../../tabs';
 
 export default function Bank() {
   return (
-    <div className="section page" id="astrobank">
+    <div className="section page retro" id="astrobank">
       <div id="container">
         <div id="content">
           <div className="text">

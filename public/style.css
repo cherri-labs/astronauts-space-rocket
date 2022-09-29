@@ -245,6 +245,27 @@ a:hover .arrow.logo.full {
     transition: width 3s, height 3s;
 }
 
+/* components */
+
+.progress.dots:after, .progress .dots:after {
+    content: '...';
+    animation: prog-dots-anim-glitch 2s linear infinite;
+}
+
+/* filters */
+
+.retro {
+    filter: brightness(120%) saturate(120%) grayscale(20%) contrast(120%);
+}
+
+.steampunk {
+    filter: hue-rotate(-100deg) brightness(120%) saturate(120%) grayscale(20%) contrast(120%);
+}
+
+.vintage {
+    filter: hue-rotate(-180deg) brightness(120%) saturate(120%) grayscale(80%) contrast(120%);
+}
+
 /* desktop */
 @media screen and (min-width: 1100px) {
     h1 {
@@ -532,6 +553,10 @@ a:hover .arrow.logo.full {
     right: 0px;
 }
 
+.wallet-adapter-modal {
+    filter: hue-rotate(-100deg) brightness(120%) saturate(120%) grayscale(18%) contrast(112%);
+}
+
 /* page */
 
 .page {
@@ -602,6 +627,8 @@ a:hover .arrow.logo.full {
 
     background-size: cover;
     background-position: center 80%;
+
+    filter: hue-rotate(-40deg) brightness(80%) saturate(120%) grayscale(18%) contrast(80%);
 }
 
 #container {
@@ -858,8 +885,24 @@ a:hover .arrow.logo.full {
 .menu button.sticky.active {
     display: block;
     position: absolute;
+}
+
+.menu:not(.hidden) .icon.north,
+.menu button.sticky.active {
     top: 15px;
+}
+
+.menu:not(.hidden) .icon.west,
+.menu button.sticky.active {
     left: 15px;
+}
+
+.menu:not(.hidden) .icon.east {
+    right: 15px;
+}
+
+.menu:not(.hidden) .icon.lightbulb span {
+    filter: hue-rotate(-100deg);
 }
 
 .menu:not(.hidden) .icon {
@@ -1048,14 +1091,16 @@ a:hover .arrow.logo.full {
 #lonely-astronauts .fp-bg {
     background: linear-gradient(
         #112 70%,
-        #132735 85%,
-        #2d323f 95%,
+        #1125 80%,
+        #1224 85%,
+        #13273532 90%,
+        #2d323f11 95%,
         transparent
     ),
     radial-gradient(
         100% 18% at bottom,
-        #334455dd 0%,
-        transparent 30%
+        #33445544 0%,
+        transparent 25%
     );
 }
 
@@ -1069,9 +1114,10 @@ a:hover .arrow.logo.full {
 
 #space-buds .fp-bg {
     background: linear-gradient(
+        #112,
         #2d325f44,
         #1134,
-        #2d325f44 90%,
+        #2d325f44 80%,
         transparent
     ),
     radial-gradient(
@@ -1426,6 +1472,17 @@ background: linear-gradient(135deg, #FAFFDFAA 0%, #F3BD90 40%,  #DDD6F3 60%, #FD
 @keyframes lasr-ring {
     0% {transform: rotate(45deg);}
     100% {transform: rotate(405deg);}
+}
+
+@keyframes prog-dots-anim-glitch {
+    0%, 92% {content: '.';}
+    33% {content: '..';}
+    66%, 88%, 95%, 100% {content: '...';}
+    89% {content: 'レ';}
+    90% {content: 'ン';}
+    91% {content: 'ダリ';}
+    93% {content: 'ン';}
+    94% {content: 'グ';}
 }
 
 @keyframes rotateY {

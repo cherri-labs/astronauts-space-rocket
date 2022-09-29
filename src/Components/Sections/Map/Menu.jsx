@@ -8,6 +8,11 @@ class MapMenu extends React.Component {
     /* menu container div */
     menu.div = document.getElementById("map-menu");
 
+    /* toggle lights */
+    menu.lights = function() {
+      document.getElementById("roadmap").classList.toggle('vintage');
+    };
+
     /* hide menu */
     menu.hide = function() {
       menu.div.classList.add('hidden');
@@ -72,7 +77,8 @@ class MapMenu extends React.Component {
     window.addEventListener('click', function(e) {
       /* click outside map menu */
       if (!menu.div.contains(e.target) ||
-         e.target.tagName.toLowerCase() !== 'button') {
+          (e.target.tagName.toLowerCase() !== 'button' &&
+              e.target.tagName.toLowerCase() !== 'span')) {
         /* hide div */
         menu.hide();
       }
@@ -82,8 +88,11 @@ class MapMenu extends React.Component {
   render() {
     return (
       <div id="map-menu" className="menu hidden">
-        <button className="icon" onClick={menu.hide}>
+        <button className="icon north west" onClick={menu.hide}>
           ☰
+        </button>
+        <button className="icon north east lightbulb" onClick={menu.lights}>
+          <span>💡</span>
         </button>
         <button className="sticky active"
                 id="map-button-world-active"

@@ -31,28 +31,29 @@ function BudCaption() {
 
 function BudImg() {
   return (
-    <div className="glitch__img bud">
+    <div className="glitch__img bud disabled">
       <div className="glitch__item"></div>
       <div className="glitch__item"></div>
       <div className="glitch__item"></div>
       <div className="glitch__item"></div>
       <div className="glitch__item"></div>
+      <div className="glitch__text">
+        &nbsp;&nbsp;&nbsp;
+        <span className="rendering"></span>
+        <span className="progress dots"></span>
+      </div>
     </div>
   );
-
-  /*
-    return <img src="img/buds/1.png" alt="Space Bud" />;
-  */
 }
 
 export default function Buds() {
   return (
-    <div className="section page" id="space-buds">
+    <div className="section page retro" id="space-buds">
       <div className="fp-bg"></div>
+      <div id='p-stars'></div>
       <div id="container">
-        <div className="shooting-stars nw">
-          {[...Array(10)].map((e,i) => <div key={i} className="star"></div>)}
-        </div>
+        <div id='p-stars2'></div>
+        <div id='p-stars3'></div>
         <div id="content">
           <div className="nft desktop">
             <BudImg />

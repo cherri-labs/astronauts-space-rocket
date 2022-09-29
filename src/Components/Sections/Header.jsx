@@ -4,7 +4,7 @@ import dropdown from '../../nav';
 
 export default function Header() {
   return (
-    <div id="header">
+    <div id="header" className="steampunk">
       <div id="topbar">
         <nav id="navbar">
           <button className="icon" onClick={function(){dropdown()}}>
