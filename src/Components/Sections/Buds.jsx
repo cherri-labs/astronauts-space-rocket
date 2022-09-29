@@ -61,16 +61,18 @@ export default function Buds() {
           <div className="text">
             <h1>Space Buds</h1>
             <article>
-              <p>
-                777 generative friendly
-                {" "}<a className="nav" href="#astronauts">
-                       Space Buds
-                     </a>{" "}
-                cruisin' thru the <i>cybergalaxy</i>.
-                All but 12 handdrawn specimens were sistematically
-                programmed. A total of 40 items will be
-                reserved for team share, giveaways and airdrops to holders.
-              </p>
+              <div className="slide">
+                <p>
+                  777 generative friendly
+                  {" "}<a className="nav" href="#astronauts">
+                   Space Buds
+                 </a>{" "}
+                  cruisin' thru the <i>cybergalaxy</i>.
+                  All but 12 handdrawn specimens were sistematically
+                  programmed. A total of 40 items will be
+                  reserved for team share, giveaways and airdrops to holders.
+                </p>
+              </div>
             </article>
             <article>
               <div className="slide nft mobile">

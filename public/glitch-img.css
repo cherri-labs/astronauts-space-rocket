@@ -1,4 +1,4 @@
-:root {
+.glitch__img {
   --color-text: #fff;
   --color-bg: #000;
   --color-link: #f9d77e;
@@ -20,12 +20,10 @@
   --blend-color-3: transparent;
   --blend-color-4: transparent;
   --blend-color-5: #af4949;
-}
 
-.glitch__img {
-  width: 100vw;
-  height: 100vh;
-  max-width: 100%;
+  width: 80vw;
+  height: 80vh;
+  max-width: 350px;
   max-height: 350px;
   position: relative;
   display: flex;

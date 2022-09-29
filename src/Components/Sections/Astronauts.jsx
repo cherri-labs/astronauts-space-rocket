@@ -16,23 +16,25 @@ export default function Astronauts() {
           <div className="text">
             <h1>Lonely<br/>Astronauts</h1>
             <article>
+              <div className="slide">
                 <p>
                   A collection of 8192
                   {" "}<a className="nav" href="#astronauts">
-                            Lonely Astronaut
-                          </a>{" "}
+                         Lonely Astronaut
+                       </a>{" "}
                   NFTs inspired by <span className="neon more">vaporwave</span> and
                   {" "}<span className="stack" style={{"--stacks": 3}}>
-                      <span className="more" style={{"--index": 0}}>cyberpunk</span>
-                      <span className="more" style={{"--index": 1}}>cyberpunk</span>
-                      <span className="more" style={{"--index": 2}}>cyberpunk</span>
-                    </span>{" "}
+                               <span className="more" style={{"--index": 0}}>cyberpunk</span>
+                               <span className="more" style={{"--index": 1}}>cyberpunk</span>
+                               <span className="more" style={{"--index": 2}}>cyberpunk</span>
+                             </span>{" "}
                   aesthetics,
                   the demoscene and pop culture from the 90's and
                   powered by the desire to leverage blockchain technology to
                   bring building power to creators and a full-fledged
                   immersive experience to everyone.
                 </p>
+              </div>
             </article>
             <article>
               <div className="slide nft mobile">
