@@ -31,7 +31,7 @@ function BudCaption() {
 
 function BudImg() {
   return (
-    <div className="glitch__img">
+    <div className="glitch__img bud">
       <div className="glitch__item"></div>
       <div className="glitch__item"></div>
       <div className="glitch__item"></div>
@@ -40,9 +40,9 @@ function BudImg() {
     </div>
   );
 
-/*
-  return <img src="img/buds/1.png" alt="Space Bud" />;
-*/
+  /*
+    return <img src="img/buds/1.png" alt="Space Bud" />;
+  */
 }
 
 export default function Buds() {
@@ -61,48 +61,16 @@ export default function Buds() {
           <div className="text">
             <h1>Space Buds</h1>
             <article>
-              <div className="slide">
-                <p>
-                  777 friendly
-                  {" "}<a className="nav" href="#astronauts">
-                         Space Buds
-                       </a>{" "}
-                  cruisin' thru the <i>cybergalaxy</i>.
-                  All but 12 generated programmatically — these last few being
-                  handdrawn especially by our team. A total of 40 items will be
-                  reserved for team share, giveaways and airdrops to holders.
-                </p>
-              </div>
-            </article>
-            <article>
-              <div className="slide">
-                <p>
-                  <strong>Space Buds</strong> give you early access to the{" "}
-                  <a className="nav" href="#cyberverse">
-                    Cyberverse
-                  </a>{" "}
-                  and to the{" "}
-                  <a className="nav" href="#astrobank">
-                    Astro Bank
-                  </a>.
-                  Once staking is fully implemented a
-                  staked <strong>Bud</strong> or <strong>Astronaut</strong> will
-                  be required in order to participate in the{" "}
-                  <a target="_blank" rel="noreferrer" href="https://github.com/cherri-labs/astrobank#mint">
-                    bank rewards
-                  </a>, but right now you can just claim your share.
-                </p>
-              </div>
-            </article>
-            <article>
-              <div className="slide">
-                <p>
-                  They also grant you a{" "}
-                  <a className="nav" href="#astronaut">
-                    Lonely Astronaut
-                  </a>{" "}
-                  free mint for each token you own.</p>
-              </div>
+              <p>
+                777 generative friendly
+                {" "}<a className="nav" href="#astronauts">
+                       Space Buds
+                     </a>{" "}
+                cruisin' thru the <i>cybergalaxy</i>.
+                All but 12 handdrawn specimens were sistematically
+                programmed. A total of 40 items will be
+                reserved for team share, giveaways and airdrops to holders.
+              </p>
             </article>
             <article>
               <div className="slide nft mobile">

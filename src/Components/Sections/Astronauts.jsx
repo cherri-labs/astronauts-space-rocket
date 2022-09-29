@@ -16,7 +16,6 @@ export default function Astronauts() {
           <div className="text">
             <h1>Lonely<br/>Astronauts</h1>
             <article>
-              <div className="slide">
                 <p>
                   A collection of 8192
                   {" "}<a className="nav" href="#astronauts">
@@ -34,23 +33,6 @@ export default function Astronauts() {
                   bring building power to creators and a full-fledged
                   immersive experience to everyone.
                 </p>
-              </div>
-            </article>
-            <article>
-              <div className="slide">
-                <p>
-                  <strong>Astronauts</strong> are your ticket into the{" "}
-                  <a className="nav" href="#cyberverse">
-                    Cyberverse
-                  </a>
-                  , a dinamically growing ever-expanding
-                  digital reality—as well as to the{" "}
-                  <a className="nav" href="#astrobank">
-                    Astro Bank
-                  </a>{" "}
-                  <a target="_blank" rel="noreferrer" href="https://github.com/cherri-labs/astrobank#mint">mint rewards</a>.
-                </p>
-              </div>
             </article>
             <article>
               <div className="slide nft mobile">

@@ -34,14 +34,18 @@
   overflow: hidden;
 }
 
-.glitch__img .glitch__item {
+.glitch__img.bud .glitch__item {
   background: url("./img/buds/1.png") no-repeat 50% 50%/cover;
+}
+
+.glitch__img .glitch__item {
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
   position: absolute;
 }
+
 .glitch__img .glitch__item:nth-child(n+2) {
   opacity: 0;
   animation-duration: var(--time-anim);

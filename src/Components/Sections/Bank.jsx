@@ -22,69 +22,54 @@ export default function Bank() {
                 <p>
                   <b>Thank you!</b> We're only here because of you. Which is why
                   owners are granted a portion of the <a target="_blank" rel="noreferrer" href="https://github.com/cherri-labs/astrobank#mint">mint
-                                                           rewards</a>.
-                </p>
-              </div>
-            </article>
-            <article>
-              <div className="slide">
-                <p>
-                  <strong>Candy Machines</strong> allocate funds to the
-                  {" "}<a className="nav" href="#astrobank">
-          Astro Bank
-        </a>{" "}
-                  during mint, with a
-                  lock period for users to claim their rewards{" "}
-                  <a target="_blank" rel="noreferrer" href="https://github.com/cherri-labs/astrobank#lock-period">before we can even access them</a>.
-                </p>
-              </div>
-            </article>
-            <article>
-              <div className="slide">
-                <p>
-                  <strong>Astro Bank</strong> is open source and can be found <a target="_blank" rel="noreferrer" href="https://github.com/cherri-labs/astrobank">on GitHub</a>.
+                                                        rewards</a>.
                 </p>
               </div>
             </article>
           </div>
-          <div className="bank">
-            <div id="tabs-container">
-              <div id="tabs-bar">
-                <button className="disabled" id="deposit-btn" onClick={function(){tab('deposit');}}><span>Deposit</span></button>
-                <button className="active" id="withdraw-btn" onClick={function(){tab('withdraw');}}><span>Withdraw</span></button>
+          <div className="bank-container">
+            <div className="bank">
+              <div id="tabs-container">
+                <div id="tabs-bar">
+                  <button className="disabled" id="deposit-btn" onClick={function(){tab('deposit');}}><span>Deposit</span></button>
+                  <button className="active" id="withdraw-btn" onClick={function(){tab('withdraw');}}><span>Withdraw</span></button>
+                </div>
               </div>
+              <form className="tab" id="deposit">
+                <label id="dep-account-note" className="note active">
+                  Deposit account (default is current wallet)
+                </label>
+                <label id="dep-amount-note" className="note active">
+                  Amount to deposit
+                </label>
+                <div className="textbox">
+                  <DepositBox />
+                </div>
+                <div className="textbox">
+                  <DepositAmount />
+                  <label htmlFor="deposit-amount">◎</label>
+                </div>
+                <DepositButton />
+              </form>
+              <form className="tab active" id="withdraw">
+                <label id="withd-amount-note" className="note active">
+                  Amount to withdraw
+                </label>
+                <label id="withd-balance-note" className="note active">
+                  Account balance
+                </label>
+                <div className="textbox">
+                  <WithdrawAmount />
+                  <label htmlFor="withdraw-amount" className="inset">◎</label>
+                  <MaxButton />
+                </div>
+                <BalanceLabel />
+                <WithdrawButton />
+              </form>
             </div>
-            <form className="tab" id="deposit">
-              <label id="dep-account-note" className="note active">
-                Deposit account (default is current wallet)
-              </label>
-              <label id="dep-amount-note" className="note active">
-                Amount to deposit
-              </label>
-              <div className="textbox">
-                <DepositBox />
-              </div>
-              <div className="textbox">
-                <DepositAmount />
-                <label htmlFor="deposit-amount">◎</label>
-              </div>
-              <DepositButton />
-            </form>
-            <form className="tab active" id="withdraw">
-              <label id="withd-amount-note" className="note active">
-                Amount to withdraw
-              </label>
-              <label id="withd-balance-note" className="note active">
-                Account balance
-              </label>
-              <div className="textbox">
-                <WithdrawAmount />
-                <label htmlFor="withdraw-amount" className="inset">◎</label>
-                <MaxButton />
-              </div>
-              <BalanceLabel />
-              <WithdrawButton />
-            </form>
+            <span className="footnote">
+              <a target="_blank" rel="noreferrer" href="https://github.com/cherri-labs/astrobank">What's inside?</a>
+            </span>
           </div>
         </div>
       </div>
