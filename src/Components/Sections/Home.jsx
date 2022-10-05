@@ -1,10 +1,14 @@
 import React from 'react';
+import { ParallaxLayer } from '@react-spring/parallax';
 
 export default function Home() {
   return (
-    <>
+    <ParallaxLayer
+      offset={0}
+      speed={2.5}>
       <div id='p-stars'></div>
-      <div className="section page" id="landing">
+      <div className="section" id="home">
+        <div className="bg"></div>
         <div id="container">
           <div id='p-stars2'></div>
           <div id='p-stars3'></div>
@@ -23,6 +27,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+    </ParallaxLayer>
   );
 }

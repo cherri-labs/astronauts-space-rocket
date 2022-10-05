@@ -273,7 +273,7 @@ a:hover .arrow.logo.full {
         font-weight: bold;
     }
 
-    .page .title {
+    .section .title {
         font-size: 60px;
     }
 
@@ -343,14 +343,14 @@ a:hover .arrow.logo.full {
 @media screen and (max-width: 1100px) {
     /* horizontal */
     @media screen and (orientation: landscape) {
-        .page .title {
+        .section .title {
             font-size: 10vw;
         }
     }
 
     /* vertical */
     @media screen and (orientation: portrait) {
-        .page .title {
+        .section .title {
             font-size: 50px;
         }
     }
@@ -557,19 +557,16 @@ a:hover .arrow.logo.full {
     filter: hue-rotate(-100deg) brightness(120%) saturate(120%) grayscale(18%) contrast(112%);
 }
 
-/* page */
+/* section page container */
 
-.page {
+.section {
     display: flex;
     justify-content: stretch;
     align-items: stretch;
     overflow: hidden;
-    height: 100vh;
-    width: 100vw;
-    border: 1px solid #48596a10;
 }
 
-.page .title {
+.section .title {
     display: inline-block;
     color: #fff;
     font-family: 'Lato', 'DM Sans', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -578,7 +575,7 @@ a:hover .arrow.logo.full {
     cursor: default;
 }
 
-.page .title span {
+.section .title span {
     background: -webkit-linear-gradient(#fff, #38495a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -586,29 +583,29 @@ a:hover .arrow.logo.full {
     transition: all 1s;
 }
 
-.page .title span::selection {
+.section .title span::selection {
     -webkit-text-fill-color: #fbb;
 }
 
-.page .title a {
+.section .title a {
     text-shadow: 0px 0px 25px #fec;
 }
 
-.page .title i,
-.page .title .arrow {
+.section .title i,
+.section .title .arrow {
     transition: all 1s;
 }
 
-.page .title a:hover {
+.section .title a:hover {
     line-height: 0;
     font-size: 1.1em;
     letter-spacing: .2em;
     text-shadow: 0px 0px 7px #fec;
 }
 
-.page .title a:hover i,
-.page .title a:hover .arrow,
-.page a:hover .arrow.logo {
+.section .title a:hover i,
+.section .title a:hover .arrow,
+.section a:hover .arrow.logo {
     border: solid #ffd;
     border-width: 0 4px 4px 0;
     animation: lasr-ring 1.2s ease .3s 1;
@@ -616,17 +613,14 @@ a:hover .arrow.logo.full {
 
 /* container */
 
-.fp-bg {
+.bg {
     z-index: -3;
     position: absolute;
     top: 0;
     left: 0;
 
-    height: 100vh;
-    width: 100vw;
-
-    background-size: cover;
-    background-position: center 80%;
+    width: 100%;
+    height: 100%;
 
     filter: hue-rotate(-40deg) brightness(80%) saturate(120%) grayscale(18%) contrast(80%);
 }
@@ -1059,14 +1053,35 @@ a:hover .arrow.logo.full {
 }
 
 /* --< sections >-- */
+/* --< backgrounds >-- */
+
+.blue.bg,
+#astronauts .bg,
+#buds .bg {
+    background: #112;
+}
+
+.grey.bg,
+#roadmap .bg {
+    background: radial-gradient(
+        ellipse at bottom,
+        #0d1d3133,
+        #1123,
+        #0c0d1333,
+        #0d1d3133
+    );
+}
+
 /* --< home >-- */
 
-#landing {
+#home {
     z-index: -1;
     position: relative;
     width: 100%;
     height: 100%;
+}
 
+#home .bg {
     background: radial-gradient(
         ellipse at bottom,
         #1b2735 0%,
@@ -1074,7 +1089,7 @@ a:hover .arrow.logo.full {
     );
 }
 
-#landing .title {
+#home .title {
     display: block;
     position: absolute;
     top: 50%;
@@ -1088,23 +1103,7 @@ a:hover .arrow.logo.full {
 
 /* --< astronauts >-- */
 
-#lonely-astronauts .fp-bg {
-    background: linear-gradient(
-        #112 70%,
-        #1125 80%,
-        #1224 85%,
-        #13273532 90%,
-        #2d323f11 95%,
-        transparent
-    ),
-    radial-gradient(
-        100% 18% at bottom,
-        #33445544 0%,
-        transparent 25%
-    );
-}
-
-#lonely-astronauts h1 {
+#astronauts h1 {
     background: linear-gradient(#fff5 0%, #b4f4eedd 10%, #3ad, #112, #3ad 80%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -1112,27 +1111,7 @@ a:hover .arrow.logo.full {
 
 /* --< buds >-- */
 
-#space-buds .fp-bg {
-    background: linear-gradient(
-        #112,
-        #2d325f44,
-        #1134,
-        #2d325f44 80%,
-        transparent
-    ),
-    radial-gradient(
-        100% 65% at bottom,
-        #23448544 0%,
-        transparent 80%
-    ),
-    radial-gradient(
-        ellipse at bottom,
-        #1b2735 0%,
-        #090a0f 100%
-    );
-}
-
-#space-buds h1 {
+#buds h1 {
 background: linear-gradient(135deg, #FAFFDFAA 0%, #F3BD90 40%,  #DDD6F3 60%, #FDD6F399 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -1140,7 +1119,7 @@ background: linear-gradient(135deg, #FAFFDFAA 0%, #F3BD90 40%,  #DDD6F3 60%, #FD
 
 /* --< bank >-- */
 
-#astrobank h1 {
+#bank h1 {
     background: linear-gradient(178deg, #fff0 0%, #b4f4eebb 20%, #38495a22);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -1263,14 +1242,6 @@ background: linear-gradient(135deg, #FAFFDFAA 0%, #F3BD90 40%,  #DDD6F3 60%, #FD
 #roadmap {
     z-index: 0;
     position: relative;
-
-    background: radial-gradient(
-        ellipse at bottom,
-        #0d1d3133,
-        #1123,
-        #0c0d1333,
-        #0d1d3133
-    );
 }
 
 #roadmap #container {
