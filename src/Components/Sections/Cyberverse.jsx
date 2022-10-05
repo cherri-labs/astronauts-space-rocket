@@ -7,7 +7,7 @@ export default function Cyberverse() {
       offset={4}
       speed={0.5}>
       <div className="section retro" id="cyberverse">
-        <div className="blue bg"></div>
+        <div className="mild blue bg"></div>
         <div className="pc-wrap" id="container">
           <div id='p-stars2'></div>
           <div id='p-stars3'></div>

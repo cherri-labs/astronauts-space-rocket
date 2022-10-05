@@ -266,6 +266,10 @@ a:hover .arrow.logo.full {
     filter: hue-rotate(-180deg) brightness(120%) saturate(120%) grayscale(80%) contrast(120%);
 }
 
+.mild {
+    filter: hue-rotate(-40deg) brightness(80%) saturate(120%) grayscale(18%) contrast(80%);
+}
+
 /* desktop */
 @media screen and (min-width: 1100px) {
     h1 {
@@ -621,8 +625,6 @@ a:hover .arrow.logo.full {
 
     width: 100%;
     height: 100%;
-
-    filter: hue-rotate(-40deg) brightness(80%) saturate(120%) grayscale(18%) contrast(80%);
 }
 
 #container {
