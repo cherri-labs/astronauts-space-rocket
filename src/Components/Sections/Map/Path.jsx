@@ -12,10 +12,10 @@ export default function Path() {
               <p>
                 As we approach <b>landing phase</b> we are going to release{" "}
                 <strong>Space Buds</strong> to the world. After <i>whitelist
-                                                                                         phase</i> and <i>public mint</i>, <b>32</b> <strong>Space
-                                                                           Commanders</strong> will be airdropped to holders and giveaway
+         phase</i> and <i>public mint</i>, <b>32</b> <strong>Space
+                                               Commanders</strong> will be airdropped to holders and giveaway
                 winners, together with the remaining portion of <strong>Space
-                                                                                                               Buds</strong> NFTs.
+           Buds</strong> NFTs.
               </p>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function Path() {
               <h3>Quest to Faraway</h3>
               <p>
                 All owners can participate in the <strong>Grand Race for
-  Space</strong> and take their chance to win the big
+    Space</strong> and take their chance to win the big
                 money prize.
               </p>
               <p>

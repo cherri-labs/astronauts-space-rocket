@@ -11,7 +11,12 @@
     }
 }
 
-.pc-wrap .top-plane, .pc-wrap .bottom-plane {
+.plane {
+    z-index: -1;
+    pointer-events: none;
+}
+
+.pc-wrap .top.plane, .pc-wrap .bottom.plane {
     width: 200%;
     height: 130%;
     position: absolute;
@@ -25,28 +30,28 @@
     animation: planeMoveTop 2s infinite linear;
 }
 
-#content:hover ~ .bottom-plane {
+#content:hover ~ .bottom.plane {
     height: 85%;
 }
 
-#content:hover ~ .top-plane {
+#content:hover ~ .top.plane {
     height: 65%;
 }
 
 /* mobile */
 @media screen and (max-width: 1100px) {
-    #content:hover ~ .bottom-plane,
-    #content:active ~ .bottom-plane {
+    #content:hover ~ .bottom.plane,
+    #content:active ~ .bottom.plane {
         height: 50%;
     }
 
-    #content:hover ~ .top-plane,
-    #content:active ~ .top-plane {
+    #content:hover ~ .top.plane,
+    #content:active ~ .top.plane {
         height: 65%;
     }
 }
 
-.pc-wrap .bottom-plane {
+.pc-wrap .bottom.plane {
     transform: rotateX(-85deg);
     top: -30%;
     animation: planeMoveBot 2s infinite linear;

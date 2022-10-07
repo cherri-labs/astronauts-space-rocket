@@ -68,8 +68,8 @@ export default function World() {
                 spawn on everyday basis. With so many people coming and going
                 it's hard to keep a steady eye on things.  That's why this project
                 is so important to us. <b>We will
-                                  not let our values drift and we will keep our goals on top
-                                  of priorities at all times.</b>
+                                                                                                                           not let our values drift and we will keep our goals on top
+                                                                                                                           of priorities at all times.</b>
               </p>
               <p>
                 Because we all need something
@@ -113,7 +113,7 @@ export default function World() {
               <h3>The Future</h3>
               <p>
                 The line that separates us from our dreams <b>becomes thinner
-                and thinner.</b>
+                                          and thinner.</b>
               </p>
               <p>
                 We have to take what we can and let go of the rest.
