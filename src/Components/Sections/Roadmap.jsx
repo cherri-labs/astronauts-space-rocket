@@ -1,29 +1,22 @@
-import React from 'react';
-import { ParallaxLayer } from '@react-spring/parallax';
+import React from "react";
 
 import World from './Map/World';
 import Vision from './Map/Vision';
 import Path from './Map/Path';
 import MapMenu from './Map/Menu';
-
-const Txt = () => {
-  return (
-    <div className="text">
-      <div className="map">
-        <World />
-        <Vision />
-        <Path />
-      </div>
-    </div>
-  );
-};
+import Mover from './Mover';
 
 function Container() {
   return (
     <div id="container">
+      <div className="retro grey bg" />
       <MapMenu />
       <div id="content">
-        <Txt />
+        <Mover>
+          <World />
+          <Vision />
+          <Path />
+        </Mover>
       </div>
     </div>
   );
@@ -31,12 +24,8 @@ function Container() {
 
 export default function Roadmap() {
   return (
-    <ParallaxLayer
-      offset={5.3}
-      speed={0.4}>
-      <div className="section" id="roadmap">
-        <Container />
-      </div>
-    </ParallaxLayer>
+    <div className="section retro" id="roadmap">
+      <Container />
+    </div>
   );
 }

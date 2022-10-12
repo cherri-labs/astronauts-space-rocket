@@ -1,5 +1,4 @@
 import React from 'react';
-import { ParallaxLayer } from '@react-spring/parallax';
 
 function BudImg() {
   return (
@@ -17,26 +16,6 @@ function BudImg() {
     </div>
   );
 }
-
-const Txt = () => {
-  return (
-    <div className="text">
-      <h1>Space Buds</h1>
-      <article>
-        <p>
-          777 generative friendly
-          {" "}<a className="nav" href="#buds">
-                 Space Buds
-               </a>{" "}
-          cruisin' thru the <i>cybergalaxy</i>.
-          All but 12 handdrawn specimens were sistematically
-          programmed. A total of 40 items will be
-          reserved for team share, giveaways and airdrops to holders.
-        </p>
-      </article>
-    </div>
-  );
-};
 
 const Nft = () => {
   return (
@@ -70,6 +49,29 @@ const Nft = () => {
   );
 };
 
+const Txt = () => {
+  return (
+    <div className="text">
+      <h1>Space Buds</h1>
+      <article>
+        <p>
+          777 generative friendly
+          {" "}<a className="nav" href="#buds">
+                 Space Buds
+               </a>{" "}
+          cruisin' thru the <i>cybergalaxy</i>.
+          Created with the conjunction of AI and Python,
+          {" "}<strong>
+                 Space Buds
+               </strong>{" "}
+          pioneer the technological advancement that is key to our
+          rapidly evolving way of life.
+        </p>
+      </article>
+    </div>
+  );
+};
+
 function Container() {
   return (
     <div id="container">
@@ -83,12 +85,8 @@ function Container() {
 
 export default function Buds() {
   return (
-    <ParallaxLayer
-      offset={1.98}
-      speed={0.8}>
-      <div className="section retro" id="buds">
-        <Container />
-      </div>
-    </ParallaxLayer>
+    <div className="section retro" id="buds">
+      <Container />
+    </div>
   );
 }

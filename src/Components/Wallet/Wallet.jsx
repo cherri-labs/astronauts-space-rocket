@@ -4,7 +4,7 @@ import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 const Wallet: FC = () => {
   return (
     <div id="wallet">
-    <WalletMultiButton />
+      <WalletMultiButton />
     </div>
   );
 };

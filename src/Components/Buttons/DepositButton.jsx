@@ -16,7 +16,7 @@ export default function DepositButton() {
     }
 
 	const accountBox = document.getElementById('deposit-account');
-    const keyValue = accountBox.value || publicKey
+    const keyValue = accountBox.value || publicKey;
     const account = new web3.PublicKey(keyValue);
 	accountBox.value = "";
 

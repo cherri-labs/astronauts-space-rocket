@@ -3,9 +3,8 @@
 import React, { FC } from 'react';
 
 import Context from './Components/Wallet/Context';
-import Header from './Components/Sections/Header';
-import Main from './Components/Sections/Main';
 import Footer from './Components/Sections/Footer';
+import Main from './Components/Sections/Main';
 
 const App: FC = () => {
   return (
@@ -20,7 +19,6 @@ export default App;
 const Content: FC = () => {
   return (
     <>
-    <Header />
     <Main />
     <Footer />
     </>

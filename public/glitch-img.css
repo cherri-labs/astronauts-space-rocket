@@ -30,11 +30,19 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  -webkit-filter: saturate(108%) contrast(92%) brightness(108%) sepia(25%) grayscale(10%);
+  filter: saturate(108%) contrast(92%) brightness(108%) sepia(25%) grayscale(10%);
+}
+
+.glitch__img.astronaut .glitch__item {
+  border-radius: 25px;
+  background: url("./img/astronauts/1.gif") no-repeat 50% 50%/cover;
 }
 
 .glitch__img.bud .glitch__item {
   border-radius: 25px;
-  background: url("./img/buds/1.png") no-repeat 50% 50%/cover;
+  background: url("./img/buds/1.gif") no-repeat 50% 50%/cover;
 }
 
 .glitch__img .glitch__item {
@@ -94,7 +102,7 @@
 }
 
 .glitch__img .glitch__text:before, .glitch__img .glitch__text:after {
-  content: 'rendering';
+  content: 'LレAーSザRー';
   position: absolute;
   left: 0;
   top: 0;
@@ -395,7 +403,24 @@
 
 .rendering:after {
     content: 'rendering';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: -1000%;
+    width: inherit;
+    word-break: keep-all;
     animation: rendering 2s linear infinite;
+}
+
+.astronaut .rendering:after {
+    content: 'lonely astronauts';
+    animation: la-rendering 2s linear infinite;
+}
+
+.bud .rendering:after {
+    content: 'space buds';
+    right: 100%;
+    animation: sb-rendering 2s linear infinite;
 }
 
 @keyframes rendering {
@@ -404,17 +429,29 @@
     82%, 84%, 94% {text-transform: lowercase;}
 }
 
+@keyframes la-rendering {
+    0%, 48%, 50%, 56%, 78%, 80%, 85%, 100% {content: 'lonely astronauts';}
+    49%, 51%, 55%, 79% {content: 'LレAーSザRー';}
+    82%, 84%, 94% {text-transform: lowercase;}
+}
+
+@keyframes sb-rendering {
+    0%, 48%, 50%, 56%, 78%, 80%, 85%, 100% {content: 'space buds';}
+    49%, 51%, 55%, 79% {content: 'LレAーSザRー';}
+    82%, 84%, 94% {text-transform: lowercase;}
+}
+
 /* nft */
 
 #lonely-astronauts .nft {
-    filter: brightness(120%) saturate(130%) grayscale(25%);
     -webkit-filter: brightness(120%) saturate(130%) grayscale(25%);
+    filter: brightness(120%) saturate(130%) grayscale(25%);
     opacity: .9;
 }
 
 #space-buds .nft {
-    filter: hue-rotate(-300deg) brightness(550%) saturate(280%) grayscale(50%) contrast(80%);
     -webkit-filter: hue-rotate(-300deg) brightness(550%) saturate(280%) grayscale(50%) contrast(80%);
+    filter: hue-rotate(-300deg) brightness(550%) saturate(280%) grayscale(50%) contrast(80%);
     opacity: .9;
 }
 

@@ -1,37 +1,25 @@
 import React from 'react';
-import { ParallaxLayer } from '@react-spring/parallax';
 
-const Txt = () => {
+function AstronautImg() {
   return (
-    <div className="text">
-      <h1>Lonely<br/>Astronauts</h1>
-      <article>
-        <p>
-          A collection of 8192
-          {" "}<a className="nav" href="#astronauts">
-                 Lonely Astronaut
-               </a>{" "}
-          NFTs inspired by <span className="neon more">vaporwave</span> and
-          {" "}<span className="stack" style={{"--stacks": 3}}>
-     <span className="more" style={{"--index": 0}}>cyberpunk</span>
-     <span className="more" style={{"--index": 1}}>cyberpunk</span>
-     <span className="more" style={{"--index": 2}}>cyberpunk</span>
-   </span>{" "}
-          aesthetics,
-          the demoscene and pop culture from the 90's and
-          powered by the desire to leverage blockchain technology to
-          bring building power to creators and a full-fledged
-          immersive experience to everyone.
-        </p>
-      </article>
+    <div className="glitch__img astronaut disabled">
+      <div className="glitch__item"></div>
+      <div className="glitch__item"></div>
+      <div className="glitch__item"></div>
+      <div className="glitch__item"></div>
+      <div className="glitch__item"></div>
+      <div className="glitch__text">
+        <span className="rendering"></span>
+        <span className="progress dots"></span>
+      </div>
     </div>
   );
-};
+}
 
 const Nft = () => {
   return (
     <div className="nft">
-      <img src="img/astronauts/1.gif" alt="Lonely Astronaut" />
+      <AstronautImg />
       <div className="caption">
         <div className="column">
           <p>
@@ -60,12 +48,36 @@ const Nft = () => {
   );
 };
 
+const Txt = () => {
+  return (
+    <div className="text">
+      <h1>Lonely<br/>Astronauts</h1>
+      <article>
+        <p>
+          A collection of 8192
+          {" "}<a className="nav" href="#astronauts">
+                 Lonely Astronaut
+               </a>{" "}
+          NFTs inspired by <span className="neon more">vaporwave</span> and
+          {" "}<span className="stack" style={{"--stacks": 3}}>
+                 <span className="more" style={{"--index": 0}}>cyberpunk</span>
+                 <span className="more" style={{"--index": 1}}>cyberpunk</span>
+                 <span className="more" style={{"--index": 2}}>cyberpunk</span>
+               </span>{" "}
+          aesthetics,
+          the demoscene and pop culture from the 80's and
+          powered by the desire to leverage blockchain technology to
+          bring building power to creators and a full-fledged
+          immersive experience to everyone.
+        </p>
+      </article>
+    </div>
+  );
+};
+
 function Container() {
   return (
     <div id="container">
-      <div className="shooting-stars ne">
-        {[...Array(10)].map((e,i) => <div key={i} className="star"></div>)}
-      </div>
       <div id="content">
         <Txt />
         <Nft />
@@ -76,12 +88,8 @@ function Container() {
 
 export default function Astronauts() {
   return (
-    <ParallaxLayer
-      offset={0.98}
-      speed={0.5}
-      className="section retro"
-      id="astronauts">
+    <div className="section retro" id="astronauts">
       <Container />
-    </ParallaxLayer>
+    </div>
   );
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { ParallaxLayer } from '@react-spring/parallax';
 
 import DepositBox from '../Boxes/DepositBox';
 import DepositAmount from '../Boxes/DepositAmount';
@@ -70,14 +69,17 @@ const Gate = () => {
           <BalanceLabel />
           <WithdrawButton />
         </form>
+        <span className="footnote">
+          <a target="_blank" rel="noreferrer"
+             className="what-is-this"
+             href="https://github.com/cherri-labs/astrobank">
+            <span className="hover" />
+          </a>
+        </span>
       </div>
-      <span className="footnote">
-        <a target="_blank" rel="noreferrer" href="https://github.com/cherri-labs/astrobank">What's inside?</a>
-      </span>
     </div>
   );
 };
-
 
 function Container() {
   return (
@@ -92,12 +94,8 @@ function Container() {
 
 export default function Bank() {
   return (
-    <ParallaxLayer
-      offset={2.98}
-      speed={0.2}>
       <div className="section retro" id="bank">
         <Container />
       </div>
-    </ParallaxLayer>
   );
 }

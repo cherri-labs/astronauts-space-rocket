@@ -1,26 +1,28 @@
-/* navbar */
-export default function dropdown(href) {
+/* toggle navbar drodown and display sections */
+export default function nav(href) {
+  /* <-- toggle navbar --> */
   /* navbar */
-  let navbar = document.getElementById("navbar");
+  const navbar = document.getElementById("navbar");
 
-  /* mobile dropdown */
-  if (!navbar.className) {
-    navbar.className = "dropdown";
-  } else {
-    navbar.className = "";
-  }
+  /* toggle mobile dropdown menu */
+  navbar.classList.toggle("dropdown");
 
   /* wallet button */
-  let wallet = document.getElementById("wallet");
+  const wallet = document.getElementById("wallet");
 
-  /* wallet drop */
-  if (!wallet.className) {
-    wallet.className = "drop";
-  } else {
-    wallet.className = "";
+  /* toggle wallet dropdown style */
+  wallet.classList.toggle("dropdown");
+
+  /* <-- display section --> */
+  /* display correct section */
+  if (href) {
+    /* remove active class from all sections */
+    const sections = document.getElementsByClassName("section");
+    [...sections].forEach(function (s) {
+      s.classList.remove("active");
+    });
+
+    /* activate correct section */
+    document.getElementById(href).classList.add("active");
   }
-
-  /* href scroll */
-  if (href)
-    window.location.assign(href);
 }

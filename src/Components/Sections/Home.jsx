@@ -1,15 +1,15 @@
 import React from 'react';
-import { ParallaxLayer } from '@react-spring/parallax';
+import nav from '../../nav';
 
 function Container() {
   return (
     <div id="container">
-      <div id="welcome" className='title'>
+      <div id="welcome" className="title">
         <span>
           WELCOME ABOARD
         </span>
         <br/>
-        <a href="#astronauts">
+        <a onClick={function(){nav('astronauts');}}>
           <span>
             LASR
           </span>
@@ -23,18 +23,8 @@ function Container() {
 
 export default function Home() {
   return (
-    <>
-      <ParallaxLayer
-        sticky={{start: 0, end: 5}}
-        speed={2.5}
-        className="home bg" />
-      <ParallaxLayer
-        offset={0}
-        speed={2.5}
-        className="section"
-        id="home">
-        <Container />
-      </ParallaxLayer>
-    </>
+    <div className="section active" id="home">
+      <Container />
+    </div>
   );
 }
