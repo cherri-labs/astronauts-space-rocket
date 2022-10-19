@@ -16,7 +16,7 @@ const Txt = () => {
       <h1>Astro Bank</h1>
       <article>
         <p>
-          <b>Thank you!</b> We're only here because of you. Which
+          We're only here because of you. Which
           is why owners are granted a portion of the
           {" "}<a target="_blank" rel="noreferrer"
                   href="https://github.com/cherri-labs/astrobank#mint">

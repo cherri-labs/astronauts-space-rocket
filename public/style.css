@@ -1,11 +1,11 @@
-/* style */
-
+/* --< imports >-- */
 @import url('https://fonts.googleapis.com/css2?family=Gill+Sans:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 @import url('https://fonts.googleapis.com/css?family=JetBrains+Mono:400');
 @import url('http://fonts.cdnfonts.com/css/helvetica-neue-9');
 
+/* --< document >-- */
 html {
     scroll-behavior: smooth;
 }
@@ -124,7 +124,7 @@ button.disabled:hover:before {
     color: #9ea1a2;
 }
 
-/* text selection */
+/* --< text selection >-- */
 
 ::selection {
     color: #212d3b;
@@ -136,21 +136,13 @@ button::selection, input::selection {
     background-color: #a1bfde;
 }
 
-/* data title */
+/* --< modules >-- */
 
-[data-title]:hover:after {
-    display: block;
+.click {
+    cursor: pointer !important;
 }
 
-[data-title]:after {
-    content: attr(data-title);
-    position: fixed;
-    padding: 0px 14px;
-    border: 1px solid #fff;
-    display: none;
-}
-
-/* icons */
+/* --< icons >-- */
 
 .arrow,
 .arrow.double:after {
@@ -257,7 +249,7 @@ a:hover .arrow.logo.full {
     margin: 40% 0 0 20%;
 }
 
-/* components */
+/* --< components >-- */
 
 .progress.dots:after, .progress .dots:after {
     content: '...';
@@ -285,7 +277,7 @@ a:hover .arrow.logo.full {
     opacity: 1;
 }
 
-/* filters */
+/* --< filters >-- */
 
 .retro {
     -webkit-filter: brightness(120%) saturate(120%) grayscale(20%) contrast(120%);
@@ -312,7 +304,8 @@ a:hover .arrow.logo.full {
     filter: hue-rotate(45deg) contrast(170%);
 }
 
-/* desktop */
+/* --< desktop >-- */
+
 @media screen and (min-width: 1100px) {
     h1 {
         font-size: 72px;
@@ -385,7 +378,8 @@ a:hover .arrow.logo.full {
     }
 }
 
-/* mobile */
+/* --< mobile >-- */
+
 @media screen and (max-width: 1100px) {
     /* horizontal */
     @media screen and (orientation: landscape) {
@@ -510,7 +504,7 @@ a:hover .arrow.logo.full {
     }
 }
 
-/* footer */
+/* --< footer >-- */
 
 #footer {
     z-index: 10;
@@ -525,6 +519,8 @@ a:hover .arrow.logo.full {
 #home.active ~ #footer {
     display: none;
 }
+
+/* --< nav >-- */
 
 #nav-container {
     display: flex;
@@ -588,6 +584,8 @@ a:hover .arrow.logo.full {
     display: none;
 }
 
+/* --< wallet >-- */
+
 #wallet {
     position: absolute;
     right: 0;
@@ -597,8 +595,7 @@ a:hover .arrow.logo.full {
     border-radius: 6px !important;
 }
 
-/* sections container */
-
+/* --< sections container >-- */
 .section {
     display: flex;
     justify-content: stretch;
@@ -612,49 +609,6 @@ a:hover .arrow.logo.full {
 .section:not(.active) {
     display: none;
 }
-
-
-
-
-
-
-.section.active .pc-wrap {
-    animation: enter-right .2s ease 1;
-}
-
-.section.active p {
-    animation: enter-bottom .3s ease 1;
-}
-
-@keyframes enter-bottom {
-    0%, 70% {margin-top: 200vh;}
-    100% {margin-top: 0;}
-}
-
-.section.active h1 {
-    animation: enter-left .2s ease 1;
-}
-
-@keyframes enter-left {
-    0%, 70% {margin-right: 200vw;}
-    100% {margin-right: 0;}
-}
-
-.section.active img {
-    animation: enter-right 1s ease 1;
-}
-
-@keyframes enter-right {
-    0%, 70% {margin-left: 200vw;}
-    100% {margin-left: 0;}
-}
-
-
-
-
-
-
-
 
 .section .title {
     display: inline-block;
@@ -699,6 +653,53 @@ a:hover .arrow.logo.full {
     border: solid #ffd;
     border-width: 0 4px 4px 0;
     animation: lasr-ring 1.2s ease .3s 1;
+}
+
+/* --< transitions >-- */
+
+.section.active .pc-wrap {
+    animation: in-from-right .2s ease 1;
+}
+
+.section.active#roadmap {
+    animation: in-hard .8s linear 1;
+}
+
+.section.active:not(#home) .logo,
+.section.active:not(#bank):not(#roadmap) p {
+    animation: in-from-bottom .3s ease 1;
+}
+
+.section.active:not(#bank) h1 {
+    animation: in-from-left .2s ease 1;
+}
+
+.section.active .bank {
+    animation: in-from-right .2s ease 1;
+}
+
+.section.active img {
+    animation: in-from-right 1s ease 1;
+}
+
+@keyframes in-from-bottom {
+    0%, 70% {margin-top: 200vh;}
+    100% {margin-top: 0;}
+}
+
+@keyframes in-from-left {
+    0%, 70% {margin-right: 200vw;}
+    100% {margin-right: 0;}
+}
+
+@keyframes in-from-right {
+    0%, 70% {margin-left: 200vw;}
+    100% {margin-left: 0;}
+}
+
+@keyframes in-hard {
+    0%, 20%, 28%, 30%, 32% {visibility: hidden;}
+    19%, 23%, 29%, 33%, 100% {visibility: visible;}
 }
 
 /* --< layers >-- */
@@ -1331,6 +1332,38 @@ body {
                  "Helvetica Neue", "Helvetica", "Arial", sans;
 }
 
+/* --< closed >-- */
+
+#roadmap .card-wrap.closed .card {
+    justify-content: flex-start;
+    height: 60px;
+    max-height: 60px;
+    min-height: 0;
+    border-width: 0;
+    overflow: hidden;
+}
+
+#roadmap .card-wrap.closed article,
+#roadmap .card-wrap.closed p,
+#roadmap .card-wrap.closed .move-nav {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    visibility: hidden;
+}
+
+.card-wrap,
+.card,
+.card article,
+.card p {
+    transition: margin .4s,
+                padding .4s,
+                height .1s,
+                max-height .1s,
+                visibility 0s .2s,
+                border-width 0s .2s;
+}
+
 /* --< sections >-- */
 /* --< home >-- */
 
@@ -1526,7 +1559,8 @@ body {
     height: 100%;
 }
 
-.world.bg {
+.world.bg,
+.world.full {
     background: url("./img/roadmap/world.jpg");
 }
 

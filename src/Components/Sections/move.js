@@ -54,10 +54,11 @@ export default function move(moverId, sectionId, index = 0) {
 
   /* activate selected article */
   [...cards].forEach(function (c) {
-    if (index !== i++)
+    if (index !== i++) {
       c.classList.remove("active");
-    else
+    } else {
       c.classList.add("active");
+    }
   });
 
   if (index < 0) { /* index points to previous section */
