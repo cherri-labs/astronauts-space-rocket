@@ -245,10 +245,6 @@ a:hover .arrow.logo.full {
     transition: width 3s, height 3s;
 }
 
-#navbar .lasr {
-    margin: 40% 0 0 20%;
-}
-
 /* --< components >-- */
 
 .progress.dots:after, .progress .dots:after {
@@ -310,6 +306,10 @@ a:hover .arrow.logo.full {
     h1 {
         font-size: 72px;
         font-weight: bold;
+    }
+
+    #navbar .lasr {
+        margin: 40% 0 0 20%;
     }
 
     .section .title {
@@ -404,6 +404,10 @@ a:hover .arrow.logo.full {
         flex-direction: column;
     }
 
+    #navbar .lasr {
+        width: 10%;
+    }
+
     #navbar button:not(:first-child) {
         display: none;
     }
@@ -411,6 +415,11 @@ a:hover .arrow.logo.full {
     #navbar button.icon {
         display: block;
         font-size: 15px;
+    }
+
+    #navbar.dropdown {
+        padding: 10px;
+        background: #111;
     }
 
     #navbar.dropdown button {
@@ -657,20 +666,13 @@ a:hover .arrow.logo.full {
 
 /* --< transitions >-- */
 
-.section.active .pc-wrap {
-    animation: in-from-right .2s ease 1;
-}
-
-.section.active#roadmap {
-    animation: in-hard .8s linear 1;
-}
-
-.section.active:not(#home) .logo,
-.section.active:not(#bank):not(#roadmap) p {
+.section.active#astronauts p,
+.section.active#buds p {
     animation: in-from-bottom .3s ease 1;
 }
 
-.section.active:not(#bank) h1 {
+.section.active#astronauts h1,
+.section.active#buds h1 {
     animation: in-from-left .2s ease 1;
 }
 
@@ -695,11 +697,6 @@ a:hover .arrow.logo.full {
 @keyframes in-from-right {
     0%, 70% {margin-left: 200vw;}
     100% {margin-left: 0;}
-}
-
-@keyframes in-hard {
-    0%, 20%, 28%, 30%, 32% {visibility: hidden;}
-    19%, 23%, 29%, 33%, 100% {visibility: visible;}
 }
 
 /* --< layers >-- */
@@ -955,22 +952,25 @@ body {
 /* menu */
 
 .menu {
+    --menu-padding: 10px;
+
     z-index: 15;
     position: fixed;
     top: 0;
     left: 0;
 
-    width: 350px;
-    height: 100vh;
+    width: 220px;
+    min-height: 220px;
+    padding: 20px var(--menu-padding);
 
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    gap: 15px;
+    justify-content: flex-end;
+    gap: 10px;
 
-    background: #2d323688;
-    -webkit-backdrop-filter: brightness(145%) saturate(55%) contrast(135%) hue-rotate(-20deg) opacity(20%);
-    backdrop-filter: brightness(145%) saturate(55%) contrast(135%) hue-rotate(-20deg) opacity(20%);
+    background: #3d202988;
+    -webkit-backdrop-filter: saturate(80%) hue-rotate(20deg) brightness(80%) contrast(80%) grayscale(20%) blur(10px);
+    backdrop-filter: saturate(80%) hue-rotate(20deg) brightness(80%) contrast(80%) grayscale(20%) blur(10px);
 }
 
 .menu.hidden {
@@ -980,12 +980,29 @@ body {
 }
 
 .menu button {
+    line-height: 0;
     text-transform: uppercase;
     color: #111;
+    background: transparent;
+}
+
+.menu button.active,
+.menu button.icon {
+    height: 58px;
     font-size: 18px;
-    background: #140d13c1;
-    -webkit-backdrop-filter: saturate(80%) hue-rotate(20deg) brightness(80%) contrast(80%) grayscale(20%) blur(1px);
-    backdrop-filter: saturate(80%) hue-rotate(20deg) brightness(80%) contrast(80%) grayscale(20%) blur(1px);
+    border-radius: 15px;
+}
+
+.menu button:not(.active):not(.icon) {
+    height: 45px;
+    font-size: 16px;
+    border-radius: 10px;
+    text-align: left;
+    transition: padding .2s;
+}
+
+.menu button:not(.active):not(.icon):not(:hover) {
+    padding: 20px 25px;
 }
 
 .menu button:hover {
@@ -1000,8 +1017,8 @@ body {
 
 .menu .top-bar {
     position: absolute;
-    top: 0;
-    width: 100%;
+    top: var(--menu-padding);
+    width: calc(100% - var(--menu-padding) * 2);
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -1011,13 +1028,6 @@ body {
 .menu.hidden .icon,
 .menu button.sticky:not(.active) {
     display: none;
-}
-
-.menu.hidden .icon:not(:hover),
-.menu.hidden button.sticky.active:not(:hover) {
-    background: transparent;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
 }
 
 .menu:not(.hidden) .icon,
@@ -1050,7 +1060,7 @@ body {
 
 .menu:not(.hidden) .icon {
     min-width: 5vw;
-    padding: 20px 25px;
+    padding: 20px;
 }
 
 .menu button.sticky.active {
@@ -1249,7 +1259,7 @@ body {
 
 #cyberverse .card {
     height: 60vh;
-    border: 2px dotted #0115;
+    border: 2px dotted #0111;
     -webkit-backdrop-filter: saturate(360%) hue-rotate(40deg) brightness(360%) contrast(240%) grayscale(40%);
     backdrop-filter: saturate(360%) hue-rotate(40deg) brightness(360%) contrast(240%) grayscale(40%);
 }
@@ -1260,10 +1270,6 @@ body {
     border: 2px solid #0ffd;
     border-top: none;
     border-radius: 1px 1px 10px 10px;
-}
-
-.card strong, .card a {
-    border: 2px solid #0ff;
 }
 
 .card p, .card strong {
@@ -1306,10 +1312,6 @@ body {
     border: 2px solid green;
     border-radius: 1px 1px 0 0;
     cursor: default;
-}
-
-.card strong {
-    padding: 8px;
 }
 
 .card ul {
