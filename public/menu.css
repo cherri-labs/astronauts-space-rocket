@@ -27,16 +27,29 @@
 .menu button {
     line-height: 0;
     text-transform: uppercase;
-    color: #111;
+    color: #b6f6f0;
+    white-space: nowrap;
 }
 
-.menu button:not(.active) {
-    background: #3d2029;
+.menu button:not(:hover) {
+    border: 1px solid #b4f4ee;
+}
+
+.menu button:hover {
+    color: #2d3236;
+    background-color: #b4f4ee;
 }
 
 .menu button.sticky.active,
-.menu:not(.hidden) button.icon {
+.menu:not(.hidden) .icon {
     font-size: 18px;
+}
+
+.menu button.sticky.active {
+    min-height: 60px;
+    min-width: 120px;
+    padding: 15px;
+    transition: padding .2s, letter-spacing .2s;
 }
 
 .menu:not(.hidden) .icon {
@@ -45,15 +58,6 @@
     flex-grow: 1;
     padding: 20px;
     border-radius: 15px;
-}
-
-.menu button.sticky.active {
-    min-height: 60px;
-    min-width: 120px;
-    padding: 15px;
-    border-radius: 0;
-    border: 1px solid #442d33;
-    white-space: nowrap;
 }
 
 .menu button:not(.active):not(.icon) {
@@ -68,8 +72,9 @@
     padding: 20px 25px;
 }
 
-.menu button:hover {
-    background: #442d33;
+.menu button.active:hover {
+    padding: 0 5px 0 20px;
+    letter-spacing: 20px;
 }
 
 .menu button:active,

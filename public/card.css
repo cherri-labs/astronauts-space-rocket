@@ -1,4 +1,11 @@
 /* --< cards >-- */
+/* --< desktop >-- */
+@media screen and (min-width: 1100px) {
+    #content .card {
+        max-width: 50%;
+    }
+}
+
 .card-wrap,
 .card,
 .card ul {
@@ -26,9 +33,9 @@
     overflow: hidden;
 }
 
-.card, .card * {
-    -webkit-filter: saturate(180%) hue-rotate(20deg) brightness(180%) contrast(120%) grayscale(20%);
-    filter: saturate(180%) hue-rotate(20deg) brightness(180%) contrast(120%) grayscale(20%);
+#cyberverse .card,
+#cyberverse .card * {
+    filter: saturate(125%) hue-rotate(-20deg) brightness(115%) contrast(170%);
 }
 
 #roadmap .card {
@@ -37,28 +44,29 @@
     width: 85vw;
     min-height: 65vh;
     max-height: 20em;
-    border: 2px solid #0ffd;
     border-top: none;
     border-radius: 1px 1px 10px 10px;
 
-    -webkit-backdrop-filter: brightness(45%) saturate(155%) contrast(35%) sepia(5%) hue-rotate(20deg) opacity(60%);
-    backdrop-filter: saturate(100%);
+    color: #fff;
+
+    contain: content;
 }
 
-.card p, .card strong {
-    -webkit-filter: saturate(180%) hue-rotate(20deg) brightness(180%) contrast(120%) grayscale(20%);
-    filter: saturate(180%) hue-rotate(20deg) brightness(180%) contrast(120%) grayscale(20%);
+#roadmap .card,
+#roadmap .card h3 {
+    border: 2px solid #b4f4ee;
+}
+
+#roadmap .card strong {
+    color: #ff0;
 }
 
 .card h1 {
     width: 100%;
-    -webkit-filter: saturate(440%) hue-rotate(30deg) brightness(300%) contrast(285%);
-    filter: saturate(440%) hue-rotate(30deg) brightness(300%) contrast(285%);
 }
 
 .card.locked {
-    -webkit-filter: saturate(110%) hue-rotate(30deg) brightness(100%) contrast(85%);
-    filter: saturate(110%) hue-rotate(30deg) brightness(100%) contrast(85%);
+    opacity: 0.5;
 }
 
 #roadmap .card article {
@@ -78,11 +86,9 @@
     letter-spacing: 1vw;
     text-transform: uppercase;
 
-    color: #fff5;
-    background: #0013;
     font-family: "Helvetica Neue", "Helvetica", "Arial", sans;
+    color: #b6f6f0;
 
-    border: 2px solid green;
     border-radius: 1px 1px 0 0;
     cursor: default;
 }
@@ -103,7 +109,6 @@
     line-height: 1.5em;
     text-align: justify;
 
-    color: #ccc;
     font-size: 14px;
     font-family: "pixelfont", "JetBrains Mono", "Roboto Mono", "Lato",
                  "Helvetica Neue", "Helvetica", "Arial", sans;

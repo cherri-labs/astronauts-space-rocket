@@ -6,13 +6,12 @@
 }
 
 .cybr-btn {
-  --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 1%));
-  --shadow-primary: hsl(var(--shadow-primary-hue), 90%, 50%);
+  --primary: transparent;
+  --shadow-primary: #b4f4ee33;
   --primary-hue: 0;
   --primary-lightness: 50;
-  --color: hsl(0, 0%, 100%);
+  --color: #2d3236;
   --font-size: 18px;
-  --shadow-primary-hue: 180;
   --label-size: 6px;
   --shadow-secondary-hue: 60;
   --shadow-secondary: hsl(var(--shadow-secondary-hue), 90%, 60%);
@@ -44,10 +43,8 @@
 }
 
 .cybr-btn:hover {
-  --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 0.8%));
-}
-.cybr-btn:active {
-  --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 0.6%));
+  --primary: #0495ae99;
+  --color: #b6f6f0;
 }
 
 .cybr-btn:after,
@@ -76,8 +73,8 @@
   padding: 1px 4px;
   letter-spacing: 1px;
   line-height: 1;
-  bottom: -5%;
-  right: 5%;
+  bottom: -10%;
+  right: 1%;
   font-weight: normal;
   color: hsl(0, 0%, 0%);
   font-size: var(--label-size);

@@ -228,14 +228,6 @@ button::selection, input::selection {
         border: 1px solid #fff;
     }
 
-    .card-wrap {
-        padding: 35px;
-    }
-
-    #content .card {
-        max-width: 50%;
-    }
-
     #content .bank {
         min-width: 24vw;
         padding: 75px 45px;
@@ -362,10 +354,6 @@ button::selection, input::selection {
     #content img, .nft {
         position: relative;
         top: 5px;
-    }
-
-    .card-wrap {
-        padding: 35px;
     }
 
     #content .caption {
