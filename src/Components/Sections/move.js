@@ -7,6 +7,10 @@ let sections;
 let currentSectionId;
 let currentIndex = 0;
 
+export function moveIndex() {
+  return currentIndex;
+}
+
 /* initialize move container and sections */
 function init(moverId) {
   /* move container */

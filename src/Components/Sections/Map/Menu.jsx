@@ -26,6 +26,12 @@ class MapMenu extends React.Component {
       menu.div.classList.toggle('hidden');
     };
 
+    /* move and close menu */
+    menu.move = function(section) {
+      move(moverId, "map-section-" + section);
+      menu.hide();
+    };
+
     /* activate map section button */
     menu.activateBtn = function(mapSection) {
       const btn = document.getElementById('map-button-' + mapSection + '-active');
@@ -84,15 +90,15 @@ class MapMenu extends React.Component {
           Path
         </button>
         <button id="map-button-world"
-                onClick={function(){move(moverId, "map-section-world");}}>
+                onClick={function(){menu.move("world");}}>
           World
         </button>
         <button id="map-button-vision"
-                onClick={function(){move(moverId, "map-section-vision");}}>
+                onClick={function(){menu.move("vision");}}>
           Vision & Goals
         </button>
         <button id="map-button-path"
-                onClick={function(){move(moverId, "map-section-path");}}>
+                onClick={function(){menu.move("path");}}>
           Path
         </button>
       </div>

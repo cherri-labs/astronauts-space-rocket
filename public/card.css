@@ -1,0 +1,141 @@
+/* --< cards >-- */
+.card-wrap,
+.card,
+.card ul {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    min-width: 35vw;
+}
+
+.card article {
+    display: flex;
+    flex-flow: column nowrap;
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.card-wrap {
+    justify-content: center;
+
+    position: relative;
+    padding: 20px 10px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.card, .card * {
+    -webkit-filter: saturate(180%) hue-rotate(20deg) brightness(180%) contrast(120%) grayscale(20%);
+    filter: saturate(180%) hue-rotate(20deg) brightness(180%) contrast(120%) grayscale(20%);
+}
+
+#roadmap .card {
+    justify-content: space-between;
+
+    width: 85vw;
+    min-height: 65vh;
+    max-height: 20em;
+    border: 2px solid #0ffd;
+    border-top: none;
+    border-radius: 1px 1px 10px 10px;
+
+    -webkit-backdrop-filter: brightness(45%) saturate(155%) contrast(35%) sepia(5%) hue-rotate(20deg) opacity(60%);
+    backdrop-filter: saturate(100%);
+}
+
+.card p, .card strong {
+    -webkit-filter: saturate(180%) hue-rotate(20deg) brightness(180%) contrast(120%) grayscale(20%);
+    filter: saturate(180%) hue-rotate(20deg) brightness(180%) contrast(120%) grayscale(20%);
+}
+
+.card h1 {
+    width: 100%;
+    -webkit-filter: saturate(440%) hue-rotate(30deg) brightness(300%) contrast(285%);
+    filter: saturate(440%) hue-rotate(30deg) brightness(300%) contrast(285%);
+}
+
+.card.locked {
+    -webkit-filter: saturate(110%) hue-rotate(30deg) brightness(100%) contrast(85%);
+    filter: saturate(110%) hue-rotate(30deg) brightness(100%) contrast(85%);
+}
+
+#roadmap .card article {
+    margin: 0;
+    padding: 20px;
+    height: 100%;
+}
+
+.card h3 {
+    margin: 0;
+    padding: 8px 0 10px 0;
+    width: 100%;
+
+    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 1vw;
+    text-transform: uppercase;
+
+    color: #fff5;
+    background: #0013;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans;
+
+    border: 2px solid green;
+    border-radius: 1px 1px 0 0;
+    cursor: default;
+}
+
+.card ul {
+    justify-content: space-between;
+
+    width: 100%;
+    margin: 0;
+    padding: 6px 18px;
+    list-style-type: none;
+}
+
+.card p,
+.card li {
+    margin: 0;
+    width: 100%;
+    line-height: 1.5em;
+    text-align: justify;
+
+    color: #ccc;
+    font-size: 14px;
+    font-family: "pixelfont", "JetBrains Mono", "Roboto Mono", "Lato",
+                 "Helvetica Neue", "Helvetica", "Arial", sans;
+}
+
+/* --< closed >-- */
+#roadmap .card-wrap.closed .card {
+    justify-content: flex-start;
+    height: 60px;
+    max-height: 60px;
+    min-height: 0;
+    border-width: 0;
+    overflow: hidden;
+}
+
+#roadmap .card-wrap.closed article,
+#roadmap .card-wrap.closed p,
+#roadmap .card-wrap.closed .move-nav {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    visibility: hidden;
+}
+
+.card-wrap,
+.card,
+.card article,
+.card p {
+    transition: margin .4s,
+                padding .4s,
+                height .1s,
+                max-height .1s,
+                visibility 0s .2s,
+                border-width 0s .2s;
+}

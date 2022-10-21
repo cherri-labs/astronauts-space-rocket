@@ -22,9 +22,8 @@ export default function World() {
           </p>
           <p>
             But through the <strong>Rebels'</strong> uncorrupted eye all we
-            see is rotten mechanisms 50 ft tall rule on every street,
-            merry-go-round, brothel, strip show, motel room and gambling den
-            in town.
+            see is rotten mechanisms 50 ft tall rule on every strip show,
+            merry-go-round, brothel and gambling den in town.
           </p>
         </article>
         <MoveNav />

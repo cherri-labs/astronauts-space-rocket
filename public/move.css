@@ -1,0 +1,29 @@
+/* --< move >-- */
+.move-section .card-wrap:not(.active),
+.move-section:not(.active) {
+    display: none;
+}
+
+.move .move-nav {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#roadmap .move .card article {
+    padding-bottom: 50px;
+}
+
+.move .move-nav button {
+
+
+
+    /* style buttons */
+
+
+
+}

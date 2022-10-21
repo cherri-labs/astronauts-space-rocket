@@ -29,13 +29,11 @@ const Txt = () => {
 
 function Container() {
   return (
-    <div className="pc-wrap" id="container">
+    <div id="container">
       <div id="content">
         <Lasr type="full" />
         <Txt />
       </div>
-      <div className="top plane" />
-      <div className="bottom plane" />
     </div>
   );
 }
@@ -43,7 +41,6 @@ function Container() {
 export default function Cyberverse() {
   return (
     <div className="section retro" id="cyberverse">
-      <div className="mild blue bg"></div>
       <Container />
     </div>
   );

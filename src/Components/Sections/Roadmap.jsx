@@ -9,7 +9,6 @@ import Mover from './Mover';
 function Container() {
   return (
     <div id="container">
-      <div className="retro grey bg" />
       <MapMenu />
       <div id="content">
         <Mover>
@@ -24,7 +23,7 @@ function Container() {
 
 export default function Roadmap() {
   return (
-    <div className="section retro" id="roadmap">
+    <div className="section" id="roadmap">
       <Container />
     </div>
   );

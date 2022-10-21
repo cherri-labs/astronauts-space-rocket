@@ -6,15 +6,12 @@ import Buds from './Buds';
 import Bank from './Bank';
 import Cyberverse from './Cyberverse';
 import Roadmap from './Roadmap';
+import Stars from './Stars';
 
 export default function Main() {
   return (
     <>
-      <div className="fg retro sticky">
-        <div id="p-stars" />
-        <div id="p-stars2" />
-        <div id="p-stars3" />
-      </div>
+      <Stars />
       <Home />
       <Astronauts />
       <Buds />

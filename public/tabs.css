@@ -1,0 +1,53 @@
+/* --< tabs >-- */
+#tabs-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 50%;
+}
+
+#tabs-bar {
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#tabs-bar button {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 0px;
+    color: #b6f6f0;
+}
+
+#tabs-bar button:first-child {
+    border-radius: 5px 0px 0px 0px;
+}
+
+#tabs-bar button:last-child {
+    border-radius: 0px 5px 0px 0px;
+}
+
+#tabs-bar button:not(.active) {
+    border: 1px solid #fff;
+}
+
+#tabs-bar button.disabled:active {
+    color: #2d3236;
+}
+
+.tab:not(.active) {
+    display: none;
+}
+
+.tab.active {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: inherit;
+    position: relative;
+    top: 16px;
+    padding: 0px 5px;
+}

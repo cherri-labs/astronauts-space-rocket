@@ -1,6 +1,7 @@
 import React from 'react';
-import nav from '../../nav';
 import Lasr from '../Icons/Lasr';
+import Icons from './Icons';
+import nav from '../../nav';
 
 export default function Navbar() {
   return (
@@ -26,6 +27,7 @@ export default function Navbar() {
       <button onClick={function(){nav('roadmap');}}>
         Roadmap
       </button>
+      <Icons />
     </nav>
   );
 }
