@@ -13,7 +13,7 @@
 }
 
 #navbar .arrow.logo {
-    transform: rotateZ(45deg) rotateY(30deg);
+    transform: rotateZ(45deg);
 }
 
 .arrow.left {
@@ -96,17 +96,37 @@ a:hover .arrow.logo.full {
 }
 
 .lasr {
+    display: flex;
+    justify-content: center;
     animation: rotateY 10s linear infinite;
     transition: width 3s, height 3s;
 }
 
+i.screen, .icon .screen, .icon.screen {
+    border: 2px solid #b6f6f0;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0 10px;
+    min-width: 25px;
+    max-width: 25px;
+    min-height: 25px;
+    max-height: 25px;
+}
+
+i.screen:hover, .icon:hover .screen, .icon.screen:hover,
+button:hover i.screen,
+button:hover .icon .screen,
+button:hover .icon.screen:hover {
+    border-color: #2d3236;
+}
+
 /* --< hyperlink icons >-- */
+.icons-wrap,
 .icons {
     --icon-gap: 2vw;
 
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-flow: row nowrap;
     align-items: center;
     gap: var(--icon-gap);
 
@@ -115,6 +135,29 @@ a:hover .arrow.logo.full {
     flex-grow: 1;
 
     cursor: default;
+}
+
+.icons-wrap {
+    justify-content: flex-start;
+}
+
+/* --< desktop >-- */
+@media screen and (min-width: 1100px) {
+    .icons {
+        justify-content: center;
+    }
+}
+
+/* --< mobile >-- */
+@media screen and (max-width: 1100px) {
+    .icons {
+        margin-left: 18px;
+        justify-content: flex-start;
+    }
+}
+
+.icons a {
+    width: 30px;
 }
 
 .icons img,

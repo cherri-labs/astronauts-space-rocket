@@ -23,7 +23,7 @@ function Container() {
 
 export default function Roadmap() {
   return (
-    <div className="section" id="roadmap">
+    <div className="section lights-out" id="roadmap">
       <Container />
     </div>
   );

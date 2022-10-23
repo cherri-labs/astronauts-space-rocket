@@ -1,5 +1,5 @@
 import React from 'react';
-import move from '../move';
+import { moveWithTrans } from '../move';
 
 const moverId = "map-mover";
 
@@ -7,13 +7,62 @@ export let menu = [];
 
 class MapMenu extends React.Component {
   componentDidMount() {
+    /* enter fullscreen */
+    function openFullscreen(elem) {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    }
+
+    /* exit fullscreen */
+    function closeFullscreen() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) { /* Safari */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { /* IE11 */
+        document.msExitFullscreen();
+      }
+    }
+
+    /* toggle fullscreen */
+     function toggleFullscreen(elem) {
+       if (!document.fullscreenElement && // alternative standard method
+        !document.mozFullScreenElement && !document.webkitFullscreenElement) { // current working methods
+         openFullscreen(elem);
+       } else {
+         closeFullscreen();
+       }
+     }
+
     /* menu container div */
     menu.div = document.getElementById("map-menu");
 
-    /* toggle lights */
-    menu.lights = function() {
-      document.getElementById("roadmap").classList.toggle("lights-out");
-      document.getElementById("menu-lights").classList.toggle("out");
+    /* toggle switches */
+    menu.activate = function(menuId) {
+      /* toggle light switch */
+      if (menuId === "lights")
+        document.getElementById("roadmap").classList.toggle("lights-out");
+
+      /* toggle screensaver */
+      if (menuId === "screensaver") {
+        /* toggle fullscreen */
+        const domHtml = document.documentElement;
+        toggleFullscreen(domHtml);
+
+        /* toggle button */
+        document.getElementById("roadmap").classList.toggle("screensaver");
+
+        /* close menu */
+        menu.hide();
+      }
+
+      /* toggle menu button */
+      document.getElementById("menu-" + menuId).classList.toggle("active");
     };
 
     /* hide menu */
@@ -28,7 +77,7 @@ class MapMenu extends React.Component {
 
     /* move and close menu */
     menu.move = function(section) {
-      move(moverId, "map-section-" + section);
+      moveWithTrans(moverId, "map-section-" + section);
       menu.hide();
     };
 
@@ -42,7 +91,8 @@ class MapMenu extends React.Component {
 
       /* reinitialize buttons */
       [...buttons].forEach(function(b) {
-        if (!b.classList.contains('disabled'))
+        if (!b.classList.contains('disabled') &&
+            !b.classList.contains('icon'))
           b.classList.remove('active');
       });
 
@@ -50,6 +100,7 @@ class MapMenu extends React.Component {
       btn.classList.add('active');
     };
 
+    /* listen for mouse click */
     window.addEventListener('click', function(e) {
       /* click outside map menu */
       if (!menu.div.contains(e.target) ||
@@ -69,8 +120,12 @@ class MapMenu extends React.Component {
                   onClick={function(){menu.hide();}}>
             ☰
           </button>
-          <button id="menu-lights" className="icon north east lightbulb"
-                  onClick={function(){menu.lights();}}>
+          <button id="menu-screensaver" className="icon north"
+                  onClick={function(){menu.activate("screensaver");}}>
+            <i className="screen" />
+          </button>
+          <button id="menu-lights" className="icon north east lightbulb active"
+                  onClick={function(){menu.activate("lights");}}>
             <span>💡</span>
           </button>
         </div>

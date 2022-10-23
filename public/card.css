@@ -49,7 +49,16 @@
 
     color: #fff;
 
+    -webkit-backdrop-filter: invert(10%) hue-rotate(5deg) brightness(80%) saturate(120%) contrast(135%);
+    backdrop-filter: invert(10%) hue-rotate(5deg) brightness(80%) saturate(120%) contrast(135%);
+
     contain: content;
+    transition: height .2s, min-height .2s, max-height .2s;
+}
+
+#roadmap:not(.lights-out) .card {
+    -webkit-backdrop-filter: invert(10%) hue-rotate(-5deg) brightness(80%) saturate(120%) contrast(135%);
+    backdrop-filter: saturate(106%) brightness(80%);
 }
 
 #roadmap .card,
@@ -93,6 +102,10 @@
     cursor: default;
 }
 
+.card h3:hover {
+    animation: glitch .8s infinite;
+}
+
 .card ul {
     justify-content: space-between;
 
@@ -112,6 +125,17 @@
     font-size: 14px;
     font-family: "pixelfont", "JetBrains Mono", "Roboto Mono", "Lato",
                  "Helvetica Neue", "Helvetica", "Arial", sans;
+}
+
+#roadmap .card p,
+#roadmap .card li {
+    text-shadow: 1px 1px 1px #000;
+    -webkit-text-stroke: 1px #b6f6f055;
+}
+
+#roadmap:not(.lights-out) .card p,
+#roadmap:not(.lights-out) .card li {
+    -webkit-text-stroke: 1px #36363033;
 }
 
 /* --< closed >-- */
@@ -140,7 +164,5 @@
     transition: margin .4s,
                 padding .4s,
                 height .1s,
-                max-height .1s,
-                visibility 0s .2s,
-                border-width 0s .2s;
+                max-height .1s;
 }

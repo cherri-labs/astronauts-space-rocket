@@ -1,17 +1,23 @@
 /* toggle navbar drodown and display sections */
 export default function nav(href) {
   /* <-- toggle navbar --> */
-  /* navbar */
-  const navbar = document.getElementById("navbar");
+  /* bar container */
+  const nav = document.getElementById("nav-container");
 
   /* toggle mobile dropdown menu */
-  navbar.classList.toggle("dropdown");
+  nav.classList.toggle("dropdown");
 
-  /* wallet button */
-  const wallet = document.getElementById("wallet");
-
-  /* toggle wallet dropdown style */
-  wallet.classList.toggle("dropdown");
+  /* listen for mouse click */
+  window.addEventListener('click', function(e) {
+    /* click outside nav menu */
+    if (!nav.contains(e.target) ||
+        (e.target.tagName.toLowerCase() !== 'button' &&
+         e.target.tagName.toLowerCase() !== 'span' &&
+         e.target.tagName.toLowerCase() !== 'i')) {
+      /* hide menu */
+      nav.classList.remove("dropdown");
+    }
+  });
 
   /* <-- display section --> */
   /* display correct section */

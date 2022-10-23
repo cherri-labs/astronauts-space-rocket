@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function Icons() {
   return (
+    <div className="icons-wrap">
       <div id="icons" className="icons">
         <a target="_blank" rel="noreferrer" href="https://discord.gg/R7bY7DQAWz">
           <img src="img/icons/discord.svg" alt="Discord" />
@@ -13,5 +14,6 @@ export default function Icons() {
           <img src="img/icons/github.svg" alt="GitHub" />
         </a>
       </div>
+    </div>
   );
 }

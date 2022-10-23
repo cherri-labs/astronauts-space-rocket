@@ -1,0 +1,25 @@
+#roadmap .bg {
+    width: 150%;
+    background-size: cover;
+    background-position: 0 25%;
+    background-repeat: no-repeat;
+}
+
+.world.bg {
+    background-position: -250px 50% !important;
+    background-image: url("./img/roadmap/world.jpg");
+}
+
+.vision.bg {
+    background-position: -250px 75% !important;
+    background-image: url("./img/roadmap/vision.jpg");
+}
+
+.path.bg {
+    background-image: url("./img/roadmap/path.jpg");
+}
+
+#roadmap.screensaver .card-wrap {
+    margin-top: 200vh;
+    transition: margin-top .8s;
+}

@@ -1,12 +1,15 @@
 import { menu } from './Map/Menu';
+import glitchTrans from './glitchTransition';
 
 const wrapperClassName = "card-wrap"; // class of containers to move
+const glitchSelector = "#roadmap .bg-container"; // element to glitch on transition
 
 let mover;
 let sections;
 let currentSectionId;
 let currentIndex = 0;
 
+/* returns current index position */
 export function moveIndex() {
   return currentIndex;
 }
@@ -33,6 +36,19 @@ export function moveBack(moverId) {
 export function moveNext(moverId) {
   if (!mover) init(moverId);
   move(moverId, currentSectionId, currentIndex+1);
+}
+
+/* move with transition effect */
+export function moveWithTrans(moverId, sectionId, index = 0) {
+  /* when changing section */
+  if ((sectionId !== currentSectionId) ||
+      /* or changing page */
+      (index !== currentIndex))
+    /* run glitch transition */
+    glitchTrans(glitchSelector);
+
+  /* move to page */
+  move(moverId, sectionId, index);
 }
 
 /* move between sections */
@@ -90,6 +106,9 @@ export default function move(moverId, sectionId, index = 0) {
       .getElementsByClassName(wrapperClassName)
       .length - 1;
 
+    /* run glitch transition */
+    glitchTrans(glitchSelector);
+
     /* recursive move to next section */
     move(moverId, previousSectionId, lastIndex);
   } else if (index >= i) { /* index points to next section */
@@ -112,6 +131,9 @@ export default function move(moverId, sectionId, index = 0) {
     if (!nextSectionId)
       /* set it to first section */
       nextSectionId = sections[0].id;
+
+    /* run glitch transition */
+    glitchTrans(glitchSelector);
 
     /* recursive move to next section */
     move(moverId, nextSectionId);

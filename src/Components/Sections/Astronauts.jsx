@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AstronautImg() {
+function AstronautImg() {//
   return (
     <div className="glitch__img astronaut disabled">
       <div className="glitch__item"></div>

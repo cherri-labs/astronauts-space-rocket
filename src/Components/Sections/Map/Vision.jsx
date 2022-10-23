@@ -6,7 +6,9 @@ export default function Vision() {
   return (
     <div id="map-section-vision"
          className="move-section">
-      <div className="vision bg" />
+      <div className="bg-container">
+        <div className="vision bg" />
+      </div>
       <Card>
         <CardTitle>Changes</CardTitle>
         <article>

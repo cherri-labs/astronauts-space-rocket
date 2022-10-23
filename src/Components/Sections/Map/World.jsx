@@ -6,7 +6,9 @@ export default function World() {
   return (
     <div id="map-section-world"
          className="move-section active">
-      <div className="world bg" />
+      <div className="bg-container">
+        <div className="world bg" />
+      </div>
       <Card active>
         <CardTitle>A New World</CardTitle>
         <article>
@@ -22,8 +24,8 @@ export default function World() {
           </p>
           <p>
             But through the <strong>Rebels'</strong> uncorrupted eye all we
-            see is rotten mechanisms 50 ft tall rule on every strip show,
-            merry-go-round, brothel and gambling den in town.
+            see is rotten mechanisms 50 ft tall taking their toll on every brothel,
+            merry-go-round and gambling den in town.
           </p>
         </article>
         <MoveNav />
@@ -33,7 +35,7 @@ export default function World() {
         <article>
           <p>
             As the night lurks in the <strong>Underground</strong> awakes,
-            and a thousand windows, <strong>Phantoms</strong>, motherboards
+            and a thousand <strong>Phantoms</strong> and motherboards
             and neon signs light up all at the same time.
           </p>
           <p>
@@ -47,15 +49,14 @@ export default function World() {
         <article>
           <p>
             In this evolving digital realm, new and varied worlds
-            spawn on everyday basis. With so many people coming and going
-            it's hard to keep a steady eye on things.  That's why this project
-            is so important to us. <b>We will
-                                     not let our values drift and we will keep our goals on top
-                                     of priorities at all times.</b>
-          </p>
-          <p>
-            Because we all need something
-            to believe in.
+            spawn on everyday basis. With so many faces coming and going
+            it's hard to keep a steady eye on things. That's why
+            {" "}<b>we will keep our goals on top of priorities at all
+                   times</b>.
+            We work to create the content that's going to be part of the
+            future in some shape or form. That's a privilege and we won't
+            throw it away, because
+            {" "}<b>we all need something to believe in</b>.
           </p>
         </article>
         <MoveNav />
@@ -64,7 +65,7 @@ export default function World() {
         <CardTitle>A Digital Realm</CardTitle>
         <article>
           <p>
-            A generation that is going to state once and for
+            This generation is going to state once and for
             all what identity is and how we can define it. And as messy as
             that is, we will try our best to get the road down in a clear
             and straight path for you to walk on.
@@ -87,14 +88,11 @@ export default function World() {
         <CardTitle>The Future</CardTitle>
         <article>
           <p>
-            The line that separates us from our dreams <b>becomes thinner
-                                                         and thinner.</b>
+            The line that separates us from our dreams becomes
+            {" "}<b>thinner and thinner</b>.
           </p>
           <p>
-            We have to take what we can and let go of the rest.
-          </p>
-          <p>
-            <b>Our choices <i>pave</i> the way before us.</b>
+            <b>Our choices pave the way before us.</b>
           </p>
         </article>
         <MoveNav />

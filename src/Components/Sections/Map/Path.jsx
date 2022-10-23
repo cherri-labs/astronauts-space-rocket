@@ -6,7 +6,9 @@ export default function Path() {
   return (
     <div id="map-section-path"
          className="move-section">
-      <div className="path bg" />
+      <div className="bg-container">
+        <div className="path bg" />
+      </div>
       <Card>
         <CardTitle>Landing</CardTitle>
         <article>
@@ -32,7 +34,7 @@ export default function Path() {
           <MoveNav />
         </article>
       </Card>
-      <Card locked>
+      <Card>
         <CardTitle>Terraforming</CardTitle>
         <article>
           <p>
@@ -43,7 +45,7 @@ export default function Path() {
           <MoveNav />
         </article>
       </Card>
-      <Card locked>
+      <Card>
         <CardTitle>Terraforming</CardTitle>
         <article>
           <p>
@@ -54,7 +56,7 @@ export default function Path() {
           <MoveNav />
         </article>
       </Card>
-      <Card locked>
+      <Card>
         <CardTitle>Terraforming</CardTitle>
         <article>
           <p>
@@ -65,7 +67,7 @@ export default function Path() {
           <MoveNav />
         </article>
       </Card>
-      <Card locked>
+      <Card>
         <CardTitle>Expansion</CardTitle>
         <article>
           <p>
@@ -78,7 +80,7 @@ export default function Path() {
           <MoveNav />
         </article>
       </Card>
-      <Card locked>
+      <Card>
         <CardTitle>Quest to Faraway</CardTitle>
         <article>
           <p>

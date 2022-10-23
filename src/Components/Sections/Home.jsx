@@ -21,10 +21,44 @@ function Container() {
   );
 }
 
-export default function Home() {
-  return (
-    <div className="section active" id="home">
-      <Container />
-    </div>
-  );
+class Home extends React.Component {
+
+
+
+
+/* fix this v */
+  ComponentDidMount() {
+    document.addEventListener('scroll', (e) => {
+      alert(0);
+      const home = document.getElementById("home");
+
+      /* if scroll down on home */
+      if (home.contains(e.target))
+        alert("astronauts");
+      else
+        alert(1);
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  render() {
+    return (
+      <div className="section fullscreen active" id="home">
+        <Container />
+      </div>
+    );
+  }
 }
+export default Home;
