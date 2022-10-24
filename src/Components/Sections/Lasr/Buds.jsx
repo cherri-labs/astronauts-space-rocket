@@ -85,7 +85,7 @@ function Container() {
 
 export default function Buds() {
   return (
-    <div className="section retro" id="buds">
+    <div id="buds">
       <Container />
     </div>
   );

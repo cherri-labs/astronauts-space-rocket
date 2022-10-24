@@ -88,7 +88,7 @@ function Container() {
 
 export default function Astronauts() {
   return (
-    <div className="section retro" id="astronauts">
+    <div id="astronauts">
       <Container />
     </div>
   );

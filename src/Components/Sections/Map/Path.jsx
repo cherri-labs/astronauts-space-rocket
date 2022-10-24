@@ -1,10 +1,10 @@
 import React from 'react';
 import Card, { CardTitle } from './Card';
-import { MoveNav } from '../Mover';
+import { MoveNav } from '../../Menu/Mover';
 
 export default function Path() {
   return (
-    <div id="map-section-path"
+    <div id="move-section-path"
          className="move-section">
       <div className="bg-container">
         <div className="path bg" />
@@ -20,7 +20,7 @@ export default function Path() {
             and giveaway winners, together with the remaining portion
             of <strong>Space Buds</strong> NFTs.
           </p>
-          <MoveNav />
+          <MoveNav mover="map-mover" />
         </article>
       </Card>
       <Card>
@@ -31,7 +31,7 @@ export default function Path() {
             the <strong>Astro Bank</strong> where users are
             able to claim their rewards right away.
           </p>
-          <MoveNav />
+          <MoveNav mover="map-mover" />
         </article>
       </Card>
       <Card>
@@ -42,7 +42,7 @@ export default function Path() {
             documentation about the project. We plan to
             release that during <b>Terraforming</b>.
           </p>
-          <MoveNav />
+          <MoveNav mover="map-mover" />
         </article>
       </Card>
       <Card>
@@ -53,7 +53,7 @@ export default function Path() {
             owners, where they can hop in for a chat, drink or
             just to buy dope stuff.
           </p>
-          <MoveNav />
+          <MoveNav mover="map-mover" />
         </article>
       </Card>
       <Card>
@@ -64,7 +64,7 @@ export default function Path() {
             the staking portal and <strong>$STRD</strong> tokens are
             airdropped to owners only.
           </p>
-          <MoveNav />
+          <MoveNav mover="map-mover" />
         </article>
       </Card>
       <Card>
@@ -77,7 +77,7 @@ export default function Path() {
           <p>
             The <strong>LASR</strong> DAO is created.
           </p>
-          <MoveNav />
+          <MoveNav mover="map-mover" />
         </article>
       </Card>
       <Card>
@@ -91,7 +91,7 @@ export default function Path() {
           <p>
             The <strong>LASR</strong> metaverse finally arrives.
           </p>
-          <MoveNav />
+          <MoveNav mover="map-mover" />
         </article>
       </Card>
     </div>

@@ -1,10 +1,10 @@
 import React from 'react';
 import Card, { CardTitle } from './Card';
-import { MoveNav } from '../Mover';
+import { MoveNav } from '../../Menu/Mover';
 
 export default function Vision() {
   return (
-    <div id="map-section-vision"
+    <div id="move-section-vision"
          className="move-section">
       <div className="bg-container">
         <div className="vision bg" />
@@ -16,7 +16,7 @@ export default function Vision() {
             Change doesn't happen overnight,
             but <b>one tiny step at a time.</b>
           </p>
-          <MoveNav />
+          <MoveNav mover="map-mover" />
         </article>
       </Card>
       <Card>
@@ -28,7 +28,7 @@ export default function Vision() {
                                                           it as simple and stupid as possible—so the important stuff
                                                           is always in clear sight.</b>
           </p>
-          <MoveNav />
+          <MoveNav mover="map-mover" />
         </article>
       </Card>
     </div>

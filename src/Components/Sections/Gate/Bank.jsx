@@ -1,27 +1,25 @@
 import React from 'react';
 
-import DepositBox from '../Boxes/DepositBox';
-import DepositAmount from '../Boxes/DepositAmount';
-import WithdrawAmount from '../Boxes/WithdrawAmount';
-import BalanceLabel from '../Labels/BalanceLabel';
-import DepositButton from '../Buttons/DepositButton';
-import MaxButton from '../Buttons/MaxButton';
-import WithdrawButton from '../Buttons/WithdrawButton';
+import DepositBox from '../../Boxes/DepositBox';
+import DepositAmount from '../../Boxes/DepositAmount';
+import WithdrawAmount from '../../Boxes/WithdrawAmount';
+import BalanceLabel from '../../Labels/BalanceLabel';
+import DepositButton from '../../Buttons/DepositButton';
+import MaxButton from '../../Buttons/MaxButton';
+import WithdrawButton from '../../Buttons/WithdrawButton';
 
-import tab from '../../tabs';
+import tab from '../../../tabs';
 
 const Txt = () => {
   return (
     <div className="text">
-      <h1>Astro Bank</h1>
       <article>
         <p>
-          We're only here because of you. Which
-          is why owners are granted a portion of the
+          Here you can withdraw your
           {" "}<a target="_blank" rel="noreferrer"
                   href="https://github.com/cherri-labs/astrobank#mint">
-                 mint rewards
-               </a>.
+          mint rewards</a>, all you need is
+    a <strong>LASR NFT</strong> inside your wallet.
         </p>
       </article>
     </div>
@@ -34,8 +32,16 @@ const Gate = () => {
       <div className="bank">
         <div id="tabs-container">
           <div id="tabs-bar">
-            <button className="disabled" id="deposit-btn" onClick={function(){tab('deposit');}}><span>Deposit</span></button>
-            <button className="active" id="withdraw-btn" onClick={function(){tab('withdraw');}}><span>Withdraw</span></button>
+            <button className="coming-soon disabled"
+                    id="deposit-btn"
+                    onClick={function(){tab('deposit');}}>
+              <span>Deposit</span>
+            </button>
+            <button className="active"
+                    id="withdraw-btn"
+                    onClick={function(){tab('withdraw');}}>
+              <span>Withdraw</span>
+            </button>
           </div>
         </div>
         <form className="tab" id="deposit">
@@ -94,8 +100,8 @@ function Container() {
 
 export default function Bank() {
   return (
-      <div className="section retro" id="bank">
-        <Container />
-      </div>
+    <div id="bank">
+      <Container />
+    </div>
   );
 }

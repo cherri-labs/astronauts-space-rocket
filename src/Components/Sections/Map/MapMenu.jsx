@@ -7,38 +7,6 @@ export let menu = [];
 
 class MapMenu extends React.Component {
   componentDidMount() {
-    /* enter fullscreen */
-    function openFullscreen(elem) {
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.webkitRequestFullscreen) { /* Safari */
-        elem.webkitRequestFullscreen();
-      } else if (elem.msRequestFullscreen) { /* IE11 */
-        elem.msRequestFullscreen();
-      }
-    }
-
-    /* exit fullscreen */
-    function closeFullscreen() {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) { /* Safari */
-        document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) { /* IE11 */
-        document.msExitFullscreen();
-      }
-    }
-
-    /* toggle fullscreen */
-     function toggleFullscreen(elem) {
-       if (!document.fullscreenElement && // alternative standard method
-        !document.mozFullScreenElement && !document.webkitFullscreenElement) { // current working methods
-         openFullscreen(elem);
-       } else {
-         closeFullscreen();
-       }
-     }
-
     /* menu container div */
     menu.div = document.getElementById("map-menu");
 
@@ -52,7 +20,7 @@ class MapMenu extends React.Component {
       if (menuId === "screensaver") {
         /* toggle fullscreen */
         const domHtml = document.documentElement;
-        toggleFullscreen(domHtml);
+        fullscreen(domHtml);
 
         /* toggle button */
         document.getElementById("roadmap").classList.toggle("screensaver");

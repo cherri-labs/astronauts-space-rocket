@@ -1,10 +1,10 @@
 import React from 'react';
 import Card, { CardTitle } from './Card';
-import { MoveNav } from '../Mover';
+import { MoveNav } from '../../Menu/Mover';
 
 export default function World() {
   return (
-    <div id="map-section-world"
+    <div id="move-section-world"
          className="move-section active">
       <div className="bg-container">
         <div className="world bg" />
@@ -28,7 +28,7 @@ export default function World() {
             merry-go-round and gambling den in town.
           </p>
         </article>
-        <MoveNav />
+        <MoveNav mover="map-mover" />
       </Card>
       <Card>
         <CardTitle>A New World</CardTitle>
@@ -42,7 +42,7 @@ export default function World() {
             It's the birth of <b>a new era</b>, are you just going to watch?
           </p>
         </article>
-        <MoveNav />
+        <MoveNav mover="map-mover" />
       </Card>
       <Card>
         <CardTitle>A Digital Realm</CardTitle>
@@ -59,7 +59,7 @@ export default function World() {
             {" "}<b>we all need something to believe in</b>.
           </p>
         </article>
-        <MoveNav />
+        <MoveNav mover="map-mover" />
       </Card>
       <Card>
         <CardTitle>A Digital Realm</CardTitle>
@@ -70,7 +70,7 @@ export default function World() {
             that is, we will try our best to get the road down in a clear
             and straight path for you to walk on.
           </p>
-          <MoveNav />
+          <MoveNav mover="map-mover" />
         </article>
       </Card>
       <Card>
@@ -82,7 +82,7 @@ export default function World() {
             abstract reality. Now, we have to adapt.
           </p>
         </article>
-        <MoveNav />
+        <MoveNav mover="map-mover" />
       </Card>
       <Card>
         <CardTitle>The Future</CardTitle>
@@ -95,7 +95,7 @@ export default function World() {
             <b>Our choices pave the way before us.</b>
           </p>
         </article>
-        <MoveNav />
+        <MoveNav mover="map-mover" />
       </Card>
     </div>
   );
