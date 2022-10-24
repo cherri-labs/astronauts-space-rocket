@@ -19,7 +19,7 @@
     background-image: url("./img/roadmap/path.jpg");
 }
 
-#roadmap.screensaver .card-wrap {
+main.widescreen #roadmap .card-wrap {
     margin-top: 200vh;
     transition: margin-top .8s;
 }

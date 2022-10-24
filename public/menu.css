@@ -11,11 +11,19 @@
     width: 220px;
     min-height: 220px;
     padding: var(--menu-top) var(--menu-padding);
+}
 
+.menu, .menu .sub-menu {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 10px;
+}
+
+#lasr:not(.active) ~ .menu .sub-menu#sub-lasr,
+#gate:not(.active) ~ .menu .sub-menu#sub-gate,
+#roadmap:not(.active) ~ .menu .sub-menu#sub-roadmap {
+    display: none;
 }
 
 .menu.hidden {
@@ -31,11 +39,12 @@
     white-space: nowrap;
 }
 
-.menu button:not(:hover) {
+.menu button:not(:hover),
+.menu button.disabled {
     border: 1px solid #b4f4ee;
 }
 
-.menu button:hover {
+.menu button:hover:not(.disabled) {
     color: #2d3236;
     background-color: #b4f4ee;
 }
@@ -75,11 +84,12 @@
     transition: padding .2s;
 }
 
-.menu button:not(.active):not(.icon):not(:hover) {
+.menu button:not(.active):not(.icon):not(:hover),
+.menu button.disabled {
     padding: 20px 25px;
 }
 
-.menu button:active,
+.menu button:active:not(.disabled),
 .menu:not(.hidden) button.active {
     background: #742d3393;
 }
@@ -127,4 +137,9 @@
 
 .menu:not(.hidden) button.sticky {
     display: none;
+}
+
+.menu button.disabled {
+    color: #cccc;
+    cursor: default;
 }

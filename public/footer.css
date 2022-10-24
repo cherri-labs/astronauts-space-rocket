@@ -14,7 +14,8 @@
     transition: top .4s, opacity .2s;
 }
 
-.section.fullscreen.active ~ #footer {
+.section.fullscreen.active ~ #footer,
+.section.fullscreen.active ~ .menu {
     display: none;
 }
 

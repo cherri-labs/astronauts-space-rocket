@@ -1,0 +1,46 @@
+/* --< transitions >-- */
+.section.active#lasr p {
+    animation: in-from-bottom .3s ease 1;
+}
+
+.section.active#gate p,
+.section.active#cyberverse p,
+.section.active#roadmap .move {
+    animation: in-from-bottom .1s ease 1;
+}
+
+.section.active#gate h1,
+.section.active#gate .title,
+.section.active#cyberverse h1,
+.section.active#cyberverse .title,
+.section.active#cyberverse .logo {
+    animation: in-from-bottom .3s ease 1;
+}
+
+.section.active#lasr h1,
+.section.active#lasr .title {
+    animation: in-from-left .2s ease 1;
+}
+
+.section.active .bank {
+    animation: in-from-right .2s ease 1;
+}
+
+.section.active img {
+    animation: in-from-right 1s ease 1;
+}
+
+@keyframes in-from-bottom {
+    0% {margin-top: 200vh;}
+    100% {margin-top: 0;}
+}
+
+@keyframes in-from-left {
+    0%, 70% {margin-right: 200vw;}
+    100% {margin-right: 0;}
+}
+
+@keyframes in-from-right {
+    0%, 70% {margin-left: 200vw;}
+    100% {margin-left: 0;}
+}

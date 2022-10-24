@@ -36,7 +36,7 @@ h1 {
 }
 
 p {
-    font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
 a {
@@ -61,7 +61,7 @@ input[type=number] {
 
 input:not([type='button']),
 input + label {
-    font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-size: 14px;
     font-weight: 500;
 }
@@ -99,11 +99,11 @@ button, input[type=button], input[type=submit], input[type=reset] {
     cursor: pointer;
 }
 
-button.disabled:hover span {
+button.coming-soon.disabled:hover span {
     display: none;
 }
 
-button.disabled:hover:before {
+button.coming-soon.disabled:hover:before {
     content: "Coming soon";
 }
 
@@ -342,6 +342,7 @@ button::selection, input::selection {
     font-family: 'Lato', 'DM Sans', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 300;
     letter-spacing: 10px;
+    text-transform: uppercase;
     cursor: default;
 }
 
@@ -379,52 +380,6 @@ button::selection, input::selection {
     border: solid #ffd;
     border-width: 0 4px 4px 0;
     animation: lasr-ring 1.2s ease .3s 1;
-}
-
-/* --< transitions >-- */
-.section.active#astronauts p,
-.section.active#buds p {
-    animation: in-from-bottom .3s ease 1;
-}
-
-.section.active#bank p,
-.section.active#cyberverse p,
-.section.active#roadmap .move {
-    animation: in-from-bottom .1s ease 1;
-}
-
-.section.active#bank h1,
-.section.active#cyberverse h1,
-.section.active#cyberverse .logo {
-    animation: in-from-bottom .3s ease 1;
-}
-
-.section.active#astronauts h1,
-.section.active#buds h1 {
-    animation: in-from-left .2s ease 1;
-}
-
-.section.active .bank {
-    animation: in-from-right .2s ease 1;
-}
-
-.section.active img {
-    animation: in-from-right 1s ease 1;
-}
-
-@keyframes in-from-bottom {
-    0% {margin-top: 200vh;}
-    100% {margin-top: 0;}
-}
-
-@keyframes in-from-left {
-    0%, 70% {margin-right: 200vw;}
-    100% {margin-right: 0;}
-}
-
-@keyframes in-from-right {
-    0%, 70% {margin-left: 200vw;}
-    100% {margin-left: 0;}
 }
 
 /* --< layers >-- */
@@ -777,12 +732,6 @@ body {
     background-color: var(--bg);
 }
 
-#bank h1 {
-    background: linear-gradient(178deg, #fff0 0%, #b4f4eebb 20%, #38495a22);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-}
-
 #content .bank-container,
 #content .bank {
     position: relative;
@@ -799,7 +748,7 @@ body {
 
 #content .bank button {
     color: #b4f4ee;
-    font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-size: 16px;
     font-weight: 600;
 }
@@ -873,9 +822,13 @@ body {
 }
 
 #cyberverse h1 {
-    background: linear-gradient(2deg, #fff2 0%, #d4f4fe66 12%, #b4f4ee44 24%, rgba(156,36,106,0.6) 60%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    font-size: 2.5em;
+    font-weight: 400;
+    letter-spacing: 1.5vw;
+    text-transform: uppercase;
+
+    font-family: "Arial", "Helvetica", "Helvetica Neue", sans;
+    color: #b6f6f0;
 }
 
 #cyberverse .logo {

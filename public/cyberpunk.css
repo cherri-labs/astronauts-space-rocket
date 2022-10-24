@@ -1,3 +1,10 @@
+/* --< glitch >-- */
+
+.glitch__hover:hover .glitch__display,
+.glitch__hover:not(:hover) .glitch__element {
+    display: none;
+}
+
 /* --< buttons >-- */
 @font-face {
   font-family: 'Cyber';
