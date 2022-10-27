@@ -1,3 +1,5 @@
+import { moveReset } from './Components/Menu/move';
+
 /* toggle navbar drodown and display sections */
 export default function nav(href) {
   /* <-- toggle navbar --> */
@@ -28,7 +30,18 @@ export default function nav(href) {
       s.classList.remove("active");
     });
 
+    /* section to activate */
+    const activeSection = document.getElementById(href);
+
     /* activate correct section */
-    document.getElementById(href).classList.add("active");
+    activeSection.classList.add("active");
+
+    /* mover inside section */
+    const mover = activeSection.querySelector(".move");
+
+    /* if mover exists */
+    if (mover)
+      /* reset section mover */
+      moveReset(mover.id);
   }
 }

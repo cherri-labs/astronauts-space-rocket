@@ -16,14 +16,6 @@
     min-width: 35vw;
 }
 
-.card article {
-    display: flex;
-    flex-flow: column nowrap;
-    align-self: stretch;
-    justify-content: flex-start;
-    align-items: stretch;
-}
-
 .card-wrap {
     justify-content: center;
 
@@ -119,9 +111,20 @@
 .card li {
     margin: 0;
     width: 100%;
-    line-height: 1.5em;
     text-align: justify;
+}
 
+#gate .card p,
+#cyberverse .card p,
+#roadmap .card p,
+#roadmap .card li {
+    line-height: 1.5em;
+}
+
+#gate .card p,
+#cyberverse .card p,
+#roadmap .card p,
+#roadmap .card li {
     font-size: 14px;
     font-family: "pixelfont", "JetBrains Mono", "Roboto Mono", "Lato",
                  "Helvetica Neue", "Helvetica", "Arial", sans;

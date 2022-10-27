@@ -1,19 +1,11 @@
 import React from 'react';
+import NftImg from './NftImg';
 
 function BudImg() {
   return (
-    <div className="glitch__img bud disabled">
-      <div className="glitch__item"></div>
-      <div className="glitch__item"></div>
-      <div className="glitch__item"></div>
-      <div className="glitch__item"></div>
-      <div className="glitch__item"></div>
-      <div className="glitch__text">
-        &nbsp;&nbsp;&nbsp;
-        <span className="rendering"></span>
-        <span className="progress dots"></span>
-      </div>
-    </div>
+    <NftImg src="bud">
+    &nbsp;&nbsp;&nbsp;
+    </NftImg>
   );
 }
 
@@ -52,18 +44,18 @@ const Nft = () => {
 const Txt = () => {
   return (
     <div className="text">
-      <h1>Space Buds</h1>
       <article>
+        <h1>Space Buds</h1>
         <p>
           777 generative friendly
           {" "}<a className="nav" href="#buds">
-                 Space Buds
-               </a>{" "}
+          Space Buds
+          </a>{" "}
           cruisin' thru the <i>cybergalaxy</i>.
           Created with the conjunction of AI and Python,
           {" "}<strong>
-                 Space Buds
-               </strong>{" "}
+            Space Buds
+          </strong>{" "}
           pioneer the technological advancement that is key to our
           rapidly evolving way of life.
         </p>

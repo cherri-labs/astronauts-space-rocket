@@ -3,10 +3,11 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import * as web3 from '@solana/web3.js';
 import React, { useCallback } from 'react';
 
-import * as bank from '../../client/lib';
+import SubmitButton from './SubmitButton';
+import * as bank from '../../../../client/lib';
 import updateBalance from './updateBalance';
 
-export default function WithdrawButton() {
+export default function DepositButton(props) {
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
 
@@ -15,12 +16,17 @@ export default function WithdrawButton() {
       throw new WalletNotConnectedError();
     }
 
-	const amountBox = document.getElementById('withdraw-amount');
+	const accountBox = document.getElementById('deposit-account');
+    const keyValue = accountBox.value || publicKey;
+    const account = new web3.PublicKey(keyValue);
+	accountBox.value = "";
+
+	const amountBox = document.getElementById('deposit-amount');
     const amount = Math.round(amountBox.value * web3.LAMPORTS_PER_SOL);
 	amountBox.value = "";
 
     if (amount) {
-      const transaction = await bank.requestWithdrawal(publicKey, amount, connection);
+      const transaction = await bank.deposit(publicKey, account, amount, connection);
       const signature = await sendTransaction(transaction, connection);
 
       await connection.confirmTransaction(signature, 'processed');
@@ -31,9 +37,12 @@ export default function WithdrawButton() {
     }
   }, [publicKey, sendTransaction, connection]);
 
+  const disabled = props.disabled;
   return (
-    <button onClick={onClick} disabled={!publicKey} className="submit">
-    <span>Withdraw</span>
-    </button>
+    <SubmitButton
+      onClick={onClick}
+      disabled={(!publicKey || disabled)}>
+      Deposit
+    </SubmitButton>
   );
 }

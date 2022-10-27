@@ -16,7 +16,7 @@ export default function Vision() {
             Change doesn't happen overnight,
             but <b>one tiny step at a time.</b>
           </p>
-          <MoveNav mover="map-mover" />
+          <MoveNav mover="roadmap-mover" />
         </article>
       </Card>
       <Card>
@@ -28,7 +28,7 @@ export default function Vision() {
                                                           it as simple and stupid as possible—so the important stuff
                                                           is always in clear sight.</b>
           </p>
-          <MoveNav mover="map-mover" />
+          <MoveNav mover="roadmap-mover" />
         </article>
       </Card>
     </div>

@@ -6,17 +6,8 @@ const glitchSelector = "#roadmap .bg-container"; // element to glitch on transit
 
 let movers = [];
 
-/* returns current index position */
-export function moveIndex(moverId) {
-  init(moverId);
-  if (movers[moverId])
-    return movers[moverId]['currentIndex'];
-  else
-    return 0;
-}
-
 /* initialize mover container and sections */
-function init(moverId) {
+function moveInit(moverId) {
   /* mover container */
   const mover = document.getElementById(moverId);
 
@@ -33,21 +24,52 @@ function init(moverId) {
       /* initialize mover */
       movers[moverId]['mover'] = mover;
 
-      /* initialize current index */
-      movers[moverId]['currentIndex'] = 0;
-
-      /* get all sections */
-      movers[moverId]['sections'] = mover.getElementsByClassName("move-section");
-
-      /* initialize to first section */
-      movers[moverId]['currentSectionId'] = movers[moverId]['sections'][0].id;
+      moveDefault(moverId);
     }
   }
 }
 
+/* reset mover index default values */
+function moveDefault(moverId) {
+  if (movers[moverId]) {
+    /* mover container */
+    const mover = document.getElementById(moverId);
+
+    /* initialize current index */
+    movers[moverId]['currentIndex'] = 0;
+
+    /* get all sections */
+    movers[moverId]['sections'] = mover.getElementsByClassName("move-section");
+
+    /* initialize to first section */
+    movers[moverId]['currentSectionId'] = movers[moverId]['sections'][0].id;
+  }
+}
+
+/* reset mover index initial state */
+export function moveReset(moverId) {
+  if (movers[moverId]) {
+    /* reset default values */
+    moveDefault(moverId);
+    /* reset to initial state */
+    move(moverId,
+         movers[moverId]['currentSectionId'],
+         movers[moverId]['currentIndex']);
+  }
+}
+
+/* returns current index position */
+export function moveIndex(moverId) {
+  moveInit(moverId);
+  if (movers[moverId])
+    return movers[moverId]['currentIndex'];
+  else
+    return 0;
+}
+
 /* call move to previous section */
 export function moveBack(moverId) {
-  init(moverId);
+  moveInit(moverId);
   move(moverId,
        movers[moverId]['currentSectionId'],
        movers[moverId]['currentIndex']-1);
@@ -55,7 +77,7 @@ export function moveBack(moverId) {
 
 /* call move to next section */
 export function moveNext(moverId) {
-  init(moverId);
+  moveInit(moverId);
   move(moverId,
        movers[moverId]['currentSectionId'],
        movers[moverId]['currentIndex']+1);
@@ -73,10 +95,10 @@ export function moveTransition(moverId, sectionId, index = 0) {
 
 /* move between sections */
 export default function move(moverId, sectionId, index = 0) {
-  init(moverId);
+  moveInit(moverId);
   const mover = movers[moverId]['mover'];
 
-  /* run transition if mover is transition type */
+  /* run default transition if mover has transition type */
   if (mover.classList.contains("transition"))
     moveTransition(moverId, sectionId, index);
 
@@ -169,7 +191,8 @@ export default function move(moverId, sectionId, index = 0) {
     /* we skip the first two words (map-section-...) */
     const btnSection = sectionId.split('-').slice(2);
     /* we activate our sticky menu button */
-    menu.activateBtn(btnSection.join('-'));
+    menu.activateBtn(moverId.split('-').slice(0,-1),
+                     btnSection.join('-'));
 
     /* and finally we update our tracker values */
     movers[moverId]['currentSectionId'] = sectionId;

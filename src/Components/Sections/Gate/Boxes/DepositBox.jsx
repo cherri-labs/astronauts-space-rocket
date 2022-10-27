@@ -9,7 +9,7 @@ function onOver() {
   mouseOver(document.getElementById('dep-account-note'));
 }
 
-export default function DepositAccount() {
+export default function DepositAccount(props) {
   const { publicKey } = useWallet();
 
   function onLeave() {
@@ -22,11 +22,13 @@ export default function DepositAccount() {
     }
   }
 
+  const disabled = props.disabled;
   return (
     <input type="text" id="deposit-account"
-    onMouseOver={onOver}
-    onMouseLeave={onLeave}
-    onFocus={onLeave}
-    placeholder={publicKey}/>
+           onMouseOver={onOver}
+           onMouseLeave={onLeave}
+           onFocus={onLeave}
+           placeholder={publicKey}
+           disabled={disabled}/>
   );
 }

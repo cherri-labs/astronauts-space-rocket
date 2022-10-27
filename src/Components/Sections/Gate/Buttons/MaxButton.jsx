@@ -3,10 +3,10 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import * as web3 from '@solana/web3.js';
 import React, { useCallback } from 'react';
 
-import { getBalance, findProgramAddress } from '../../client/accounts';
-import { seed, programId } from '../../client/conf';
+import { getBalance, findProgramAddress } from '../../../../client/accounts';
+import { seed, programId } from '../../../../client/conf';
 
-export default function MaxBalance() {
+export default function MaxBalance(props) {
   const { connection } = useConnection();
   const { publicKey } = useWallet();
 
@@ -26,9 +26,13 @@ export default function MaxBalance() {
       await getBalance(connection, programAddress) / web3.LAMPORTS_PER_SOL;
   }, [publicKey, connection]);
 
+  const disabled = props.disabled;
   return (
-    <button onClick={onClick} disabled={!publicKey} className="inset">
-    Max
+    <button 
+      className="inset"
+      onClick={onClick}
+      disabled={(!publicKey || disabled)}>
+      Max
     </button>
   );
 }

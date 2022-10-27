@@ -1,7 +1,7 @@
 import * as web3 from '@solana/web3.js';
 
-import { getBalance, findProgramAddress } from '../../client/accounts';
-import { seed, programId } from '../../client/conf';
+import { getBalance, findProgramAddress } from '../../../../client/accounts';
+import { seed, programId } from '../../../../client/conf';
 
 export default async function updateBalance(publicKey, connection) {
   if (publicKey && connection) {

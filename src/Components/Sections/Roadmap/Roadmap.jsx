@@ -1,15 +1,15 @@
 import React from "react";
 
-import World from './Map/World';
-import Vision from './Map/Vision';
-import Path from './Map/Path';
-import Mover from '../Menu/Mover';
+import World from './World';
+import Vision from './Vision';
+import Path from './Path';
+import Mover from '../../Menu/Mover';
 
 function Container() {
   return (
     <div id="container">
       <div id="content">
-        <Mover id="map-mover" transition>
+        <Mover id="roadmap-mover">
           <World />
           <Vision />
           <Path />

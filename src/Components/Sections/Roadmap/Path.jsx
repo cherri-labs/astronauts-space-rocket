@@ -20,7 +20,7 @@ export default function Path() {
             and giveaway winners, together with the remaining portion
             of <strong>Space Buds</strong> NFTs.
           </p>
-          <MoveNav mover="map-mover" />
+          <MoveNav mover="roadmap-mover" />
         </article>
       </Card>
       <Card>
@@ -31,7 +31,7 @@ export default function Path() {
             the <strong>Astro Bank</strong> where users are
             able to claim their rewards right away.
           </p>
-          <MoveNav mover="map-mover" />
+          <MoveNav mover="roadmap-mover" />
         </article>
       </Card>
       <Card>
@@ -42,7 +42,7 @@ export default function Path() {
             documentation about the project. We plan to
             release that during <b>Terraforming</b>.
           </p>
-          <MoveNav mover="map-mover" />
+          <MoveNav mover="roadmap-mover" />
         </article>
       </Card>
       <Card>
@@ -53,7 +53,7 @@ export default function Path() {
             owners, where they can hop in for a chat, drink or
             just to buy dope stuff.
           </p>
-          <MoveNav mover="map-mover" />
+          <MoveNav mover="roadmap-mover" />
         </article>
       </Card>
       <Card>
@@ -64,7 +64,7 @@ export default function Path() {
             the staking portal and <strong>$STRD</strong> tokens are
             airdropped to owners only.
           </p>
-          <MoveNav mover="map-mover" />
+          <MoveNav mover="roadmap-mover" />
         </article>
       </Card>
       <Card>
@@ -77,7 +77,7 @@ export default function Path() {
           <p>
             The <strong>LASR</strong> DAO is created.
           </p>
-          <MoveNav mover="map-mover" />
+          <MoveNav mover="roadmap-mover" />
         </article>
       </Card>
       <Card>
@@ -91,7 +91,7 @@ export default function Path() {
           <p>
             The <strong>LASR</strong> metaverse finally arrives.
           </p>
-          <MoveNav mover="map-mover" />
+          <MoveNav mover="roadmap-mover" />
         </article>
       </Card>
     </div>

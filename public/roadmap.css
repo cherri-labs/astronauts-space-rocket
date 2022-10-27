@@ -1,3 +1,34 @@
+/* --< roadmap >-- */
+#roadmap {
+    z-index: 0;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+#roadmap strong {
+    color: #942d33;
+}
+
+#roadmap #container,
+#roadmap #content {
+    padding: 0;
+    margin: 0;
+}
+
+#roadmap #content {
+    justify-content: space-evenly;
+
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+/* --< map-mover >-- */
+
 #roadmap .bg {
     width: 150%;
     background-size: cover;

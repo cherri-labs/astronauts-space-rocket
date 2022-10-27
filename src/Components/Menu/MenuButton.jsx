@@ -1,25 +1,46 @@
 import React from 'react';
 import { menu } from './SideMenu';
 
+export function MenuQuickLaunch(props) {
+  return (
+    <>
+      <div className="quicklaunch sticky active"
+           id={"move-button-"
+        + (props.id ? props.id : 'quicklaunch')
+        + "-active"}>
+        {props.children}
+      </div>
+    </>
+  );
+}
+
 class MenuButton extends React.Component {
   render() {
-    const goto = this.props.goto;
     const mover = this.props.mover;
+    const goto = this.props.goto || 'index';
     const disabled = this.props.disabled;
+    const quicklaunch = this.props.quicklaunch;
 
     return (
       <>
-        <button className={"sticky " + (this.props.active ? 'active' : '')}
+        <button className={"sticky "
+                         + (this.props.active ? 'active ' : '')
+                         + (this.props.index ? 'index ' : '')}
                 id={"move-button-" + goto + "-active"}
-                onClick={function(){menu.toggle(goto);}}>
+                onClick={function(){
+                  (quicklaunch ?
+                  menu.move(mover, goto) :
+                  menu.toggle(goto));
+                }}>
           {this.props.title ? this.props.title : this.props.children}
         </button>
 
         {(this.props.only) ? "" :
          /* show button in open menu if not 'only' */
          <button id={"move-button-" + goto}
-                 className={disabled ? 'disabled' : ''}
-                 onClick={function(){
+                 className={(disabled ? 'disabled ' : '')
+                          + (this.props.index ? 'index ' : '')}
+                 onClick={function() {
                    /* if button not disabled */
                    if (!disabled)
                      /* move to section */

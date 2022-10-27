@@ -3,6 +3,7 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import * as web3 from '@solana/web3.js';
 import React, { useCallback } from 'react';
 
+import SubmitButton from './SubmitButton';
 import { getAllAccounts } from '../client/accounts';
 import { programId } from '../client/conf';
 import * as bank from '../client/lib';
@@ -55,9 +56,12 @@ export default function DrainButton() {
     }
   }, [publicKey, sendTransaction, connection]);
 
+  const disabled = props.disabled;
   return (
-    <button onClick={onClick} disabled={!publicKey} className="submit">
-    Drain account
-    </button>
+    <SubmitButton
+             onClick={onClick}
+             disabled={(!publicKey || disabled)}>
+      Drain account
+    </SubmitButton>
   );
 };

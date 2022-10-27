@@ -15,7 +15,7 @@ function onLeave() {
   mouseLeave(document.getElementById('withd-balance-note'));
 }
 
-export default function BalanceLabel() {
+export default function BalanceLabel(props) {
   const { connection } = useConnection();
   const { publicKey } = useWallet();
 
@@ -34,12 +34,14 @@ export default function BalanceLabel() {
     await updateBalance(publicKey, connection);
   }, [publicKey, connection]);
 
+  const disabled = props.disabled;
   return (
     <label id="bank-balance" className="data"
-    onClick={onClick}
-    onMouseOver={onOver}
-    onMouseLeave={onLeave}
-    onFocus={onLeave}>
+           onClick={onClick}
+           onMouseOver={onOver}
+           onMouseLeave={onLeave}
+           onFocus={onLeave}
+           disabled={disabled}>
     Balance: 0 ◎
     </label>
   );

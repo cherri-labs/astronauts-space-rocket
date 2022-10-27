@@ -1,11 +1,12 @@
 import React from 'react';
-import MenuButton from './MenuButton';
+import MenuButton, { MenuQuickLaunch } from './MenuButton';
 import SubMenu from './SubMenu';
 import move from './move';
 import fullscreen from '../../fullscreen';
 
 const lasrMoverId = "lasr-mover";
-const mapMoverId = "map-mover";
+const gateMoverId = "gate-mover";
+const mapMoverId = "roadmap-mover";
 
 export let menu = [];
 class SideMenu extends React.Component {
@@ -52,15 +53,26 @@ class SideMenu extends React.Component {
     };
 
     /* activate section button */
-    menu.activateBtn = function(moveSection) {
+    menu.activateBtn = function(subMenuId, moveSection) {
       /* our button */
-      const btn = menu.div.querySelector('#move-button-' + moveSection + '-active');
+      let btn; /* we don't get by id here to avoid sub-menu ambiguity */
+
+      /* button sub menu */
+      const subMenu = menu.div.querySelector("#sub-" + subMenuId);
 
       /* all buttons in the same sub-menu */
-      const buttons = btn.parentElement.getElementsByTagName('button');
+      const buttons = subMenu.getElementsByTagName('button');
 
-      /* reinitialize buttons */
+      /* our button id */
+      const btnId = 'move-button-' + moveSection + '-active';
+
+      /* parse and reinitialize buttons */
       [...buttons].forEach(function(b) {
+        /* if button id corresponds */
+        if (b.id === btnId)
+          /* set our button */
+          btn = b;
+
         if (!b.classList.contains('disabled') &&
             !b.classList.contains('icon'))
           b.classList.remove('active');
@@ -101,13 +113,17 @@ class SideMenu extends React.Component {
         </div>
 
         <SubMenu name="lasr">
-          <MenuButton title="ASTRONAUTS" goto="astronauts" mover={lasrMoverId} active>Lonely Astronauts</MenuButton>
-          <MenuButton title="BUDS" goto="buds" mover={lasrMoverId}>Space Buds</MenuButton>
+          <MenuButton mover={lasrMoverId} index active />
+          <MenuQuickLaunch id="lasr">
+            <MenuButton quicklaunch title="1" goto="astronauts" mover={lasrMoverId} active>Lonely Astronauts</MenuButton>
+            <MenuButton quicklaunch title=" 2" goto="buds" mover={lasrMoverId}>Space Buds</MenuButton>
+          </MenuQuickLaunch>
         </SubMenu>
 
         <SubMenu name="gate">
-          <MenuButton goto="bank" mover={lasrMoverId} disabled>Stake</MenuButton>
-          <MenuButton goto="bank" mover={lasrMoverId} active>Gate</MenuButton>
+          <MenuButton mover={gateMoverId} index active />
+          <MenuButton goto="stake" mover={gateMoverId} disabled>Stake</MenuButton>
+          <MenuButton goto="bank" mover={gateMoverId}>Gate</MenuButton>
         </SubMenu>
 
         <SubMenu name="roadmap">

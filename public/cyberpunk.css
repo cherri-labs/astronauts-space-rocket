@@ -1,7 +1,7 @@
 /* --< glitch >-- */
 
-.glitch__hover:hover .glitch__display,
-.glitch__hover:not(:hover) .glitch__element {
+.glitch__sub:hover .glitch__display,
+.glitch__sub:not(:hover) .glitch__element {
     display: none;
 }
 

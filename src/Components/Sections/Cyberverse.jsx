@@ -5,7 +5,7 @@ const Txt = () => {
   return (
     <div className="text card">
       <article>
-        <h1>Cyberverse</h1>
+        <h3>Cyberverse</h3>
         <p>
           Welcome to the{" "}
           <a className="nav" href="#cyber">
@@ -14,7 +14,7 @@ const Txt = () => {
           <i className="arrow right"></i>
           a dinamically growing ever-expanding
           digital reality.
-          {" "}<strong className="glitch__hover">
+          {" "}<strong className="glitch__sub">
             <span className="glitch__display">LASR NFTs</span>
             <span className="glitch__element">レーザー トークン</span>
           </strong>{" "}
@@ -30,7 +30,7 @@ function Container() {
   return (
     <div id="container">
       <div id="content">
-        <Lasr type="full" />
+        <Lasr type="full" glitch />
         <Txt />
       </div>
     </div>

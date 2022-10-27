@@ -1,18 +1,9 @@
 import React from 'react';
+import NftImg from './NftImg';
 
-function AstronautImg() {//
+function AstronautImg() {
   return (
-    <div className="glitch__img astronaut disabled">
-      <div className="glitch__item"></div>
-      <div className="glitch__item"></div>
-      <div className="glitch__item"></div>
-      <div className="glitch__item"></div>
-      <div className="glitch__item"></div>
-      <div className="glitch__text">
-        <span className="rendering"></span>
-        <span className="progress dots"></span>
-      </div>
-    </div>
+    <NftImg src="astronaut" />
   );
 }
 
@@ -51,19 +42,19 @@ const Nft = () => {
 const Txt = () => {
   return (
     <div className="text">
-      <h1>Lonely<br/>Astronauts</h1>
       <article>
+        <h1>Lonely<br/>Astronauts</h1>
         <p>
           A collection of 8192
           {" "}<a className="nav" href="#astronauts">
-                 Lonely Astronaut
-               </a>{" "}
+          Lonely Astronaut
+          </a>{" "}
           NFTs inspired by <span className="neon more">vaporwave</span> and
           {" "}<span className="stack" style={{"--stacks": 3}}>
-                 <span className="more" style={{"--index": 0}}>cyberpunk</span>
-                 <span className="more" style={{"--index": 1}}>cyberpunk</span>
-                 <span className="more" style={{"--index": 2}}>cyberpunk</span>
-               </span>{" "}
+            <span className="more" style={{"--index": 0}}>cyberpunk</span>
+            <span className="more" style={{"--index": 1}}>cyberpunk</span>
+            <span className="more" style={{"--index": 2}}>cyberpunk</span>
+          </span>{" "}
           aesthetics,
           the demoscene and pop culture from the 80's and
           powered by the desire to leverage blockchain technology to

@@ -1,0 +1,14 @@
+/* --< lasr >-- */
+/* --< astronauts >-- */
+#astronauts h1 {
+    background: linear-gradient(#fff5 0%, #b4f4eedd 10%, #3ad, #112, #3ad 80%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+/* --< buds >-- */
+#buds h1 {
+    background: linear-gradient(135deg, #f3ad70 40%, #edd6f3 53%, #ffd690cc 63%, #fdd6f399 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}

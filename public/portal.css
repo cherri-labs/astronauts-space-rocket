@@ -1,0 +1,65 @@
+/* --< portal button >-- */
+.portal-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.portal-wrap {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+
+    margin: auto -50px;
+}
+
+button.portal {
+    min-height: 60px;
+    min-width: 180px;
+    padding: 20px;
+
+    font-size: 18px;
+    line-height: 0;
+    color: #b6f6f0;
+    border: 1px solid #b4f4ee;
+
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+button.portal:not(.disabled) {
+    transition: background-color .2s;
+}
+
+button.portal:hover:not(.disabled) {
+    color: #2d3236;
+    background-color: #b4f4ee;
+}
+
+button.portal.disabled,
+span.portal {
+    cursor: default;
+}
+
+button.portal:not(:hover) + span.portal,
+.portal-btn-wrap:not(:hover) + span.portal {
+    opacity: 0;
+}
+
+button.portal.disabled:hover {
+    border: none;
+}
+
+span.portal {
+    text-align: center;
+    width: 350px;
+}
+
+button.portal:not(.disabled) + span.portal,
+.portal-btn-wrap:not(.disabled) + span.portal {
+    transition: opacity .4s;
+}

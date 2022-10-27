@@ -1,0 +1,49 @@
+/* --< team >-- */
+#team #content h1, #team #content p {
+    padding-left: 20px;
+}
+
+#content .team {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#content .team .pfp {
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+#content .team .pfp img {
+    max-width: 350px;
+}
+
+#content .team .pfp h3 {
+    line-height: 20px;
+    padding: 10px 0px 0px 0px;
+    margin: 0px;
+    font-size: 17px;
+    -webkit-text-stroke: 1px #ccdd00;
+    text-shadow: 0px 0px 15px #ccdd00;
+    border-radius: 50px;
+}
+
+#team h5 {
+    font-size: 17px;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px #666,
+                 -1px -1px 2px #333;
+    line-height: 15px;
+    margin: 20px;
+    padding: 20px;
+    background: linear-gradient(
+        to right,
+        rgba(16,2,41,1),
+        rgba(180,80,150,1)
+    );
+    border: 2px ridge rgba(96,9,121,1);
+}

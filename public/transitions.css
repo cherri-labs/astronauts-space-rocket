@@ -3,15 +3,18 @@
     animation: in-from-bottom .3s ease 1;
 }
 
-.section.active#gate p,
 .section.active#cyberverse p,
 .section.active#roadmap .move {
-    animation: in-from-bottom .1s ease 1;
+    animation: in-from-bottom .1s ease 1,
+               fade-in .1s ease 1;
 }
 
-.section.active#gate h1,
-.section.active#gate .title,
+.section.active#roadmap .bg {
+    animation: fade-in 2s ease 1;
+}
+
 .section.active#cyberverse h1,
+.section.active#cyberverse h3,
 .section.active#cyberverse .title,
 .section.active#cyberverse .logo {
     animation: in-from-bottom .3s ease 1;
@@ -22,12 +25,13 @@
     animation: in-from-left .2s ease 1;
 }
 
-.section.active .bank {
-    animation: in-from-right .2s ease 1;
-}
-
 .section.active img {
     animation: in-from-right 1s ease 1;
+}
+
+@keyframes fade-in {
+    0% {opacity: 0;}
+    30% {opacity: 0.8;}
 }
 
 @keyframes in-from-bottom {
