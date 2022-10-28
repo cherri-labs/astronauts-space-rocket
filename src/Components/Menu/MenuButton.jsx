@@ -1,4 +1,5 @@
 import React from 'react';
+import MoveButton from './MoveButton';
 import { menu } from './SideMenu';
 
 export function MenuQuickLaunch(props) {
@@ -6,8 +7,8 @@ export function MenuQuickLaunch(props) {
     <>
       <div className="quicklaunch sticky active"
            id={"move-button-"
-        + (props.id ? props.id : 'quicklaunch')
-        + "-active"}>
+             + (props.id ? props.id : 'quicklaunch')
+             + "-active"}>
         {props.children}
       </div>
     </>
@@ -23,33 +24,30 @@ class MenuButton extends React.Component {
 
     return (
       <>
-        <button className={"sticky "
-                         + (this.props.active ? 'active ' : '')
-                         + (this.props.index ? 'index ' : '')}
-                id={"move-button-" + goto + "-active"}
-                onClick={function(){
-                  (quicklaunch ?
-                  menu.move(mover, goto) :
-                  menu.toggle(goto));
-                }}>
-          {this.props.title ? this.props.title : this.props.children}
+      <button className={"sticky "
+                       + (this.props.active ? 'active ' : '')
+                       + (this.props.index ? 'index ' : '')}
+      id={"move-button-" + goto + "-active"}
+      onClick={function(){
+        (quicklaunch ?
+         menu.move(mover, goto) :
+         menu.toggle(goto));
+      }}>
+      {this.props.title ? this.props.title : this.props.children}
         </button>
 
         {(this.props.only) ? "" :
          /* show button in open menu if not 'only' */
-         <button id={"move-button-" + goto}
-                 className={(disabled ? 'disabled ' : '')
-                          + (this.props.index ? 'index ' : '')}
-                 onClick={function() {
-                   /* if button not disabled */
-                   if (!disabled)
-                     /* move to section */
-                     menu.move(mover, goto);
-                 }}>
+         <MoveButton id={"move-button-" + goto}
+                     className={(disabled ? 'disabled ' : '')
+                              + (this.props.index ? 'index ' : '')}
+                     mover={mover}
+                     goto={goto}
+                     disabled={disabled}>
            {this.props.children}
-         </button>
+         </MoveButton>
         }
-      </>
+    </>
     );
   }
 }

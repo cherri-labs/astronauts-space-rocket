@@ -333,6 +333,12 @@ button::selection, input::selection {
     animation: lasr-ring 1.2s ease .3s 1;
 }
 
+/* --< index >-- */
+.index__page #content {
+    flex-flow: column nowrap;
+    gap: 1.5vh;
+}
+
 /* --< layers >-- */
 .fg {
     z-index: 1;
@@ -466,7 +472,8 @@ body {
     text-shadow: 3px 2px 1px rgba(225,0,125,0.5);
 }
 
-#content strong {
+#content strong,
+#content .strong {
     color: #96ff9b;
     font-weight: 500;
     letter-spacing: .1rem;
@@ -482,7 +489,7 @@ body {
     cursor: default;
 }
 
-#content p a,
+#content p a:not(.strong),
 #content a.nav {
     --blue: #a0ebfecc;
     --brightblue: #70ebde;

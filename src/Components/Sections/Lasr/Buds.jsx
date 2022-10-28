@@ -1,9 +1,10 @@
 import React from 'react';
+import { MoveArrow } from '../../Menu/MoveButton';
 import NftImg from './NftImg';
 
-function BudImg() {
+export function BudImg(props) {
   return (
-    <NftImg src="bud">
+    <NftImg src="bud" glitch={props.glitch}>
     &nbsp;&nbsp;&nbsp;
     </NftImg>
   );
@@ -12,7 +13,7 @@ function BudImg() {
 const Nft = () => {
   return (
     <div className="nft">
-      <BudImg />
+      <BudImg glitch />
       <div className="caption">
         <div className="column">
           <p>
@@ -47,17 +48,11 @@ const Txt = () => {
       <article>
         <h1>Space Buds</h1>
         <p>
-          777 generative friendly
-          {" "}<a className="nav" href="#buds">
-          Space Buds
-          </a>{" "}
-          cruisin' thru the <i>cybergalaxy</i>.
-          Created with the conjunction of AI and Python,
-          {" "}<strong>
-            Space Buds
-          </strong>{" "}
-          pioneer the technological advancement that is key to our
-          rapidly evolving way of life.
+          777 generative friendly <a>Space Buds</a> cruisin'
+          thru the <i>cybergalaxy</i>. Created with the conjunction
+          of AI and Python, <strong>Space Buds</strong> pioneer the
+          technological advancement that is key to our rapidly
+          evolving way of life.
         </p>
       </article>
     </div>
@@ -71,6 +66,10 @@ function Container() {
         <Nft />
         <Txt />
       </div>
+      <MoveArrow dir="right"
+        id="buds"
+        mover="lasr-mover"
+        goto="astronauts"/>
     </div>
   );
 }

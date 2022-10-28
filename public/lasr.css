@@ -1,4 +1,10 @@
 /* --< lasr >-- */
+#lasr .index__page #content,
+#lasr .index__page #container {
+    position: absolute;
+    top: 6px;
+}
+
 /* --< astronauts >-- */
 #astronauts h1 {
     background: linear-gradient(#fff5 0%, #b4f4eedd 10%, #3ad, #112, #3ad 80%);

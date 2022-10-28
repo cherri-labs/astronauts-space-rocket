@@ -20,15 +20,6 @@
     animation: in-from-bottom .3s ease 1;
 }
 
-.section.active#lasr h1,
-.section.active#lasr .title {
-    animation: in-from-left .2s ease 1;
-}
-
-.section.active img {
-    animation: in-from-right 1s ease 1;
-}
-
 @keyframes fade-in {
     0% {opacity: 0;}
     30% {opacity: 0.8;}
@@ -37,14 +28,4 @@
 @keyframes in-from-bottom {
     0% {margin-top: 200vh;}
     100% {margin-top: 0;}
-}
-
-@keyframes in-from-left {
-    0%, 70% {margin-right: 200vw;}
-    100% {margin-right: 0;}
-}
-
-@keyframes in-from-right {
-    0%, 70% {margin-left: 200vw;}
-    100% {margin-left: 0;}
 }

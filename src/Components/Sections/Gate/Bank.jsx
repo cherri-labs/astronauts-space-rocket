@@ -59,7 +59,7 @@ function BankNote(props) {
   );
 }
 
-function BankContent(props) {
+function BankSpace(props) {
   const disabled = props.disabled;
 
   return (
@@ -123,7 +123,7 @@ class Gate extends React.Component {
   render() {
     return (
       <div className="bank-container">
-        <BankContent disabled />
+        <BankSpace disabled />
       </div>
     );
   }

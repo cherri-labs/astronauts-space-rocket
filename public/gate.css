@@ -72,6 +72,23 @@
 
     border: 1px solid #fff;
     border-radius: 5px;
+
+    transition: opacity .3s;
+}
+
+.bank.disabled:hover {
+    opacity: 0.5;
+}
+
+.bank.disabled:hover:after {
+    content: 'Please come back after the mint';
+    -webkit-text-stroke: 1px #b4f4ee;
+    text-shadow: 1px 1px 3px #000;
+    position: absolute;
+    padding: 20% 0;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(1px) invert(80%);
 }
 
 .bank .textbox {
@@ -123,15 +140,8 @@
     opacity: 1;
 }
 
-.bank.disabled input[type=text],
-.bank.disabled input[type=number],
-.bank input[type=text]:disabled,
-.bank input[type=number]:disabled,
-
-.bank.disabled label:not(.inset),
-.bank.disabled label:not(.inset),
-.bank input[type=text]:disabled + label:not(.inset),
-.bank input[type=number]:disabled + label:not(.inset) {
+.bank input[type=text]:focus,
+.bank input[type=number]:focus {
     background-color: #4563;
 }
 
@@ -158,8 +168,13 @@
     cursor: default;
 }
 
-.bank button:disabled:hover span,
-.bank.disabled button:hover span {
+.bank button:disabled + label,
+.bank.disabled label,
+.bank.disabled button:active {
+    pointer-events: none;
+}
+
+.bank button:disabled:hover span {
     display: none;
 }
 

@@ -1,4 +1,5 @@
-.glitch__img {
+.nft .img,
+.nft.img {
     --color-text: #fff;
     --color-bg: #000;
     --color-link: #f9d77e;
@@ -31,14 +32,16 @@
     filter: saturate(108%) contrast(92%) brightness(108%) sepia(25%) grayscale(10%);
 }
 
-.glitch__img:not(.full) {
+.nft .img:not(.full),
+.nft.img:not(.full) {
     width: 80vw;
     height: 80vh;
     max-width: 350px;
     max-height: 350px;
 }
 
-.glitch__img.full {
+.nft .img.full,
+.nft.img.full {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -52,11 +55,15 @@
     background-position: -25% 25%;
 }
 
+.nft .img.astronaut,
+.nft.img.astronaut,
 .glitch__img.astronaut .glitch__item {
     border-radius: 25px;
     background: url("./img/astronauts/1.gif") no-repeat 50% 50%/cover;
 }
 
+.nft .img.bud,
+.nft.img.bud,
 .glitch__img.bud .glitch__item {
     border-radius: 25px;
     background: url("./img/buds/1.gif") no-repeat 50% 50%/cover;
@@ -475,8 +482,8 @@
     opacity: .9;
 }
 
-.nft.disabled:before, .nft .disabled:before,
-.nft.disabled:after, .nft .disabled:after {
+.nft.opaque:before, .nft .opaque:before,
+.nft.opaque:after, .nft .opaque:after {
     content: "";
     position: absolute;
     top: 0;
@@ -489,6 +496,6 @@
     background: rgba(38,0,5,0.5);
 }
 
-.nft.disabled:after, .nft .disabled:after {
+.nft.opaque:after, .nft .opaque:after {
     animation: glitch-anim-flash 2s linear infinite alternate-reverse;
 }

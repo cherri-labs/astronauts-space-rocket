@@ -24,12 +24,28 @@
     transform: rotate(-45deg);
 }
 
+.move-arrow {
+    position: fixed;
+    top: 46vh;
+}
+
+.move-arrow.right {
+    right: 50px;
+}
+
+.move-arrow.left {
+    left: 50px;
+}
+
+.move-arrow,
 .arrow.nav,
 .arrow.double:after {
     box-sizing: border-box;
     width: 20px;
     height: 20px;
+    padding: 8px;
     border-width: 0 1px 1px 0;
+    border-radius: 0;
 }
 
 .arrow.double:after {
@@ -37,7 +53,7 @@
     margin: 5px;
 }
 
-p .arrow:not(.nav) {
+p .arrow:not(.nav):not(.move-arrow) {
     margin: 0 10px 0 5px;
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import AmountBox from './AmountBox';
 import { mouseOver, mouseLeave } from '../Labels/noteDisplay';
 
 function onOver() {
@@ -14,11 +15,9 @@ function onLeave() {
 export default function DepositAmount(props) {
   const disabled = props.disabled;
   return (
-    <input type="number" id="deposit-amount"
-           onMouseOver={onOver}
-           onMouseLeave={onLeave}
-           onFocus={onLeave}
-           placeholder="0"
-           disabled={disabled}/>
+    <AmountBox id="deposit"
+               onOver={onOver}
+               onLeave={onLeave}
+               disabled={disabled} />
   );
 }

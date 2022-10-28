@@ -17,7 +17,13 @@
     margin: auto -50px;
 }
 
-button.portal {
+button.portal.anchor {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+button.portal:not(.anchor) {
     min-height: 60px;
     min-width: 180px;
     padding: 20px;
@@ -35,9 +41,10 @@ button.portal:not(.disabled) {
     transition: background-color .2s;
 }
 
-button.portal:hover:not(.disabled) {
+button.portal:not(.disabled):not(.anchor):hover {
     color: #2d3236;
     background-color: #b4f4ee;
+    outline: 2px solid #b4f4ee;
 }
 
 button.portal.disabled,
@@ -57,9 +64,38 @@ button.portal.disabled:hover {
 span.portal {
     text-align: center;
     width: 350px;
+    pointer-events: none;
 }
 
 button.portal:not(.disabled) + span.portal,
 .portal-btn-wrap:not(.disabled) + span.portal {
     transition: opacity .4s;
+}
+
+/* --< lasr index >-- */
+
+#lasr .index__page .portal-container {
+    width: 70vw;
+}
+
+/* --< mobile >-- */
+@media screen and (max-width: 1100px) {
+    #lasr .index__page .portal-container {
+        width: 90vw;
+    }
+
+    #lasr .index__page .portal {
+        width: 50vw;
+        overflow: hidden;
+    }
+}
+
+#lasr .index__page .portal-wrap {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+#lasr .index__page span.portal {
+    position: absolute;
+    transform: translateZ(20px);
 }

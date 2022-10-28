@@ -4,28 +4,31 @@ import Portal, {
   PortalButton,
   PortalTag,
 } from '../../Portal/Portal';
+import { AstronautImg } from './Astronauts';
+import { BudImg } from './Buds';
 
 function Container() {
   return (
     <div id="container">
       <div id="content">
+        <h1>Select Player</h1>
         <PortalContainer>
           <Portal disabled>
             <PortalButton mover="lasr-mover"
-                          goto="buds">
-              Space Buds
+                          goto="buds" anchor>
+              <BudImg />
             </PortalButton>
             <PortalTag>
-              Ready Player 2
+              <strong>Space Buds</strong>
             </PortalTag>
           </Portal>
           <Portal>
             <PortalButton mover="lasr-mover"
-                          goto="astronauts">
-              Lonely Astronauts
+                          goto="astronauts" anchor>
+              <AstronautImg />
             </PortalButton>
             <PortalTag>
-              Ready Player 1
+              <strong>Lonely Astronauts</strong>
             </PortalTag>
           </Portal>
         </PortalContainer>

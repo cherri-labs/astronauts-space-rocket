@@ -1,16 +1,17 @@
 import React from 'react';
+import { MoveArrow } from '../../Menu/MoveButton';
 import NftImg from './NftImg';
 
-function AstronautImg() {
+export function AstronautImg(props) {
   return (
-    <NftImg src="astronaut" />
+    <NftImg src="astronaut" glitch={props.glitch} />
   );
 }
 
 const Nft = () => {
   return (
     <div className="nft">
-      <AstronautImg />
+      <AstronautImg glitch />
       <div className="caption">
         <div className="column">
           <p>
@@ -45,18 +46,14 @@ const Txt = () => {
       <article>
         <h1>Lonely<br/>Astronauts</h1>
         <p>
-          A collection of 8192
-          {" "}<a className="nav" href="#astronauts">
-          Lonely Astronaut
-          </a>{" "}
-          NFTs inspired by <span className="neon more">vaporwave</span> and
-          {" "}<span className="stack" style={{"--stacks": 3}}>
+          A collection of 8192 <a>Lonely Astronaut</a> NFTs
+          inspired by <span className="neon more">vaporwave</span> and{" "}
+          <span className="stack" style={{"--stacks": 3}}>
             <span className="more" style={{"--index": 0}}>cyberpunk</span>
             <span className="more" style={{"--index": 1}}>cyberpunk</span>
             <span className="more" style={{"--index": 2}}>cyberpunk</span>
           </span>{" "}
-          aesthetics,
-          the demoscene and pop culture from the 80's and
+          aesthetics, the demoscene and pop culture from the 80's and
           powered by the desire to leverage blockchain technology to
           bring building power to creators and a full-fledged
           immersive experience to everyone.
@@ -69,6 +66,10 @@ const Txt = () => {
 function Container() {
   return (
     <div id="container">
+      <MoveArrow dir="left"
+                 id="astronauts"
+                 mover="lasr-mover"
+                 goto="buds"/>
       <div id="content">
         <Txt />
         <Nft />

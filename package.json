@@ -19,6 +19,7 @@
     "crypto-browserify": "^3.12.0",
     "fullpage": "^1.5.1",
     "fullpage.js": "^4.0.11",
+    "glitched-writer": "^2.0.29",
     "powerglitch": "^2.2.0",
     "react": "^18.2.0",
     "react-app-rewired": "^2.2.1",
@@ -29,6 +30,7 @@
     "serve": "^14.0.1",
     "stream-browserify": "^3.0.0",
     "swiper": "^8.4.3",
+    "vanilla-tilt": "^1.7.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

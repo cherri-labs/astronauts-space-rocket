@@ -1,4 +1,5 @@
 import React from 'react';
+import VanillaTilt from 'vanilla-tilt';
 import setGlitch from '../../glitchTransition';
 import { menu } from '../Menu/SideMenu.jsx';
 
@@ -11,14 +12,23 @@ export function PortalTag(props) {
 }
 
 export class PortalButton extends React.Component {
+  componentDidMount() {
+    VanillaTilt.init(document.querySelectorAll('.portal-wrap'), {
+      max: 25,
+    });
+  }
+
   render() {
     const mover = this.props.mover;
     const goto = this.props.goto;
     const disabled = this.props.disabled;
+    const anchor = this.props.anchor;
 
     return (
-      <div className={"portal-btn-wrap " + (disabled ? 'disabled' : '')}>
-        <button className={"portal " + (disabled ? 'disabled' : '')}
+      <div className={'portal-btn-wrap ' + (disabled ? 'disabled' : '')}>
+        <button className={'portal '
+                         + (anchor ? 'anchor ' : '')
+                         + (disabled ? 'disabled ' : '')}
                 onMouseOver={function() {
                   setGlitch('.portal-btn-wrap.disabled:hover');
                 }}
