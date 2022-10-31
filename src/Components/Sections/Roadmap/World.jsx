@@ -54,8 +54,7 @@ export default function World() {
             {" "}<b>we will keep our goals on top of priorities at all
                    times</b>.
             We work to create the content that's going to be part of the
-            future in some shape or form. That's a privilege and we won't
-            throw it away, because
+            future. That's a privilege won't throw away, because
             {" "}<b>we all need something to believe in</b>.
           </p>
         </article>
@@ -65,7 +64,7 @@ export default function World() {
         <CardTitle>A Digital Realm</CardTitle>
         <article>
           <p>
-            This generation is going to state once and for
+            A new generation is going to state once and for
             all what identity is and how we can define it. And as messy as
             that is, we will try our best to get the road down in a clear
             and straight path for you to walk on.
