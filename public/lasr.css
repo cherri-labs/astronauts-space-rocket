@@ -1,8 +1,7 @@
 /* --< lasr >-- */
 #lasr .index__page #content,
 #lasr .index__page #container {
-    position: absolute;
-    top: 6px;
+    margin-top: -2%;
 }
 
 /* --< astronauts >-- */

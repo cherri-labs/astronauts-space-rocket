@@ -24,19 +24,6 @@
     transform: rotate(-45deg);
 }
 
-.move-arrow {
-    position: fixed;
-    top: 46vh;
-}
-
-.move-arrow.right {
-    right: 50px;
-}
-
-.move-arrow.left {
-    left: 50px;
-}
-
 .move-arrow,
 .arrow.nav,
 .arrow.double:after {

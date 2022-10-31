@@ -1,11 +1,12 @@
 import React from 'react';
-import MenuButton, { MenuQuickLaunch } from './MenuButton';
+import MenuButton from './MenuButton';
 import SubMenu from './SubMenu';
 import move from './move';
 import fullscreen from '../../fullscreen';
 
 const lasrMoverId = "lasr-mover";
 const gateMoverId = "gate-mover";
+const cyberMoverId = "cyberverse-mover";
 const mapMoverId = "roadmap-mover";
 
 export let menu = [];
@@ -78,8 +79,10 @@ class SideMenu extends React.Component {
           b.classList.remove('active');
       });
 
-      /* activate button */
-      btn.classList.add('active');
+      /* if there's a button */
+      if (btn)
+        /* activate button */
+        btn.classList.add('active');
     };
 
     /* listen for mouse click */
@@ -106,7 +109,7 @@ class SideMenu extends React.Component {
                   onClick={function(){menu.activate("fullscreen");}}>
             <i className="screen" />
           </button>
-          <button id="menu-lights" className="icon north east lightbulb active"
+          <button id="menu-lights" className="icon north east lightbulb"
                   onClick={function(){menu.activate("lights");}}>
             <span>💡</span>
           </button>
@@ -114,16 +117,16 @@ class SideMenu extends React.Component {
 
         <SubMenu name="lasr">
           <MenuButton mover={lasrMoverId} index active />
-          <MenuQuickLaunch id="lasr">
-            <MenuButton quicklaunch title="1" goto="astronauts" mover={lasrMoverId} active>Lonely Astronauts</MenuButton>
-            <MenuButton quicklaunch title=" 2" goto="buds" mover={lasrMoverId}>Space Buds</MenuButton>
-          </MenuQuickLaunch>
         </SubMenu>
 
         <SubMenu name="gate">
           <MenuButton mover={gateMoverId} index active />
           <MenuButton goto="stake" mover={gateMoverId} disabled>Stake</MenuButton>
           <MenuButton goto="bank" mover={gateMoverId}>Gate</MenuButton>
+        </SubMenu>
+
+        <SubMenu name="cyber">
+          <MenuButton mover={cyberMoverId} index show active>Cyberverse</MenuButton>
         </SubMenu>
 
         <SubMenu name="roadmap">

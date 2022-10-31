@@ -1,4 +1,4 @@
-import { moveReset } from './Components/Menu/move';
+import { moveReset } from './move';
 
 /* toggle navbar drodown and display sections */
 export default function nav(href) {

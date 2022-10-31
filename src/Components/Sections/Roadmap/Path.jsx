@@ -1,6 +1,6 @@
 import React from 'react';
 import Card, { CardTitle } from './Card';
-import { MoveNav } from '../../Menu/Mover';
+import { MoveNav } from '../../Move/Mover';
 
 export default function Path() {
   return (

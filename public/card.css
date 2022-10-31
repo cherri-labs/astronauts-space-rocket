@@ -1,8 +1,19 @@
 /* --< cards >-- */
 /* --< desktop >-- */
 @media screen and (min-width: 1100px) {
-    #content .card {
+    .card {
         max-width: 50%;
+    }
+
+    #roadmap .card {
+        min-height: 350px;
+    }
+}
+
+/* --< mobile >-- */
+@media screen and (max-width: 1100px) {
+    #roadmap .card {
+        min-height: 450px;
     }
 }
 
@@ -25,6 +36,10 @@
     overflow: hidden;
 }
 
+.widescreen .card-wrap {
+    display: none;
+}
+
 #cyberverse .card,
 #cyberverse .card * {
     filter: saturate(125%) hue-rotate(-20deg) brightness(115%) contrast(170%);
@@ -34,7 +49,6 @@
     justify-content: space-between;
 
     width: 85vw;
-    min-height: 65vh;
     max-height: 20em;
     border-top: none;
     border-radius: 1px 1px 10px 10px;
@@ -74,6 +88,7 @@
     margin: 0;
     padding: 20px;
     height: 100%;
+    max-height: 300px;
 }
 
 .card h3 {

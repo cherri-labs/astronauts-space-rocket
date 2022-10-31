@@ -4,7 +4,10 @@ import { PowerGlitch } from 'powerglitch';
 export default function setGlitch(selector,
                                   duration = 800,
                                   iterations = 1,
-                                  containers = false) {
+                                  containers = false,
+                                  count = 4,
+                                  velocity = 1000,
+                                  hueRotate = true) {
   PowerGlitch.glitch(
     selector,
     {
@@ -18,6 +21,11 @@ export default function setGlitch(selector,
         start: 0,
         end: 0.4,
       },
+      slice: {
+          count: count,
+          velocity: velocity,
+          hueRotate: hueRotate,
+        },
     }
   );
 }

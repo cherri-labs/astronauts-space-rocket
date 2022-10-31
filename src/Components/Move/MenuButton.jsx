@@ -24,16 +24,17 @@ class MenuButton extends React.Component {
 
     return (
       <>
-      <button className={"sticky "
-                       + (this.props.active ? 'active ' : '')
-                       + (this.props.index ? 'index ' : '')}
-      id={"move-button-" + goto + "-active"}
-      onClick={function(){
-        (quicklaunch ?
-         menu.move(mover, goto) :
-         menu.toggle(goto));
-      }}>
-      {this.props.title ? this.props.title : this.props.children}
+        <button className={"sticky "
+                         + (this.props.active ? 'active ' : '')
+                         + (this.props.show ? 'show ' : '')
+                         + (this.props.index ? 'index ' : '')}
+                id={"move-button-" + goto + "-active"}
+                onClick={function(){
+                  (quicklaunch ?
+                   menu.move(mover, goto) :
+                   menu.toggle(goto));
+                }}>
+          {this.props.title ? this.props.title : this.props.children}
         </button>
 
         {(this.props.only) ? "" :
@@ -47,7 +48,7 @@ class MenuButton extends React.Component {
            {this.props.children}
          </MoveButton>
         }
-    </>
+      </>
     );
   }
 }

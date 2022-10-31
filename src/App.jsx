@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 
 import Context from './Components/Wallet/Context';
-import SideMenu from './Components/Menu/SideMenu';
+import SideMenu from './Components/Move/SideMenu';
 import Footer from './Components/Footer/Footer';
 import Main from './Components/Sections/Main';
 

@@ -1,41 +1,28 @@
 import React from 'react';
-import { MoveArrow } from '../../Menu/MoveButton';
-import NftImg from './NftImg';
+import { MoveArrow } from '../../Move/MoveButton';
+import NftImg, { Zoom } from './NftImg';
+import NftCaption from './NftCaption';
 
 export function AstronautImg(props) {
   return (
-    <NftImg src="astronaut" glitch={props.glitch} />
+    <NftImg src="astronaut" opaque={props.opaque} glitch={props.glitch} />
   );
 }
 
 const Nft = () => {
   return (
     <div className="nft">
-      <AstronautImg glitch />
-      <div className="caption">
-        <div className="column">
-          <p>
-            <b>Mint price:</b> 1 ◎
-          </p>
-          <p>
-            <b>Whitelist:</b> 0.64 ◎
-          </p>
-          <p>
-            <b>Owners:</b> free mint
-          </p>
-        </div>
-        <div className="column">
-          <p>
-            <b>Mint supply:</b> 7168
-          </p>
-          <p>
-            <b>Total supply:</b> 8192
-          </p>
-          <p>
-            <b>Reserve:</b> 1024
-          </p>
-        </div>
-      </div>
+      <Zoom href="lasr" glitch>
+        <AstronautImg glitch />
+      </Zoom>
+      <NftCaption type="border bar"
+                  price="1"
+                  whitelist="0.64"
+                  freeMint="Owners"
+                  mint="7168"
+                  supply="8192"
+                  reserve="1024"
+                  icons/>
     </div>
   );
 };
@@ -66,14 +53,14 @@ const Txt = () => {
 function Container() {
   return (
     <div id="container">
-      <MoveArrow dir="left"
-                 id="astronauts"
-                 mover="lasr-mover"
-                 goto="buds"/>
       <div id="content">
         <Txt />
         <Nft />
       </div>
+      <MoveArrow dir="left"
+                 id="astronauts"
+                 mover="lasr-mover"
+                 goto="buds"/>
     </div>
   );
 }

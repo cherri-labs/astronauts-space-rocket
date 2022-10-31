@@ -23,6 +23,13 @@
     letter-spacing: .7em;
 }
 
+/* --< mobile >-- */
+@media screen and (max-width: 1100px) {
+    #cyberverse h3 {
+        font-size: 6vw;
+    }
+}
+
 #cyberverse .logo {
     min-width: 18vw;
     min-height: 18vw;

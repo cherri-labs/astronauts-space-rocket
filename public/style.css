@@ -21,7 +21,6 @@ body::-webkit-scrollbar {
 }
 
 body {
-    --bg: #2d3236;
     color: #fff;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'Arial', 'Helvetica', sans-serif;
     font-size: 17px;
@@ -30,7 +29,6 @@ body {
 h1 {
     display: inline-block;
     letter-spacing: 10px;
-    color: #fff;
     -webkit-text-stroke: 1px #fff;
 }
 
@@ -54,7 +52,6 @@ input[type=submit],
 input[type=reset],
 button {
     background-color: transparent;
-    color: #fff;
 }
 
 input[type=text],
@@ -198,10 +195,6 @@ button::selection, input::selection {
     #content .team {
         flex-flow: row nowrap;
     }
-
-    #content img, .nft {
-        width: 350px;
-    }
 }
 
 /* --< mobile >-- */
@@ -227,7 +220,7 @@ button::selection, input::selection {
 
     #container {
         margin: 80px 0px;
-        padding: 60px 5vw 90px 5vw;
+        padding: 60px 0 90px 0;
     }
 
     #content {
@@ -238,7 +231,7 @@ button::selection, input::selection {
         margin: 0;
     }
 
-    #content .text {
+    #lasr #content .text {
         order: -1;
     }
 
@@ -248,23 +241,6 @@ button::selection, input::selection {
 
     #content p {
         line-height: 5px;
-    }
-
-    #content img, .nft {
-        order: 1;
-        max-width: 80vw;
-        max-height: 80vh;
-    }
-
-    #content img, .nft {
-        position: relative;
-        top: 5px;
-    }
-
-    #content .caption {
-        order: 2;
-        flex-flow: row wrap;
-        align-items: flex-start;
     }
 
     #content .team {
@@ -289,7 +265,6 @@ button::selection, input::selection {
 
 .section .title {
     display: inline-block;
-    color: #fff;
     font-family: 'Lato', 'DM Sans', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 300;
     letter-spacing: 10px;
@@ -351,7 +326,7 @@ button::selection, input::selection {
 
 /* --< backgrounds >-- */
 body {
-    background: radial-gradient(
+    background-image: radial-gradient(
         ellipse at bottom,
         #1b2735 0%,
         #090a0f 100%
@@ -412,10 +387,6 @@ body {
 
     overflow-wrap: break-word;
     word-wrap: break-word; /* backward compatibility */
-}
-
-#content a {
-    color: #fff;
 }
 
 #content .text {
@@ -584,50 +555,6 @@ body {
 
 #content .footnote:hover {
     opacity: 1;
-}
-
-/* --< nft >-- */
-.nft, .caption {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    text-transform: uppercase;
-}
-
-.nft {
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
-    gap: 10px;
-    overflow-wrap: break-word;
-    word-wrap: break-word; /* backward compatibility */
-}
-
-.nft img, img.nft {
-    border: 1px solid #3d3256;
-    border-radius: 50px;
-    margin: 5px 10px;
-}
-
-#content .caption,
-#content .caption .column,
-#content .caption .column p {
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    color: #fefe;
-}
-
-.caption .column {
-    flex-flow: column wrap;
-    align-items: center;
-    gap: 5px;
-}
-
-.caption .column p {
-    margin: 0px;
 }
 
 /* --< note >-- */

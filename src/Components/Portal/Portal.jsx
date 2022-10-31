@@ -1,7 +1,7 @@
 import React from 'react';
 import VanillaTilt from 'vanilla-tilt';
 import setGlitch from '../../glitchTransition';
-import { menu } from '../Menu/SideMenu.jsx';
+import { menu } from '../Move/SideMenu.jsx';
 
 export function PortalTag(props) {
   return (
@@ -30,7 +30,7 @@ export class PortalButton extends React.Component {
                          + (anchor ? 'anchor ' : '')
                          + (disabled ? 'disabled ' : '')}
                 onMouseOver={function() {
-                  setGlitch('.portal-btn-wrap.disabled:hover');
+                  setGlitch('.portal-btn-wrap.disabled');
                 }}
                 onClick={function() {
                   /* if button not disabled */

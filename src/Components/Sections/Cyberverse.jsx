@@ -1,7 +1,8 @@
 import React from 'react';
+import Mover from '../Move/Mover';
 import Lasr from '../Icons/Lasr';
 import GlitchSpan from '../GlitchSpan';
-import nav from '../../nav';
+import nav from '../Move/nav';
 
 const Txt = () => {
   return (
@@ -43,10 +44,23 @@ function Container() {
   );
 }
 
+function CyberMover() {
+  return (
+    <Mover id="cyberverse-mover">
+      <div id="move-section-index"
+           className="move-section active">
+        <div className="index__page" id="cyberverse__index">
+          <Container />
+        </div>
+      </div>
+    </Mover>
+  );
+}
+
 export default function Cyberverse() {
   return (
     <div className="section retro" id="cyberverse">
-      <Container />
+      <CyberMover />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import nav from '../../nav';
+import nav from '../Move/move';
 
 function Container() {
   return (

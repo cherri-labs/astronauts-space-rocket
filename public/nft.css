@@ -1,0 +1,128 @@
+/* --< desktop >-- */
+@media screen and (min-width: 1100px) {
+    img, .nft {
+        width: 350px;
+    }
+}
+
+/* --< mobile >-- */
+@media screen and (max-width: 1100px) {
+    img, .nft {
+        order: 1;
+        position: relative;
+        top: 5px;
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+
+    .caption {
+        order: 2;
+        flex-flow: row wrap;
+        align-items: flex-start;
+    }
+}
+
+/* --< nft >-- */
+.nft, .caption {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    text-transform: uppercase;
+}
+
+.nft {
+    flex-flow: column nowrap;
+    gap: 10px;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* backward compatibility */
+}
+
+.nft img, img.nft {
+    border: 1px solid #3d3256;
+    border-radius: 50px;
+    margin: 5px 10px;
+}
+
+/* --< caption >-- */
+.caption,
+.caption .column,
+.caption .column p {
+    justify-content: center;
+    width: 100%;
+    min-width: min-content;
+    margin: 0;
+    padding: 0;
+    color: #fefe;
+    white-space: nowrap;
+}
+
+.caption {
+    position: relative;
+    right: 25px;
+    width: calc(100% + 50px);
+}
+
+.caption .column {
+    top: 0;
+    flex-flow: column wrap;
+    gap: 5px;
+    max-width: 50%;
+}
+
+.caption .column p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    margin: 0px;
+}
+
+.caption.center .column {
+    align-items: center;
+}
+
+.caption.center .column p {
+    justify-content: center;
+}
+
+.caption.border .column:nth-of-type(odd) {
+    align-items: flex-start;
+}
+
+.caption.border .column:nth-of-type(even) {
+    align-items: flex-end;
+}
+
+.caption.border .column:nth-of-type(even) p {
+    flex-direction: row-reverse;
+    text-align: right !important;
+}
+
+.caption.bar .column p b:after,
+.caption.bar .column p b:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    height: 16px;
+}
+
+.caption.colon .column p b:after {
+    content: ':';
+}
+
+.caption.bar:not(.border) .column p b:after,
+.caption.bar.border .column:nth-of-type(odd) p b:after {
+    border-right: 2px solid #696969;
+    margin-left: 5px;
+}
+
+.caption.bar.border .column:nth-of-type(even) p b:before {
+    border-left: 2px solid #696969;
+    margin-right: 5px;
+}
+
+.caption:.no-icons i {
+    display: none;
+}

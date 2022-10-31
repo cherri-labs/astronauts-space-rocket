@@ -1,10 +1,35 @@
 import { menu } from './SideMenu';
+import nav from './nav';
 import glitchTrans from '../../glitchTransition';
 
 const wrapperClassName = "card-wrap"; // class of containers to move
 const glitchSelector = "#roadmap .bg-container"; // element to glitch on transition
 
+/* mover containers */
 let movers = [];
+
+/* page titles */
+let titles = [];
+titles['main'] = 'LASR NFT';
+/* home */
+titles['home'] = [];
+titles['home']['index'] = titles['main'];
+/* lasr */
+titles['lasr'] = [];
+titles['lasr']['astronauts'] = 'Lonely Astronauts';
+titles['lasr']['buds'] = 'Space Buds';
+/* gate */
+titles['gate'] = [];
+titles['gate']['bank'] = 'Astro Gate';
+/* cyberverse */
+titles['cyberverse'] = [];
+titles['cyberverse']['index'] = 'Cyberverse';
+/* roadmap */
+titles['roadmap'] = [];
+titles['roadmap']['index'] = 'WORLD';
+titles['roadmap']['world'] = 'WORLD';
+titles['roadmap']['vision'] = 'VISION & GOALS';
+titles['roadmap']['path'] = 'PATH';
 
 /* initialize mover container and sections */
 function moveInit(moverId) {
@@ -41,8 +66,12 @@ function moveDefault(moverId) {
     /* get all sections */
     movers[moverId]['sections'] = mover.getElementsByClassName("move-section");
 
-    /* initialize to first section */
-    movers[moverId]['currentSectionId'] = movers[moverId]['sections'][0].id;
+    /* first section */
+    const first = movers[moverId]['sections'][0];
+
+    if (first)
+      /* initialize to first section */
+      movers[moverId]['currentSectionId'] = first.id;
   }
 }
 
@@ -94,40 +123,49 @@ export function moveTransition(moverId, sectionId, index = 0) {
 }
 
 /* move between sections */
-export default function move(moverId, sectionId, index = 0) {
+export default function move(moverId, sectionId = 'index', index = 0) {
   moveInit(moverId);
+
+  /* get move container */
   const mover = movers[moverId]['mover'];
-
-  /* run default transition if mover has transition type */
-  if (mover.classList.contains("transition"))
-    moveTransition(moverId, sectionId, index);
-
-  /* move section */
-  const moveSection = mover.querySelector("#" + sectionId);
   /* get all sections */
   const sections = mover.getElementsByClassName("move-section");
+  /* move section */
+  const moveSection = mover.querySelector("#" + sectionId);
 
-  /* reset sections */
-  [...sections].forEach(function (s) {
-    s.classList.remove("active");
-  });
-  /* activate selected section */
-  moveSection.classList.add("active");
-
-  /* get card containers */
-  const cards = moveSection.getElementsByClassName(wrapperClassName);
   /* initialize index */
   let i = 0;
 
-  if (cards) {
-    /* activate selected article */
-    [...cards].forEach(function (c) {
-      if (index !== i++) {
-        c.classList.remove("active");
-      } else {
-        c.classList.add("active");
+  if (moveSection) {
+    /* run default transition if mover has transition type */
+    if (mover.classList.contains("transition"))
+      moveTransition(moverId, sectionId, index);
+
+    if (moveSection) {
+      /* reset sections */
+      [...sections].forEach(function (s) {
+        s.classList.remove("active");
+      });
+      /* activate selected section */
+      moveSection.classList.add("active");
+
+      /* get card containers */
+      const cards = moveSection.getElementsByClassName(wrapperClassName);
+
+      if (cards) {
+        /* activate selected article */
+        [...cards].forEach(function (c) {
+          if (index !== i++) {
+            c.classList.remove("active");
+          } else {
+            c.classList.add("active");
+          }
+        });
       }
-    });
+    }
+  } else {
+    /* fallback to nav call */
+    nav(moverId);
   }
 
   if (index < 0) { /* index points to previous section */
@@ -187,12 +225,35 @@ export default function move(moverId, sectionId, index = 0) {
     /* recursive move to next section */
     move(moverId, nextSectionId);
   } else { /* we activated our section properly */
-    /* now we fetch our menu button section id */
-    /* we skip the first two words (map-section-...) */
-    const btnSection = sectionId.split('-').slice(2);
-    /* we activate our sticky menu button */
-    menu.activateBtn(moverId.split('-').slice(0,-1),
-                     btnSection.join('-'));
+    /* now we isolate our mover and section tag name */
+    const sectionTag = sectionId.split('-').slice(2).join('-') || sectionId;
+    const moverTag = moverId.split('-').slice(0,-1).join('-') || moverId;
+
+    if (moveSection) {
+      /* we fetch our menu button section id */
+      /* we skip the first two words (map-section-...) */
+      const btnSection = sectionTag;
+      /* we activate our sticky menu button */
+      menu.activateBtn(moverTag,
+                       btnSection);
+    }
+
+    /* update our page title */
+    let title = titles['main'];
+
+    /* if there are own mover titles */
+    if (titles[moverTag]) {
+      /* get move section title */
+      title = titles[moverTag][sectionTag] ||
+              titles[moverTag]['index'] || // fallback to index title
+              titles['main'];
+      /* if not default */
+      if (title !== titles['main'])
+        title += ' | ' + titles['main'];
+    }
+
+    /* set title */
+    document.title = title;
 
     /* and finally we update our tracker values */
     movers[moverId]['currentSectionId'] = sectionId;

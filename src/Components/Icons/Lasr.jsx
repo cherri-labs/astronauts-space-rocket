@@ -1,6 +1,6 @@
 import React from 'react';
 import VanillaTilt from 'vanilla-tilt';
-import nav from '../../nav';
+import nav from '../Move/nav';
 
 class Lasr extends React.Component {
   componentDidMount() {

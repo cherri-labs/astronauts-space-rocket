@@ -3,7 +3,7 @@ import React from "react";
 import World from './World';
 import Vision from './Vision';
 import Path from './Path';
-import Mover from '../../Menu/Mover';
+import Mover from '../../Move/Mover';
 
 function Container() {
   return (

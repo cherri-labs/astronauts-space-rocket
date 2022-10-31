@@ -1,5 +1,5 @@
 import React from "react";
-import Mover from '../../Menu/Mover';
+import Mover from '../../Move/Mover';
 import Index from './Index';
 import Bank from './Bank';
 
