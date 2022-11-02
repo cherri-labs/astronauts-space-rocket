@@ -29,7 +29,11 @@
 
     .bank {
         min-width: 24vw;
-        padding: 75px 45px;
+        padding: 75px 2vw;
+    }
+
+    .bank .textbox {
+        min-width: 20vw;
     }
 
     .bank .textbox button.inset {
