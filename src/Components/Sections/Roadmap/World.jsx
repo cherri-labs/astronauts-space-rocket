@@ -67,7 +67,7 @@ export default function World() {
             A new generation is going to state once and for
             all what identity is and how we can define it. And as messy as
             that is, we will try our best to get the road down in a clear
-            and straight path for you to walk on.
+            and linear path for you to walk on.
           </p>
           <MoveNav mover="roadmap-mover" />
         </article>
