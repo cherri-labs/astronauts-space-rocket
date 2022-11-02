@@ -183,6 +183,8 @@ button::selection, input::selection {
 
     #content {
         gap: 5vw;
+        margin: 3vw;
+        padding: 3vw;
     }
 
     #content .caption {
@@ -225,6 +227,8 @@ button::selection, input::selection {
 
     #content {
         flex-flow: column nowrap;
+        margin: 0;
+        padding: 0;
     }
 
     #content h1 {
@@ -381,9 +385,6 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
-    margin: 0 3vw;
-    padding: 0 3vw;
 
     overflow-wrap: break-word;
     word-wrap: break-word; /* backward compatibility */
