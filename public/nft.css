@@ -123,6 +123,6 @@
     margin-right: 5px;
 }
 
-.caption:.no-icons i {
+.caption:.no-icons .caption__icon {
     display: none;
 }
