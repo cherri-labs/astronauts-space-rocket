@@ -154,7 +154,6 @@
 }
 
 .menu button.disabled {
-    color: #cccc;
-    border-color: #cccc;
+    opacity: .5;
     cursor: default;
 }

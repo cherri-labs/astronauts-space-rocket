@@ -1,30 +1,23 @@
 /* --< filters >-- */
+:root {
+    --retro: brightness(120%) saturate(120%) grayscale(20%) contrast(120%);
+    --lights__out: invert(10%) hue-rotate(-40deg) brightness(80%) saturate(120%) hue-rotate(45deg) contrast(140%);
+    --lights__on: brightness(150%) saturate(250%) contrast(150%);
+}
+
 .retro {
-    -webkit-filter: brightness(120%) saturate(120%) grayscale(20%) contrast(120%);
-    filter: brightness(120%) saturate(120%) grayscale(20%) contrast(120%);
-}
-
-.steampunk {
-    -webkit-filter: hue-rotate(-100deg) brightness(120%) saturate(120%) grayscale(20%) contrast(120%);
-    filter: hue-rotate(-100deg) brightness(120%) saturate(120%) grayscale(20%) contrast(120%);
-}
-
-.vintage {
-    -webkit-filter: hue-rotate(-180deg) brightness(120%) saturate(120%) grayscale(80%) contrast(120%);
-    filter: hue-rotate(-180deg) brightness(120%) saturate(120%) grayscale(80%) contrast(120%);
-}
-
-.mild {
-    -webkit-filter: hue-rotate(-40deg) brightness(80%) saturate(120%) grayscale(18%) contrast(80%);
-    filter: hue-rotate(-40deg) brightness(80%) saturate(120%) grayscale(18%) contrast(80%);
+    -webkit-filter: var(--retro);
+    filter: var(--retro);
 }
 
 .lights-out {
-    -webkit-filter: invert(10%) hue-rotate(-40deg) brightness(80%) saturate(120%) hue-rotate(45deg) contrast(140%);
-    filter: invert(10%) hue-rotate(-40deg) brightness(80%) saturate(120%) hue-rotate(45deg) contrast(140%);
+    -webkit-filter: var(--lights__out);
+    filter: var(--lights__out);
 }
 
-.lights-on {
-    -webkit-filter: invert(80%) hue-rotate(20deg) brightness(110%) saturate(90%) contrast(160%);
-    filter: invert(80%) hue-rotate(20deg) brightness(110%) saturate(90%) contrast(160%);
+.lights-on > * {
+    -webkit-filter: var(--lights__on);
+    filter: var(--lights__on);
+    -webkit-backdrop-filter: var(--lights__on);
+    backdrop-filter: var(--lights__on);
 }

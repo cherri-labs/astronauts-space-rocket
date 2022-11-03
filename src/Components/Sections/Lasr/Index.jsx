@@ -24,7 +24,7 @@ function Container() {
           </Portal>
           <Portal>
             <PortalButton mover="lasr-mover"
-                          goto="astronauts" anchor>
+                          href="astronauts" anchor>
               <AstronautImg opaque />
             </PortalButton>
             <PortalTag>

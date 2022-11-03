@@ -11,7 +11,7 @@ function GateMover() {
         <Index />
       </div>
       <div id="move-section-bank"
-           className="move-section active">
+           className="move-section">
         <Bank />
       </div>
     </Mover>

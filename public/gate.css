@@ -190,3 +190,10 @@
     content: "You have to connect your wallet";
     padding: 2px;
 }
+
+#dep-account-note,
+#dep-amount-note,
+#withd-balance-note,
+#withd-amount-note {
+    visibility: hidden;
+}
