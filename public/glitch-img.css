@@ -69,6 +69,12 @@
     background-position: -25% 25%;
 }
 
+a.zoom {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 a.zoom .img:after {
     z-index: 3;
     pointer-events: none;

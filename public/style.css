@@ -184,8 +184,8 @@ button::selection, input::selection {
 
     #content {
         gap: 5vw;
-        margin: 3vw;
-        padding: 3vw;
+        margin: 0 3vw;
+        padding: 0 3vw;
     }
 
     #content .caption {
