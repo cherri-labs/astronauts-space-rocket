@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuButton from './MenuButton';
 import SubMenu from './SubMenu';
-import move from './move';
+import move, { activeSection } from './move';
 import fullscreen from '../../fullscreen';
 
 const lasrMoverId = "lasr-mover";
@@ -19,7 +19,7 @@ class SideMenu extends React.Component {
     menu.activate = function(menuId) {
       /* toggle light switch */
       if (menuId === "lights")
-        document.body.classList.toggle("lights-on");
+        activeSection().classList.toggle("lights-on");
 
       /* toggle fullscreen */
       if (menuId === "fullscreen") {

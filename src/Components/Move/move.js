@@ -31,6 +31,30 @@ titles['roadmap']['world'] = 'WORLD';
 titles['roadmap']['vision'] = 'VISION & GOALS';
 titles['roadmap']['path'] = 'PATH';
 
+/* returns current active section node element */
+export function activeSection() {
+  /* get all sections */
+  const sections = document.getElementsByClassName("section");
+  let activeSection;
+
+  /* fetch active section element */
+  [...sections].forEach(function (s) {
+    if (s.classList.contains('active'))
+      activeSection = s;
+  });
+
+  return activeSection;
+}
+
+/* returns current index position */
+export function moveIndex(moverId) {
+  moveInit(moverId);
+  if (movers[moverId])
+    return movers[moverId]['currentIndex'];
+  else
+    return 0;
+}
+
 /* initialize mover container and sections */
 function moveInit(moverId) {
   /* mover container */
@@ -85,15 +109,6 @@ export function moveReset(moverId) {
          movers[moverId]['currentSectionId'],
          movers[moverId]['currentIndex']);
   }
-}
-
-/* returns current index position */
-export function moveIndex(moverId) {
-  moveInit(moverId);
-  if (movers[moverId])
-    return movers[moverId]['currentIndex'];
-  else
-    return 0;
 }
 
 /* call move to previous section */
