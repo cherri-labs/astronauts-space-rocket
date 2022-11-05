@@ -15,13 +15,13 @@ function Container() {
           <Portal disabled>
             <BudImg portal opaque />
             <PortalTag>
-              <strong>Space Buds</strong>
+              <strong className="buds">Space Buds</strong>
             </PortalTag>
           </Portal>
           <Portal>
             <AstronautImg portal opaque />
             <PortalTag>
-              <strong>Lonely Astronauts</strong>
+              <strong className="astronauts">Lonely Astronauts</strong>
             </PortalTag>
           </Portal>
         </PortalContainer>
