@@ -15,9 +15,19 @@
     filter: var(--lights__out);
 }
 
-.lights-on > * {
-    -webkit-filter: var(--lights__on);
-    filter: var(--lights__on);
-    -webkit-backdrop-filter: var(--lights__on);
-    backdrop-filter: var(--lights__on);
+.lights-on {
+    background-image: radial-gradient(
+        ellipse at bottom,
+        #1b4755 0%,
+        #090a0f 100%
+    );
+}
+
+.widescreen #lasr,
+.widescreen #gate,
+.widescreen .text,
+.widescreen .card,
+.widescreen .bank,
+.widescreen .caption {
+    display: none !important;
 }

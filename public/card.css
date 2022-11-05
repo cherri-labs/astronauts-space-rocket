@@ -36,10 +36,6 @@
     overflow: hidden;
 }
 
-.widescreen .card-wrap {
-    display: none;
-}
-
 #cyberverse .card,
 #cyberverse .card * {
     filter: saturate(125%) hue-rotate(-20deg) brightness(115%) contrast(170%);

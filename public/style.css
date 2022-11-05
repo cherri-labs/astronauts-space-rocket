@@ -241,7 +241,7 @@ button::selection, input::selection {
 /* --< sections container >-- */
 .section {
     display: flex;
-    justify-content: stretch;
+    justify-content: center;
     align-items: stretch;
     overflow: hidden;
 

@@ -1,3 +1,7 @@
+.lights-on .parastar {
+    display: none;
+}
+
 #p-stars {
   width: 1px;
   height: 1px;
