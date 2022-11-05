@@ -8,7 +8,7 @@ export function BudImg(props) {
 
   return (
     <NftImg src="bud"
-            mover="lasr-mover"
+            mover="lasr"
             opaque={props.opaque}
             glitch={props.glitch}
             href={href}

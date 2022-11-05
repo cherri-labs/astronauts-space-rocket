@@ -1,3 +1,9 @@
+.nft-wrap {
+    width: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
 .nft .img,
 .nft.img {
     --color-text: #fff;
@@ -30,16 +36,9 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-size: cover;
 
     -webkit-filter: saturate(108%) contrast(92%) brightness(108%) sepia(25%) grayscale(10%);
     filter: saturate(108%) contrast(92%) brightness(108%) sepia(25%) grayscale(10%);
-}
-
-.nft .img,
-.nft.img,
-.glitch__img .glitch__item {
-    border-radius: 25px;
 }
 
 .nft .img.astronaut,
@@ -52,6 +51,12 @@
 .nft.img.bud,
 .glitch__img.bud .glitch__item {
     background: url("./img/buds/1.gif") no-repeat 50% 50%/cover;
+}
+
+.nft .img,
+.nft.img,
+.glitch__img .glitch__item {
+    background-size: cover;
 }
 
 .nft .img:not(.full),
@@ -91,23 +96,23 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #2007;
+    background-color: #5007;
     opacity: 0;
     transition: opacity .4s;
 }
 
 .zoom .img:hover:after {
-    opacity: .8;
+    opacity: .7;
 }
 
 .zoom .img,
-.zoom .glitch__img .glitch__item {
-    transition: background-size .6s ease-out;
+.zoom .glitch__item {
+    transition: transform .6s ease-out;
 }
 
 .zoom:hover .img,
 .zoom:hover .glitch__img .glitch__item {
-    background-size: 115% 115%;
+    transform: scale(1.1);
 }
 
 .glitch__img .glitch__item {

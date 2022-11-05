@@ -24,22 +24,24 @@ export function Zoom(props) {
 export default function NftImg(props) {
   function Content() {
     return (
-      <div className={(props.glitch ? 'glitch__img ' : '') +
-                      'nft img ' +
-                      props.src +
-                              ((props.dim || props.opaque) ? ' opaque ' : '')}>
-        {(props.glitch ? <>
-          <div className="glitch__item"></div>
-          <div className="glitch__item"></div>
-          <div className="glitch__item"></div>
-          <div className="glitch__item"></div>
-          <div className="glitch__item"></div>
-          <div className="glitch__text">
-            {props.children}
-            <span className="rendering"></span>
-            <span className="progress dots"></span>
-          </div>
-        </> : '')}
+      <div className="nft-wrap">
+      <div className={(props.glitch ? 'glitch__img ' : '')
+                    + 'nft img '
+                    + props.src
+                    + ((props.dim || props.opaque) ? ' opaque ' : '')}>
+      {(props.glitch ? <>
+        <div className="glitch__item"></div>
+        <div className="glitch__item"></div>
+        <div className="glitch__item"></div>
+        <div className="glitch__item"></div>
+        <div className="glitch__item"></div>
+        <div className="glitch__text">
+          {props.children}
+          <span className="rendering"></span>
+          <span className="progress dots"></span>
+        </div>
+      </> : '')}
+      </div>
       </div>
     );
   }
@@ -47,7 +49,7 @@ export default function NftImg(props) {
   return (<>
     {(
       props.portal ?
-      <PortalButton mover={props.mover}
+      <PortalButton mover={props.mover + '-mover'}
                     goto={props.href}
                     zoom={props.zoom}
                     glitch={props.hover}
@@ -61,5 +63,5 @@ export default function NftImg(props) {
         <Content />
       </Zoom>
     )}
-        </>);
+      </>);
 }
