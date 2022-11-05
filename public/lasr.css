@@ -7,9 +7,19 @@
 }
 
 /* --< index >-- */
-#lasr .index__page #content,
-#lasr .index__page #container {
+#lasr .index__page #container,
+#lasr .index__page #content {
     margin-top: -2%;
+}
+
+#lasr .index__page .portal-container {
+    flex-flow: row nowrap;
+}
+
+#lasr .index__page .portal-wrap:hover .nft {
+    flex-grow: .3;
+    min-width: 400px;
+    min-height: 400px;
 }
 
 #lasr .index__page span.portal {

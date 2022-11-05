@@ -34,7 +34,7 @@
 /* --< mobile >-- */
 @media screen and (max-width: 1100px) {
     .move-arrow {
-        --move-arrow-margin: 30px;
+        --move-arrow-margin: 20px;
     }
 }
 

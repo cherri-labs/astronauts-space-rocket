@@ -13,6 +13,24 @@
     align-self: flex-start;
 }
 
+#gate .portal-container:hover > .portal-wrap:not(:hover) button {
+    border: none;
+}
+
+#gate .index__page .portal-wrap,
+#gate .index__page .portal-wrap button {
+    transition: padding .2s;
+}
+
+/* --< index >-- */
+#gate .index__page .portal-wrap:hover {
+    padding: 15px;
+}
+
+#gate .index__page .portal-wrap:hover button {
+    padding: 25px;
+}
+
 /* --< bank >-- */
 .bank {
     --box__padding__top: 15px;

@@ -25,23 +25,23 @@ export default function NftImg(props) {
   function Content() {
     return (
       <div className="nft-wrap">
-      <div className={(props.glitch ? 'glitch__img ' : '')
-                    + 'nft img '
-                    + props.src
-                    + ((props.dim || props.opaque) ? ' opaque ' : '')}>
-      {(props.glitch ? <>
-        <div className="glitch__item"></div>
-        <div className="glitch__item"></div>
-        <div className="glitch__item"></div>
-        <div className="glitch__item"></div>
-        <div className="glitch__item"></div>
-        <div className="glitch__text">
-          {props.children}
-          <span className="rendering"></span>
-          <span className="progress dots"></span>
+        <div className={(props.glitch ? 'glitch__img ' : '')
+                      + 'nft img '
+                      + props.src
+                      + ((props.dim || props.opaque) ? ' opaque ' : '')}>
+          {(props.glitch ? <>
+            <div className="glitch__item"></div>
+            <div className="glitch__item"></div>
+            <div className="glitch__item"></div>
+            <div className="glitch__item"></div>
+            <div className="glitch__item"></div>
+            <div className="glitch__text">
+              {props.children}
+              <span className="rendering"></span>
+              <span className="progress dots"></span>
+            </div>
+          </> : '')}
         </div>
-      </> : '')}
-      </div>
       </div>
     );
   }

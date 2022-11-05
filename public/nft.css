@@ -45,12 +45,6 @@
     word-wrap: break-word; /* backward compatibility */
 }
 
-.nft img, img.nft {
-    border: 1px solid #3d3256;
-    border-radius: 50px;
-    margin: 5px 10px;
-}
-
 /* --< caption >-- */
 .caption,
 .caption .column,

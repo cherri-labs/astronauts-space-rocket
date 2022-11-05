@@ -37,6 +37,8 @@
     align-items: center;
     overflow: hidden;
 
+    border-radius: 25px;
+
     -webkit-filter: saturate(108%) contrast(92%) brightness(108%) sepia(25%) grayscale(10%);
     filter: saturate(108%) contrast(92%) brightness(108%) sepia(25%) grayscale(10%);
 }
