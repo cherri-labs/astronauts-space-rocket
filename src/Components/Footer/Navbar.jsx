@@ -17,7 +17,7 @@ export default function Navbar() {
         Choose Player
       </button>
       <button onClick={function(){move('gate');}}>
-        Astro Gate
+        Open Portal
       </button>
       <button onClick={function(){move('cyberverse');}}>
         Cyberverse

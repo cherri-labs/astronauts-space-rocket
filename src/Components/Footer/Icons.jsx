@@ -11,7 +11,7 @@ export default function Icons() {
           <img src="img/icons/twitter.svg" alt="Twitter" />
         </a>
         <a target="_blank" rel="noreferrer" href="https://github.com/cherri-labs">
-          <img src="img/icons/github.svg" alt="GitHub" />
+          <img src="img/icons/github.svg" alt="Github" />
         </a>
       </div>
     </div>
