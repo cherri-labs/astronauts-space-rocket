@@ -10,7 +10,7 @@ function close() {
 }
 
 export function CardTitle(props) {
-  return <h3 className="click" onClick={function(){close();}}>{props.children}</h3>;
+  return <h3 className="clickable" onClick={function(){close();}}>{props.children}</h3>;
 }
 
 class Card extends React.Component {

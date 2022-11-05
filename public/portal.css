@@ -72,7 +72,7 @@ button.portal:not(.disabled) + span.portal,
     transition: opacity .4s;
 }
 
-/* --< lasr index >-- */
+/* --< lasr >-- */
 
 #lasr .index__page .portal-container {
     width: 70vw;

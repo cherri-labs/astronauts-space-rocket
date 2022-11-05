@@ -1,20 +1,28 @@
 import React from 'react';
 import { MoveArrow } from '../../Move/MoveButton';
-import NftImg, { Zoom } from './NftImg';
+import NftImg from './NftImg';
 import NftCaption from './NftCaption';
 
 export function AstronautImg(props) {
+  const href = props.href || 'astronauts';
+
   return (
-    <NftImg src="astronaut" opaque={props.opaque} glitch={props.glitch} />
+    <NftImg src="astronaut"
+            mover="lasr-mover"
+            opaque={props.opaque}
+            glitch={props.glitch}
+            href={href}
+            zoom={props.zoom}
+            hover={props.hover}
+            portal={props.portal}
+            anchor/>
   );
 }
 
 const Nft = () => {
   return (
     <div className="nft">
-      <Zoom href="lasr" glitch>
-        <AstronautImg glitch />
-      </Zoom>
+      <AstronautImg glitch />
       <NftCaption type="border bar"
                   price="1"
                   whitelist="0.64"

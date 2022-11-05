@@ -1,4 +1,12 @@
 /* --< lasr >-- */
+/* --< mobile >-- */
+@media screen and (max-width: 1100px) {
+    #lasr .text {
+        order: -1;
+    }
+}
+
+/* --< index >-- */
 #lasr .index__page #content,
 #lasr .index__page #container {
     margin-top: -2%;

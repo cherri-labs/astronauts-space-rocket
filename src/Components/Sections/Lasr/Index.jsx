@@ -1,7 +1,6 @@
 import React from 'react';
 import Portal, {
   PortalContainer,
-  PortalButton,
   PortalTag,
 } from '../../Portal/Portal';
 import { AstronautImg } from './Astronauts';
@@ -14,19 +13,13 @@ function Container() {
         <h1>Select Player</h1>
         <PortalContainer>
           <Portal disabled>
-            <PortalButton mover="lasr-mover"
-                          goto="buds" anchor>
-              <BudImg opaque />
-            </PortalButton>
+            <BudImg portal opaque />
             <PortalTag>
               <strong>Space Buds</strong>
             </PortalTag>
           </Portal>
           <Portal>
-            <PortalButton mover="lasr-mover"
-                          href="astronauts" anchor>
-              <AstronautImg opaque />
-            </PortalButton>
+            <AstronautImg portal opaque />
             <PortalTag>
               <strong>Lonely Astronauts</strong>
             </PortalTag>
@@ -39,7 +32,7 @@ function Container() {
 
 export default function Index() {
   return (
-    <div className="index__page" id="gate__index">
+    <div className="index__page" id="lasr__index">
       <Container />
     </div>
   );

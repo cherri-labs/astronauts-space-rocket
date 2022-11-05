@@ -5,6 +5,9 @@
     --color-link: #f9d77e;
     --color-link-hover: #fff;
     --color-info: #efc453;
+    --color-astr: #e9d7f7;
+    --color-astr: #7ed7f9;
+    --color-bud: var(--color-link);
     --glitch-width: 100vw;
     --glitch-height: 100vh;
     --gap-horizontal: 10px;
@@ -27,22 +30,27 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-size: cover;
 
     -webkit-filter: saturate(108%) contrast(92%) brightness(108%) sepia(25%) grayscale(10%);
     filter: saturate(108%) contrast(92%) brightness(108%) sepia(25%) grayscale(10%);
 }
 
+.nft .img,
+.nft.img,
+.glitch__img .glitch__item {
+    border-radius: 25px;
+}
+
 .nft .img.astronaut,
 .nft.img.astronaut,
 .glitch__img.astronaut .glitch__item {
-    border-radius: 25px;
     background: url("./img/astronauts/1.gif") no-repeat 50% 50%/cover;
 }
 
 .nft .img.bud,
 .nft.img.bud,
 .glitch__img.bud .glitch__item {
-    border-radius: 25px;
     background: url("./img/buds/1.gif") no-repeat 50% 50%/cover;
 }
 
@@ -65,17 +73,16 @@
     max-height: 100vh;
 
     width: 150%;
-    background-size: cover;
     background-position: -25% 25%;
 }
 
-a.zoom {
+.zoom {
     display: flex;
     justify-content: center;
     align-content: center;
 }
 
-a.zoom .img:after {
+.zoom .img:after {
     z-index: 3;
     pointer-events: none;
     content: '';
@@ -84,23 +91,22 @@ a.zoom .img:after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #2007;
+    background-color: #2007;
     opacity: 0;
     transition: opacity .4s;
 }
 
-a.zoom .img:hover:after {
+.zoom .img:hover:after {
     opacity: .8;
 }
 
-a.zoom .img,
-a.zoom .glitch__img .glitch__item {
-    background-size: 100% 100%;
+.zoom .img,
+.zoom .glitch__img .glitch__item {
     transition: background-size .6s ease-out;
 }
 
-a.zoom:hover .img,
-a.zoom:hover .glitch__img .glitch__item {
+.zoom:hover .img,
+.zoom:hover .glitch__img .glitch__item {
     background-size: 115% 115%;
 }
 
@@ -110,6 +116,7 @@ a.zoom:hover .glitch__img .glitch__item {
     top: 0;
     left: 0;
     position: absolute;
+    background-size: cover;
 }
 
 .glitch__img .glitch__item:nth-child(n+2) {
@@ -157,10 +164,18 @@ a.zoom:hover .glitch__img .glitch__item {
 .glitch__img .glitch__text {
     position: absolute;
     bottom: 0;
-    color: --var(--color-link);
+    color: var(--color-link);
     text-transform: uppercase;
     letter-spacing: 12px;
     opacity: .8;
+}
+
+.astronaut .glitch__text {
+    color: var(--color-astr);
+}
+
+.bud .glitch__text {
+    color: var(--color-bud);
 }
 
 .glitch__img .glitch__text:before, .glitch__img .glitch__text:after {

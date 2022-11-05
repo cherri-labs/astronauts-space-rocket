@@ -1,0 +1,50 @@
+noscript {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+noscript span {
+    color: #b6f6f0;
+    text-shadow: 0 0 2px #b4f4ee;
+    -webkit-text-stroke: 1px #2d323633;
+
+    letter-spacing: 1px;
+    line-height: 1.6em;
+
+    transition: letter-spacing .4s, line-height .4s;
+}
+
+noscript span:hover {
+    letter-spacing: 2px;
+    line-height: 1.8em;
+
+    padding: 15px 25px;
+    border: 2px ridge #b4f4ee99;
+    outline: 1px solid #b4f4ee66;
+
+    cursor: pointer;
+
+    animation: noscript-glitch .8s cubic-bezier(0, 0, 1, 0.03) 2;
+}
+
+@keyframes noscript-glitch {
+    60%, 60.6%,
+    80%, 80.3% {
+        text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+        transform: translate(var(--glitch-translate));
+    }
+    60.2%, 60.8%,
+    80.1%, 80.4% {
+        text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+    }
+    79.9%, 80.2%, 80.5% {
+        transform: none;
+    }
+    0%, 79.5%, 81%, 100% {
+        text-shadow: 0 0 2px #b4f4ee;
+    }
+}
