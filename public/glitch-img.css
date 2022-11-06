@@ -107,15 +107,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #5007;
-    opacity: 0;
-    transition: opacity .4s;
+    background-color: #0007;
+    opacity: .3;
+    transition: background-color .4s, opacity .4s;
 }
 
 .zoom .img:hover:after {
-    opacity: .7;
+    background-color: #4007;
+    opacity: .6;
 }
 
+.nft .img,
+.nft.img,
 .zoom .img,
 .zoom .glitch__item {
     transition: transform .6s ease-out;

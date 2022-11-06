@@ -16,10 +16,15 @@
     flex-flow: row nowrap;
 }
 
+#lasr .index__page .portal-wrap .nft {
+    width: 350px;
+    transition: width .3s ease-out, transform .6s ease-out;
+}
+
 #lasr .index__page .portal-wrap:hover .nft {
-    flex-grow: .3;
-    min-width: 400px;
-    min-height: 400px;
+    width: 400px;
+    max-width: 400px;
+    transform: scale(1.1);
 }
 
 #lasr .index__page span.portal {
