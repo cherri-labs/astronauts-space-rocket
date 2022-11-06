@@ -5,12 +5,16 @@ import Portal, {
 } from '../../Portal/Portal';
 import { AstronautImg } from './Astronauts';
 import { BudImg } from './Buds';
+import { menu } from '../../Move/SideMenu';
 
 function Container() {
   return (
     <div id="container">
       <div id="content">
-        <h1>Select Player</h1>
+        <h1 className="neon"
+            onClick={function(){menu.move('lasr', 'buds');}}>
+            Select Player
+        </h1>
         <PortalContainer>
           <Portal disabled>
             <BudImg portal opaque />

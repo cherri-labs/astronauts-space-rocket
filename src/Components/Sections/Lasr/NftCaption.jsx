@@ -3,7 +3,13 @@ import React from 'react';
 export function CaptionRow(props) {
   return (
     <p>
-      <span className="caption__icon">{props.icon}</span><b>{props.title}</b> <span>{props.children}</span>
+      <span className="caption__icon">{props.icon}</span>
+      <b>{props.title}</b>
+      <span>{props.children}</span>
+      {
+        (props.symbol === 'sol' ?
+         <span className="caption__symbol"> ◎</span> : <></>)
+      }
     </p>
   );
 }
@@ -29,8 +35,8 @@ export default function NftCaption(props) {
   return (
     <Caption type={props.type} icons={props.icons}>
       <CaptionColumn>
-        <CaptionRow icon="◎" title="Mint price">{props.price} ◎</CaptionRow>
-        <CaptionRow icon="Ξ" title="Whitelist">{props.whitelist} ◎</CaptionRow>
+        <CaptionRow icon="◎" title="Mint price" symbol="sol">{props.price}</CaptionRow>
+        <CaptionRow icon="Ξ" title="Whitelist" symbol="sol">{props.whitelist}</CaptionRow>
         <CaptionRow icon="⊹" title={props.freeMint}>free mint</CaptionRow>
       </CaptionColumn>
       <CaptionColumn>

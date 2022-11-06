@@ -83,28 +83,101 @@
         justify-content: flex-start;
     }
 
-    .caption.border .column:nth-of-type(odd) {
-        align-items: flex-start;
-    }
-
-    .caption.border .column:nth-of-type(even) {
-        align-items: flex-end;
-    }
-
+    /* --< border >-- */
     .caption.border .column:nth-of-type(even) p {
         flex-direction: row-reverse;
         text-align: right;
     }
 
-    .caption.bar:not(.border) .column p b:after,
-    .caption.bar.border .column:nth-of-type(odd) p b:after {
+    .caption.bar:not(.border):not(.middle) .column p b:after,
+    .caption.bar.border .column:nth-of-type(odd) p b:after,
+    .caption.bar.middle:not(.inside) .column:nth-of-type(odd) p b:after,
+    .caption.bar.middle.inside .column:nth-of-type(odd) p b:before {
         border-right: 2px solid #696969;
+    }
+
+    .caption.bar.border .column:nth-of-type(even) p b:before,
+    .caption.bar.middle:not(.inside) .column:nth-of-type(even) p b:before,
+    .caption.bar.middle.inside .column:nth-of-type(even) p b:after {
+        border-left: 2px solid #696969;
+    }
+
+    .caption.bar:not(.border):not(.middle) .column p b:after,
+    .caption.bar.border .column:nth-of-type(odd) p b:after,
+    .caption.bar.middle:not(.inside) .column:nth-of-type(odd) p b:after,
+    .caption.bar.middle.inside .column:nth-of-type(even) p b:after {
         margin-left: 5px;
     }
 
-    .caption.bar.border .column:nth-of-type(even) p b:before {
-        border-left: 2px solid #696969;
+    .caption.bar.border .column:nth-of-type(even) p b:before,
+    .caption.bar.middle:not(.inside) .column:nth-of-type(even) p b:before,
+    .caption.bar.middle.inside .column:nth-of-type(odd) p b:before {
         margin-right: 5px;
+    }
+
+    /* --< middle >-- */
+    .caption.middle .column:nth-of-type(odd) p {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+
+    .caption.bar.middle .column:nth-of-type(even) p b:after {
+        margin-left: 5px;
+    }
+
+    /* --< middle !(inside) >-- */
+    .caption.middle:not(.inside) p b,
+    /* --< middle s__out >-- */
+    .caption.middle.s__out p .caption__symbol {
+        order: 99;
+    }
+
+    /* --< middle !(inside) >-- */
+    .caption.middle:not(.inside):not(.s__out) p .caption__icon {
+        order: -2;
+    }
+
+    .caption.middle:not(.inside):not(.s__out) .column:first-of-type p:first-of-type .caption__icon {
+        display: none;
+    }
+
+    .caption.middle:not(.inside):not(.s__out) p .caption__symbol {
+        order: -1;
+    }
+
+    /* --< middle inside >-- */
+    .caption.bar.middle.inside .column:nth-of-type(odd) p b:before {
+        border-right: 2px solid #696969;
+    }
+
+    .caption.bar.middle.inside .column:nth-of-type(even) p b:after {
+        border-left: 2px solid #696969;
+    }
+
+    /* --< table >-- */
+    .caption.table .column {
+        border: 2px solid #696969;
+        border-right: none;
+        padding-right: 5px;
+    }
+
+    .caption.table .column + .column {
+        border-right: 2px solid #696969;
+        border-left: none;
+    }
+
+    .caption.table .column:nth-of-type(even):before {
+        content: '';
+        position: absolute;
+        border-left: 5px double #696969;
+        margin: -2px -8px;
+        height: 100%;
+    }
+
+    /* --< pad >-- */
+    .caption.bar.pad .column p b:after,
+    .caption.bar.pad .column p b:before {
+        margin: 0 5px;
     }
 }
 

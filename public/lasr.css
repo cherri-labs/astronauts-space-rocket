@@ -47,9 +47,32 @@ strong.astronauts {
     -webkit-background-clip: text;
 }
 
-/* --< buds >-- */
-#buds h1 {
-    background: linear-gradient(135deg, #f3ad70 40%, #edd6f3 53%, #ffd690cc 63%, #fdd6f399 100%);
+/* --< index >-- */
+#lasr .index__page h1 {
+    background: linear-gradient(#112, #66f 60%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    cursor: pointer;
+}
+
+#lasr .index__page h1:hover {
+    -webkit-text-stroke: 1px #66f;
+}
+
+/* --< buds >-- */
+#buds h1.orange {
+    background: linear-gradient(#102, #852 10%, #f3ad70 60%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+#buds h1.blue {
+    background: linear-gradient(#112, #3ad 60%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+#buds h1.lightblue {
+    color: #8994ce;
+    -webkit-text-stroke: 1px #b4f4ee;
 }

@@ -10,10 +10,10 @@ export default function Navbar() {
       <button className="icon" onClick={function(){nav()}}>
         ☰
       </button>
-      <button className="home thin" onClick={function(){nav('home');}}>
+      <button className="home thin" onClick={function(){move('home');}}>
         <Lasr />
       </button>
-      <button onClick={function(){nav('lasr');}}>
+      <button onClick={function(){move('lasr');}}>
         Choose Player
       </button>
       <button onClick={function(){move('gate');}}>
@@ -22,7 +22,7 @@ export default function Navbar() {
       <button onClick={function(){move('cyberverse');}}>
         Cyberverse
       </button>
-      <button onClick={function(){nav('roadmap');}}>
+      <button onClick={function(){move('roadmap');}}>
         Roadmap
       </button>
       <Icons />

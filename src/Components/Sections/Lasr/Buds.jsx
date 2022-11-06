@@ -23,7 +23,7 @@ const Nft = () => {
   return (
     <div className="nft">
       <BudImg href="index" glitch zoom hover />
-      <NftCaption type="border bar"
+      <NftCaption type="middle bar"
                   price="0.37"
                   whitelist="0.17"
                   freeMint="Early Bird"
@@ -39,7 +39,7 @@ const Txt = () => {
   return (
     <div className="text">
       <article>
-        <h1>Space Buds</h1>
+        <h1 className="orange">Space Buds</h1>
         <p>
           777 generative friendly <a>Space Buds</a> cruisin'
           thru the <i>cybergalaxy</i>. Created with the conjunction

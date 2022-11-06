@@ -4,15 +4,16 @@
 }
 
 .neon:hover {
-    height: 1em;
-    padding: 2px;
-
-    font-size: .8em;
-    letter-spacing: .1em;
     color: #1f0e28;
     border: 3px solid rgba(22, 182, 212, 0);
-
     animation: neon-glitch 1s cubic-bezier(0.02, 0.08, 1, 0.03) 1 forwards;
+}
+
+#content p .neon:hover {
+    height: 1em;
+    padding: 2px;
+    font-size: .8em;
+    letter-spacing: .1em;
 }
 
 @keyframes neon-glitch {
