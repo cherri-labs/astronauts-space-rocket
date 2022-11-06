@@ -49,7 +49,7 @@ export default function NftImg(props) {
   return (<>
     {(
       props.portal ?
-      <PortalButton mover={props.mover + '-mover'}
+      <PortalButton mover={props.mover}
                     goto={props.href}
                     zoom={props.zoom}
                     glitch={props.hover}

@@ -61,7 +61,7 @@ function Container() {
       </div>
       <MoveArrow dir="right"
                  id="buds"
-                 mover="lasr-mover"
+                 mover="lasr"
                  goto="astronauts"/>
     </div>
   );

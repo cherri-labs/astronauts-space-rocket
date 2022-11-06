@@ -28,7 +28,7 @@ export default function World() {
             merry-go-round and gambling den in town.
           </p>
         </article>
-        <MoveNav mover="roadmap-mover" />
+        <MoveNav mover="roadmap" />
       </Card>
       <Card>
         <CardTitle>A New World</CardTitle>
@@ -42,7 +42,7 @@ export default function World() {
             It's the birth of <b>a new era</b>, are you just going to watch?
           </p>
         </article>
-        <MoveNav mover="roadmap-mover" />
+        <MoveNav mover="roadmap" />
       </Card>
       <Card>
         <CardTitle>A Digital Realm</CardTitle>
@@ -58,7 +58,7 @@ export default function World() {
             {" "}<b>we all need something to believe in</b>.
           </p>
         </article>
-        <MoveNav mover="roadmap-mover" />
+        <MoveNav mover="roadmap" />
       </Card>
       <Card>
         <CardTitle>A Digital Realm</CardTitle>
@@ -69,7 +69,7 @@ export default function World() {
             that is, we will try our best to get the road down in a clear
             and linear path for you to walk on.
           </p>
-          <MoveNav mover="roadmap-mover" />
+          <MoveNav mover="roadmap" />
         </article>
       </Card>
       <Card>
@@ -81,7 +81,7 @@ export default function World() {
             abstract reality. Now, we have to adapt.
           </p>
         </article>
-        <MoveNav mover="roadmap-mover" />
+        <MoveNav mover="roadmap" />
       </Card>
       <Card>
         <CardTitle>The Future</CardTitle>
@@ -94,7 +94,7 @@ export default function World() {
             <b>Our choices pave the way before us.</b>
           </p>
         </article>
-        <MoveNav mover="roadmap-mover" />
+        <MoveNav mover="roadmap" />
       </Card>
     </div>
   );

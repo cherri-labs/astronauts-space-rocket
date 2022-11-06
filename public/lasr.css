@@ -55,6 +55,10 @@ strong.astronauts {
     cursor: pointer;
 }
 
+#lasr .index__page h1:not(:hover) {
+    letter-spacing: 12px;
+}
+
 #lasr .index__page h1:hover {
     -webkit-text-stroke: 1px #66f;
 }

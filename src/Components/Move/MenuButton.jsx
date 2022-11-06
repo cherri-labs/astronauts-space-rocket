@@ -44,7 +44,8 @@ class MenuButton extends React.Component {
                               + (this.props.index ? 'index ' : '')}
                      mover={mover}
                      goto={goto}
-                     disabled={disabled}>
+                     disabled={disabled}
+                     menu>
            {this.props.children}
          </MoveButton>
         }

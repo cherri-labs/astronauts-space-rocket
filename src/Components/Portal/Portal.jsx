@@ -1,7 +1,7 @@
 import React from 'react';
 import VanillaTilt from 'vanilla-tilt';
 import setGlitch from '../../glitchTransition';
-import { menu } from '../Move/SideMenu.jsx';
+import move from '../Move/move';
 
 export function PortalTag(props) {
   return (
@@ -40,7 +40,7 @@ export class PortalButton extends React.Component {
              /* if button not disabled */
              if (!disabled)
                /* move to section */
-               menu.move(mover, goto);
+               move(mover + "-mover", "move-section-" + goto);
            }}>
         <button className={'portal '
                          + (anchor ? 'anchor ' : '')

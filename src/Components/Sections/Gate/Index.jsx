@@ -19,7 +19,7 @@ function Container() {
             </PortalTag>
           </Portal>
           <Portal>
-            <PortalButton mover="gate-mover"
+            <PortalButton mover="gate"
                           goto="bank">
               Astro Gate
             </PortalButton>

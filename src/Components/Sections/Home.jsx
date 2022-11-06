@@ -1,5 +1,5 @@
 import React from 'react';
-import nav from '../Move/move';
+import { MoveAnchor } from '../Move/MoveButton';
 
 function Container() {
   return (
@@ -9,13 +9,13 @@ function Container() {
           WELCOME ABOARD
         </span>
         <br/>
-        <a onClick={function(){nav('lasr');}}>
+        <MoveAnchor mover="lasr" nav>
           <span>
             LASR
           </span>
           <br/>
           <i className="arrow logo"></i>
-        </a>
+        </MoveAnchor>
       </div>
     </div>
   );

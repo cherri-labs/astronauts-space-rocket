@@ -5,14 +5,14 @@ import Portal, {
 } from '../../Portal/Portal';
 import { AstronautImg } from './Astronauts';
 import { BudImg } from './Buds';
-import { menu } from '../../Move/SideMenu';
+import move from '../../Move/move';
 
 function Container() {
   return (
     <div id="container">
       <div id="content">
         <h1 className="neon"
-            onClick={function(){menu.move('lasr', 'buds');}}>
+            onClick={function(){move('lasr-mover', 'move-section-buds');}}>
             Select Player
         </h1>
         <PortalContainer>

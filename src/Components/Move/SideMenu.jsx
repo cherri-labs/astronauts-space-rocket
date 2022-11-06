@@ -4,10 +4,10 @@ import SubMenu from './SubMenu';
 import move from './move';
 import fullscreen from '../../fullscreen';
 
-const lasrMoverId = "lasr-mover";
-const gateMoverId = "gate-mover";
-const cyberMoverId = "cyberverse-mover";
-const mapMoverId = "roadmap-mover";
+const lasrMoverId = "lasr";
+const gateMoverId = "gate";
+const cyberMoverId = "cyberverse";
+const mapMoverId = "roadmap";
 
 export let menu = [];
 class SideMenu extends React.Component {
@@ -49,7 +49,7 @@ class SideMenu extends React.Component {
 
     /* move and close menu */
     menu.move = function(moverId, section) {
-      move(moverId, "move-section-" + section);
+      move(moverId + "-mover", "move-section-" + section);
       menu.hide();
     };
 
