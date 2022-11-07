@@ -8,15 +8,16 @@ function pad(num, size) {
 }
 
 function MoveButton(props) {
+  const mover = props.mover + '-mover';
   const index = moveIndex() + (props.dir === 'back' ? -1 : 1);
 
   return (
     <button className="cybr-btn"
             onClick={function(){
               if (props.dir === 'back')
-                moveBack(props.mover);
+                moveBack(mover);
               else if (props.dir === 'next')
-                moveNext(props.mover);
+                moveNext(mover);
             }}>
       <span aria-hidden className={"cybr-btn__glitch " + props.dir} />
       <span aria-hidden className="cybr-btn__tag">{pad(index,3)}</span>
@@ -48,7 +49,8 @@ export default function Mover(props) {
   return (
     <>
       <div id={props.id + "-mover"}
-           className={"move " + (props.transition ? 'transition' : '')}>
+           className={"move "
+                    + (props.transition ? 'transition ' : '')}>
         {props.children}
       </div>
     </>

@@ -10,7 +10,7 @@ function Page() {
   return (
     <Container>
       <Content>
-        <Mover id="roadmap">
+        <Mover id="roadmap" transition>
           <World />
           <Vision />
           <Path />

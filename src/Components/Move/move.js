@@ -151,6 +151,18 @@ export default function move(moverId, sectionId = 'index', index = 0) {
   /* initialize index */
   let i = 0;
 
+
+
+
+  console.log("mover: " + moverId,
+              "section: " + sectionId,
+              "mover class: " + mover.classList,
+              "contains: " + (mover.classList.contains("transition")),
+              "moveSection: " + moveSection);
+
+
+
+
   if (moveSection) {
     /* run default transition if mover has transition type */
     if (mover.classList.contains("transition"))
