@@ -2,6 +2,7 @@ import React from 'react';
 import { MoveArrow } from '../../Move/MoveButton';
 import NftImg from './NftImg';
 import NftCaption from './NftCaption';
+import { Container, Content, Text } from '../Section';
 
 export function AstronautImg(props) {
   const href = props.href || 'astronauts';
@@ -37,46 +38,44 @@ const Nft = () => {
 
 const Txt = () => {
   return (
-    <div className="text">
-      <article>
-        <h1>Lonely<br/>Astronauts</h1>
-        <p>
-          A collection of 8192 <a>Lonely Astronaut</a> NFTs
-          inspired by <span className="neon more">vaporwave</span> and{" "}
-          <span className="stack" style={{"--stacks": 3}}>
-            <span className="more" style={{"--index": 0}}>cyberpunk</span>
-            <span className="more" style={{"--index": 1}}>cyberpunk</span>
-            <span className="more" style={{"--index": 2}}>cyberpunk</span>
-          </span>{" "}
-          aesthetics, the demoscene and pop culture from the 80's and
-          powered by the desire to leverage blockchain technology to
-          bring building power to creators and a full-fledged
-          immersive experience to everyone.
-        </p>
-      </article>
-    </div>
+    <Text>
+      <h1>Lonely<br/>Astronauts</h1>
+      <p>
+        A collection of 8192 <a>Lonely Astronaut</a> NFTs
+        inspired by <span className="neon more">vaporwave</span> and{" "}
+        <span className="stack" style={{"--stacks": 3}}>
+          <span className="more" style={{"--index": 0}}>cyberpunk</span>
+          <span className="more" style={{"--index": 1}}>cyberpunk</span>
+          <span className="more" style={{"--index": 2}}>cyberpunk</span>
+        </span>{" "}
+        aesthetics, the demoscene and pop culture from the 80's and
+        powered by the desire to leverage blockchain technology to
+        bring building power to creators and a full-fledged
+        immersive experience to everyone.
+      </p>
+    </Text>
   );
 };
 
-function Container() {
+function Page() {
   return (
-    <div id="container">
-      <div id="content">
+    <Container>
+      <Content>
         <Txt />
         <Nft />
-      </div>
+      </Content>
       <MoveArrow dir="left"
                  id="astronauts"
                  mover="lasr"
                  goto="buds"/>
-    </div>
+    </Container>
   );
 }
 
 export default function Astronauts() {
   return (
     <div id="astronauts">
-      <Container />
+      <Page />
     </div>
   );
 }

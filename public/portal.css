@@ -5,11 +5,6 @@
     justify-content: space-around;
     align-items: flex-start;
     gap: 0;
-    pointer-events: none;
-}
-
-.portal-container > * {
-    pointer-events: auto;
 }
 
 .portal-wrap {
@@ -22,10 +17,6 @@
     margin: auto -50px;
 
     transition: opacity .2s;
-}
-
-.portal-container:hover > .portal-wrap:not(:hover) {
-    opacity: .5;
 }
 
 button.portal.anchor {

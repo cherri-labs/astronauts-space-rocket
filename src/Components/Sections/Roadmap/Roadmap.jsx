@@ -1,28 +1,29 @@
 import React from "react";
 
+import Mover from '../../Move/Mover';
+import { Container, Content } from '../Section';
 import World from './World';
 import Vision from './Vision';
 import Path from './Path';
-import Mover from '../../Move/Mover';
 
-function Container() {
+function Page() {
   return (
-    <div id="container">
-      <div id="content">
-        <Mover id="roadmap-mover">
+    <Container>
+      <Content>
+        <Mover id="roadmap">
           <World />
           <Vision />
           <Path />
         </Mover>
-      </div>
-    </div>
+      </Content>
+    </Container>
   );
 }
 
 export default function Roadmap() {
   return (
     <div className="section lights-out" id="roadmap">
-      <Container />
+      <Page />
     </div>
   );
 }

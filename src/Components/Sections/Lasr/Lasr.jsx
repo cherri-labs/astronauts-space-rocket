@@ -1,24 +1,21 @@
 import React from "react";
-import Mover from '../../Move/Mover';
+import Mover, { MoveSection } from '../../Move/Mover';
 import Index from './Index';
 import Astronauts from './Astronauts';
 import Buds from './Buds';
 
 function LasrMover() {
   return (
-    <Mover id="lasr-mover">
-      <div id="move-section-index"
-           className="move-section active">
+    <Mover id="lasr">
+      <MoveSection active>
         <Index />
-      </div>
-      <div id="move-section-astronauts"
-           className="move-section">
+      </MoveSection>
+      <MoveSection id="astronauts">
         <Astronauts />
-      </div>
-      <div id="move-section-buds"
-           className="move-section">
+      </MoveSection>
+      <MoveSection id="buds">
         <Buds />
-      </div>
+      </MoveSection>
     </Mover>
   );
 }

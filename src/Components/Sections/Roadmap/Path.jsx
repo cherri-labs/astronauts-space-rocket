@@ -1,11 +1,10 @@
 import React from 'react';
 import Card, { CardTitle } from './Card';
-import { MoveNav } from '../../Move/Mover';
+import { MoveSection, MoveNav } from '../../Move/Mover';
 
 export default function Path() {
   return (
-    <div id="move-section-path"
-         className="move-section">
+    <MoveSection id="path">
       <div className="bg-container">
         <div className="path bg" />
       </div>
@@ -85,7 +84,7 @@ export default function Path() {
         <article>
           <p>
             All owners can participate in the <strong>Grand Race for
-                                                Space</strong> and take their chance to win the big
+            Space</strong> and take their chance to win the big
             money prize.
           </p>
           <p>
@@ -94,6 +93,6 @@ export default function Path() {
           <MoveNav mover="roadmap" />
         </article>
       </Card>
-    </div>
+    </MoveSection>
   );
 }

@@ -3,19 +3,20 @@ import Portal, {
   PortalContainer,
   PortalTag,
 } from '../../Portal/Portal';
+import { Container, Content } from '../Section';
 import { AstronautImg } from './Astronauts';
 import { BudImg } from './Buds';
 import move from '../../Move/move';
 
-function Container() {
+function Page() {
   return (
-    <div id="container">
-      <div id="content">
+    <Container>
+      <Content>
         <h1 className="neon"
             onClick={function(){move('lasr-mover', 'move-section-buds');}}>
-            Select Player
+          Select Player
         </h1>
-        <PortalContainer>
+        <PortalContainer className="focus">
           <Portal disabled>
             <BudImg portal opaque />
             <PortalTag>
@@ -29,15 +30,15 @@ function Container() {
             </PortalTag>
           </Portal>
         </PortalContainer>
-      </div>
-    </div>
+      </Content>
+    </Container>
   );
 }
 
 export default function Index() {
   return (
     <div className="index__page" id="lasr__index">
-      <Container />
+      <Page />
     </div>
   );
 }

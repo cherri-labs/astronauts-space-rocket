@@ -40,13 +40,6 @@ strong.astronauts {
     color: #96fffb !important;
 }
 
-/* --< astronauts >-- */
-#astronauts h1 {
-    background: linear-gradient(#fff5 0%, #b4f4eedd 10%, #3ad, #112, #3ad 80%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-}
-
 /* --< index >-- */
 #lasr .index__page h1 {
     background: linear-gradient(#112, #66f 60%);
@@ -56,11 +49,18 @@ strong.astronauts {
 }
 
 #lasr .index__page h1:not(:hover) {
-    letter-spacing: 12px;
+    letter-spacing: 11px;
 }
 
 #lasr .index__page h1:hover {
     -webkit-text-stroke: 1px #66f;
+}
+
+/* --< astronauts >-- */
+#astronauts h1 {
+    background: linear-gradient(#fff5 0%, #b4f4eedd 10%, #3ad, #112, #3ad 80%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 
 /* --< buds >-- */

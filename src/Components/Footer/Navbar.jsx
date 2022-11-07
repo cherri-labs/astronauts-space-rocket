@@ -6,7 +6,7 @@ import move from '../Move/move';
 
 export default function Navbar() {
   return (
-    <nav id="navbar">
+    <nav id="navbar" className="focus">
       <button className="icon" onClick={function(){nav()}}>
         ☰
       </button>

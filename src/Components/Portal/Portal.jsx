@@ -54,7 +54,7 @@ export class PortalButton extends React.Component {
 
 export function PortalContainer(props) {
   return (
-    <div className="portal-container">
+    <div className={"portal-container " + props.className}>
       {props.children}
     </div>
   );
@@ -62,7 +62,7 @@ export function PortalContainer(props) {
 
 export default function Portal(props) {
   return (
-    <div className="portal-wrap">
+    <div className={"portal-wrap " + props.className}>
       {props.children}
     </div>
   );

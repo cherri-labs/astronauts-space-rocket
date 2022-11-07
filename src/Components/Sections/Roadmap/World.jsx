@@ -1,11 +1,10 @@
 import React from 'react';
 import Card, { CardTitle } from './Card';
-import { MoveNav } from '../../Move/Mover';
+import { MoveSection, MoveNav } from '../../Move/Mover';
 
 export default function World() {
   return (
-    <div id="move-section-world"
-         className="move-section active">
+    <MoveSection id="world" active>
       <div className="bg-container">
         <div className="world bg" />
       </div>
@@ -52,7 +51,7 @@ export default function World() {
             spawn on everyday basis. With so many faces coming and going
             it's hard to keep a steady eye on things. That's why
             {" "}<b>we will keep our goals on top of priorities at all
-                   times</b>.
+            times</b>.
             We work to create the content that's going to be part of the
             future. That's a privilege won't throw away, because
             {" "}<b>we all need something to believe in</b>.
@@ -96,6 +95,6 @@ export default function World() {
         </article>
         <MoveNav mover="roadmap" />
       </Card>
-    </div>
+    </MoveSection>
   );
 }

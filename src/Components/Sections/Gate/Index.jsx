@@ -4,12 +4,13 @@ import Portal, {
   PortalButton,
   PortalTag,
 } from '../../Portal/Portal';
+import { Container, Content } from '../Section';
 
-function Container() {
+function Page() {
   return (
-    <div id="container">
-      <div id="content">
-        <PortalContainer>
+    <Container>
+      <Content>
+        <PortalContainer className="focus">
           <Portal disabled>
             <PortalButton disabled>
               Staking Portal
@@ -28,15 +29,15 @@ function Container() {
             </PortalTag>
           </Portal>
         </PortalContainer>
-      </div>
-    </div>
+      </Content>
+    </Container>
   );
 }
 
 export default function Index() {
   return (
     <div className="index__page" id="gate__index">
-      <Container />
+      <Page />
     </div>
   );
 }

@@ -1,11 +1,10 @@
 import React from 'react';
 import Card, { CardTitle } from './Card';
-import { MoveNav } from '../../Move/Mover';
+import { MoveSection, MoveNav } from '../../Move/Mover';
 
 export default function Vision() {
   return (
-    <div id="move-section-vision"
-         className="move-section">
+    <MoveSection id="vision">
       <div className="bg-container">
         <div className="vision bg" />
       </div>
@@ -25,12 +24,12 @@ export default function Vision() {
           <p>
             Whenever we provide
             you with information, software, interfaces, <b>we try to keep
-                                                          it as simple and stupid as possible—so the important stuff
-                                                          is always in clear sight.</b>
+            it as simple and stupid as possible—so the important stuff
+            is always in clear sight.</b>
           </p>
           <MoveNav mover="roadmap" />
         </article>
       </Card>
-    </div>
+    </MoveSection>
   );
 }

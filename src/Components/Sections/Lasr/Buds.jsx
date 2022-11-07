@@ -2,6 +2,7 @@ import React from 'react';
 import { MoveArrow } from '../../Move/MoveButton';
 import NftImg from './NftImg';
 import NftCaption from './NftCaption';
+import { Container, Content, Text } from '../Section';
 
 export function BudImg(props) {
   const href = props.href || 'buds';
@@ -37,40 +38,38 @@ const Nft = () => {
 
 const Txt = () => {
   return (
-    <div className="text">
-      <article>
-        <h1 className="orange">Space Buds</h1>
-        <p>
-          777 generative friendly <a>Space Buds</a> cruisin'
-          thru the <i>cybergalaxy</i>. Created with the conjunction
-          of AI and Python, <strong>Space Buds</strong> pioneer the
-          technological advancement that is key to our rapidly
-          evolving way of life.
-        </p>
-      </article>
-    </div>
+    <Text>
+      <h1 className="orange">Space Buds</h1>
+      <p>
+        777 generative friendly <a>Space Buds</a> cruisin'
+        thru the <i>cybergalaxy</i>. Created with the conjunction
+        of AI and Python, <strong>Space Buds</strong> pioneer the
+        technological advancement that is key to our rapidly
+        evolving way of life.
+      </p>
+    </Text>
   );
 };
 
-function Container() {
+function Page() {
   return (
-    <div id="container">
-      <div id="content">
+    <Container>
+      <Content>
         <Nft />
         <Txt />
-      </div>
+      </Content>
       <MoveArrow dir="right"
                  id="buds"
                  mover="lasr"
                  goto="astronauts"/>
-    </div>
+    </Container>
   );
 }
 
 export default function Buds() {
   return (
     <div id="buds">
-      <Container />
+      <Page />
     </div>
   );
 }

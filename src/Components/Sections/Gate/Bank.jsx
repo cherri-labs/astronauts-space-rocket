@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Container, Content, Text } from '../Section';
 import DepositBox from './Boxes/DepositBox';
 import DepositAmount from './Boxes/DepositAmount';
 import WithdrawAmount from './Boxes/WithdrawAmount';
@@ -12,18 +13,16 @@ import setGlitch from '../../../glitchTransition';
 
 const Txt = () => {
   return (
-    <div className="text card">
-      <article>
-        <h3>Astro Gate</h3>
-        <p>
-          Here you can withdraw your
-          {" "}<a target="_blank" rel="noreferrer"
-                  href="https://github.com/cherri-labs/astrobank#mint">
-          rewards</a>, all you need is
+    <Text card>
+      <h3>Astro Gate</h3>
+      <p>
+        Here you can withdraw your
+        {" "}<a target="_blank" rel="noreferrer"
+                href="https://github.com/cherri-labs/astrobank#mint">
+        rewards</a>, all you need is
     a <strong>LASR NFT</strong> and your wallet.
-        </p>
-      </article>
-    </div>
+      </p>
+    </Text>
   );
 };
 
@@ -33,8 +32,8 @@ function TabButton(props) {
 
   return (
     <button className={(props.active ? 'active ' : '') +
-           (props.comingSoon ? 'coming-soon ' : '') +
-           (disabled ? 'disabled ' : '')}
+            (props.comingSoon ? 'coming-soon ' : '') +
+            (disabled ? 'disabled ' : '')}
             id={id + '-btn'}
             onMouseOver={function() {
               if (disabled)
@@ -63,8 +62,8 @@ function BankSpace(props) {
   const disabled = props.disabled;
 
   return (
-    <div className={'bank ' +
-                              (disabled ? 'disabled' : '')}>
+    <div className={'bank focus space ' +
+                               (disabled ? 'disabled' : '')}>
       <div id="tabs-container">
         <div id="tabs-bar">
           <TabButton id="deposit" comingSoon disabled>
@@ -129,21 +128,21 @@ class Gate extends React.Component {
   }
 }
 
-function Container() {
+function Page() {
   return (
-    <div id="container">
-      <div id="content">
+    <Container>
+      <Content>
         <Txt />
         <Gate />
-      </div>
-    </div>
+      </Content>
+    </Container>
   );
 }
 
 export default function Bank() {
   return (
     <div id="bank">
-      <Container />
+      <Page />
     </div>
   );
 }

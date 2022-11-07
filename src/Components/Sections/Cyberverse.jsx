@@ -1,14 +1,14 @@
 import React from 'react';
-import Mover from '../Move/Mover';
+import Mover, { MoveSection } from '../Move/Mover';
+import { Container, Content, Text } from './Section';
 import Lasr from '../Icons/Lasr';
 import GlitchSpan from '../GlitchSpan';
 import nav from '../Move/nav';
 
 const Txt = () => {
   return (
-    <div className="text card">
-      <article>
-        <h3>Cyberverse</h3>
+<Text card>
+    <h3>Cyberverse</h3>
         <p>
           Welcome to the{" "}
           <a className="strong">
@@ -28,31 +28,29 @@ const Txt = () => {
           are your all-access pass. They allow you to freely explore
           all new features and released products.
         </p>
-      </article>
-    </div>
+    </Text>
   );
 };
 
-function Container() {
+function Page() {
   return (
-    <div id="container">
-      <div id="content">
+    <Container>
+      <Content>
         <Lasr type="full" tilt />
         <Txt />
-      </div>
-    </div>
+      </Content>
+    </Container>
   );
 }
 
 function CyberMover() {
   return (
-    <Mover id="cyberverse-mover">
-      <div id="move-section-index"
-           className="move-section active">
+    <Mover id="cyberverse">
+      <MoveSection active>
         <div className="index__page" id="cyberverse__index">
-          <Container />
+          <Page />
         </div>
-      </div>
+      </MoveSection>
     </Mover>
   );
 }

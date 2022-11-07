@@ -1,0 +1,17 @@
+/* --< focus__space >-- */
+.focus {
+    pointer-events: none !important;
+}
+
+.focus > *:not(.focus) {
+    pointer-events: auto;
+}
+
+.focus:not(.space):hover > *:not(:hover) {
+    opacity: .5;
+}
+
+/* --< focus__clue >-- */
+.focus:hover > *:not(:hover) .focus__clue {
+    display: none;
+}
