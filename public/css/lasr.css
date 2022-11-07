@@ -42,7 +42,7 @@ strong.astronauts {
 
 /* --< index >-- */
 #lasr .index__page h1 {
-    background: linear-gradient(#112, #66f 60%);
+    background: linear-gradient(#212, #336 10%, #636 40%, #639 60%, #66f 80%);
     -webkit-text-stroke: 1px #669;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
