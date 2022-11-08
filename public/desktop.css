@@ -37,11 +37,16 @@
         padding: 6px;
     }
 
-    #navbar {
+    :not(.dropdown) #navbar {
         width: 100%;
     }
 
+    .dropdown #navbar {
+        width: 270px;
+    }
+
     .icons {
+        --icons-gap: 2vw;
         justify-content: center;
     }
 

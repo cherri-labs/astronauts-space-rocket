@@ -76,12 +76,20 @@
         font-size: 6vw;
     }
 
+    .dropdown #navbar {
+        width: 80%;
+    }
+
     *:not(.dropdown) #navbar *:not(:first-child) {
         display: none;
     }
 
     .dropdown #navbar *:not(:first-child) {
         display: block;
+    }
+
+    .icons {
+        --icons-gap: 20px;
     }
 
     .nft {

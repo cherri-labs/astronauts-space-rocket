@@ -23,8 +23,16 @@ export default function Navbar() {
       <button onClick={function(){move('roadmap');}}>
         Roadmap
       </button>
+      <div id="bottom-bar" className="focus">
+        <button className="home" onClick={function(){nav();}}>
+          <Lasr />
+        </button>
+        <Icons />
+      </div>
       <Wallet />
-      <Icons />
+      <button className="exit hidden" onClick={function(){move('home');}}>
+        Exit
+      </button>
     </nav>
   );
 }
