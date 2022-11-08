@@ -5,9 +5,14 @@ import move from '../Move/move';
 
 export function PortalTag(props) {
   return (
-    <span className="portal">
-      {props.children}
-    </span>
+    <div className={"portal-tag "
+                  + (props.center ? 'center ' : '')}
+         style={{marginTop: props.top,
+                 marginRight: props.right}}>
+      <span className="portal">
+        {props.children}
+      </span>
+    </div>
   );
 }
 

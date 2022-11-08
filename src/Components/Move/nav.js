@@ -2,12 +2,8 @@ import { moveReset } from './move';
 
 /* toggle navbar drodown and display sections */
 export default function nav(href) {
-  /* <-- toggle navbar --> */
   /* bar container */
   const nav = document.getElementById("nav-container");
-
-  /* toggle mobile dropdown menu */
-  nav.classList.toggle("dropdown");
 
   /* listen for mouse click */
   window.addEventListener('click', function(e) {
@@ -16,7 +12,7 @@ export default function nav(href) {
         (e.target.tagName.toLowerCase() !== 'button' &&
          e.target.tagName.toLowerCase() !== 'span' &&
          e.target.tagName.toLowerCase() !== 'i')) {
-      /* hide menu */
+      /* hide dropdown */
       nav.classList.remove("dropdown");
     }
   });
@@ -43,5 +39,11 @@ export default function nav(href) {
     if (mover)
       /* reset section mover */
       moveReset(mover.id);
+
+    /* hide dropdown */
+    nav.classList.remove("dropdown");
+  } else {
+    /* toggle dropdown */
+    nav.classList.toggle("dropdown");
   }
 }

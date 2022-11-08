@@ -2,14 +2,18 @@ import React from 'react';
 import { write } from 'glitched-writer';
 
 export default function GlitchSpan(props) {
-  const id = (props.id ? props.id : 'glitch__span');
-  const name = (props.name ? props.name : 'glitch__span');
+  const id = props.id || 'glitch__span';
+  const name = props.name || 'glitch__span';
   const selector = '#' + id + '.' + name;
+  const steps = props.step || 4;
+  const duration = props.duration || 80;
+  const delay = props.delay || 800;
+  const text = props.text || props.children;
 
   const options = {
-    steps: [1,4],
-    interval: [80, 180],
-    delay: [0, 800],
+    steps: [1, steps],
+    interval: [duration, 180],
+    delay: [0, delay],
   }
 
   const onHover = function () {
@@ -17,15 +21,26 @@ export default function GlitchSpan(props) {
   };
 
   const onLeave = function () {
-    write(props.children, selector, options)
+    write(text, selector, options)
   };
 
-  return (
-    <span id={id}
-          className={name}
-          onMouseOver={onHover}
-          onMouseLeave={onLeave}>
-      {props.children}
-    </span>
-  );
+  if (props.div) {
+    return (
+      <div id={id}
+           className={name}
+           onMouseOver={onHover}
+           onMouseLeave={onLeave}>
+        {props.children}
+      </div>
+    );
+  } else {
+    return (
+      <span id={id}
+            className={name}
+            onMouseOver={onHover}
+            onMouseLeave={onLeave}>
+        {props.children}
+      </span>
+    );
+  }
 }

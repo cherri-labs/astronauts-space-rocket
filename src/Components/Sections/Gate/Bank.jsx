@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Container, Content, Text } from '../Section';
 import DepositBox from './Boxes/DepositBox';
 import DepositAmount from './Boxes/DepositAmount';
@@ -8,13 +7,23 @@ import BalanceLabel from './Labels/BalanceLabel';
 import DepositButton from './Buttons/DepositButton';
 import MaxButton from './Buttons/MaxButton';
 import WithdrawButton from './Buttons/WithdrawButton';
+import GlitchSpan from '../../GlitchSpan';
 import tab from '../../../tabs';
 import setGlitch from '../../../glitchTransition';
+import lang from '../../lang';
 
 const Txt = () => {
   return (
     <Text card>
-      <h3>Astro Gate</h3>
+      <h3>
+        <GlitchSpan id="astro-gate__glitch"
+                    steps="2"
+                    duration="0"
+                    delay="100"
+                    write={lang["astro gate"]}>
+          Astro Gate
+        </GlitchSpan>
+      </h3>
       <p>
         Here you can withdraw your
         {" "}<a target="_blank" rel="noreferrer"
@@ -32,8 +41,8 @@ function TabButton(props) {
 
   return (
     <button className={(props.active ? 'active ' : '') +
-            (props.comingSoon ? 'coming-soon ' : '') +
-            (disabled ? 'disabled ' : '')}
+             (props.comingSoon ? 'coming-soon ' : '') +
+             (disabled ? 'disabled ' : '')}
             id={id + '-btn'}
             onMouseOver={function() {
               if (disabled)
@@ -63,7 +72,7 @@ function BankSpace(props) {
 
   return (
     <div className={'bank focus space ' +
-                               (disabled ? 'disabled' : '')}>
+                                (disabled ? 'disabled' : '')}>
       <div id="tabs-container">
         <div id="tabs-bar">
           <TabButton id="deposit" comingSoon disabled>

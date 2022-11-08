@@ -4,30 +4,39 @@ import { Container, Content, Text } from './Section';
 import Lasr from '../Icons/Lasr';
 import GlitchSpan from '../GlitchSpan';
 import nav from '../Move/nav';
+import lang from '../lang';
 
 const Txt = () => {
   return (
-<Text card>
-    <h3>Cyberverse</h3>
-        <p>
-          Welcome to the{" "}
-          <a className="strong">
-            <GlitchSpan id="cyberverse__glitch" write="レーザー トークン">
-              Cyberverse
-            </GlitchSpan>
-          </a>
-          <i className="arrow right"></i>
-          a dinamically growing ever-expanding
-          digital reality.{" "}
-          <a className="strong"
-             onClick={function(){nav('lasr');}}>
-            <GlitchSpan id="lasr__glitch" write="レーザー トークン">
-              LASR NFTs
-            </GlitchSpan>
-          </a>{" "}
-          are your all-access pass. They allow you to freely explore
-          all new features and released products.
-        </p>
+    <Text card>
+      <h3>
+        <GlitchSpan id="cyberverse-title__glitch"
+                    steps="2"
+                    duration="0"
+                    delay="100"
+                    write={lang["cyberverse"]}>
+          Cyberverse
+        </GlitchSpan>
+      </h3>
+      <p>
+        Welcome to the{" "}
+        <a className="strong">
+          <GlitchSpan id="cyberverse-text__glitch" write={lang["cyberverse"]}>
+            Cyberverse
+          </GlitchSpan>
+        </a>
+        <i className="arrow right"></i>
+        a dinamically growing ever-expanding
+        digital reality.{" "}
+        <a className="strong"
+           onClick={function(){nav('lasr');}}>
+          <GlitchSpan id="lasr__glitch" write={lang["lasr nfts"]}>
+            LASR NFTs
+          </GlitchSpan>
+        </a>{" "}
+        are your all-access pass. They allow you to freely explore
+        all new features and released products.
+      </p>
     </Text>
   );
 };
