@@ -41,14 +41,6 @@
         width: 100%;
     }
 
-    #navbar .icon {
-        display: none;
-    }
-
-    #navbar .lasr {
-        margin: 40% 0 0 20%;
-    }
-
     .icons {
         justify-content: center;
     }

@@ -8,10 +8,7 @@ import move from '../Move/move';
 export default function Navbar() {
   return (
     <nav id="navbar" className="focus">
-      <button className="icon" onClick={function(){nav()}}>
-        <Lasr />
-      </button>
-      <button className="home thin" onClick={function(){move('home');}}>
+      <button className="home" onClick={function(){nav();}}>
         <Lasr />
       </button>
       <button onClick={function(){move('lasr');}}>
