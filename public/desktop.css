@@ -1,75 +1,59 @@
-/* --< nft >-- */
-.nft, .caption {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    text-transform: uppercase;
-}
-
-.nft {
-    flex-flow: column nowrap;
-    gap: 10px;
-    overflow-wrap: break-word;
-    word-wrap: break-word; /* backward compatibility */
-}
-
-/* --< caption >-- */
-.caption {
-    position: relative;
-    width: calc(100% + 50px);
-}
-
-.caption,
-.caption .column,
-.caption .column p {
-    justify-content: center;
-    width: 100%;
-    min-width: min-content;
-    margin: 0;
-    padding: 0;
-    color: #fefe;
-    white-space: nowrap;
-}
-
-.caption .column {
-    flex-flow: column wrap;
-    gap: 5px;
-    top: 0;
-    max-width: 50%;
-}
-
-.caption .column p {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin: 0px;
-}
-
-.caption.center .column {
-    align-items: center;
-}
-
-.caption.center .column p {
-    justify-content: center;
-}
-
-.caption.bar .column p b:after,
-.caption.bar .column p b:before {
-    content: '';
-    display: inline-block;
-    position: relative;
-    top: 2px;
-    height: 16px;
-}
-
-.caption.colon .column p b:after {
-    content: ':';
-}
-
 /* --< desktop >-- */
 @media screen and (min-width: 1100px) {
-    img, .nft {
+    h1 {
+        font-size: 72px;
+        font-weight: bold;
+    }
+
+    .section .title {
+        font-size: 60px;
+    }
+
+    #container {
+        padding: 60px;
+    }
+
+    #content {
+        gap: 5vw;
+        margin: 0 3vw;
+    }
+
+    .bank .note.active {
+        margin: -13.5% -6%;
+        padding: 5px 10px;
+        border: 1px solid #fff;
+    }
+
+    .bank {
+        min-width: 24vw;
+        padding: 75px 2vw;
+    }
+
+    .bank .textbox {
+        min-width: 20vw;
+    }
+
+    .bank .textbox button.inset {
+        padding: 6px;
+    }
+
+    #navbar {
+        width: 100%;
+    }
+
+    #navbar .icon {
+        display: none;
+    }
+
+    #navbar .lasr {
+        margin: 40% 0 0 20%;
+    }
+
+    .icons {
+        justify-content: center;
+    }
+
+    .nft {
         width: 350px;
     }
 
@@ -179,33 +163,16 @@
     .caption.bar.pad .column p b:before {
         margin: 0 5px;
     }
-}
 
-/* --< mobile >-- */
-@media screen and (max-width: 1100px) {
-    img, .nft {
-        order: 1;
-        position: relative;
-        top: 5px;
-        max-width: 80vw;
-        max-height: 80vh;
+    .card {
+        max-width: 50%;
     }
 
-    .caption {
-        order: 2;
+    #roadmap .card {
+        min-height: 350px;
     }
 
-    .caption .column p {
-        justify-content: center;
-        text-align: center;
+    .move-arrow {
+        --move-arrow-margin: 50px;
     }
-
-    .caption.bar .column p b:after {
-        border-right: 2px solid #696969;
-        margin-left: 5px;
-    }
-}
-
-.caption.no-icons .caption__icon {
-    display: none;
 }

@@ -37,7 +37,7 @@
     "start": "BROWSER=none react-app-rewired start",
     "win": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "minify-css": "postcss public/css/style.css > public/css/min/style.min.css",
+    "minify-css": "postcss public/style.css > public/style.min.css & postcss public/desktop.css > public/desktop.min.css & postcss public/mobile.css > public/mobile.min.css",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },

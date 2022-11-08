@@ -1,6 +1,7 @@
 import React from 'react';
 import Lasr from '../Icons/Lasr';
 import Icons from './Icons';
+import Wallet from '../Wallet/Wallet';
 import nav from '../Move/nav';
 import move from '../Move/move';
 
@@ -8,7 +9,7 @@ export default function Navbar() {
   return (
     <nav id="navbar" className="focus">
       <button className="icon" onClick={function(){nav()}}>
-        ☰
+        <Lasr />
       </button>
       <button className="home thin" onClick={function(){move('home');}}>
         <Lasr />
@@ -25,6 +26,7 @@ export default function Navbar() {
       <button onClick={function(){move('roadmap');}}>
         Roadmap
       </button>
+      <Wallet />
       <Icons />
     </nav>
   );

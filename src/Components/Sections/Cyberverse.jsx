@@ -36,7 +36,7 @@ function Page() {
   return (
     <Container>
       <Content>
-        <Lasr type="full" tilt />
+        <Lasr nav="home" type="full" tilt />
         <Txt />
       </Content>
     </Container>

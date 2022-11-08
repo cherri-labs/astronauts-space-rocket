@@ -11,12 +11,16 @@ class Lasr extends React.Component {
   }
 
   render() {
+    const href = this.props.nav;
     const lasrClass = 'arrow logo ' +
                        (this.props.type ? this.props.type : '');
 
     return (
       <div className={'lasr ' + (this.props.tilt ? 'tilt ' : '')}>
-        <a onClick={function(){nav('home');}}>
+        <a onClick={function() {
+          if (href)
+            nav(href);
+        }}>
           <i className={lasrClass} />
         </a>
       </div>
