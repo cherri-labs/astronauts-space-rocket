@@ -4,19 +4,37 @@ import GlitchSpan from '../GlitchSpan';
 import lang from '../lang';
 import _uniqueId from 'lodash/uniqueId';
 
-const Wallet: FC = () => {
+function Content(props) {
   const [id] = useState(_uniqueId("wallet-button__glitch"));
 
+  if (props.glitch) {
+    return (
+      <GlitchSpan id={id}
+                  steps="2"
+                  duration="0"
+                  delay="100"
+                  write={lang["wallet"]}>
+        {props.children}
+      </GlitchSpan>
+    );
+  } else {
+    return (
+      <span>
+        {props.children}
+      </span>
+    );
+  }
+}
+
+const Wallet: FC = (props) => {
+  const text = props.children || "Select Wallet";
+
   return (
-    <div id="wallet">
+    <div id="wallet" className="wallet-container">
       <WalletMultiButton>
-        <GlitchSpan id={id}
-                    steps="2"
-                    duration="0"
-                    delay="100"
-                    write={lang["wallet"]}>
-          Select Wallet
-        </GlitchSpan>
+        <Content glitch={props.glitch}>
+          {text}
+        </Content>
       </WalletMultiButton>
     </div>
   );

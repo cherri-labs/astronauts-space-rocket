@@ -45,6 +45,11 @@
         width: 270px;
     }
 
+    #navbar .wallet-adapter-button,
+    .dropdown #navbar button:not(.home):not(.exit) {
+        display: none !important;
+    }
+
     .icons {
         --icons-gap: 2vw;
         justify-content: center;

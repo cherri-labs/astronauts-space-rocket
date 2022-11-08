@@ -13,7 +13,8 @@ export function Text(props) {
 
 export function Content(props) {
   return (
-    <div id="content" className="focus">
+    <div id="content"
+         className={(props.focus ? "focus " : "")}>
       {props.children}
     </div>
   );
@@ -21,7 +22,8 @@ export function Content(props) {
 
 export function Container(props) {
   return (
-    <div id="container" className="focus">
+    <div id="container"
+         className={(props.focus ? "focus " : "")}>
       {props.children}
     </div>
   );

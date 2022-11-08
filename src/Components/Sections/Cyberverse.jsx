@@ -21,18 +21,14 @@ const Txt = () => {
       <p>
         Welcome to the{" "}
         <a className="strong">
-          <GlitchSpan id="cyberverse-text__glitch" write={lang["cyberverse"]}>
-            Cyberverse
-          </GlitchSpan>
+          Cyberverse
         </a>
         <i className="arrow right"></i>
         a dinamically growing ever-expanding
         digital reality.{" "}
         <a className="strong"
            onClick={function(){nav('lasr');}}>
-          <GlitchSpan id="lasr__glitch" write={lang["lasr nfts"]}>
-            LASR NFTs
-          </GlitchSpan>
+          LASR NFTs
         </a>{" "}
         are your all-access pass. They allow you to freely explore
         all new features and released products.

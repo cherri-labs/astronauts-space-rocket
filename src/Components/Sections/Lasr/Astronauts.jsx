@@ -59,7 +59,7 @@ const Txt = () => {
 
 function Page() {
   return (
-    <Container>
+    <Container focus>
       <Content>
         <Txt />
         <Nft />

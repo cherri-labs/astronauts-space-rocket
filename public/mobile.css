@@ -88,6 +88,15 @@
         display: block;
     }
 
+    .dropdown *:not(#navbar) .wallet-adapter-button,
+    *:not(.dropdown) #navbar .wallet-adapter-button {
+        display: none !important;
+    }
+
+    .dropdown #navbar .wallet-adapter-button {
+        display: block !important;
+    }
+
     .icons {
         --icons-gap: 20px;
     }
