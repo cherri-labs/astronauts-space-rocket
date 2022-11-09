@@ -4,7 +4,9 @@ import { write } from 'glitched-writer';
 export default function GlitchSpan(props) {
   const id = props.id || 'glitch__span';
   const name = props.name || 'glitch__span';
-  const selector = '#' + id + '.' + name;
+  const selector = (props.to ?
+                    '#' + props.to :
+                    '#' + id + '.' + name);
   const steps = props.step || 4;
   const duration = props.duration || 80;
   const delay = props.delay || 800;
