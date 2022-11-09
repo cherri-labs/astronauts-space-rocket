@@ -1448,9 +1448,11 @@ main.widescreen #roadmap .card-wrap {
 }
 
 #roadmap .card-wrap .move-nav.focus:not(.space):hover > *:not(:hover) {
-    background-color: transparent;
-    box-shadow: 1px -1px 2px 1px #355;
-    opacity: .2;
+    --primary: #49a !important;
+    border-radius: 1px;
+    -webkit-filter: invert(60%) contrast(200%);
+    filter: invert(40%) contrast(200%);
+    opacity: .3;
 }
 
 .card-wrap,
@@ -1974,7 +1976,7 @@ button.portal:not(.disabled) + .portal-tag,
     min-width: 105px;
     height: 40px;
     line-height: 40px;
-    transition: background 0.2s;
+    transition: background .2s, filter .2s, opacity .2s;
 }
 
 .cybr-btn:hover {
