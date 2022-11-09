@@ -704,7 +704,7 @@ strong.astronauts {
 
 /* --< buds >-- */
 #buds h1.orange {
-    background: linear-gradient(#102, #852 10%, #f3ad70 60%);
+    background: linear-gradient(#841, #987 10%, #c3ad70 60%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
@@ -1445,6 +1445,14 @@ main.widescreen #roadmap .card-wrap {
     visibility: hidden;
 }
 
+#roadmap .card-wrap .move-nav.focus:not(.space):hover > *:not(:hover) {
+    --primary: #49a !important;
+    border-radius: 1px;
+    -webkit-filter: invert(60%) contrast(200%);
+    filter: invert(40%) contrast(200%);
+    opacity: .3;
+}
+
 .card-wrap,
 .card,
 .card article,
@@ -1915,7 +1923,9 @@ button.portal:not(.disabled) + .portal-tag,
 /* --< glitch >-- */
 .glitch__span:hover {
     min-width: 100px;
+    padding: 0 100px;
     text-align: center;
+    white-space: nowrap;
 }
 
 .glitch__sub:hover .glitch__display,
@@ -1964,7 +1974,7 @@ button.portal:not(.disabled) + .portal-tag,
     min-width: 105px;
     height: 40px;
     line-height: 40px;
-    transition: background 0.2s;
+    transition: background .2s, filter .2s, opacity .2s;
 }
 
 .cybr-btn:hover {
