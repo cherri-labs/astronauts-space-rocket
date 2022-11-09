@@ -24,7 +24,7 @@ const Nft = () => {
   return (
     <div className="nft">
       <AstronautImg href="index" glitch zoom hover />
-      <NftCaption type="middle bar"
+      <NftCaption type="bar"
                   price="1"
                   whitelist="0.64"
                   freeMint="Owners"

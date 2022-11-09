@@ -660,14 +660,15 @@ body {
     margin-top: -2%;
 }
 
-#lasr .index__page .portal-container {
-    flex-flow: row nowrap;
-    width: 70vw;
-}
-
 #lasr .index__page .portal-wrap {
     transform-style: preserve-3d;
     transform: perspective(1000px);
+
+    transition: margin .2s;
+}
+
+#lasr .index__page .portal-wrap:hover {
+    margin-top: -10px;
 }
 
 #lasr .index__page .portal-tag span.portal {
@@ -732,10 +733,6 @@ strong.astronauts {
 
 #gate h3 {
     align-self: flex-start;
-}
-
-#gate .portal-container {
-    gap: 180px;
 }
 
 #gate .portal-container:hover > .portal-wrap:not(:hover) button {
