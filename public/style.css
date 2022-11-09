@@ -1050,8 +1050,6 @@ main.widescreen #roadmap .card-wrap {
 #nav-container.dropdown {
     bottom: 0;
     margin: 0;
-
-    pointer-events: auto !important;
 }
 
 #navbar {
