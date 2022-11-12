@@ -35,11 +35,17 @@
     }
 
     #home .title {
-        top: 48%;
+        transform: translateY(-.8em);
     }
 
     #lasr .text {
         order: -1;
+    }
+
+    #lasr .index__page .nft .img.bud,
+    #lasr .index__page .nft.img.bud,
+    #lasr .index__page .glitch__img.bud .glitch__item {
+        background-position: -35px 0;
     }
 
     #lasr .index__page .portal-container {
@@ -51,21 +57,28 @@
         overflow: hidden;
     }
 
-    #lasr .index__page .nft .img.bud,
-    #lasr .index__page .nft.img.bud,
-    #lasr .index__page .glitch__img.bud .glitch__item {
-        background-position: -35px 0;
-    }
-
     #gate .portal-container {
         gap: 20px;
         flex-flow: column nowrap;
     }
 
-    .bank .note.active {
-        margin: -10% 0%;
-        padding: 5px;
-        text-decoration: underline;
+    .portal-wrap {
+        transform: perspective(0) !important;
+    }
+
+    #lasr button.portal:not(:hover) + .portal-tag:not(:hover),
+    #lasr .portal-btn-wrap:not(:hover) + .portal-tag:not(:hover) {
+        opacity: 0;
+    }
+
+    #lasr button.portal:not(:hover) + .portal-tag:not(:hover) span,
+    #lasr .portal-btn-wrap:not(:hover) + .portal-tag:not(:hover) span {
+        display: none;
+    }
+
+    #gate .portal-container {
+        flex-flow: column nowrap;
+        align-items: center !important;
     }
 
     .bank {
@@ -73,8 +86,30 @@
         padding: 55px 25px;
     }
 
+    .bank.disabled {
+        opacity: 0.5;
+    }
+
+    .bank.disabled:after {
+        content: 'Please come back after the mint';
+        -webkit-text-stroke: 1px #b4f4ee;
+        text-shadow: 1px 1px 3px #000;
+        position: absolute;
+        padding: 20% 0;
+        width: 100%;
+        text-align: center;
+        -webkit-backdrop-filter: blur(1px) invert(80%);
+        backdrop-filter: blur(1px) invert(80%);
+    }
+
     .bank .textbox button.inset {
         padding: 5px;
+    }
+
+    .bank .note.active {
+        margin: -10% 0%;
+        padding: 5px;
+        text-decoration: underline;
     }
 
     #cyberverse h3 {
@@ -132,8 +167,22 @@
         margin-left: 5px;
     }
 
+    #roadmap {
+        padding: 7vh 0;
+    }
+
     #roadmap .card {
+        margin-bottom: 3vh;
         min-height: 450px;
+    }
+
+    .mechas.bg,
+    .ronins.bg {
+        background-position: -250px 0;
+    }
+
+    .buds.bg {
+        background-position: -500px 0;
     }
 
     .move-arrow {

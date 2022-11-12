@@ -1,5 +1,7 @@
 import React from 'react';
 
+let activeBg;
+
 function close() {
   const cards = document.getElementById("roadmap")
                         .getElementsByClassName("card-wrap active");
@@ -26,12 +28,18 @@ class Card extends React.Component {
   }
 
   render() {
+    if (this.props.bg)
+      activeBg = this.props.bg;
+
     return (
-      <div ref = {this.myRef} className={"card-wrap " +
-             (this.props.active ? "active " : "") +
-                 (this.props.closed ? "" : "closed")}>
-        <div className={"card " +
-                 (this.props.locked ? "locked " : "")}>
+      <div ref = {this.myRef} className={"card-wrap "
+                                       + (this.props.active ? "active " : "")
+                                       + (this.props.closed ? "" : "closed")}>
+        <div className={activeBg ? "bg-container" : ""}>
+          <div className={activeBg ? activeBg + " bg" : ""} />
+        </div>
+        <div className={"card "
+                      + (this.props.locked ? "locked " : "")}>
           {this.props.children}
         </div>
       </div>

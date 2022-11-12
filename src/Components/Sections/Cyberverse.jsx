@@ -41,7 +41,7 @@ function Page() {
   return (
     <Container>
       <Content>
-        <Lasr nav="home" type="full" tilt />
+        <Lasr nav="lasr" type="full" tilt />
         <Txt />
       </Content>
     </Container>

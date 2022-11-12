@@ -6,7 +6,8 @@ import move from '../Move/move';
 export function PortalTag(props) {
   return (
     <div className={"portal-tag "
-                  + (props.center ? 'center ' : '')}
+                  + (props.center ? 'center ' : '')
+                  + (props.disabled ? 'disabled ' : '')}
          style={{marginTop: props.top,
                  marginRight: props.right}}>
       <span className="portal">

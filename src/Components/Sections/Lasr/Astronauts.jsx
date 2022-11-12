@@ -25,12 +25,12 @@ const Nft = () => {
     <div className="nft">
       <AstronautImg href="index" glitch zoom hover />
       <NftCaption type="bar"
-                  price="1"
-                  whitelist="0.64"
+                  price="?"
+                  whitelist="?"
                   freeMint="Owners"
-                  mint="7168"
-                  supply="8192"
-                  reserve="1024"
+                  mint="????"
+                  supply="????"
+                  reserve="????"
                   icons/>
     </div>
   );
@@ -41,7 +41,7 @@ const Txt = () => {
     <Text>
       <h1>Lonely<br/>Astronauts</h1>
       <p>
-        A collection of 8192 <a>Lonely Astronaut</a> NFTs
+        A collection of <a>Lonely Astronaut</a> NFTs
         inspired by <span className="neon more">vaporwave</span> and{" "}
         <span className="stack" style={{"--stacks": 3}}>
           <span className="more" style={{"--index": 0}}>cyberpunk</span>

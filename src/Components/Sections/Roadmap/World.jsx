@@ -1,100 +1,168 @@
 import React from 'react';
-import Card, { CardTitle } from './Card';
-import { MoveSection, MoveNav } from '../../Move/Mover';
+import { MoveSection } from '../../Move/Mover';
+import MapCard from './MapCard';
+
+const mover = "roadmap";
+
+function Mechas() {
+  return (
+    <MapCard mover={mover} title="Mecha Angels" bg="mechas" active>
+      <p>
+        At the <strong>Horizon Centre</strong> dense degraded
+        circuitry under the gradient twilight stars glimpsed into a
+        world where shadow obstructs and clutters with uneven
+        machinery the metropolis' skyline.
+      </p>
+      <p>
+        They call them <strong>Mechas</strong>.
+      </p>
+      <p>
+        They're programmed to watch over the citizens' peace and prosperity.
+      </p>
+    </MapCard>
+  );
+}
+
+function Ronins() {
+  return (
+    <MapCard mover={mover} title="Cyber Ronins" bg="ronins">
+    <p>
+    With the upsurge of machines in the months preceding the attack,
+    the population was growing increasingly worried. While often
+    dismissed as paranoid, groups started forming in secret
+    to discuss solutions for the current &laquo; state of society &raquo;.
+                                                                 </p>
+    <p>
+    They called themselves <strong>Ronins</strong>.
+    </p>
+    <p>
+    Through the <strong>Ronins'</strong> uncorrupted eye we look
+    at <strong>Mecha</strong> vigilantes and all we
+    see is rotten mechanisms 50 ft tall taking their toll on the{" "}
+    <strong>
+      citizens
+    </strong>.
+      </p>
+    </MapCard>
+  );
+}
+
+function Phantoms() {
+  return (
+    <MapCard mover={mover} title="Phantom Shells" bg="phantoms">
+      <p>
+        As the night lurks in the <strong>Underground</strong> awakes
+        and a thousand <strong>Phantoms</strong>, motherboards
+    and neon signs light up the dark city alleyways.
+      </p>
+      <p>
+        It's the birth of <b>a new era</b>, are you just going to watch?
+      </p>
+    </MapCard>
+  );
+}
+
+function Buds() {
+  return (
+    <MapCard mover={mover} title="Space Buds" bg="buds">
+      <p>
+        From the farthest corner of the galaxy a spedition was sent.
+      </p>
+      <p>
+        With destination unknown, they were escaping their star's
+        destruction by the almighty hands of God.
+      </p>
+      <p>
+        Only a small number of ships that took off that day survived.
+      </p>
+      <p>
+        Warp engines and technology advancements allowed them to
+        quickly cross thousands of light years until the radar caught an
+        inhabitable planet.
+      </p>
+      <p>
+        One of them has landed right into the <strong>city</strong>.
+      </p>
+    </MapCard>
+  );
+}
+
+function Astronauts() {
+  return (
+    <MapCard mover={mover} title="Lonely Astronauts" bg="astronauts">
+      <p>
+        Rogue spaceships cross the borders of{" "}
+        <strong>Sypharpunk</strong> in an attempt to fetch
+        dark matter at a cheaper price.
+      </p>
+      <p>
+        When they get caught the only chance is <strong>teleportation</strong>.
+        But not all <strong>portal guns</strong> on these
+        crafts are as solid as you would expect.
+      </p>
+      <p>
+        Sometimes they can take you right in the middle of nowhere.
+        Nothing for billions of light years in any direction.
+      </p>
+      <p>
+        The only option would be cryo-freezing. But even after
+        thousands of years, you could wake up and still see nothing.
+      </p>
+      <p>
+        It can get pretty lonely up there.
+      </p>
+    </MapCard>
+  );
+}
+
+function NeoTowns() {
+  return (
+    <MapCard mover={mover} title="Neo Towns" bg="neotowns">
+      <p>
+      </p>
+    </MapCard>
+  );
+}
+
+function BlueDiary() {
+  return (
+    <MapCard mover={mover} title="Blue Diary" bg="diary">
+      <p>
+        Found under the wreckage of an old{" "}
+        <strong>
+          underground house
+        </strong>.
+      </p>
+      <p>
+        It documented life in the city before{" "}
+        <strong>
+          crit point
+        </strong>. During the attack many of the informations contained
+        here happened to be striked from human knowledge.
+      </p>
+      <p>
+        For many, this was the first and only history they knew.
+      </p>
+      <p>
+        When the <strong>Ronins</strong> got their hands on it
+        copies were made spreading its contents.
+        Soon enough it also became known as <i>The Bible</i> in
+        the <strong>Underground</strong> world.
+      </p>
+    </MapCard>
+  );
+}
 
 export default function World() {
   return (
     <MoveSection id="world" active>
-      <div className="bg-container">
-        <div className="world bg" />
-      </div>
-      <Card active>
-        <CardTitle>A New World</CardTitle>
-        <article>
-          <p>
-            At the <strong>Horizon Centre</strong> dense degraded
-            circuitry under the gradient twilight stars glimpsed into a
-            world where shadow obstructs and clutters with uneven
-            machinery the metropolis' skyline.
-          </p>
-          <p>
-            They call them <strong>Mechas</strong>, and they're
-            programmed to watch over the citizens' peace and prosperity.
-          </p>
-          <p>
-            But through the <strong>Rebels'</strong> uncorrupted eye all we
-            see is rotten mechanisms 50 ft tall taking their toll on every brothel,
-            merry-go-round and gambling den in town.
-          </p>
-        </article>
-        <MoveNav mover="roadmap" />
-      </Card>
-      <Card>
-        <CardTitle>A New World</CardTitle>
-        <article>
-          <p>
-            As the night lurks in the <strong>Underground</strong> awakes,
-            and a thousand <strong>Phantoms</strong> and motherboards
-            and neon signs light up all at the same time.
-          </p>
-          <p>
-            It's the birth of <b>a new era</b>, are you just going to watch?
-          </p>
-        </article>
-        <MoveNav mover="roadmap" />
-      </Card>
-      <Card>
-        <CardTitle>A Digital Realm</CardTitle>
-        <article>
-          <p>
-            In this evolving digital realm, new and varied worlds
-            spawn on everyday basis. With so many faces coming and going
-            it's hard to keep a steady eye on things. That's why
-            {" "}<b>we will keep our goals on top of priorities at all
-            times</b>.
-            We work to create the content that's going to be part of the
-            future. That's a privilege won't throw away, because
-            {" "}<b>we all need something to believe in</b>.
-          </p>
-        </article>
-        <MoveNav mover="roadmap" />
-      </Card>
-      <Card>
-        <CardTitle>A Digital Realm</CardTitle>
-        <article>
-          <p>
-            A new generation is going to state once and for
-            all what identity is and how we can define it. And as messy as
-            that is, we will try our best to get the road down in a clear
-            and linear path for you to walk on.
-          </p>
-          <MoveNav mover="roadmap" />
-        </article>
-      </Card>
-      <Card>
-        <CardTitle>The Way Things Were</CardTitle>
-        <article>
-          <p>
-            Our world used to be <b>one of a kind</b>. A distinctive mark
-            in an otherwise unholy chaos of wishful thinking and
-            abstract reality. Now, we have to adapt.
-          </p>
-        </article>
-        <MoveNav mover="roadmap" />
-      </Card>
-      <Card>
-        <CardTitle>The Future</CardTitle>
-        <article>
-          <p>
-            The line that separates us from our dreams becomes
-            {" "}<b>thinner and thinner</b>.
-          </p>
-          <p>
-            <b>Our choices pave the way before us.</b>
-          </p>
-        </article>
-        <MoveNav mover="roadmap" />
-      </Card>
+      <Mechas />
+      <Ronins />
+      <Phantoms />
+      <Buds />
+      <Astronauts />
+      <NeoTowns />
+      <BlueDiary />
     </MoveSection>
   );
 }

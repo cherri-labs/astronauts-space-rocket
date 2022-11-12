@@ -209,7 +209,7 @@ export default function move(moverId, sectionId = 'index', index = 0) {
       .length - 1;
 
     /* run glitch transition */
-//  glitchTrans(glitchSelector);
+    //  glitchTrans(glitchSelector);
 
     /* recursive move to next section */
     move(moverId, previousSectionId, lastIndex);
@@ -235,7 +235,7 @@ export default function move(moverId, sectionId = 'index', index = 0) {
       nextSectionId = sections[0].id;
 
     /* run glitch transition */
-//  glitchTrans(glitchSelector);
+    //  glitchTrans(glitchSelector);
 
     /* recursive move to next section */
     move(moverId, nextSectionId);

@@ -1,6 +1,157 @@
 import React from 'react';
-import Card, { CardTitle } from './Card';
-import { MoveSection, MoveNav } from '../../Move/Mover';
+import { MoveSection } from '../../Move/Mover';
+import { MoveAnchor } from '../../Move/MoveButton';
+import MapCard from './MapCard';
+
+const mover = "roadmap";
+
+function Landing() {
+  return (
+    <MapCard mover={mover} title="Landing">
+      <p>
+        Landing phase is going to be minting for both initial
+        collections.
+        After each mint NFTs from the reserve are going
+        to fuel giveaways to the community and holder airdrops.
+      </p>
+      <p>
+        That's going to include the original NFTs from which all others were
+        generated. The <i>Commanders</i>.
+      </p>
+      <p>
+        Rewards will be accessible from the{" "}
+        <MoveAnchor mover="gate" goto="bank">
+          <strong>Astro Bank</strong>
+        </MoveAnchor>
+        {" "}right after mint.
+      </p>
+    </MapCard>
+  );
+}
+
+function Stardust() {
+  return (
+    <MapCard mover={mover} title="Stardust">
+      <p>
+        We are planning to launch our very own token after both collections
+        are minted.
+      </p>
+      <p>
+        <strong>Stardust</strong>.
+      </p>
+      <p>
+        It will be initially airdropped to holders only.
+      </p>
+      <p>
+        <strong>$STRD</strong> tokens will be the standarm form of payment
+        for services following the release.
+      </p>
+    </MapCard>
+  );
+}
+
+function Terraforming() {
+  return (
+    <MapCard mover={mover} title="Terra-forming">
+      <p>
+        We're working everyday to extend the current
+        documentation about the project. We plan to
+        release extended docs during terraforming phase.
+      </p>
+      <p>
+        Terraforming would begin right after mint and continue throughout
+        the token launch.
+      </p>
+    </MapCard>
+  );
+}
+
+function SpaceClub() {
+  return (
+    <MapCard mover={mover} title="Space Club">
+      <p>
+        The <strong>Space Club</strong> will be opening doors to
+        holders.
+      </p>
+      <p>
+        In here they can hang out with others from the gang,
+        take a shot at one of our challenges or just to buy dope stuff.
+      </p>
+      <p>
+        <b>No rules.</b> Community comes first, so you do you.
+      </p>
+    </MapCard>
+  );
+}
+
+function Staking() {
+  return (
+    <MapCard mover={mover} title="Staking">
+      <p>
+        After mint we will begin implementation for
+        the <strong>staking portal</strong>.
+      </p>
+      <p>
+        <MoveAnchor mover="lasr" goto="index">
+          <strong>LASR NFTs</strong>
+        </MoveAnchor>
+        {" "}as well as <strong>$STRD</strong> tokens will be stakable
+        in exchange for daily rewards.
+      </p>
+    </MapCard>
+  );
+}
+
+function Expansion() {
+  return (
+    <MapCard mover={mover} title="Expansion">
+      <p>
+        We're not stopping there.
+        The <strong>LASR</strong> universe is intricate and complex.
+      </p>
+      <p>
+        You're going to discover it all with us, as we do the same.
+      </p>
+      <p>
+        We will eventually release <strong>Mecha Angels</strong> and{" "}
+        <strong>Cyber Rebels</strong> to the world.
+      </p>
+      <p>
+        At this time the <strong>LASR DAO</strong> is created.
+        The <strong>LASR DAO</strong> will be regulated entirely by the
+        community. It will be in charge of
+        the <strong>Stardust</strong> token as well as other important
+        community decisions to be taken together.
+      </p>
+    </MapCard>
+  );
+}
+
+function QuestToFaraway() {
+  return (
+    <MapCard mover={mover} title="Quest To Faraway">
+      <p>
+        Only you, <b>the community</b>, can decide how far we go.
+      </p>
+      <p>
+        We've planned the route ahead of us, but there's no finish line.
+      </p>
+      <p>
+        <strong>LASR</strong> is entirely yours, and possibilities
+        are endless.
+      </p>
+      <p>
+        We believe it's much cooler to leave it by itself and see
+        how far it can travel, what it can become. It will
+        be fascinating to observe as it mutates and takes on new shapes and
+        forms of all kinds.
+      </p>
+      <p>
+        We wouldn't miss it for the world.
+      </p>
+    </MapCard>
+  );
+}
 
 export default function Path() {
   return (
@@ -8,91 +159,13 @@ export default function Path() {
       <div className="bg-container">
         <div className="path bg" />
       </div>
-      <Card>
-        <CardTitle>Landing</CardTitle>
-        <article>
-          <p>
-            As we approach <b>landing phase</b> we are going to
-            release <strong>Space Buds</strong> to the world.
-            After <i>whitelist phase</i> and <i>public mint</i>, <b>32</b>{" "}
-            <strong>Space Commanders</strong> will be airdropped to holders
-            and giveaway winners, together with the remaining portion
-            of <strong>Space Buds</strong> NFTs.
-          </p>
-          <MoveNav mover="roadmap" />
-        </article>
-      </Card>
-      <Card>
-        <CardTitle>Landing</CardTitle>
-        <article>
-          <p>
-            All funds from the mint will are locked immediately into
-            the <strong>Astro Bank</strong> where users are
-            able to claim their rewards right away.
-          </p>
-          <MoveNav mover="roadmap" />
-        </article>
-      </Card>
-      <Card>
-        <CardTitle>Terraforming</CardTitle>
-        <article>
-          <p>
-            We're working everyday to extend the current
-            documentation about the project. We plan to
-            release that during <b>Terraforming</b>.
-          </p>
-          <MoveNav mover="roadmap" />
-        </article>
-      </Card>
-      <Card>
-        <CardTitle>Terraforming</CardTitle>
-        <article>
-          <p>
-            We will also be opening a <strong>Space Club</strong> for
-            owners, where they can hop in for a chat, drink or
-            just to buy dope stuff.
-          </p>
-          <MoveNav mover="roadmap" />
-        </article>
-      </Card>
-      <Card>
-        <CardTitle>Terraforming</CardTitle>
-        <article>
-          <p>
-            After <strong>Lonely Astronauts</strong> mint we implement
-            the staking portal and <strong>$STRD</strong> tokens are
-            airdropped to owners only.
-          </p>
-          <MoveNav mover="roadmap" />
-        </article>
-      </Card>
-      <Card>
-        <CardTitle>Expansion</CardTitle>
-        <article>
-          <p>
-            We release <strong>Mechas</strong> and <strong>Rebels</strong> to
-            the world.
-          </p>
-          <p>
-            The <strong>LASR</strong> DAO is created.
-          </p>
-          <MoveNav mover="roadmap" />
-        </article>
-      </Card>
-      <Card>
-        <CardTitle>Quest to Faraway</CardTitle>
-        <article>
-          <p>
-            All owners can participate in the <strong>Grand Race for
-            Space</strong> and take their chance to win the big
-            money prize.
-          </p>
-          <p>
-            The <strong>LASR</strong> metaverse finally arrives.
-          </p>
-          <MoveNav mover="roadmap" />
-        </article>
-      </Card>
+      <Landing />
+      <Stardust />
+      <Terraforming />
+      <SpaceClub />
+      <Staking />
+      <Expansion />
+      <QuestToFaraway />
     </MoveSection>
   );
 }

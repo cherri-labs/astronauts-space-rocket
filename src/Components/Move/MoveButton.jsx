@@ -10,12 +10,14 @@ function callMove(props, mover, goto) {
     if (props.menu) {
       /* use menu move call */
       menu.move(mover, goto);
-    } else if (!props.nav) {
-      /* move to section */
-      move(mover + "-mover", "move-section-" + goto);
     } else {
-      /* use fallback nav function */
+      /* nav to mover */
       nav(mover);
+
+      if (!props.nav || props.goto) {
+        /* move to section */
+        move(mover + "-mover", "move-section-" + goto);
+      }
     }
   }
 }

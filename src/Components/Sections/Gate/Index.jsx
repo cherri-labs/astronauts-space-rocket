@@ -15,7 +15,7 @@ function Page() {
             <PortalButton disabled>
               Staking Portal
             </PortalButton>
-            <PortalTag>
+            <PortalTag disabled>
               Portal is not available yet. Try again later.
             </PortalTag>
           </Portal>

@@ -21,7 +21,7 @@ export default function Navbar() {
           Cyberverse
       </button>
       <button onClick={function(){move('roadmap');}}>
-          Roadmap
+          World Map
       </button>
       <div id="bottom-bar" className="focus">
         <button className="home" onClick={function(){nav();}}>
