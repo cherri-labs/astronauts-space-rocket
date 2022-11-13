@@ -22,7 +22,7 @@ function Creators() {
         world and that is going to stick with you through the test of time.
       </p>
       <p>
-        Something that makes you want to hold on to it till the end.
+        Something that you want to hold on to till the end.
       </p>
     </MapCard>
   );
