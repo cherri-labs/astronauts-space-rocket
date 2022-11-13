@@ -155,6 +155,7 @@
 
     .caption {
         order: 2;
+        flex-flow: row wrap;
     }
 
     .caption .column p {
