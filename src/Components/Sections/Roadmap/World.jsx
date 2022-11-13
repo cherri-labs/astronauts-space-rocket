@@ -134,7 +134,7 @@ function NeoTowns() {
         Following was a rapid decrease of population, and abandoned
         facilities growing in number accordingly. Inhabited buildings
         were often adapted to the stronger climate with scrap. This was
-        also a quick fix for walls and windows damaged from war.
+        also a quick fix for walls and windows damaged badly from war.
       </p>
     </MapCard>
   );
