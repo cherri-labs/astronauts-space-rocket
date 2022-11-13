@@ -148,6 +148,9 @@ export default function move(moverId, sectionId = 'index', index = 0) {
   /* move section */
   const moveSection = mover.querySelector("#" + sectionId);
 
+  /* nav to mover */
+  nav(moverId);
+
   /* initialize index */
   let i = 0;
 

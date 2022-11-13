@@ -20,7 +20,7 @@
 
     #lasr .index__page .portal-container,
     #gate .portal-container {
-        gap: 180px;
+        gap: 100px;
     }
 
     #lasr .index__page .portal-wrap {
@@ -43,11 +43,11 @@
         padding: 75px 2vw;
     }
 
-    .bank.disabled:hover:active {
+    .bank.disabled:hover {
         opacity: 0.5;
     }
 
-    .bank.disabled:hover:active:after {
+    .bank.disabled:hover:after {
         content: 'Please come back after the mint';
         -webkit-text-stroke: 1px #b4f4ee;
         text-shadow: 1px 1px 3px #000;
@@ -87,8 +87,11 @@
     }
 
     .icons {
-        --icons-gap: 2vw;
         justify-content: center;
+    }
+
+    .dropdown .icons {
+        padding-right: calc(var(--bottom-bar-padding) * 1.8);
     }
 
     .nft {

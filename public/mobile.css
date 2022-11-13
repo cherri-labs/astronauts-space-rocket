@@ -49,7 +49,7 @@
     }
 
     #lasr .index__page .portal-container {
-        width: 90vw;
+        width: 85vw;
     }
 
     #lasr .index__page .portal {
@@ -132,6 +132,10 @@
         display: block;
     }
 
+    .dropdown .icons {
+        padding-right: calc(var(--bottom-bar-padding) * 1.3);
+    }
+
     .dropdown *:not(#navbar) .wallet-adapter-button,
     *:not(.dropdown) #navbar .wallet-adapter-button {
         display: none !important;
@@ -139,10 +143,6 @@
 
     .dropdown #navbar .wallet-adapter-button {
         display: block !important;
-    }
-
-    .icons {
-        --icons-gap: 20px;
     }
 
     .nft {

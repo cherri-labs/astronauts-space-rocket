@@ -7,21 +7,21 @@ import move from '../Move/move';
 
 export default function Navbar() {
   return (
-    <nav id="navbar" className="focus">
+    <nav id="navbar" className="focus normal">
       <button className="home" onClick={function(){nav();}}>
         <Lasr />
       </button>
       <button onClick={function(){move('lasr');}}>
-          Choose Player
+        Choose Player
       </button>
-      <button onClick={function(){move('gate');}}>
-          Open Portal
+      <button onClick={function(){move('gate', 'move-section-bank');}}>
+        Open Portal
       </button>
       <button onClick={function(){move('cyberverse');}}>
-          Cyberverse
+        Cyberverse
       </button>
       <button onClick={function(){move('roadmap');}}>
-          World Map
+        World Map
       </button>
       <div id="bottom-bar" className="focus">
         <button className="home" onClick={function(){nav();}}>

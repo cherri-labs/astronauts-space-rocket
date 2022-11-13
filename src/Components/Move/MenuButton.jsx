@@ -19,37 +19,38 @@ class MenuButton extends React.Component {
   render() {
     const mover = this.props.mover;
     const goto = this.props.goto || 'index';
+    const glitch = this.props.glitch;
     const disabled = this.props.disabled;
     const quicklaunch = this.props.quicklaunch;
 
     return (
       <>
-        <button className={"sticky "
-                         + (this.props.active ? 'active ' : '')
-                         + (this.props.show ? 'show ' : '')
-                         + (this.props.index ? 'index ' : '')}
-                id={"move-button-" + goto + "-active"}
-                onClick={function(){
-                  (quicklaunch ?
-                   menu.move(mover, goto) :
-                   menu.toggle(goto));
-                }}>
-          {this.props.title ? this.props.title : this.props.children}
-        </button>
+      <button className={"sticky "
+                       + (this.props.active ? 'active ' : '')
+                       + (this.props.show ? 'show ' : '')
+                       + (this.props.index ? 'index ' : '')}
+      id={"move-button-" + goto + "-active"}
+      onClick={function(){
+        (quicklaunch ?
+         menu.move(mover, goto) :
+         menu.toggle(goto));
+      }}>
+      {this.props.title ? this.props.title : this.props.children}
+      </button>
 
-        {(this.props.only) ? "" :
-         /* show button in open menu if not 'only' */
-         <MoveButton id={"move-button-" + goto}
-                     className={(disabled ? 'disabled ' : '')
-                              + (this.props.index ? 'index ' : '')}
-                     mover={mover}
-                     goto={goto}
-                     disabled={disabled}
-                     menu>
-           {this.props.children}
+      {(this.props.only) ? "" :
+       /* show button in open menu if not 'only' */
+       <MoveButton id={"move-button-" + goto}
+        className={(this.props.index ? 'index ' : '')}
+        mover={mover}
+        goto={goto}
+        glitch={glitch}
+        disabled={disabled}
+        menu>
+        {this.props.children}
          </MoveButton>
-        }
-      </>
+      }
+    </>
     );
   }
 }

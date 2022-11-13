@@ -2,6 +2,7 @@ import React from 'react';
 import move from './move';
 import nav from './nav';
 import { menu } from './SideMenu';
+import setGlitch from '../../glitchTransition';
 
 /* call required move function */
 function callMove(props, mover, goto) {
@@ -40,12 +41,12 @@ export function MoveAnchor(props) {
 
   return (
     <a id={props.id}
-            className={props.className}
-            onClick={function() {
-              /* call move to section */
-              callMove(props, mover, goto);
-            }}>
-    {props.children}
+       className={props.className}
+       onClick={function() {
+         /* call move to section */
+         callMove(props, mover, goto);
+       }}>
+      {props.children}
     </a>
   );
 }
@@ -53,15 +54,22 @@ export function MoveAnchor(props) {
 export default function MoveButton(props) {
   const mover = props.mover;
   const goto = props.goto;
+  const glitch = props.glitch;
+  const disabled = props.disabled;
 
   return (
     <button id={props.id}
-            className={props.className}
-            onClick={function() {
-              /* call move to section */
-              callMove(props, mover, goto);
-            }}>
-      {props.children}
+    className={props.className
+             + (glitch ? ' glitch ' : '')
+             + (disabled ? ' disabled ' : '')}
+    onClick={function() {
+      if (glitch)
+        setGlitch('.menu button.glitch', 400, 1, true, 6, 2000, false,);
+      if (!disabled)
+        /* call move to section */
+        callMove(props, mover, goto);
+    }}>
+    {props.children}
     </button>
   );
 }

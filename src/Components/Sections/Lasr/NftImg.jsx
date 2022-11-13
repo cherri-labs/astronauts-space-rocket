@@ -5,8 +5,8 @@ import move from '../../Move/move';
 
 export function Zoom(props) {
   const glitch = props.glitch;
-  const mover = props.mover;
-  const href = props.href;
+  const mover = props.mover + '-mover';
+  const href = 'move-section-' + props.href;
   const index = props.index;
 
   return (

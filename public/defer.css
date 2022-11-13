@@ -1063,18 +1063,22 @@ main.widescreen #roadmap .card-wrap {
     transform: translateY(-110px) !important;
 }
 
-/* --< footer icons >-- */
+/* --< bottom bar >-- */
 .dropdown #navbar #bottom-bar {
+    --bottom-bar-padding: 16px;
+
     order: 99;
     display: flex;
     width: 100%;
-    margin-top: 8px;
-    margin-left: 16px;
+    margin: calc(var(--bottom-bar-padding)/2) var(--bottom-bar-padding);
 }
 
+/* --< footer icons >-- */
 #bottom-bar,
 .icons-wrap,
 .icons {
+    --icons-gap: 1vw;
+
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -1086,7 +1090,6 @@ main.widescreen #roadmap .card-wrap {
 
 .dropdown .icons {
     justify-content: flex-end;
-    padding-right: var(--icons-gap);
 }
 
 .icons a {
@@ -1533,6 +1536,10 @@ main.widescreen #roadmap .card-wrap {
     border: 1px solid #b4f4ee;
 }
 
+.menu button.sticky:hover {
+    border-radius: 0;
+}
+
 .menu button:hover:not(.disabled):not(:active),
 .menu .quicklaunch button.sticky.active {
     color: #2d3236;
@@ -1648,6 +1655,10 @@ button.portal:not(.disabled):not(.anchor):hover {
     outline: 2px solid #b4f4ee;
 }
 
+#gate button.portal:not(.anchor):hover {
+    border-radius: 0;
+}
+
 button.portal.disabled, .portal-tag.disabled,
 button.portal.disabled + .portal-tag {
     opacity: .5;
@@ -1682,17 +1693,35 @@ button.portal:not(.disabled) + .portal-tag,
     transition: opacity .4s;
 }
 
-/* --< focus__space >-- */
+/* --< focus >-- */
 .focus {
+    --focus-off-opacity: .5;
     pointer-events: none !important;
+}
+
+.focus.low {
+    --focus-off-opacity: .9;
+}
+
+.focus.medium {
+    --focus-off-opacity: .8;
+}
+
+.focus.normal {
+    --focus-off-opacity: .6;
+}
+
+.focus.high {
+    --focus-off-opacity: .1;
 }
 
 .focus > *:not(.focus) {
     pointer-events: auto;
 }
 
-.focus:not(.space):hover > *:not(:hover) {
-    opacity: .5;
+.focus:not(.space):hover > *:not(.focus__on):not(:hover),
+.focus.off > *:not(.focus__on):not(:hover) {
+    opacity: var(--focus-off-opacity);
 }
 
 /* --< focus__clue >-- */

@@ -121,7 +121,7 @@ class SideMenu extends React.Component {
 
         <SubMenu name="gate">
           <MenuButton mover={gateMoverId} index active />
-          <MenuButton goto="stake" mover={gateMoverId} disabled>Stake</MenuButton>
+          <MenuButton goto="stake" mover={gateMoverId} glitch disabled>Stake</MenuButton>
           <MenuButton goto="bank" mover={gateMoverId}>Gate</MenuButton>
         </SubMenu>
 
