@@ -24,35 +24,31 @@ export default function nav(href) {
     /* toggle dropdown */
     nav.classList.toggle("dropdown");
 
-  if (curMover !== href && curMover + '-mover' !== href) {
+  if (href && curMover !== href && curMover + '-mover' !== href) {
     /* update current mover */
     curMover = href;
 
-    /* <-- display section --> */
-    /* display correct section */
-    if (href) {
-      /* remove active class from all sections */
-      const sections = document.getElementsByClassName("section");
-      [...sections].forEach(function (s) {
-        s.classList.remove("active");
-      });
+    /* remove active class from all sections */
+    const sections = document.getElementsByClassName("section");
+    [...sections].forEach(function (s) {
+      s.classList.remove("active");
+    });
 
-      /* section to activate */
-      const activeSection = document.getElementById(href);
+    /* section to activate */
+    const activeSection = document.getElementById(href);
 
-      /* activate correct section */
-      activeSection.classList.add("active");
+    /* activate correct section */
+    activeSection.classList.add("active");
 
-      /* mover inside section */
-      const mover = activeSection.querySelector(".move");
+    /* mover inside section */
+    const mover = activeSection.querySelector(".move");
 
-      /* if mover exists */
-      if (mover)
-        /* reset section mover */
-        moveReset(mover.id);
+    /* if mover exists */
+    if (mover)
+      /* reset section mover */
+      moveReset(mover.id);
 
-      /* hide dropdown */
-      nav.classList.remove("dropdown");
-    }
+    /* hide dropdown */
+    nav.classList.remove("dropdown");
   }
 }
