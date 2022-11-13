@@ -119,9 +119,9 @@ function NeoTowns() {
   return (
     <MapCard mover={mover} title="Neo Towns" bg="neotowns">
       <p>
-        Carbon emissions doubled every 18 months for years. When they
-        began to plateau the planet's atmosphere had already been
-        reduced by about 10%.
+        Carbon emissions doubled every 18 months or so. When they
+        began to settle the planet's atmosphere had already been
+        reduced by about 2%.
       </p>
       <p>
         Because of that, <strong>Neo-Towns</strong> experience drastic
@@ -131,10 +131,10 @@ function NeoTowns() {
         Winters can get extremely cold, and summers burning hot.
       </p>
       <p>
-        Following a rapid decrease of population, abandoned facilities
-        grew in number. Inhabited buildings were often adapted to the
-        stronger climate with scrap. This was also a quick fix for
-        badly damaged walls and windows.
+        Following was a rapid decrease of population, and abandoned
+        facilities growing in number accordingly. Inhabited buildings
+        were often adapted to the stronger climate with scrap. This was
+        also a quick fix for walls and windows damaged from war.
       </p>
     </MapCard>
   );
