@@ -119,6 +119,22 @@ function NeoTowns() {
   return (
     <MapCard mover={mover} title="Neo Towns" bg="neotowns">
       <p>
+        Carbon emissions doubled every 18 months for years. When they
+        began to plateau the planet's atmosphere had already been
+        reduced by about 10%.
+      </p>
+      <p>
+        Because of that, <strong>Neo-Towns</strong> experience drastic
+        temperature escalations throughout the year.
+      </p>
+      <p>
+        Winters can get extremely cold, and summers burning hot.
+      </p>
+      <p>
+        Following a rapid decrease of population, abandoned facilities
+        grew in number. Inhabited buildings were often adapted to the
+        stronger climate with scrap. This was also a quick fix for
+        badly damaged walls and windows.
       </p>
     </MapCard>
   );
