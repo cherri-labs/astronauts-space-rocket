@@ -202,9 +202,6 @@ function Web3() {
 export default function Vision() {
   return (
     <MoveSection id="vision">
-      <div className="bg-container">
-        <div className="vision bg" />
-      </div>
       <Creators />
       <Believe />
       <Ahead />

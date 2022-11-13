@@ -873,12 +873,40 @@ strong.astronauts {
     background-image: url('img/roadmap/neotowns1.jpg');
 }
 
-.vision.bg {
-    background-image: url('img/roadmap/vision.jpg');
+.creators.bg {
+    background-image: url('img/roadmap/vision/creators.jpg');
+}
+
+..bg {
+    background-image: url('img/roadmap/vision/.jpg');
+}
+
+..bg {
+    background-image: url('img/roadmap/vision/.jpg');
+}
+
+..bg {
+    background-image: url('img/roadmap/vision/.jpg');
+}
+
+..bg {
+    background-image: url('img/roadmap/vision/.jpg');
+}
+
+..bg {
+    background-image: url('img/roadmap/vision/.jpg');
+}
+
+..bg {
+    background-image: url('img/roadmap/vision/.jpg');
 }
 
 .path.bg {
     background-image: url('img/roadmap/path.jpg');
+}
+
+..bg {
+    background-image: url('img/roadmap/.jpg');
 }
 
 main.widescreen #roadmap .card-wrap {
