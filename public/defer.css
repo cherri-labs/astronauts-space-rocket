@@ -1730,8 +1730,12 @@ button.portal:not(.disabled) + .portal-tag,
 }
 
 /* --< transitions >-- */
-.section.active#lasr p {
-    animation: in-from-bottom .3s ease 1;
+.section.active#lasr #buds .caption {
+    animation: in-from-left .3s ease 1;
+}
+
+.section.active#lasr #astronauts .caption {
+    animation: in-from-right .3s ease 1;
 }
 
 .section.active#cyberverse p,
@@ -1756,9 +1760,16 @@ button.portal:not(.disabled) + .portal-tag,
     30% {opacity: 0.8;}
 }
 
+@keyframes in-from-left {
+    0% {margin-right: 200vw;}
+}
+
+@keyframes in-from-right {
+    0% {margin-left: 200vw;}
+}
+
 @keyframes in-from-bottom {
     0% {margin-top: 200vh;}
-    100% {margin-top: 0;}
 }
 
 /* --< filters >-- */
