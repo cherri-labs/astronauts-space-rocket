@@ -12,15 +12,17 @@ function Creators() {
       </p>
       <p>
         When we build something, we do it our own way. And it's
-        always something different, something new.
+        never seen before, always new.
       </p>
       <p>
-        We're not just making something for you to make a few bucks on.
+        We're making something that lasts here.
       </p>
       <p>
-        Our goal is to create something that is going to stick with you
-        through the years, no matter what. Something that makes you want to hold
-        on to it, not lose it.
+        Our goal is to create real change that truly has an impact on this
+        world and that is going to stick with you through the test of time.
+      </p>
+      <p>
+        Something that makes you want to hold on to it till the end.
       </p>
     </MapCard>
   );

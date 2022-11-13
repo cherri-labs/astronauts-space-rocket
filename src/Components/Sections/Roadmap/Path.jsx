@@ -131,20 +131,20 @@ function QuestToFaraway() {
   return (
     <MapCard mover={mover} title="Quest To Faraway">
       <p>
-        Only you, <b>the community</b>, can decide how far we go.
+        It's up to you how far we go.
       </p>
       <p>
-        We've planned the route ahead of us, but there's no finish line.
+        We've planned the route just ahead of us, but there's no finish line.
       </p>
       <p>
-        <strong>LASR</strong> is entirely yours, and possibilities
+        <strong>LASR</strong> is going to be entirely yours, and possibilities
         are endless.
       </p>
       <p>
-        We believe it's much cooler to leave it by itself and see
-        how far it can travel, what it can become. It will
+        We believe it's much cooler to let it grow and see
+        what it can do by itself, what it can become. It will
         be fascinating to observe as it mutates and takes on new shapes and
-        forms of all kinds.
+        forms. All kinds of them.
       </p>
       <p>
         We wouldn't miss it for the world.
