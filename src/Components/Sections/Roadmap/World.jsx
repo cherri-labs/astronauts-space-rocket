@@ -125,7 +125,7 @@ function NeoTowns() {
       </p>
       <p>
         Because of that, <strong>Neo-Towns</strong> experience drastic
-        temperature escalations throughout the year.
+        temperature escalations through the year.
       </p>
       <p>
         Winters can get extremely cold, and summers burning hot.
