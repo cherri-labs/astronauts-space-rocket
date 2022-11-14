@@ -33,8 +33,7 @@ function Stardust() {
   return (
     <MapCard mover={mover} title="Stardust" bg="stardust">
       <p>
-        We are planning to launch our very token after both collections
-        are minted.
+        We are planning to launch our very token after both mints.
       </p>
       <p>
         <strong>Stardust</strong>.
@@ -52,9 +51,9 @@ function Stardust() {
 
 function Terraforming() {
   return (
-    <MapCard mover={mover} title="Terra/forming" bg="terraforming">
+    <MapCard mover={mover} title="Terra / forming" bg="terraforming">
       <p>
-        We work nonstop to produce further
+        We work nonstop to produce more extensive
         documentation about the project. We plan to
         release extended docs during terraforming phase.
       </p>
@@ -66,9 +65,9 @@ function Terraforming() {
   );
 }
 
-function SpaceClub() {
+function LonelySpace() {
   return (
-    <MapCard mover={mover} title="Lonely Space" bg="space-club">
+    <MapCard mover={mover} title="Lonely Space" bg="lonely-space">
       <p>
         The <strong>Lonely Orbiting Space Hideout</strong> opens its doors.
       </p>
@@ -140,7 +139,7 @@ function QuestToFaraway() {
         We've planned the route just ahead of us, but there's no finish line.
       </p>
       <p>
-        <strong>LASR</strong> is going to be entirely community owned, and
+        <strong>LASR</strong> is meant to be owned entirely by the community, and
         possibilities are endless.
       </p>
       <p>
@@ -162,7 +161,7 @@ export default function Path() {
       <Landing />
       <Stardust />
       <Terraforming />
-      <SpaceClub />
+      <LonelySpace />
       <Staking />
       <Expansion />
       <QuestToFaraway />

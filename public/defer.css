@@ -898,7 +898,7 @@ strong.astronauts {
 }
 
 .diary.bg {
-    background-image: url('img/roadmap/neotowns1.jpg');
+    background-image: url('img/roadmap/world/blue-diary.jpg');
 }
 
 .creators.bg {
@@ -945,28 +945,24 @@ strong.astronauts {
     background-image: url('img/roadmap/path/stardust.jpg');
 }
 
-..bg {
-    background-image: url('img/roadmap/path/.jpg');
+.terraforming.bg {
+    background-image: url('img/roadmap/path/terraforming.jpg');
 }
 
-..bg {
-    background-image: url('img/roadmap/path/.jpg');
+.lonely-space.bg {
+    background-image: url('img/roadmap/path/lonely-space.jpg');
 }
 
-..bg {
-    background-image: url('img/roadmap/path/.jpg');
+.staking.bg {
+    background-image: url('img/roadmap/path/staking.jpg');
 }
 
-..bg {
-    background-image: url('img/roadmap/path/.jpg');
+.expansion.bg {
+    background-image: url('img/roadmap/path/lonely-space.jpg');
 }
 
-..bg {
-    background-image: url('img/roadmap/path/.jpg');
-}
-
-..bg {
-    background-image: url('img/roadmap/path/.jpg');
+.quest-to-faraway.bg {
+    background-image: url('img/roadmap/path/quest-to-faraway.jpg');
 }
 
 main.widescreen #roadmap .card-wrap {

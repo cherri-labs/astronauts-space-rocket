@@ -218,7 +218,24 @@
     }
 
     .identity.bg {
-        background-position: 0 -1000px;
+            background-position: 0 -1000px;
+    }
+
+    .lonely-space.bg {
+        background-position: 0 -800px;
+    }
+
+    .terraforming.bg {
+        background-position: 0 -500px;
+    }
+
+    .staking.bg {
+        background-position: 0 0px;
+    }
+
+    .diary.bg,
+    .quest-to-faraway.bg {
+        background-position: 0 -750px;
     }
 
     .move-arrow {

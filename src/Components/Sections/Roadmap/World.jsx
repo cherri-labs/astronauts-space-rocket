@@ -26,24 +26,24 @@ function Mechas() {
 function Ronins() {
   return (
     <MapCard mover={mover} title="Cyber Ronins" bg="ronins">
-    <p>
-    With the upsurge of machines in the months preceding the attack,
-    the population was growing increasingly worried. While often
-    dismissed as paranoid, groups started forming in secret
-    to discuss solutions for the current &laquo; state of society &raquo;.
-                                                                 </p>
-    <p>
-    They called themselves <strong>Ronins</strong>.
-    </p>
-    <p>
-    Through the <strong>Ronins'</strong> uncorrupted eye we look
-    at <strong>Mecha</strong> vigilantes and all we
-    see is rotten mechanisms 50 ft tall taking their toll on the{" "}
-    <strong>
-      citizens
-    </strong>.
+      <p>
+        With the upsurge of machines in the months preceding the attack,
+        the population was growing increasingly worried. While often
+        dismissed as paranoid, groups started forming in secret
+        to discuss solutions for the current &laquo; state of society &raquo;.
       </p>
-    </MapCard>
+      <p>
+        They called themselves <strong>Ronins</strong>.
+      </p>
+      <p>
+        Through the <strong>Ronins'</strong> uncorrupted eye we look
+        at <strong>Mechas</strong> and all we
+        see is rotten mechanisms 50 ft tall taking their toll on the{" "}
+        <strong>
+          citizens
+        </strong> at every chance.
+      </p>
+      </MapCard>
   );
 }
 
