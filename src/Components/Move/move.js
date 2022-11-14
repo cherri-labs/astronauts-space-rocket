@@ -267,7 +267,7 @@ export default function move(moverId, sectionId = 'index', index = 0) {
               titles['main'];
       /* if not default */
       if (title !== titles['main'])
-        title += ' | ' + titles['main'];
+        title += ' // ' + titles['main'];
     }
 
     /* set title */

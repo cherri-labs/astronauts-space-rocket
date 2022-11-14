@@ -877,36 +877,68 @@ strong.astronauts {
     background-image: url('img/roadmap/vision/creators.jpg');
 }
 
-..bg {
-    background-image: url('img/roadmap/vision/.jpg');
+.believe.bg {
+    background-image: url('img/roadmap/vision/believe.jpg');
+}
+
+.ahead.bg {
+    background-image: url('img/roadmap/vision/ahead.jpg');
+}
+
+.dreams.bg {
+    background-image: url('img/roadmap/vision/dreams.jpg');
+}
+
+.dope-shit.bg {
+    background-image: url('img/roadmap/vision/dope-shit.jpg');
+}
+
+.our-way.bg {
+    background-image: url('img/roadmap/vision/our-way.jpg');
+}
+
+.cyberworld.bg {
+    background-image: url('img/roadmap/vision/cyberworld.jpg');
+}
+
+.identity.bg {
+    background-image: url('img/roadmap/vision/identity.jpg');
+}
+
+.web3.bg {
+    background-image: url('img/roadmap/vision/web3.jpg');
+}
+
+.landing.bg {
+    background-image: url('img/roadmap/path/landing.jpg');
+}
+
+.stardust.bg {
+    background-image: url('img/roadmap/path/stardust.jpg');
 }
 
 ..bg {
-    background-image: url('img/roadmap/vision/.jpg');
+    background-image: url('img/roadmap/path/.jpg');
 }
 
 ..bg {
-    background-image: url('img/roadmap/vision/.jpg');
+    background-image: url('img/roadmap/path/.jpg');
 }
 
 ..bg {
-    background-image: url('img/roadmap/vision/.jpg');
+    background-image: url('img/roadmap/path/.jpg');
 }
 
 ..bg {
-    background-image: url('img/roadmap/vision/.jpg');
+    background-image: url('img/roadmap/path/.jpg');
 }
 
 ..bg {
-    background-image: url('img/roadmap/vision/.jpg');
-}
-
-.path.bg {
-    background-image: url('img/roadmap/path.jpg');
+    background-image: url('img/roadmap/path/.jpg');
 }
 
 ..bg {
-    background-image: url('img/roadmap/.jpg');
+    background-image: url('img/roadmap/path/.jpg');
 }
 
 main.widescreen #roadmap .card-wrap {

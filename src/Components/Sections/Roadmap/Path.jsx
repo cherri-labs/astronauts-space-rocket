@@ -7,7 +7,7 @@ const mover = "roadmap";
 
 function Landing() {
   return (
-    <MapCard mover={mover} title="Landing">
+    <MapCard mover={mover} title="Landing" bg="landing">
       <p>
         Landing phase is going to be minting for both initial
         collections.
@@ -31,16 +31,16 @@ function Landing() {
 
 function Stardust() {
   return (
-    <MapCard mover={mover} title="Stardust">
+    <MapCard mover={mover} title="Stardust" bg="stardust">
       <p>
-        We are planning to launch our very own token after both collections
+        We are planning to launch our very token after both collections
         are minted.
       </p>
       <p>
         <strong>Stardust</strong>.
       </p>
       <p>
-        It will be initially airdropped to holders only.
+        All of initial allocation will be airdropped to holders.
       </p>
       <p>
         <strong>$STRD</strong> tokens will be the standarm form of payment
@@ -52,9 +52,9 @@ function Stardust() {
 
 function Terraforming() {
   return (
-    <MapCard mover={mover} title="Terra-forming">
+    <MapCard mover={mover} title="Terra/forming" bg="terraforming">
       <p>
-        We're working everyday to extend the current
+        We work nonstop to produce further
         documentation about the project. We plan to
         release extended docs during terraforming phase.
       </p>
@@ -68,17 +68,19 @@ function Terraforming() {
 
 function SpaceClub() {
   return (
-    <MapCard mover={mover} title="Space Club">
+    <MapCard mover={mover} title="Lonely Space" bg="space-club">
       <p>
-        The <strong>Space Club</strong> will be opening doors to
-        holders.
+        The <strong>Lonely Orbiting Space Hideout</strong> opens its doors.
       </p>
       <p>
-        In here they can hang out with others from the gang,
-        take a shot at one of our challenges or just to buy dope stuff.
+        Here you can hang out, chat with other members,
+        take a shot at one of our challenges or just buy dope stuff.
       </p>
       <p>
-        <b>No rules.</b> Community comes first, so you do you.
+        No rules, so you do you.
+        </p>
+      <p>
+        <b>Holders only //</b>
       </p>
     </MapCard>
   );
@@ -86,17 +88,17 @@ function SpaceClub() {
 
 function Staking() {
   return (
-    <MapCard mover={mover} title="Staking">
+    <MapCard mover={mover} title="Staking" bg="staking">
       <p>
-        After mint we will begin implementation for
-        the <strong>staking portal</strong>.
+        After mint implementation for
+        the <strong>staking portal</strong> begins.
       </p>
       <p>
         <MoveAnchor mover="lasr" goto="index">
           <strong>LASR NFTs</strong>
         </MoveAnchor>
-        {" "}as well as <strong>$STRD</strong> tokens will be stakable
-        in exchange for daily rewards.
+        {" "}and <strong>$STRD</strong> tokens in your wallet will be stakable
+        in exchange for rewards.
       </p>
     </MapCard>
   );
@@ -104,24 +106,28 @@ function Staking() {
 
 function Expansion() {
   return (
-    <MapCard mover={mover} title="Expansion">
+    <MapCard mover={mover} title="Expansion" bg="expansion">
       <p>
-        We're not stopping there.
+        That's not all!
         The <strong>LASR</strong> universe is intricate and complex.
       </p>
       <p>
-        You're going to discover it all with us, as we do the same.
+        You're going to discover it with us, as we do the same.
       </p>
       <p>
-        We will eventually release <strong>Mecha Angels</strong> and{" "}
-        <strong>Cyber Rebels</strong> to the world.
+        We will eventually drop our newer collections to the world,
+        as well as other products we are currently working on and
+        things we still have to take on.
       </p>
       <p>
         At this time the <strong>LASR DAO</strong> is created.
         The <strong>LASR DAO</strong> will be regulated entirely by the
         community. It will be in charge of
-        the <strong>Stardust</strong> token as well as other important
+        the <strong>Stardust</strong> token as well as other
         community decisions to be taken together.
+      </p>
+      <p>
+        So you will be in charge of all this. Break a leg!
       </p>
     </MapCard>
   );
@@ -129,19 +135,16 @@ function Expansion() {
 
 function QuestToFaraway() {
   return (
-    <MapCard mover={mover} title="Quest To Faraway">
-      <p>
-        It's up to you how far we go.
-      </p>
+    <MapCard mover={mover} title="Quest To Faraway" bg="quest-to-faraway">
       <p>
         We've planned the route just ahead of us, but there's no finish line.
       </p>
       <p>
-        <strong>LASR</strong> is going to be entirely yours, and possibilities
-        are endless.
+        <strong>LASR</strong> is going to be entirely community owned, and
+        possibilities are endless.
       </p>
       <p>
-        We believe it's much cooler to let it grow and see
+        We believe it's much cooler to let it grow wild and see
         what it can do by itself, what it can become. It will
         be fascinating to observe as it mutates and takes on new shapes and
         forms. All kinds of them.
@@ -156,9 +159,6 @@ function QuestToFaraway() {
 export default function Path() {
   return (
     <MoveSection id="path">
-      <div className="bg-container">
-        <div className="path bg" />
-      </div>
       <Landing />
       <Stardust />
       <Terraforming />

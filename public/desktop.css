@@ -213,6 +213,10 @@
         max-height: 25em;
     }
 
+    .identity.bg {
+        background-position: 0 -1000px;
+    }
+
     .move-arrow {
         --move-arrow-margin: 50px;
     }

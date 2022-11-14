@@ -30,7 +30,7 @@ function Creators() {
 
 function Believe() {
   return (
-    <MapCard mover={mover} title="Believe">
+    <MapCard mover={mover} title="Believe" bg="believe">
       <p>
         In this evolving digital realm, new and varied worlds
         spawn on everyday basis.
@@ -53,22 +53,21 @@ function Believe() {
 
 function Ahead() {
   return (
-    <MapCard mover={mover} title="Ahead">
+    <MapCard mover={mover} title="Ahead" bg="ahead">
       <p>
         Our world used to be <b>one of a kind</b>. A distinctive mark
         in an otherwise unholy chaos of wishful thinking and
         abstract reality.
       </p>
       <p>
-        Now, it's either adapt or die.
+        Now we need to adapt or die.
       </p>
       <p>
-        We abandon pieces of what's old and unusable in favor of
-        progress and advancement. We always look ahead.
+        We abandon pieces of what's old in favor of
+        progress and advancement.
       </p>
       <p>
-        We keep on moving lest we stay behind, and won't rest until
-        we're dead.
+      We keep looking ahead. And keep moving lest we stay behind.
       </p>
     </MapCard>
   );
@@ -76,25 +75,25 @@ function Ahead() {
 
 function Dreams() {
   return (
-    <MapCard mover={mover} title="Dreams">
+    <MapCard mover={mover} title="Dreams" bg="dreams">
       <p>
         The line that separates us from our dreams becomes
         {" "}<b>thinner and thinner</b>.
       </p>
       <p>
-        We're walking on that line. We make things real and possible,
+        We're walking on that thin line. We make things possible
         for the first time.
       </p>
       <p>
-        We don't wait for others to clear the way, we just go. We are
-        brave, true and relentless. And we're going to grow strong
-        with you and stick through every turning point.
+        We don't wait on others to clear the way. We pave our own path. We
+        stay relentless and true to our goals. And we're going to grow strong
+        with you with every turning point.
       </p>
       <p>
-        Our choices pave the way before us.
+        Our vision leads the way before us.
       </p>
       <p>
-        <b>Let's be bold together.</b>
+        Let's be <b>bold together.</b>
       </p>
     </MapCard>
   );
@@ -102,7 +101,7 @@ function Dreams() {
 
 function DopeShit() {
   return (
-    <MapCard mover={mover} title="Dope Shit">
+    <MapCard mover={mover} title="Dope Shit" bg="dope-shit">
       <p>
         We build with design in mind, but community too.
         We try to keep things as simple and stupid as possible—so
@@ -119,7 +118,7 @@ function DopeShit() {
 
 function OurWay() {
   return (
-    <MapCard mover={mover} title="Our Way">
+    <MapCard mover={mover} title="Our Way" bg="our-way">
       <p>
         Change doesn't happen overnight,
         but <b>one tiny step at a time.</b>
@@ -141,18 +140,19 @@ function OurWay() {
 
 function Cyberworld() {
   return (
-    <MapCard mover={mover} title="Cyberworld">
+    <MapCard mover={mover} title="Cyberworld" bg="cyberworld">
       <p>
-        If it glitches, good. That means it's new. It's experimental.
+        If it glitches, good. That means it's healthy. It's organic.
+        It's experimental.
       </p>
       <p>
-        It's not the same thing over and over, and it ain't got
+        It's not things already seen over and over again. It ain't got
         time for detail. It's not stagnating in perfection, because
-        it's already further still into the future.
+        it's already further away into the future.
       </p>
       <p>
-        What you see is real. There's no hiding things, no
-        secrets, no bells no whistles. We put all the power in your
+        What you see here is real. There's no hiding from the truth, no
+        secrets, no bells no whistles. We put all the power into your
         hands. It's up to you what to do with it.
       </p>
     </MapCard>
@@ -161,7 +161,7 @@ function Cyberworld() {
 
 function Identity() {
   return (
-    <MapCard mover={mover} title="Identity">
+    <MapCard mover={mover} title="Identity" bg="identity">
       <p>
         A new generation is going to state once and for
         all what identity is and how we can define it.
@@ -177,7 +177,7 @@ function Identity() {
 
 function Web3() {
   return (
-    <MapCard mover={mover} title="Web3">
+    <MapCard mover={mover} title="Web3" bg="web3">
       <p>
         Technology moves fast. We've got to keep up the pace.
         We're going to overwhelm the web3 space with the way we see
