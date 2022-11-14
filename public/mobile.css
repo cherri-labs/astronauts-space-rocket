@@ -48,6 +48,10 @@
         background-position: -35px 0;
     }
 
+    #lasr .index__page h1 {
+        word-spacing: -6px;
+    }
+
     #lasr .index__page .portal-container {
         width: 85vw;
     }

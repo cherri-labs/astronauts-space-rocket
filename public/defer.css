@@ -23,12 +23,12 @@ body:after {
 }
 
 h1, h2, h3 {
+    display: inline-block;
     color: #b6f6f0;
     cursor: default;
 }
 
 h1 {
-    display: inline-block;
     margin: 15px;
     text-align: center;
     letter-spacing: 10px;
@@ -38,7 +38,7 @@ h1 {
 
 h2, h3 {
     margin: 0;
-    padding: 8px 0 10px 0;
+    padding: 5px 0 0 0;
     width: 100%;
 
     text-align: center;
@@ -295,7 +295,7 @@ button:hover .icon .screen, button:hover .icon.screen {
 }
 
 .what-is-this .hover:before {
-    content: '?';
+    content: 'i';
     opacity: 0.8;
     transition: margin .4s, opacity .4s;
 }
@@ -367,6 +367,13 @@ button:hover .icon .screen, button:hover .icon.screen {
 
 #content h1 {
     white-space: nowrap;
+}
+
+#content h3.separator {
+    --sep-color: #b4f4de;
+    border-image: linear-gradient(90deg, transparent 5%, var(--sep-color) 30%, var(--sep-color) 70%, transparent 95%) 30;
+    border-width: 1px;
+    border-bottom-style: solid;
 }
 
 #content article {
@@ -532,10 +539,26 @@ button:hover .icon .screen, button:hover .icon.screen {
 }
 
 /* --< lasr >-- */
+#lasr h3 {
+    font-size: 2.5em;
+}
+
+#lasr h3.separator {
+    padding-bottom: 15px;
+}
+
 /* --< index >-- */
 #lasr .index__page #container,
 #lasr .index__page #content {
     margin-top: -2%;
+}
+
+#lasr .index__page h1 {
+    background: linear-gradient(to right, #f98 50%, #a9f 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    letter-spacing: 12px;
+    padding-left: 4px;
 }
 
 #lasr .index__page .portal-wrap {
@@ -577,22 +600,21 @@ strong.astronauts {
     -webkit-background-clip: text;
 }
 
+#astronauts h3 {
+    --sep-color: #c4a4fe !important;
+    color: #a9f;
+}
+
 /* --< buds >-- */
-#buds h1.orange {
+#buds h1 {
     background: linear-gradient(#841, #987 10%, #c3ad70 60%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
 
-#buds h1.blue {
-    background: linear-gradient(#112, #3ad 60%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-}
-
-#buds h1.lightblue {
-    color: #8994ce;
-    -webkit-text-stroke: 1px #b4f4ee;
+#buds h3 {
+    --sep-color: #f4b49e !important;
+    color: #f98;
 }
 
 /* --< gate >-- */
@@ -608,6 +630,12 @@ strong.astronauts {
 
 #gate h3 {
     align-self: flex-start;
+    padding: 5px 0 3px 0;
+}
+
+#gate h3.separator {
+    margin-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 #gate .portal-container:hover > .portal-wrap:not(:hover) button {
@@ -786,9 +814,9 @@ strong.astronauts {
 }
 
 #cyberverse h3 {
-    padding: .5em; /* god knows why */
     text-align: center;
     letter-spacing: .7em;
+    margin-top: 20px;
 }
 
 #cyberverse .logo {
@@ -1001,12 +1029,24 @@ main.widescreen #roadmap .card-wrap {
     margin: 0;
 }
 
-#navbar {
+#navbar,
+#navbar nav {
     display: flex;
     justify-content: flex-start;
     overflow: hidden;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+}
+
+.dropdown #navbar,
+.dropdown #navbar nav {
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    max-width: 350px;
+    padding: 20px 10px 5px 10px;
+    background: #111;
+
+    opacity: 1 !important;
 }
 
 #navbar button {
@@ -1043,18 +1083,9 @@ main.widescreen #roadmap .card-wrap {
     margin: 20% -20%;
 }
 
-.dropdown #navbar {
-    flex-flow: column nowrap;
-    align-items: flex-start;
-    max-width: 350px;
-    padding: 20px 10px 5px 10px;
-    background: #111;
-
-    opacity: 1 !important;
-}
-
 *:not(.dropdown) #navbar #bottom-bar .home,
 .dropdown #navbar > .home,
+.dropdown #navbar nav > .home,
 *:not(.dropdown) #navbar .hidden {
     display: none !important;
 }
@@ -1319,12 +1350,12 @@ main.widescreen #roadmap .card-wrap {
     border: 2px solid #b4f4ee;
 }
 
-#roadmap .card strong {
-    color: #ff0;
-}
-
 .card h1 {
     width: 100%;
+}
+
+#roadmap .card strong {
+    color: #ff0;
 }
 
 .card.locked {
@@ -1348,8 +1379,12 @@ main.widescreen #roadmap .card-wrap {
 
 .card p,
 .card li {
-    margin: 5px;
     text-align: justify;
+}
+
+#roadmap .card p,
+#roadmap .card li {
+    margin: 5px;
 }
 
 #gate .card p,

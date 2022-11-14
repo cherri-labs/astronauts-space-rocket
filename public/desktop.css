@@ -18,6 +18,10 @@
         margin: 0 3vw;
     }
 
+    #lasr .index__page h1 {
+        word-spacing: 26px;
+    }
+
     #lasr .index__page .portal-container,
     #gate .portal-container {
         gap: 100px;
