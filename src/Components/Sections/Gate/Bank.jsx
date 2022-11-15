@@ -7,22 +7,14 @@ import BalanceLabel from './Labels/BalanceLabel';
 import DepositButton from './Buttons/DepositButton';
 import MaxButton from './Buttons/MaxButton';
 import WithdrawButton from './Buttons/WithdrawButton';
-import GlitchSpan from '../../GlitchSpan';
 import tab from '../../../tabs';
 import setGlitch from '../../../glitchTransition';
-import lang from '../../lang';
 
 const Txt = () => {
   return (
     <Text card>
       <h3>
-        <GlitchSpan id="astro-gate__glitch"
-                    steps="2"
-                    duration="0"
-                    delay="100"
-                    write={lang["astro gate"]}>
-          Astro Gate
-        </GlitchSpan>
+        Astro Gate
       </h3>
       <p>
         Here you can withdraw your

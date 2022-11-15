@@ -2,21 +2,13 @@ import React from 'react';
 import Mover, { MoveSection } from '../Move/Mover';
 import { Container, Content, Text } from './Section';
 import Lasr from '../Icons/Lasr';
-import GlitchSpan from '../GlitchSpan';
 import nav from '../Move/nav';
-import lang from '../lang';
 
 const Txt = () => {
   return (
     <Text card>
       <h3>
-        <GlitchSpan id="cyberverse-title__glitch"
-                    steps="2"
-                    duration="0"
-                    delay="100"
-                    write={lang["cyberverse"]}>
-          Cyberverse
-        </GlitchSpan>
+        Cyberverse
       </h3>
       <p>
         Welcome to the{" "}
@@ -37,12 +29,23 @@ const Txt = () => {
   );
 };
 
+function Nav() {
+  return (
+    <nav className="nav-container blocks">
+      <button>Explore</button> 
+      <button>Vision</button> 
+      <button>Goals</button> 
+    </nav>
+  );
+}
+
 function Page() {
   return (
     <Container>
       <Content>
         <Lasr nav="lasr" type="full" tilt />
         <Txt />
+        <Nav />
       </Content>
     </Container>
   );

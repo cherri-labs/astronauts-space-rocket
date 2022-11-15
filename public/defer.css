@@ -996,9 +996,12 @@ main.widescreen #roadmap .card-wrap {
 }
 
 /* --< navbar >-- */
-#nav-container {
+.nav-container {
     display: flex;
     justify-content: space-between;
+}
+
+#footer .nav-container {
     position: absolute;
     bottom: 2vh;
     left: 0;
@@ -1006,23 +1009,17 @@ main.widescreen #roadmap .card-wrap {
     margin: 0px 10px;
 }
 
-#nav-container button {
-    display: flex;
-    align-items: center;
-    border: none;
-    color: #b6f6f0;
-    font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    height: 48px;
-    line-height: 48px;
-    padding: 0 24px;
-    border-radius: 4px;
-}
-
-#nav-container.dropdown {
+.nav-container.dropdown {
     bottom: 0;
     margin: 0;
+}
+
+.nav-container.blocks {
+    gap: 20px;
+}
+
+#cyberverse .nav-container {
+    margin-top: -10px;
 }
 
 #navbar,
@@ -1046,6 +1043,33 @@ main.widescreen #roadmap .card-wrap {
     max-width: 350px;
     padding: 25px 10px 5px 10px;
     background: #111;
+}
+
+.nav-container button {
+    display: flex;
+    align-items: center;
+    border: none;
+    color: #b6f6f0;
+    font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 24px;
+    border-radius: 4px;
+}
+
+.nav-container.blocks button {
+    border: 2px solid #b4f4ee;
+    border-radius: 0;
+    padding: 0 25px;
+    max-height: 40px;
+    transition: color .4s, background-color .4s;
+}
+
+.nav-container.blocks button:hover {
+    color: #2d3236;
+    background-color: #b4f4ee;
 }
 
 #navbar button {
