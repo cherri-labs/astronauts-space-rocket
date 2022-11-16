@@ -218,11 +218,11 @@
     }
 
     .identity.bg {
-            background-position: 0 -1000px;
+        background-position: 0 -1000px;
     }
 
     .lonely-space.bg {
-        background-position: 0 -800px;
+        background-position: 0 -60vh;
     }
 
     .terraforming.bg {
@@ -235,7 +235,7 @@
 
     .diary.bg,
     .quest-to-faraway.bg {
-        background-position: 0 -750px;
+        background-position: 0 80%;
     }
 
     .move-arrow {

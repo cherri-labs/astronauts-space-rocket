@@ -5,7 +5,7 @@ import Wallet from '../Wallet/Wallet';
 export default function Footer() {
   return (
     <div id="footer">
-      <div className="nav-container">
+      <div id="footer-nav" className="nav-container">
         <Navbar />
         <Wallet />
       </div>

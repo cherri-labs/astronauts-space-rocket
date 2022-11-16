@@ -1,6 +1,6 @@
 import React from 'react';
 import VanillaTilt from 'vanilla-tilt';
-import nav from '../Move/nav';
+import navMove from '../Move/navMove';
 
 class Lasr extends React.Component {
   componentDidMount() {
@@ -19,7 +19,7 @@ class Lasr extends React.Component {
       <div className={'lasr ' + (this.props.tilt ? 'tilt ' : '')}>
         <a onClick={function() {
           if (href)
-            nav(href);
+            navMove(href);
         }}>
           <i className={lasrClass} />
         </a>

@@ -2,7 +2,7 @@ import React from 'react';
 import { MoveSection } from '../../Move/Mover';
 import MapCard from './MapCard';
 
-const mover = "roadmap";
+const mover = "cyber";
 
 function Creators() {
   return (
@@ -19,10 +19,10 @@ function Creators() {
       </p>
       <p>
         Our goal is to create real change that truly has an impact on this
-        world and that is going to stick with you through the test of time.
+        world and that sticks with you through the test of time.
       </p>
       <p>
-        Something that you want to hold on to till the end.
+        Something you want to hold on to till the end.
       </p>
     </MapCard>
   );

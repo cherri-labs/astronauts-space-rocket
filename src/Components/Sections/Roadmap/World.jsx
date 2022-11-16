@@ -2,7 +2,7 @@ import React from 'react';
 import { MoveSection } from '../../Move/Mover';
 import MapCard from './MapCard';
 
-const mover = "roadmap";
+const mover = "cyber";
 
 function Mechas() {
   return (
@@ -171,7 +171,7 @@ function BlueDiary() {
 
 export default function World() {
   return (
-    <MoveSection id="world" active>
+    <MoveSection id="world">
       <Mechas />
       <Ronins />
       <Phantoms />

@@ -1,5 +1,5 @@
 import { menu } from './SideMenu';
-import nav from './nav';
+import navMove from './navMove';
 import glitchTrans from '../../glitchTransition';
 
 const wrapperClassName = "card-wrap"; // class of containers to move
@@ -21,9 +21,9 @@ titles['lasr']['buds'] = 'Space Buds';
 /* gate */
 titles['gate'] = [];
 titles['gate']['bank'] = 'Astro Gate';
-/* cyberverse */
-titles['cyberverse'] = [];
-titles['cyberverse']['index'] = 'Cyberverse';
+/* cyber */
+titles['cyber'] = [];
+titles['cyber']['index'] = 'Cyberverse';
 /* roadmap */
 titles['roadmap'] = [];
 titles['roadmap']['index'] = 'WORLD';
@@ -149,7 +149,7 @@ export default function move(moverId, sectionId = 'index', index = 0) {
   const moveSection = mover.querySelector("#" + sectionId);
 
   /* nav to mover */
-  nav(moverId);
+  navMove(moverId);
 
   /* initialize index */
   let i = 0;
@@ -183,7 +183,7 @@ export default function move(moverId, sectionId = 'index', index = 0) {
     }
   } else {
     /* fallback to nav call */
-    nav(moverId);
+    navMove(moverId);
   }
 
   if (index < 0) { /* index points to previous section */

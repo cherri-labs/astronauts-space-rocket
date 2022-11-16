@@ -2,14 +2,14 @@ import React from 'react';
 import Lasr from '../Icons/Lasr';
 import Icons from './Icons';
 import Wallet from '../Wallet/Wallet';
-import nav from '../Move/nav';
+import navMove from '../Move/navMove';
 import move from '../Move/move';
 
 export default function Navbar() {
   return (
     <div id="navbar">
       <nav className="focus normal">
-        <button className="home" onClick={function(){nav();}}>
+        <button className="home" onClick={function(){navMove();}}>
           <Lasr />
         </button>
         <button onClick={function(){move('lasr');}}>
@@ -18,23 +18,20 @@ export default function Navbar() {
         <button onClick={function(){move('gate', 'move-section-bank');}}>
           Open Portal
         </button>
-        <button onClick={function(){move('cyberverse');}}>
+        <button onClick={function(){move('cyber');}}>
           Cyberverse
         </button>
-        <button onClick={function(){move('roadmap');}}>
-          Explore
-        </button>
       </nav>
+      <button className="exit" onClick={function(){move('home');}}>
+        Exit
+      </button>
       <div id="bottom-bar" className="focus normal">
-        <button className="home" onClick={function(){nav();}}>
+        <button className="home" onClick={function(){navMove();}}>
           <Lasr />
         </button>
         <Icons />
       </div>
       <Wallet />
-      <button className="exit hidden" onClick={function(){move('home');}}>
-        Exit
-      </button>
     </div>
   );
 }

@@ -22,7 +22,7 @@ body:after {
              url('img/roadmap/path.jpg');
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     display: inline-block;
     color: #b6f6f0;
     cursor: default;
@@ -36,7 +36,7 @@ h1 {
     font-family: 'Arial', 'Helvetica', 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
 }
 
-h2, h3 {
+h2, h3, h4 {
     margin: 0;
     padding: 5px 0 0 0;
     width: 100%;
@@ -55,7 +55,7 @@ h2 {
     letter-spacing: 2vw;
 }
 
-h3 {
+h3, h4 {
     font-family: "Helvetica Neue", "Helvetica", "Arial", sans;
     font-size: 2em;
     font-weight: 700;
@@ -63,14 +63,17 @@ h3 {
 }
 
 h4 {
-    display: inline;
-    text-shadow: 3px 2px 1px rgba(225,0,125,0.5);
+    font-size: 1.5em;
 }
 
 strong, .strong {
     color: #96ff9b;
     font-weight: 500;
     letter-spacing: .1rem;
+}
+
+.shadow {
+    text-shadow: 3px 2px 1px rgba(225,0,125,0.5);
 }
 
 p {
@@ -795,7 +798,11 @@ strong.astronauts {
 }
 
 /* --< cyberverse >-- */
-#cyberverse #container {
+#cyber {
+    max-height: 100vh;
+}
+
+#cyber .index__page {
     -webkit-filter: hue-rotate(20deg) saturate(180%) brightness(120%) contrast(120%);
     filter: hue-rotate(20deg) saturate(180%) brightness(120%) contrast(120%);
 
@@ -803,23 +810,23 @@ strong.astronauts {
     min-height: 100vh;
 }
 
-#cyberverse article {
+#cyber .index__page article {
     gap: 10px;
 }
 
-#cyberverse h1 {
+#cyber .index__page h1 {
     background: linear-gradient(2deg, #fff2 0%, #d4f4fe66 12%, #b4f4ee44 24%, rgba(156,36,106,0.6) 60%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
 
-#cyberverse h3 {
+#cyber .index__page h3 {
     text-align: center;
     letter-spacing: .7em;
     margin-top: 20px;
 }
 
-#cyberverse .logo {
+#cyber .index__page .logo {
     min-width: 18vw;
     min-height: 18vw;
     border-width: 0 9px 9px 0;
@@ -828,24 +835,30 @@ strong.astronauts {
 }
 
 /* --< roadmap >-- */
-#roadmap {
+#cyber .map {
     z-index: 0;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 100vw;
 }
 
-#roadmap strong {
+#cyber #move-section-index.active + .map {
+    display: none;
+}
+
+#cyber .map strong {
     color: #942d33;
 }
 
-#roadmap #container,
-#roadmap #content {
+#cyber .map #container,
+#cyber .map #content {
     padding: 0;
     margin: 0;
 }
 
-#roadmap #content {
+#cyber .map #content {
     justify-content: space-evenly;
 
     height: 100%;
@@ -865,9 +878,11 @@ strong.astronauts {
     bottom: 0;
     width: 100%;
     height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 
-#roadmap .bg {
+#cyber .map .bg {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -965,11 +980,6 @@ strong.astronauts {
     background-image: url('img/roadmap/path/quest-to-faraway.jpg');
 }
 
-main.widescreen #roadmap .card-wrap {
-    margin-top: 200vh;
-    transition: margin-top .8s;
-}
-
 /* --< footer >-- */
 #footer {
     display: flex;
@@ -1018,7 +1028,7 @@ main.widescreen #roadmap .card-wrap {
     gap: 20px;
 }
 
-#cyberverse .nav-container {
+#cyber .index__page .nav-container {
     margin-top: -10px;
 }
 
@@ -1084,6 +1094,11 @@ main.widescreen #roadmap .card-wrap {
     border-radius: 50px;
 }
 
+#navbar button:disabled,
+#navbar button.disabled {
+    opacity: .5 !important;
+}
+
 #navbar button:nth-child(3):hover:after {
     width: 130px;
     transform: translate(-2.5%, 0%);
@@ -1140,9 +1155,13 @@ main.widescreen #roadmap .card-wrap {
     width: 10%;
 }
 
-.dropdown #navbar .exit:hover {
+#navbar .exit:hover {
     background-color: transparent !important;
     color: #810 !important;
+}
+
+.dropdown #navbar .exit {
+    order: 10;
 }
 
 /* --< wallet >-- */
@@ -1336,17 +1355,17 @@ main.widescreen #roadmap .card-wrap {
     overflow: hidden;
 }
 
-#cyberverse .card,
-#cyberverse .card * {
+#cyber .index__page .card,
+#cyber .index__page .card * {
     filter: saturate(125%) hue-rotate(-20deg) brightness(115%) contrast(170%);
 }
 
-#roadmap .card-wrap.closed .card {
+#cyber .map .card-wrap.closed .card {
     position: absolute;
     top: 18px;
 }
 
-#roadmap .card {
+#cyber .map .card {
     justify-content: space-between;
 
     width: 85vw;
@@ -1363,13 +1382,8 @@ main.widescreen #roadmap .card-wrap {
     transition: height .2s, min-height .2s, max-height .2s;
 }
 
-#roadmap:not(.lights-out) .card {
-    -webkit-backdrop-filter: invert(10%) hue-rotate(-5deg) brightness(80%) saturate(120%) contrast(135%);
-    backdrop-filter: saturate(106%) brightness(80%);
-}
-
-#roadmap .card,
-#roadmap .card h3 {
+#cyber .map .card,
+#cyber .map .card h3 {
     border: 2px solid #b4f4ee;
 }
 
@@ -1377,7 +1391,7 @@ main.widescreen #roadmap .card-wrap {
     width: 100%;
 }
 
-#roadmap .card strong {
+#cyber .map .card strong {
     color: #ff0;
 }
 
@@ -1385,7 +1399,7 @@ main.widescreen #roadmap .card-wrap {
     opacity: 0.5;
 }
 
-#roadmap .card article {
+#cyber .map .card article {
     margin: 0;
     padding: 10px 20px;
     height: 100%;
@@ -1405,40 +1419,35 @@ main.widescreen #roadmap .card-wrap {
     text-align: justify;
 }
 
-#roadmap .card p,
-#roadmap .card li {
+#cyber .map .card p,
+#cyber .map .card li {
     margin: 5px;
 }
 
 #gate .card p,
-#cyberverse .card p,
-#roadmap .card p,
-#roadmap .card li {
+#cyber .card p,
+#cyber .map .card p,
+#cyber .map .card li {
     line-height: 1.5em;
 }
 
 #gate .card p,
-#cyberverse .card p,
-#roadmap .card p,
-#roadmap .card li {
+#cyber .card p,
+#cyber .map .card p,
+#cyber .map .card li {
     font-size: 14px;
     font-family: "JetBrains Mono", "Roboto Mono", "Lato",
                  "Helvetica Neue", "Helvetica", "Arial", sans;
 }
 
-#roadmap .card p,
-#roadmap .card li {
+#cyber .map .card p,
+#cyber .map .card li {
     text-shadow: 1px 1px 1px #000;
     -webkit-text-stroke: 1px #b6f6f055;
 }
 
-#roadmap:not(.lights-out) .card p,
-#roadmap:not(.lights-out) .card li {
-    -webkit-text-stroke: 1px #36363033;
-}
-
 /* --< closed >-- */
-#roadmap .card-wrap.closed .card {
+#cyber .map .card-wrap.closed .card {
     justify-content: flex-start;
     height: 60px;
     max-height: 60px;
@@ -1447,16 +1456,16 @@ main.widescreen #roadmap .card-wrap {
     overflow: hidden;
 }
 
-#roadmap .card-wrap.closed article,
-#roadmap .card-wrap.closed p,
-#roadmap .card-wrap.closed .move-nav {
+#cyber .map .card-wrap.closed article,
+#cyber .map .card-wrap.closed p,
+#cyber .map .card-wrap.closed .move-nav {
     height: 0;
     max-height: 0;
     min-height: 0;
     visibility: hidden;
 }
 
-#roadmap .card-wrap .move-nav.focus:not(.space):hover > *:not(:hover) {
+#cyber .map .card-wrap .move-nav.focus:not(.space):hover > *:not(:hover) {
     -webkit-filter: invert(40%) contrast(200%);
     filter: invert(40%) contrast(200%);
     opacity: .3;
@@ -1537,6 +1546,7 @@ main.widescreen #roadmap .card-wrap {
 .move-section .card-wrap:not(.active),
 .move-section:not(.active) {
     display: none;
+    z-index: -1;
 }
 
 .move .move-nav {
@@ -1549,7 +1559,7 @@ main.widescreen #roadmap .card-wrap {
     gap: 10px;
 }
 
-#roadmap .move .card article {
+#cyber .map .move .card article {
     padding-bottom: 50px;
 }
 
@@ -1592,8 +1602,8 @@ main.widescreen #roadmap .card-wrap {
 
 #lasr:not(.active) ~ .menu .sub-menu#sub-lasr,
 #gate:not(.active) ~ .menu .sub-menu#sub-gate,
-#cyberverse:not(.active) ~ .menu .sub-menu#sub-cyber,
-#roadmap:not(.active) ~ .menu .sub-menu#sub-roadmap {
+#cyber:not(.active) ~ .menu .sub-menu#sub-cyber,
+#cyber .map:not(.active) ~ .menu .sub-menu#sub-roadmap {
     display: none;
 }
 
@@ -1626,8 +1636,13 @@ main.widescreen #roadmap .card-wrap {
     gap: 5px;
 }
 
-.menu .sticky,
 .menu:not(.hidden) .icon {
+    max-width: 31%;
+    font-size: 24px;
+}
+
+.menu .sticky,
+.menu:not(.hidden) .icon i {
     font-size: 18px;
 }
 
@@ -1833,8 +1848,13 @@ button.portal:not(.disabled) + .portal-tag,
     --focus-off-opacity: .1;
 }
 
-.focus > *:not(.focus) {
+.focus > *:not(.focus):not(:disabled):not(.disabled) {
     pointer-events: auto;
+}
+
+.focus > :disabled,
+.focus > .disabled {
+    pointer-events: none;
 }
 
 .focus:not(.space):hover > *:not(.focus__on):not(:hover),
@@ -1856,20 +1876,20 @@ button.portal:not(.disabled) + .portal-tag,
     animation: in-from-right .3s ease 1;
 }
 
-.section.active#cyberverse p,
-.section.active#roadmap .move {
+.section.active#cyber .index__page p,
+.section.active#cyber .map .move {
     animation: in-from-bottom .1s ease 1,
                fade-in .1s ease 1;
 }
 
-.section.active#roadmap .bg {
+.section.active#cyber .map .bg {
     animation: fade-in 2s ease 1;
 }
 
-.section.active#cyberverse h1,
-.section.active#cyberverse h3,
-.section.active#cyberverse .title,
-.section.active#cyberverse .logo {
+.section.active#cyber .index__page h1,
+.section.active#cyber .index__page h3,
+.section.active#cyber .index__page .title,
+.section.active#cyber .index__page .logo {
     animation: in-from-bottom .3s ease 1;
 }
 

@@ -6,8 +6,7 @@ import fullscreen from '../../fullscreen';
 
 const lasrMoverId = "lasr";
 const gateMoverId = "gate";
-const cyberMoverId = "cyberverse";
-const mapMoverId = "roadmap";
+const cyberMoverId = "cyber";
 
 export let menu = [];
 class SideMenu extends React.Component {
@@ -105,14 +104,6 @@ class SideMenu extends React.Component {
                   onClick={function(){menu.hide();}}>
             ☰
           </button>
-          <button id="menu-fullscreen" className="icon north"
-                  onClick={function(){menu.activate("fullscreen");}}>
-            <i className="screen" />
-          </button>
-          <button id="menu-lights" className="icon north east lightbulb"
-                  onClick={function(){menu.activate("lights");}}>
-            <span>💡</span>
-          </button>
         </div>
 
         <SubMenu name="lasr">
@@ -126,13 +117,9 @@ class SideMenu extends React.Component {
         </SubMenu>
 
         <SubMenu name="cyber">
-          <MenuButton mover={cyberMoverId} index show active>Cyberverse</MenuButton>
-        </SubMenu>
-
-        <SubMenu name="roadmap">
-          <MenuButton goto="world" mover={mapMoverId} active>World</MenuButton>
-          <MenuButton goto="vision" mover={mapMoverId}>Vision & Goals</MenuButton>
-          <MenuButton goto="path" mover={mapMoverId}>Path</MenuButton>
+          <MenuButton goto="world" mover={cyberMoverId} active>Explore</MenuButton>
+          <MenuButton goto="vision" mover={cyberMoverId}>Vision</MenuButton>
+          <MenuButton goto="path" mover={cyberMoverId}>Goals</MenuButton>
         </SubMenu>
       </div>
     );

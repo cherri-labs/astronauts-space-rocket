@@ -4,7 +4,6 @@ import Home from './Home';
 import Lasr from './Lasr/Lasr';
 import Gate from './Gate/Gate';
 import Cyberverse from './Cyberverse';
-import Roadmap from './Roadmap/Roadmap';
 import Stars from '../Stars';
 
 class Main extends React.Component {
@@ -16,7 +15,6 @@ class Main extends React.Component {
         <Lasr />
         <Gate />
         <Cyberverse />
-        <Roadmap />
       </>
     );
   }

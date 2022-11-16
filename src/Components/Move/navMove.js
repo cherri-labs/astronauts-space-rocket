@@ -4,9 +4,9 @@ import { moveReset } from './move';
 let curMover;
 
 /* toggle navbar drodown and display sections */
-export default function nav(href) {
+export default function navMove(href) {
   /* bar container */
-  const nav = document.getElementById("nav-container");
+  const nav = document.getElementById("footer-nav");
 
   /* listen for mouse click */
   window.addEventListener('click', function(e) {

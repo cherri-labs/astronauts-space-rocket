@@ -1,6 +1,6 @@
 import React from 'react';
 import move from './move';
-import nav from './nav';
+import navMove from './navMove';
 import { menu } from './SideMenu';
 import setGlitch from '../../glitchTransition';
 
@@ -13,7 +13,7 @@ function callMove(props, mover, goto) {
       menu.move(mover, goto);
     } else {
       /* nav to mover */
-      nav(mover);
+      navMove(mover);
 
       if (!props.nav || props.goto) {
         /* move to section */
