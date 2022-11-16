@@ -16,7 +16,7 @@ function Landing() {
       </p>
       <p>
         That's going to include the original NFTs from which all others were
-        generated. The <i>Commanders</i>.
+        generated.
       </p>
       <p>
         Rewards will be accessible from the{" "}

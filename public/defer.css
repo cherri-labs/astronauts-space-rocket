@@ -1426,14 +1426,12 @@ strong.astronauts {
 
 #gate .card p,
 #cyber .card p,
-#cyber .map .card p,
 #cyber .map .card li {
     line-height: 1.5em;
 }
 
 #gate .card p,
 #cyber .card p,
-#cyber .map .card p,
 #cyber .map .card li {
     font-size: 14px;
     font-family: "JetBrains Mono", "Roboto Mono", "Lato",

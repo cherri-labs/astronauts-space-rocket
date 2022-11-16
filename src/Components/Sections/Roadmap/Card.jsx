@@ -3,7 +3,7 @@ import React from 'react';
 let activeBg;
 
 function close() {
-  const cards = document.getElementById("roadmap")
+  const cards = document.getElementById("cyber")
                         .getElementsByClassName("card-wrap active");
 
   [...cards].forEach(function (c) {
