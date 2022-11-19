@@ -24,12 +24,9 @@ titles['gate']['bank'] = 'Astro Gate';
 /* cyber */
 titles['cyber'] = [];
 titles['cyber']['index'] = 'Cyberverse';
-/* roadmap */
-titles['roadmap'] = [];
-titles['roadmap']['index'] = 'WORLD';
-titles['roadmap']['world'] = 'WORLD';
-titles['roadmap']['vision'] = 'VISION & GOALS';
-titles['roadmap']['path'] = 'PATH';
+titles['cyber']['world'] = 'EXPLORE';
+titles['cyber']['vision'] = 'VISION';
+titles['cyber']['path'] = 'GOALS';
 
 /* returns current active section node element */
 export function activeSection() {

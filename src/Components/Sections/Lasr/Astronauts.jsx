@@ -14,7 +14,7 @@ export function AstronautImg(props) {
             glitch={props.glitch}
             href={href}
             zoom={props.zoom}
-            hover={props.hover}
+            hoverglitch={props.hoverglitch}
             portal={props.portal}
             anchor/>
   );
@@ -23,7 +23,7 @@ export function AstronautImg(props) {
 const Nft = () => {
   return (
     <div className="nft">
-      <AstronautImg href="index" glitch zoom hover />
+      <AstronautImg href="index" glitch zoom hoverglitch />
       <NftCaption type="bar"
                   price="?"
                   whitelist="?"

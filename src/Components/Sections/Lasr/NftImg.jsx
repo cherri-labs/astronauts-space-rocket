@@ -52,14 +52,14 @@ export default function NftImg(props) {
       <PortalButton mover={props.mover}
                     goto={props.href}
                     zoom={props.zoom}
-                    glitch={props.hover}
+                    glitch={props.hoverglitch}
                     anchor>
         <Content />
       </PortalButton>
       :
       <Zoom mover={props.mover}
             href={props.href}
-            glitch={props.hover}>
+            glitch={props.hoverglitch}>
         <Content />
       </Zoom>
     )}

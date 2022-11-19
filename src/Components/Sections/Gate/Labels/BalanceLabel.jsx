@@ -42,7 +42,7 @@ export default function BalanceLabel(props) {
            onMouseLeave={onLeave}
            onFocus={onLeave}
            disabled={disabled}>
-    Balance: 0 ◎
+      Balance: 0 ◎
     </label>
   );
 }
