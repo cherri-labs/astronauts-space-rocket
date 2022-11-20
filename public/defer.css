@@ -50,7 +50,7 @@ h2, h3, h4 {
 
 h2 {
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'Arial', 'Helvetica', sans-serif;
-    font-size: 3.5em;
+    font-size: 2.5em;
     font-weight: 900;
     letter-spacing: 2vw;
 }
@@ -375,10 +375,6 @@ button:hover .icon .screen, button:hover .icon.screen {
     white-space: nowrap;
 }
 
-#content h3 {
-    font-size: 2.5em;
-}
-
 #content h3.separator {
     --sep-color: #b4f4de;
     border-image: linear-gradient(90deg, transparent 5%, var(--sep-color) 30%, var(--sep-color) 70%, transparent 95%) 30;
@@ -551,8 +547,16 @@ button:hover .icon .screen, button:hover .icon.screen {
 }
 
 /* --< lasr >-- */
+#lasr {
+    --nft-size: 60vh;
+    --nft-inside-size: var(--nft-size);
+    --nft-outside-size: var(--nft-size);
+    --nft-max-inside-size: 415px;
+    --nft-max-outside-size: 435px;
+}
+
 #lasr h3 {
-    font-size: 2.8em;
+    font-size: 2.5em;
 }
 
 #lasr h3.separator {
@@ -587,19 +591,15 @@ button:hover .icon .screen, button:hover .icon.screen {
 }
 
 #lasr .index__page .portal-wrap .nft {
-    width: 350px;
+    width: var(--nft-outside-size);
     transition: width .3s ease-out, transform .6s ease-out;
 }
 
 #lasr .index__page .portal-wrap:hover .nft {
-    width: 400px;
-    max-width: 400px;
-}
-
-#lasr :not(.index__page) .nft .img:not(.full),
-#lasr :not(.index__page) .nft.img:not(.full) {
-    max-width: 400px;
-    max-height: 400px;
+    width: var(--nft-outside-size);
+    height: var(--nft-outside-size);
+    max-width: var(--nft-max-outside-size);
+    max-height: var(--nft-max-outside-size);
 }
 
 /* --< astronauts >-- */
@@ -694,7 +694,7 @@ strong.buds {
     align-items: center;
     gap: 10px;
 
-    padding: 60px 20px;
+    padding: 60px 22px;
 
     border: 1px solid #fff;
     border-radius: 5px;
@@ -2330,14 +2330,6 @@ button.portal:not(.disabled) + .portal-tag,
     background-size: cover;
 }
 
-.nft .img:not(.full),
-.nft.img:not(.full) {
-    width: 80vw;
-    height: 80vh;
-    max-width: 350px;
-    max-height: 350px;
-}
-
 .nft .img.full,
 .nft.img.full {
     position: absolute;
@@ -2377,15 +2369,37 @@ button.portal:not(.disabled) + .portal-tag,
     opacity: .6;
 }
 
-.zoom,
 .nft .img,
 .nft.img,
 .zoom .img,
 .zoom .glitch__item {
-    min-width: 400px;
-    min-height: 400px;
-
     transition: transform .6s ease-out;
+}
+
+.zoom:not(.full),
+.nft .img:not(.full),
+.nft.img:not(.full),
+.zoom:not(.full) .img:not(.full),
+.zoom:not(.full) .glitch__item,
+#lasr :not(.index__page) .nft .img:not(.full),
+#lasr :not(.index__page) .nft.img:not(.full) {
+    width: var(--nft-inside-size);
+    height: var(--nft-inside-size);
+    max-width: var(--nft-max-inside-size);
+    max-height: var(--nft-max-inside-size);
+}
+
+.index__page .zoom:not(.full),
+.index__page .nft .img:not(.full),
+.index__page .nft.img:not(.full),
+.index__page .zoom:not(.full) .img:not(.full),
+.index__page .zoom:not(.full) .glitch__item,
+#lasr .index__page .nft .img:not(.full),
+#lasr .index__page .nft.img:not(.full) {
+    width: var(--nft-outside-size);
+    height: var(--nft-outside-size);
+    max-width: var(--nft-max-outside-size);
+    max-height: var(--nft-max-outside-size);
 }
 
 .zoom:hover .img,
