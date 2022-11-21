@@ -36,8 +36,6 @@ function Page() {
 
 export default function Index() {
   return (
-    <div className="index__page" id="gate__index">
-      <Page />
-    </div>
+    <Page />
   );
 }

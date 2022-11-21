@@ -6,7 +6,7 @@ import Bank from './Bank';
 function GateMover() {
   return (
     <Mover id="gate">
-      <MoveSection active>
+      <MoveSection className="index__page" id="index" active>
         <Index />
       </MoveSection>
       <MoveSection id="bank">
