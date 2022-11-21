@@ -39,8 +39,9 @@ export function MoveSection(props) {
   return (
     <div id={"move-section-" + (props.id ? props.id : 'index')}
          className={"move-section "
-                  + (props.active ? 'active' : '')}>
-    {props.children}
+                  + (props.active ? 'active ' : '')
+                  + (props.className)}>
+      {props.children}
     </div>
   );
 }

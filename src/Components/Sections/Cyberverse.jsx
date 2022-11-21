@@ -61,14 +61,12 @@ function Nav() {
 
 function Index() {
   return (
-    <MoveSection active>
-      <div className="index__page" id="cyberverse__index">
-        <Content>
-          <Lasr type="full" />
-          <Txt />
-          <Nav />
-        </Content>
-      </div>
+    <MoveSection className="index__page" id="index" active>
+      <Content>
+        <Lasr type="full" />
+        <Txt />
+        <Nav />
+      </Content>
     </MoveSection>
   );
 }

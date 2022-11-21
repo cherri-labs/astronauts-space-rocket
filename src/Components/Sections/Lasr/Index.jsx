@@ -39,8 +39,6 @@ function Page() {
 
 export default function Index() {
   return (
-    <div className="index__page" id="lasr__index">
-      <Page />
-    </div>
+    <Page />
   );
 }

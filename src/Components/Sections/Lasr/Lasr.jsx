@@ -7,7 +7,7 @@ import Buds from './Buds';
 function LasrMover() {
   return (
     <Mover id="lasr">
-      <MoveSection active>
+      <MoveSection className="index__page" id="index" active>
         <Index />
       </MoveSection>
       <MoveSection id="astronauts">

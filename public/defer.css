@@ -1,9 +1,3 @@
-/* --< imports >-- */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gill+Sans:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono:400');
-@import url('http://fonts.cdnfonts.com/css/helvetica-neue-9');
-
 /* preload images */
 body:after {
     /* hide imgs */
@@ -551,7 +545,7 @@ button:hover .icon .screen, button:hover .icon.screen {
     --nft-size: 60vh;
     --nft-inside-size: var(--nft-size);
     --nft-outside-size: var(--nft-size);
-    --nft-max-inside-size: 415px;
+    --nft-max-inside-size: 400px;
     --nft-max-outside-size: 435px;
 }
 
@@ -826,9 +820,6 @@ strong.buds {
 #cyber .index__page {
     -webkit-filter: hue-rotate(20deg) saturate(180%) brightness(120%) contrast(120%);
     filter: hue-rotate(20deg) saturate(180%) brightness(120%) contrast(120%);
-
-    position: relative;
-    min-height: 100vh;
 }
 
 #cyber .index__page article {
@@ -1455,11 +1446,14 @@ strong.buds {
 }
 
 #gate .card p,
-#cyber .card p,
-#cyber .map .card li {
+#cyber .index__page .card p {
     font-size: 16px;
     font-family: "JetBrains Mono", "Roboto Mono", "Lato",
                  "Helvetica Neue", "Helvetica", "Arial", sans;
+}
+
+#cyber .map .card p {
+    font-size: 15px;
 }
 
 #cyber .map .card p,
@@ -1565,6 +1559,19 @@ strong.buds {
 }
 
 /* --< move >-- */
+.move-section.active {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin: 0;
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+}
+
 .move-section .card-wrap:not(.active),
 .move-section:not(.active) {
     display: none;
