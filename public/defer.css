@@ -1440,20 +1440,19 @@ strong.buds {
 }
 
 #gate .card p,
-#cyber .card p,
-#cyber .map .card li {
+#cyber .card p {
     line-height: 1.5em;
+    font-family: "JetBrains Mono", "Roboto Mono", "Lato",
+                 "Helvetica Neue", "Helvetica", "Arial", sans;
 }
 
 #gate .card p,
 #cyber .index__page .card p {
     font-size: 16px;
-    font-family: "JetBrains Mono", "Roboto Mono", "Lato",
-                 "Helvetica Neue", "Helvetica", "Arial", sans;
 }
 
 #cyber .map .card p {
-    font-size: 15px;
+    font-size: 14px;
 }
 
 #cyber .map .card p,
