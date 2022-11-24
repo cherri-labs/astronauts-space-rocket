@@ -1036,6 +1036,14 @@ strong.buds {
     transition: bottom 6s ease-out .6s, opacity .2s;
 }
 
+.section.fullscreen.transition#cyber ~ #footer #navbar .btn-container {
+    cursor: pointer;
+}
+
+.section.fullscreen.transition#cyber ~ #footer #navbar button {
+    pointer-events: none;
+}
+
 .section.fullscreen.active:not(.transition) ~ #footer,
 .section.fullscreen.active:not(.transition) ~ .menu {
     display: none;
@@ -1164,7 +1172,7 @@ strong.buds {
 }
 
 #navbar .btn-container ul > button:not(:last-of-type) {
-    transition: height .4s ease, opacity .8s ease;
+    transition: height .2s ease, opacity .4s ease;
 }
 
 #navbar .btn-container:not(:hover) ul > button:not(:last-of-type) {
@@ -1172,8 +1180,6 @@ strong.buds {
     opacity: 0;
     visibility: hidden;
 }
-
-
 
 #navbar .btn-container:hover ul button {
     border-radius: 0;

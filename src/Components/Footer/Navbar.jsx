@@ -13,6 +13,30 @@ function pullCurtain(name) {
   document.getElementById(name + '-curtain').classList.toggle('closed');
 }
 
+function Curtain(props) {
+  const name = props.name;
+
+  return (
+    <button onMouseEnter={function(){openCurtain(name)}}>
+      {props.children}
+    </button>
+  );
+}
+
+function CurtainNav(props) {
+  return (
+    <button onClick={function() {
+      if (!props.disabled) {
+        pullCurtain(props.mover);
+        move(props.mover, 'move-section-' + props.section);
+      }
+    }}
+            disabled={props.disabled}>
+      <span>{props.children}</span>
+    </button>
+  );
+}
+
 export default function Navbar() {
   return (
     <div id="navbar">
@@ -22,33 +46,28 @@ export default function Navbar() {
         </button>
         <div className="btn-container">
           <ul id="lasr-curtain">
-            <button onClick={function(){
-              move('lasr','move-section-buds');}}>
-              <span>Space Buds</span>
-            </button>
-            <button onClick={function(){
-              move('lasr','move-section-astronauts');}}>
-              <span>Lonely Astronauts</span>
-            </button>
-            <button onClick={function(){pullCurtain('lasr')}}
-                    onMouseEnter={function(){openCurtain('lasr')}}>
+            <CurtainNav mover="lasr" section="buds">
+              Space Buds
+            </CurtainNav>
+            <CurtainNav mover="lasr" section="astronauts">
+              Lonely Astronauts
+            </CurtainNav>
+            <Curtain name="lasr">
               Choose Player
-            </button>
+            </Curtain>
           </ul>
         </div>
         <div className="btn-container">
           <ul id="gate-curtain">
-            <button onClick={function(){
-              move('gate','move-section-bank');}}>
-              <span>Astro Gate</span>
-            </button>
-            <button disabled>
-              <span>Staking Portal</span>
-            </button>
-            <button onClick={function(){pullCurtain('gate')}}
-              onMouseEnter={function(){openCurtain('gate')}}>
+            <CurtainNav mover="gate" section="bank">
+              Astro Gate
+            </CurtainNav>
+            <CurtainNav disabled>
+              Staking Portal
+            </CurtainNav>
+            <Curtain name="gate">
               Open Portal
-            </button>
+            </Curtain>
           </ul>
         </div>
         <div className="btn-container">

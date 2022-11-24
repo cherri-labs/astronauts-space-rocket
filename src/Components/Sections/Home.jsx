@@ -9,7 +9,7 @@ function Container() {
           WELCOME ABOARD
         </span>
         <br/>
-        <MoveAnchor mover="lasr" nav>
+        <MoveAnchor mover="lasr">
           <span>
             LASR
           </span>
