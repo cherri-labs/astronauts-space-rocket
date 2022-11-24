@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { moveIndex, moveBack, moveNext } from './move';
 
 function pad(num, size) {

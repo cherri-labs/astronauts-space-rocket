@@ -4,86 +4,38 @@ import MapCard from './MapCard';
 
 const mover = "cyber";
 
-function Mechas() {
-  return (
-    <MapCard mover={mover} title="Mecha Angels" bg="mechas" active>
-      <p>
-        At the <strong>Horizon Centre</strong> dense degraded
-        circuitry under the gradient twilight stars glimpsed into a
-        world where shadow obstructs and clutters with uneven
-        machinery the metropolis' skyline.
-      </p>
-      <p>
-        They call them <strong>Mechas</strong>.
-      </p>
-      <p>
-        They're programmed to watch over the citizens' peace and prosperity.
-      </p>
-    </MapCard>
-  );
-}
-
-function Ronins() {
-  return (
-    <MapCard mover={mover} title="Cyber Ronins" bg="ronins">
-      <p>
-        With the upsurge of machines in the months preceding the attack,
-        the population was growing increasingly worried. While often
-        dismissed as paranoid, groups started forming in secret
-        to discuss solutions for the current &laquo; state of society &raquo;.
-      </p>
-      <p>
-        They called themselves <strong>Ronins</strong>.
-      </p>
-      <p>
-        Through the <strong>Ronins'</strong> uncorrupted eye we look
-        at <strong>Mechas</strong> and all we
-        see is rotten mechanisms 50 ft tall taking their toll on the{" "}
-        <strong>
-          citizens
-        </strong> at every chance.
-      </p>
-      </MapCard>
-  );
-}
-
-function Phantoms() {
-  return (
-    <MapCard mover={mover} title="Phantom Shells" bg="phantoms">
-      <p>
-        As the night lurks in the <strong>Underground</strong> awakes
-        and a thousand <strong>Phantoms</strong>, motherboards
-    and neon signs light up the dark city alleyways.
-      </p>
-      <p>
-        It's the birth of <b>a new era</b>, are you just going to watch?
-      </p>
-    </MapCard>
-  );
-}
-
 function Buds() {
   return (
-    <MapCard mover={mover} title="Space Buds" bg="buds">
-      <p>
-        From the farthest corner of the galaxy a spedition was sent.
-      </p>
-      <p>
-        With destination unknown, they were escaping their star's
-        destruction by the almighty hands of God.
-      </p>
-      <p>
-        Only a small number of ships that took off that day survived.
-      </p>
-      <p>
-        Warp engines and technology advancements allowed them to
-        quickly cross thousands of light years until the radar caught an
-        inhabitable planet.
-      </p>
-      <p>
-        One of them has landed right into the <strong>city</strong>.
-      </p>
-    </MapCard>
+    <>
+      <MapCard mover={mover} bg="buds">
+        <p>
+          From the farthest corner of the galaxy a spedition was sent.
+        </p>
+      </MapCard>
+      <MapCard mover={mover}>
+        <p>
+          With destination unknown, they were escaping their star's
+          destruction by the almighty hands of God.
+        </p>
+      </MapCard>
+      <MapCard mover={mover}>
+        <p>
+          Only a small number of ships that took off that day survived.
+        </p>
+      </MapCard>
+      <MapCard mover={mover}>
+        <p>
+          Warp engines and technology advancements allowed them to
+          quickly cross thousands of light years until the radar caught an
+          inhabitable planet.
+        </p>
+      </MapCard>
+      <MapCard mover={mover}>
+        <p>
+          One of them has landed right into the <strong>city</strong>.
+        </p>
+      </MapCard>
+    </>
   );
 }
 
@@ -140,6 +92,64 @@ function NeoTowns() {
   );
 }
 
+function Mechas() {
+  return (
+    <MapCard mover={mover} title="Mecha Angels" bg="mechas" active>
+      <p>
+        At the <strong>Horizon Centre</strong> dense degraded
+        circuitry under the gradient twilight stars glimpsed into a
+        world where shadow obstructs and clutters with uneven
+        machinery the metropolis' skyline.
+      </p>
+      <p>
+        They call them <strong>Mechas</strong>.
+      </p>
+      <p>
+        They're programmed to watch over the citizens' peace and prosperity.
+      </p>
+    </MapCard>
+  );
+}
+
+function Ronins() {
+  return (
+    <MapCard mover={mover} title="Cyber Ronins" bg="ronins">
+      <p>
+        With the upsurge of machines in the months preceding the attack,
+        the population was growing increasingly worried. While often
+        dismissed as paranoid, groups started forming in secret
+        to discuss solutions for the current &laquo; state of society &raquo;.
+      </p>
+      <p>
+        They called themselves <strong>Ronins</strong>.
+      </p>
+      <p>
+        Through the <strong>Ronins'</strong> uncorrupted eye we look
+        at <strong>Mechas</strong> and all we
+        see is rotten mechanisms 50 ft tall taking their toll on the{" "}
+        <strong>
+          citizens
+        </strong> at every chance.
+      </p>
+    </MapCard>
+  );
+}
+
+function Phantoms() {
+  return (
+    <MapCard mover={mover} title="Phantom Shells" bg="phantoms">
+      <p>
+        As the night lurks in the <strong>Underground</strong> awakes
+        and a thousand <strong>Phantoms</strong>, motherboards
+    and neon signs light up the dark city alleyways.
+      </p>
+      <p>
+        It's the birth of <b>a new era</b>, are you just going to watch?
+      </p>
+    </MapCard>
+  );
+}
+
 function BlueDiary() {
   return (
     <MapCard mover={mover} title="Blue Diary" bg="diary">
@@ -172,12 +182,12 @@ function BlueDiary() {
 export default function World() {
   return (
     <MoveSection id="world">
-      <Mechas />
-      <Ronins />
-      <Phantoms />
       <Buds />
       <Astronauts />
       <NeoTowns />
+      <Mechas />
+      <Ronins />
+      <Phantoms />
       <BlueDiary />
     </MoveSection>
   );

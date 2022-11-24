@@ -10,11 +10,11 @@ class Main extends React.Component {
   render() {
     return (
       <>
-        <Stars />
         <Home />
         <Lasr />
         <Gate />
         <Cyberverse />
+        <Stars />
       </>
     );
   }

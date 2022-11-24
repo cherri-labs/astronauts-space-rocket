@@ -15,7 +15,7 @@ function callMove(props, mover, goto) {
       /* nav to mover */
       navMove(mover);
 
-      if (!props.nav || props.goto) {
+      if (!props.nav || goto) {
         /* move to section */
         move(mover + "-mover", "move-section-" + goto);
       }
@@ -59,17 +59,17 @@ export default function MoveButton(props) {
 
   return (
     <button id={props.id}
-    className={props.className
-             + (glitch ? ' glitch ' : '')
-             + (disabled ? ' disabled ' : '')}
-    onClick={function() {
-      if (glitch)
-        setGlitch('.menu button.glitch', 400, 1, true, 6, 2000, false,);
-      if (!disabled)
-        /* call move to section */
-        callMove(props, mover, goto);
-    }}>
-    {props.children}
+            className={props.className
+                     + (glitch ? ' glitch ' : '')
+                     + (disabled ? ' disabled ' : '')}
+            onClick={function() {
+              if (glitch)
+                setGlitch('.menu button.glitch', 400, 1, true, 6, 2000, false,);
+              if (!disabled)
+                /* call move to section */
+                callMove(props, mover, goto);
+            }}>
+      {props.children}
     </button>
   );
 }

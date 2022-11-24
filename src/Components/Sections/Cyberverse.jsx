@@ -3,7 +3,7 @@ import Mover, { MoveSection } from '../Move/Mover';
 import { Container, Content, Text } from './Section';
 import Lasr from '../Icons/Lasr';
 import MoveButton from '../Move/MoveButton';
-import navMove from '../Move/navMove';
+import move from '../Move/move';
 
 import World from './Roadmap/World';
 import Vision from './Roadmap/Vision';
@@ -24,7 +24,7 @@ const Txt = () => {
         a dinamically growing ever-expanding
         digital reality.{" "}
         <a className="strong"
-           onClick={function(){navMove('lasr');}}>
+           onClick={function(){move('lasr');}}>
           LASR NFTs
         </a>{" "}
         are your all-access pass. They allow you to freely explore
@@ -36,7 +36,10 @@ const Txt = () => {
 
 function Nav() {
   return (
-    <nav className="nav-container blocks">
+    <nav className="nav-container blocks"
+         onClick={function(){
+           document.getElementById("cyber").classList.add('fullscreen');
+         }}>
       <MoveButton id="move-button-nav-explore"
                   mover="cyber"
                   goto="world"
@@ -71,9 +74,15 @@ function Index() {
   );
 }
 
+function goBack() {
+  document.getElementById("cyber").classList.remove('fullscreen');
+  move('cyber');
+}
+
 function CyberMover() {
   return (
     <Mover id="cyber">
+      <button className="esc" onClick={goBack} />
       <Index />
       <div className="map">
         <World />
@@ -96,7 +105,7 @@ function Page() {
 
 export default function Cyberverse() {
   return (
-    <div className="section retro" id="cyber">
+    <div className="section retro transition" id="cyber">
       <Page />
     </div>
   );

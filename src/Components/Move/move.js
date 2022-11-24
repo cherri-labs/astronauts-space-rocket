@@ -109,19 +109,19 @@ export function moveReset(moverId) {
 }
 
 /* call move to previous section */
-export function moveBack(moverId) {
+export function moveBack(moverId, offset=1) {
   moveInit(moverId);
   move(moverId,
        movers[moverId]['currentSectionId'],
-       movers[moverId]['currentIndex']-1);
+       movers[moverId]['currentIndex']-offset);
 }
 
 /* call move to next section */
-export function moveNext(moverId) {
+export function moveNext(moverId, offset=1) {
   moveInit(moverId);
   move(moverId,
        movers[moverId]['currentSectionId'],
-       movers[moverId]['currentIndex']+1);
+       movers[moverId]['currentIndex']+offset);
 }
 
 /* move with transition effect */
@@ -135,7 +135,7 @@ export function moveTransition(moverId, sectionId, index = 0) {
 }
 
 /* move between sections */
-export default function move(moverId, sectionId = 'index', index = 0) {
+export default function move(moverId, sectionId = 'move-section-index', index = 0) {
   moveInit(moverId);
 
   /* get move container */
@@ -158,7 +158,7 @@ export default function move(moverId, sectionId = 'index', index = 0) {
 
     if (moveSection) {
       /* reset sections */
-      [...sections].forEach(function (s) {
+      [...sections].forEach(function(s) {
         s.classList.remove("active");
       });
       /* activate selected section */

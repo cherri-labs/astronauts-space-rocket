@@ -1,4 +1,5 @@
 import React from 'react';
+import { moveNext } from '../../Move/move';
 
 let activeBg;
 
@@ -27,14 +28,19 @@ class Card extends React.Component {
     this.myRef.current.classList.remove("closed");
   }
 
+  onClick() {
+    moveNext('cyber-mover');
+  }
+
   render() {
     if (this.props.bg)
       activeBg = this.props.bg;
 
     return (
-      <div ref = {this.myRef} className={"card-wrap "
+      <div ref={this.myRef} className={"card-wrap "
                                        + (this.props.active ? "active " : "")
-                                       + (this.props.closed ? "" : "closed")}>
+                                       + (this.props.closed ? "" : "closed")}
+           onClick={this.onClick}>
         <div className={activeBg ? "bg-container" : ""}>
           <div className={activeBg ? activeBg + " bg" : ""} />
         </div>

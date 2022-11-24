@@ -1,14 +1,18 @@
 import React from 'react';
-import Card, { CardTitle } from './Card';
-import { MoveNav } from '../../Move/Mover';
+import Card from './Card';
+import { moveBack } from '../../Move/move';
+
+function onClick() {
+  moveBack('cyber-mover', 2);
+}
 
 export default function MapCard(props) {
   return (
     <Card active={props.active} bg={props.bg}>
-      <CardTitle>{props.title}</CardTitle>
       <article>
         {props.children}
-        <MoveNav mover={props.mover} />
+        <span className="back" onClick={onClick} />
+        <span className="next" />
       </article>
     </Card>
   );
