@@ -171,7 +171,7 @@ button::selection, input::selection {
     cursor: pointer !important;
 }
 
-/* --< mod icons >-- */
+/* --< arrows >-- */
 .arrow:hover {
     border-width: 0 2px 2px 0;
     border-color: #dfc;
@@ -278,6 +278,76 @@ i.screen, .icon .screen, .icon.screen {
 i.screen:hover, .icon:hover .screen, .icon.screen:hover,
 button:hover .icon .screen, button:hover .icon.screen {
     border-color: #2d3236;
+}
+
+/* --< pointer arrows >-- */
+.pointer-arrow {
+    --outer-size: 50px;
+    --inner-size: 20px;
+    z-index: 10;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: var(--outer-size);
+    height: var(--outer-size);
+    padding: 0;
+    border-radius: 50px;
+    border: 1px solid #b4f4ee;
+    color: #b6f6f0;
+    transition: all .25s ease;
+}
+
+.pointer-arrow:hover {
+    color: #2d3236;
+    background-color: #b4f4ee;
+    border-color: #b4f4ee;
+}
+
+.pointer-arrow:after, .pointer-arrow:before {
+    content: '';
+    display: block;
+    position: absolute;
+    transition: transform .25s ease, width .25s ease, right .25s ease;
+}
+
+/* cap */
+.pointer-arrow:after {
+    width: var(--inner-size);
+    height: var(--inner-size);
+    top: calc(50% - var(--inner-size)/2);
+    left: calc(50% - var(--inner-size)/2 + 4px);
+    border-top: 1px solid;
+    border-left: 1px solid;
+}
+
+.pointer-arrow.left:after {
+    transform: rotateZ(-45deg);
+}
+
+.pointer-arrow.left:hover:after {
+    transform: translate(-8px, 0) rotate(-45deg);
+}
+
+/* bar */
+.pointer-arrow:before {
+    top: 50%;
+    right: 24px;
+    width: 0;
+    height: 1px;
+    background-color: #2d3236;
+}
+
+.pointer-arrow:not(:hover):before {
+    transform: translate(-5px, 5px) rotate(45deg);
+}
+
+.pointer-arrow:hover:before {
+    right: 8px;
+    width: 32px;
+}
+
+.section:not(.fullscreen) .pointer-arrow {
+    display: none;
 }
 
 /* --< components >-- */
@@ -1016,6 +1086,27 @@ strong.buds {
     background-image: url('img/roadmap/path/quest-to-faraway.jpg');
 }
 
+/* --< focus__area >-- */
+.bg-container .bg.area {
+    -webkit-filter: brightness(50%);
+    filter: brightness(50%);
+}
+
+.bg-container .bg.area:after {
+    content: '';
+    position: absolute;
+    border-radius: 500px;
+    -webkit-backdrop-filter: brightness(200%);
+    backdrop-filter: brightness(200%);
+}
+
+.bg-container .bg.area.bud:after {
+    top: 300px;
+    left: 800px;
+    width: 400px;
+    height: 100vh;
+}
+
 /* --< footer >-- */
 #footer {
     display: flex;
@@ -1033,7 +1124,7 @@ strong.buds {
 
 .section.fullscreen.transition#cyber ~ #footer {
     bottom: -100vh;
-    transition: bottom 6s ease-out .6s, opacity .2s;
+    transition: bottom 6s ease-out .4s, opacity .2s;
 }
 
 .section.fullscreen.transition#cyber ~ #footer #navbar .btn-container {
@@ -1509,6 +1600,10 @@ strong.buds {
     opacity: 0.5;
 }
 
+.card.empty {
+    display: none;
+}
+
 #cyber .map .card article {
     margin: 0;
     padding: 10px 35px 10px 30px;
@@ -1911,67 +2006,6 @@ strong.buds {
     cursor: default;
 }
 
-/* --< esc button >-- */
-.esc {
-    --outer-size: 50px;
-    --inner-size: 20px;
-    z-index: 10;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: var(--outer-size);
-    height: var(--outer-size);
-    padding: 0;
-    border-radius: 50px;
-    border: 1px solid #b4f4ee;
-    color: #b6f6f0;
-    transition: all .25s ease;
-}
-
-.esc:hover {
-    color: #2d3236;
-    background-color: #b4f4ee;
-    border-color: #b4f4ee;
-}
-
-.esc:after, .esc:before {
-    content: '';
-    display: block;
-    position: absolute;
-    transition: transform .25s ease, width .25s ease, right .25s ease;
-}
-
-.esc:after {
-    width: var(--inner-size);
-    height: var(--inner-size);
-    top: calc(50% - var(--inner-size)/2);
-    left: calc(50% - var(--inner-size)/2 + 4px);
-    border-top: 1px solid;
-    border-left: 1px solid;
-    transform: rotateZ(-45deg);
-}
-
-.esc:hover:after {
-    transform: translate(-8px, 0) rotate(-45deg);
-}
-
-.esc:before {
-    top: 50%;
-    right: 24px;
-    width: 0;
-    height: 1px;
-    background-color: #2d3236;
-}
-
-.esc:hover:before {
-    right: 8px;
-    width: 32px;
-}
-
-.section:not(.fullscreen) .esc {
-    display: none;
-}
-
 /* --< portal button >-- */
 .portal-container {
     display: flex;
@@ -2117,7 +2151,7 @@ button.portal:not(.disabled) + .portal-tag,
 }
 
 .section.active#cyber .map {
-    animation: in-from-bottom 1.6s ease-out;
+    animation: in-from-bottom-ease-out 1.2s ease-out;
 }
 
 .section.active#cyber .map .bg {
@@ -2151,6 +2185,11 @@ button.portal:not(.disabled) + .portal-tag,
 
 @keyframes in-from-bottom {
     0% {margin-top: 200vh;}
+}
+
+@keyframes in-from-bottom-ease-out {
+    0% {margin-top: 100vh;}
+    10% {margin-top: 80vh;}
 }
 
 @keyframes bg-slide-up {

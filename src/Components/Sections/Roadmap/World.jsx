@@ -7,34 +7,47 @@ const mover = "cyber";
 function Buds() {
   return (
     <>
-      <MapCard mover={mover} bg="buds">
+      <MapCard mover={mover} bg="buds" area>
         <p>
           From the farthest corner of the galaxy a spedition was sent.
         </p>
       </MapCard>
-      <MapCard mover={mover}>
+      <MapCard mover={mover} area>
         <p>
-          With destination unknown, they were escaping their star's
-          destruction by the almighty hands of God.
+          With destination unknown, they were escaping the destruction
+          of their own sun.
         </p>
       </MapCard>
-      <MapCard mover={mover}>
+      <MapCard mover={mover} area>
+        <p>
+          It collapsed on itself and sucked their home planet into a
+          giant supernova.
+        </p>
+      </MapCard>
+      <MapCard mover={mover} area>
         <p>
           Only a small number of ships that took off that day survived.
         </p>
       </MapCard>
-      <MapCard mover={mover}>
+      <MapCard mover={mover} area>
+        <p>
+          They had to travel enormous distances, landing on several planets
+          before they could find anything inhabitable.
+        </p>
+      </MapCard>
+      <MapCard mover={mover} area>
         <p>
           Warp engines and technology advancements allowed them to
           quickly cross thousands of light years until the radar caught an
           inhabitable planet.
         </p>
       </MapCard>
-      <MapCard mover={mover}>
+      <MapCard mover={mover} area="bud">
         <p>
           One of them has landed right into the <strong>city</strong>.
         </p>
       </MapCard>
+      <MapCard mover={mover} />
     </>
   );
 }

@@ -82,7 +82,7 @@ function goBack() {
 function CyberMover() {
   return (
     <Mover id="cyber">
-      <button className="esc" onClick={goBack} />
+      <button className="pointer-arrow left" onClick={goBack} />
       <Index />
       <div className="map">
         <World />

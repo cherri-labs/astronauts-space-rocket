@@ -4,16 +4,16 @@ import { moveNext } from '../../Move/move';
 let activeBg;
 
 function close() {
-  const cards = document.getElementById("cyber")
-                        .getElementsByClassName("card-wrap active");
+  const cards = document.getElementById('cyber')
+                        .getElementsByClassName('card-wrap active');
 
   [...cards].forEach(function (c) {
-    c.classList.toggle("closed");
+    c.classList.toggle('closed');
   });
 }
 
 export function CardTitle(props) {
-  return <h3 className="clickable" onClick={function(){close();}}>{props.children}</h3>;
+  return <h3 className='clickable' onClick={function(){close();}}>{props.children}</h3>;
 }
 
 class Card extends React.Component {
@@ -25,7 +25,7 @@ class Card extends React.Component {
 
   componentDidMount() {
     /* toggle opening transition */
-    this.myRef.current.classList.remove("closed");
+    this.myRef.current.classList.remove('closed');
   }
 
   onClick() {
@@ -36,20 +36,26 @@ class Card extends React.Component {
     if (this.props.bg)
       activeBg = this.props.bg;
 
+    const area = this.props.area;
+
     return (
-      <div ref={this.myRef} className={"card-wrap "
-                                       + (this.props.active ? "active " : "")
-                                       + (this.props.closed ? "" : "closed")}
+      <div ref={this.myRef} className={'card-wrap '
+                                     + (this.props.active ? 'active ' : '')
+                                     + (this.props.closed ? '' : 'closed')}
            onClick={this.onClick}>
-        <div className={activeBg ? "bg-container" : ""}>
-          <div className={activeBg ? activeBg + " bg" : ""} />
+        <div className={activeBg ? 'bg-container' : ''}>
+          <div className={(activeBg ?
+                           activeBg + ' bg '
+                           + (area ? 'area ' + area : '')
+                         : '')} />
         </div>
-        <div className={"card "
-                      + (this.props.locked ? "locked " : "")}>
+        <div className={'card '
+                      + (this.props.locked ? 'locked ' : '')
+                      + (this.props.empty ? 'empty ' : '')}>
           {this.props.children}
         </div>
       </div>
     );
-  }
+}
 }
 export default Card;
