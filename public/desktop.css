@@ -102,6 +102,12 @@
         width: 350px;
     }
 
+    .zoom:hover .img,
+    .zoom:hover .glitch__img .glitch__item,
+    #lasr .index__page .portal-wrap:hover .nft {
+        width: 33vw;
+    }
+
     .caption {
         flex-flow: row nowrap;
         gap: 12px;
@@ -213,32 +219,19 @@
         max-width: 50%;
     }
 
-    #roadmap .card {
-        max-height: 25em;
-    }
-
-    .identity.bg {
-        background-position: 0 -1000px;
-    }
-
-    .lonely-space.bg {
-        background-position: 0 -60vh;
-    }
-
-    .terraforming.bg {
-        background-position: 0 -500px;
-    }
-
-    .staking.bg {
-        background-position: 0 0px;
-    }
-
-    .diary.bg,
-    .quest-to-faraway.bg {
-        background-position: 0 80%;
-    }
-
     .move-arrow {
         --move-arrow-margin: 50px;
+    }
+
+    #lasr .portal-wrap + .bg-container .bg {
+        background-size: 300%;
+    }
+
+    #lasr .bud__nft.bg {
+        background-position: 0 -200px;
+    }
+
+    #lasr .astronaut__nft.bg {
+        background-position: -1500px -3000px;
     }
 }

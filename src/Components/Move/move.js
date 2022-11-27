@@ -24,9 +24,6 @@ titles['gate']['bank'] = 'Astro Gate';
 /* cyber */
 titles['cyber'] = [];
 titles['cyber']['index'] = 'Cyberverse';
-titles['cyber']['world'] = 'EXPLORE';
-titles['cyber']['vision'] = 'VISION';
-titles['cyber']['path'] = 'GOALS';
 
 /* returns current active section node element */
 export function activeSection() {
@@ -264,7 +261,7 @@ export default function move(moverId, sectionId = 'move-section-index', index = 
               titles['main'];
       /* if not default */
       if (title !== titles['main'])
-        title += ' // ' + titles['main'];
+        title += ' / ' + titles['main'];
     }
 
     /* set title */

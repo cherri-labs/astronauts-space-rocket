@@ -6,18 +6,23 @@ import navMove from '../Move/navMove';
 import move from '../Move/move';
 
 function openCurtain(name) {
-  document.getElementById(name + '-curtain').classList.remove('closed');
+  const curtain = document.getElementById(name + '-curtain')
+  if (curtain)
+    curtain.classList.remove('closed');
 }
 
 function pullCurtain(name) {
-  document.getElementById(name + '-curtain').classList.toggle('closed');
+  const curtain = document.getElementById(name + '-curtain')
+  if (curtain)
+    curtain.classList.toggle('closed');
 }
 
 function Curtain(props) {
   const name = props.name;
 
   return (
-    <button onMouseEnter={function(){openCurtain(name)}}>
+    <button className={props.className}
+            onMouseEnter={function(){openCurtain(name)}}>
       {props.children}
     </button>
   );
@@ -25,17 +30,20 @@ function Curtain(props) {
 
 function CurtainNav(props) {
   return (
-    <button onClick={function() {
+    <button className={props.className}
+    onClick={function() {
       if (!props.disabled) {
         pullCurtain(props.mover);
-        move(props.mover, 'move-section-' + props.section);
+        move(props.mover, 'move-section-' + (props.section || 'index'));
       }
     }}
-            disabled={props.disabled}>
-      <span>{props.children}</span>
+    disabled={props.disabled}>
+    {(props.alone ?
+      props.children :
+      <span>{props.children}</span>)}
     </button>
   );
-}
+    }
 
 export default function Navbar() {
   return (
@@ -59,28 +67,22 @@ export default function Navbar() {
         </div>
         <div className="btn-container">
           <ul id="gate-curtain">
-            <CurtainNav mover="gate" section="bank">
-              Astro Gate
-            </CurtainNav>
-            <CurtainNav disabled>
-              Staking Portal
-            </CurtainNav>
-            <Curtain name="gate">
+            <CurtainNav mover="gate" section="bank" alone>
               Open Portal
-            </Curtain>
+            </CurtainNav>
           </ul>
         </div>
         <div className="btn-container">
           <ul>
-            <button onClick={function(){move('cyber');}}>
+            <CurtainNav mover="cyber" alone>
               Cyberverse
-            </button>
+            </CurtainNav>
           </ul>
         </div>
       </nav>
-      <button className="exit" onClick={function(){move('home');}}>
+      <CurtainNav className="exit" mover="home" alone>
         Exit
-      </button>
+      </CurtainNav>
       <div id="bottom-bar" className="focus normal">
         <button className="home" onClick={function(){navMove();}}>
           <Lasr />

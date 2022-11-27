@@ -116,7 +116,7 @@ class SideMenu extends React.Component {
           <MenuButton goto="bank" mover={gateMoverId}>Gate</MenuButton>
         </SubMenu>
 
-        <SubMenu name="cyber">
+        <SubMenu name="cyber" hidden>
           <MenuButton goto="world" mover={cyberMoverId} active>Explore</MenuButton>
           <MenuButton goto="vision" mover={cyberMoverId}>Vision</MenuButton>
           <MenuButton goto="path" mover={cyberMoverId}>Goals</MenuButton>

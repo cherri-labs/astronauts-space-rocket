@@ -172,39 +172,18 @@
         margin-left: 5px;
     }
 
-    #roadmap {
-        padding: 7vh 0;
+    #lasr .bud__nft.bg {
+        background-position: 0 -2000px;
+        background-size: 750%;
     }
 
-    #roadmap .card {
-        margin-bottom: 3vh;
-        min-height: 450px;
-    }
-
-    .mechas.bg,
-    .ronins.bg,
-    .lonely-space.bg {
-            background-position: -250px 0;
-    }
-
-    .buds.bg {
+    #lasr .astronaut__nft.bg {
         background-position: -500px 0;
+        background-size: 300%;
     }
 
-    .diary.bg {
-        background-position: -150px 0;
-    }
-
-    .our-way.bg {
-        background-position: -300px 0;
-    }
-
-    .lonely-space.bg {
-        background-image: url('img/roadmap/path/lonely-space_mobile.jpg') !important;
-    }
-
-    .staking.bg {
-        background-position: -100px 0;
+    #cyber .buds.bg {
+        background-position: -500px 0;
     }
 
     .move-arrow {

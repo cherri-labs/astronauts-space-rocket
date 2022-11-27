@@ -4,50 +4,58 @@ import MapCard from './MapCard';
 
 const mover = "cyber";
 
+function Neotowns() {
+  return (
+    <>
+      <MapCard mover={mover} bg="neotowns">
+        <p>
+          At the <strong>Horizon Centre</strong> dense degraded
+          circuitry under the gradient twilight stars glimpsed into a
+          world where shadow obstructs and clutters with uneven
+          machinery the metropolis' skyline.
+        </p>
+      </MapCard>
+      <MapCard mover={mover}>
+        <p>
+          As the night lurks in the <strong>Underground</strong> awakes
+          and a thousand <strong>Phantoms</strong>, motherboards
+    and neon signs light up the dark city alleyways.
+        </p>
+      </MapCard>
+      <MapCard mover={mover}>
+        <p>
+          It's the birth of <b>a new era</b>, are you just going to watch?
+        </p>
+      </MapCard>
+    </>
+  );
+}
+
 function Buds() {
   return (
     <>
-      <MapCard mover={mover} bg="buds" area>
+      <MapCard mover={mover} bg="buds" color="greenblue">
         <p>
           From the farthest corner of the galaxy a spedition was sent.
         </p>
       </MapCard>
-      <MapCard mover={mover} area>
+      <MapCard mover={mover} color="greenblue">
         <p>
-          With destination unknown, they were escaping the destruction
-          of their own sun.
+          With destination unknown, they were forced to run away
+          by the upcoming collapse of their own sun.
         </p>
       </MapCard>
-      <MapCard mover={mover} area>
+      <MapCard mover={mover} color="greenblue">
         <p>
-          It collapsed on itself and sucked their home planet into a
-          giant supernova.
+          They travelled long before they found another suitable
+          planet.
         </p>
       </MapCard>
-      <MapCard mover={mover} area>
+      <MapCard mover={mover} color="greenblue">
         <p>
-          Only a small number of ships that took off that day survived.
+          Until they landed on <strong>CITY</strong>.
         </p>
       </MapCard>
-      <MapCard mover={mover} area>
-        <p>
-          They had to travel enormous distances, landing on several planets
-          before they could find anything inhabitable.
-        </p>
-      </MapCard>
-      <MapCard mover={mover} area>
-        <p>
-          Warp engines and technology advancements allowed them to
-          quickly cross thousands of light years until the radar caught an
-          inhabitable planet.
-        </p>
-      </MapCard>
-      <MapCard mover={mover} area="bud">
-        <p>
-          One of them has landed right into the <strong>city</strong>.
-        </p>
-      </MapCard>
-      <MapCard mover={mover} />
     </>
   );
 }
@@ -80,128 +88,12 @@ function Astronauts() {
   );
 }
 
-function NeoTowns() {
-  return (
-    <MapCard mover={mover} title="Neo Towns" bg="neotowns">
-      <p>
-        Carbon emissions doubled every 18 months or so. When they
-        began to settle the planet's atmosphere had already been
-        reduced by about 2%.
-      </p>
-      <p>
-        Because of that, <strong>Neo-Towns</strong> experience drastic
-        temperature escalations through the year.
-      </p>
-      <p>
-        Winters can get extremely cold, and summers burning hot.
-      </p>
-      <p>
-        Following was a rapid decrease of population, and abandoned
-        facilities growing in number accordingly. Inhabited buildings
-        were often adapted to the stronger climate with scrap. This was
-        also a quick fix for walls and windows damaged badly from war.
-      </p>
-    </MapCard>
-  );
-}
-
-function Mechas() {
-  return (
-    <MapCard mover={mover} title="Mecha Angels" bg="mechas" active>
-      <p>
-        At the <strong>Horizon Centre</strong> dense degraded
-        circuitry under the gradient twilight stars glimpsed into a
-        world where shadow obstructs and clutters with uneven
-        machinery the metropolis' skyline.
-      </p>
-      <p>
-        They call them <strong>Mechas</strong>.
-      </p>
-      <p>
-        They're programmed to watch over the citizens' peace and prosperity.
-      </p>
-    </MapCard>
-  );
-}
-
-function Ronins() {
-  return (
-    <MapCard mover={mover} title="Cyber Ronins" bg="ronins">
-      <p>
-        With the upsurge of machines in the months preceding the attack,
-        the population was growing increasingly worried. While often
-        dismissed as paranoid, groups started forming in secret
-        to discuss solutions for the current &laquo; state of society &raquo;.
-      </p>
-      <p>
-        They called themselves <strong>Ronins</strong>.
-      </p>
-      <p>
-        Through the <strong>Ronins'</strong> uncorrupted eye we look
-        at <strong>Mechas</strong> and all we
-        see is rotten mechanisms 50 ft tall taking their toll on the{" "}
-        <strong>
-          citizens
-        </strong> at every chance.
-      </p>
-    </MapCard>
-  );
-}
-
-function Phantoms() {
-  return (
-    <MapCard mover={mover} title="Phantom Shells" bg="phantoms">
-      <p>
-        As the night lurks in the <strong>Underground</strong> awakes
-        and a thousand <strong>Phantoms</strong>, motherboards
-    and neon signs light up the dark city alleyways.
-      </p>
-      <p>
-        It's the birth of <b>a new era</b>, are you just going to watch?
-      </p>
-    </MapCard>
-  );
-}
-
-function BlueDiary() {
-  return (
-    <MapCard mover={mover} title="Blue Diary" bg="diary">
-      <p>
-        Found under the wreckage of an old{" "}
-        <strong>
-          underground house
-        </strong>.
-      </p>
-      <p>
-        It documented life in the city before{" "}
-        <strong>
-          crit point
-        </strong>. During the attack many of the informations contained
-        here happened to be striked from human knowledge.
-      </p>
-      <p>
-        For many, this was the first and only history they knew.
-      </p>
-      <p>
-        When the <strong>Ronins</strong> got their hands on it
-        copies were made spreading its contents.
-        Soon enough it also became known as <i>The Bible</i> in
-        the <strong>Underground</strong> world.
-      </p>
-    </MapCard>
-  );
-}
-
 export default function World() {
   return (
     <MoveSection id="world">
+      <Neotowns />
       <Buds />
       <Astronauts />
-      <NeoTowns />
-      <Mechas />
-      <Ronins />
-      <Phantoms />
-      <BlueDiary />
     </MoveSection>
   );
 }

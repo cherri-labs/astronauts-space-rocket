@@ -50,12 +50,13 @@ class Card extends React.Component {
                          : '')} />
         </div>
         <div className={'card '
-                      + (this.props.locked ? 'locked ' : '')
-                      + (this.props.empty ? 'empty ' : '')}>
+                      + (this.props.color ? 'color__' + this.props.color : '')
+                      + (this.props.locked ? ' locked ' : '')
+                      + (this.props.empty ? ' empty ' : '')}>
           {this.props.children}
         </div>
       </div>
     );
-}
+  }
 }
 export default Card;

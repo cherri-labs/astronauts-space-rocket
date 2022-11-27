@@ -41,7 +41,7 @@ const Txt = () => {
     <Text>
       <h3 className="separator">Space Buds</h3>
       <p>
-        777 generative friendly <a>Space Buds</a> cruisin'
+        777 generative <a>Space Buds</a> cruisin'
         thru the <i>cybergalaxy</i>. Created with the conjunction
         of AI and Python, <strong>Space Buds</strong> pioneer the
         technological advancement that is key to our rapidly

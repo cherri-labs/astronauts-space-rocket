@@ -3,8 +3,10 @@ import React from 'react';
 class SubMenu extends React.Component {
   render() {
     return (
-      <div className="sub-menu" id={"sub-" + this.props.name}>
-      {this.props.children}
+      <div id={'sub-' + this.props.name}
+           className={'sub-menu '
+                    + (this.props.hidden ? 'hidden ' : '')}>
+        {this.props.children}
       </div>
     );
   }
