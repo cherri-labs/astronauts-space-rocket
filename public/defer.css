@@ -620,10 +620,6 @@ button:hover .icon .screen, button:hover .icon.screen {
     order: -99;
 }
 
-.section#home:not(.active) ~ #stars {
-    display: none;
-}
-
 /* --< lasr >-- */
 #lasr {
     --nft-size: 60vh;
@@ -645,6 +641,7 @@ button:hover .icon .screen, button:hover .icon.screen {
 #lasr .index__page #container,
 #lasr .index__page #content {
     margin-top: -2%;
+    width: 100vw;
 }
 
 #lasr .index__page h1 {
@@ -1045,13 +1042,6 @@ strong.buds {
     border-radius: 500px;
     -webkit-backdrop-filter: brightness(200%);
     backdrop-filter: brightness(200%);
-}
-
-.bg-container .bg.area.bud:after {
-    top: 300px;
-    left: 800px;
-    width: 400px;
-    height: 100vh;
 }
 
 /* --< footer >-- */
@@ -2069,22 +2059,6 @@ button.portal:not(.disabled) + .portal-tag,
     pointer-events: none !important;
 }
 
-.focus.low {
-    --focus-off-opacity: .9;
-}
-
-.focus.medium {
-    --focus-off-opacity: .8;
-}
-
-.focus.normal {
-    --focus-off-opacity: .6;
-}
-
-.focus.high {
-    --focus-off-opacity: .1;
-}
-
 .focus > *:not(.focus):not(:disabled):not(.disabled) {
     pointer-events: auto;
 }
@@ -2534,9 +2508,7 @@ button.portal:not(.disabled) + .portal-tag,
     --blend-color-5: #af4949;
 
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
     overflow: hidden;
 
     border-radius: 25px;
@@ -2606,7 +2578,9 @@ button.portal:not(.disabled) + .portal-tag,
 .nft.img,
 .zoom .img,
 .zoom .glitch__item {
-    transition: transform .6s ease-out, width .6s ease-out;
+    transition: transform .6s ease-out,
+                width .6s ease-out,
+                background-position .6s ease-out;
 }
 
 .zoom:not(.full),
@@ -2640,7 +2614,6 @@ button.portal:not(.disabled) + .portal-tag,
 .zoom:hover .img,
 .zoom:hover .glitch__img .glitch__item,
 #lasr .index__page .portal-wrap:hover .nft {
-    max-width: none;
     transform: scale(1.1);
 }
 
@@ -2649,8 +2622,11 @@ button.portal:not(.disabled) + .portal-tag,
 }
 
 #lasr .index__page .portal-wrap:hover + .bg-container {
-    opacity: .5;
-    backdrop-filter: blur(10px);
+    opacity: .6;
+    -webkit-filter: contrast(90%) saturate(120%) brightness(110%);
+    filter: contrast(90%) saturate(120%) brightness(110%);
+    -webkit-backdrop-filter: blur(10px) contrast(110%);
+    backdrop-filter: blur(10px) contrast(110%);
 }
 
 .glitch__img .glitch__item {
@@ -2705,24 +2681,17 @@ button.portal:not(.disabled) + .portal-tag,
 }
 
 .glitch__img .glitch__text {
-    position: absolute;
-    bottom: 0;
+    display: flex;
+    align-self: flex-end;
+    padding: 5px 15px;
     color: var(--color-link);
     text-transform: uppercase;
     letter-spacing: 12px;
     opacity: .8;
 }
 
-.astronaut .glitch__text {
-    color: var(--color-astr);
-}
-
-.bud .glitch__text {
-    color: var(--color-bud);
-}
-
 .glitch__img .glitch__text:before, .glitch__img .glitch__text:after {
-    content: 'LレAーSザRー';
+    content: '';
     position: absolute;
     left: 0;
     top: 0;
@@ -3020,45 +2989,45 @@ button.portal:not(.disabled) + .portal-tag,
 }
 
 /* rendering text */
-
 .rendering:after {
-    content: 'rendering';
+    content: '';
     display: block;
-    position: absolute;
-    bottom: 0;
-    right: -1000%;
-    width: inherit;
+    font-size: 14px;
+    padding-left: .8em;
     word-break: keep-all;
+    white-space: nowrap;
+    overflow: visible;
     animation: rendering 2s linear infinite;
+    transition: margin .6s ease, filter .2s ease, opacity .6s ease .4s;
 }
 
-.astronaut .rendering:after {
-    content: 'lonely astronauts';
-    animation: la-rendering 2s linear infinite;
+.astronaut .rendering {
+    --content: 'lonely astronauts';
+    color: var(--color-astr);
 }
 
-.bud .rendering:after {
-    content: 'space buds';
-    right: 100%;
-    animation: sb-rendering 2s linear infinite;
+.bud .rendering {
+    --content: 'space buds';
+    color: var(--color-bud);
 }
 
 @keyframes rendering {
-    0%, 48%, 50%, 56%, 78%, 80%, 85%, 100% {content: 'rendering';}
-    49%, 51%, 55%, 79% {content: 'レンダリング';}
-    82%, 84%, 94% {text-transform: lowercase;}
+    0%, 48%, 50%, 53%, 56%, 58%, 100% {content: var(--content);}
+    49%, 51%, 55%, 57% {content: '';}
 }
 
-@keyframes la-rendering {
-    0%, 48%, 50%, 56%, 78%, 80%, 85%, 100% {content: 'lonely astronauts';}
-    49%, 51%, 55%, 79% {content: 'LレAーSザRー';}
-    82%, 84%, 94% {text-transform: lowercase;}
+.zoom:hover .rendering:after {
+    content: var(--content);
+    animation: none;
+    margin-bottom: 20px;
+    opacity: 0;
+    -webkit-filter: saturate(500%) contrast(500%);
+    filter: saturate(500%) contrast(500%);
 }
 
-@keyframes sb-rendering {
-    0%, 48%, 50%, 56%, 78%, 80%, 85%, 100% {content: 'space buds';}
-    49%, 51%, 55%, 79% {content: 'LレAーSザRー';}
-    82%, 84%, 94% {text-transform: lowercase;}
+.zoom:hover .progress.dots:after,
+.zoom:hover .progress .dots:after {
+    display: none;
 }
 
 /* nft */
@@ -3170,11 +3139,6 @@ noscript span:hover {
     0%, 92% {content: '.';}
     33% {content: '..';}
     66%, 88%, 95%, 100% {content: '...';}
-    89% {content: 'レ';}
-    90% {content: 'ン';}
-    91% {content: 'ダリ';}
-    93% {content: 'ン';}
-    94% {content: 'グ';}
 }
 
 @keyframes lasr-ring {

@@ -102,10 +102,10 @@
         width: 350px;
     }
 
-    .zoom:hover .img,
-    .zoom:hover .glitch__img .glitch__item,
-    #lasr .index__page .portal-wrap:hover .nft {
-        width: 33vw;
+    #lasr :not(.index__page) .zoom:hover .img,
+    #lasr :not(.index__page) .zoom:hover .glitch__img .glitch__item {
+        width: 50vw;
+        background-position: 2.5vw 5vh;
     }
 
     .caption {
@@ -223,15 +223,15 @@
         --move-arrow-margin: 50px;
     }
 
-    #lasr .portal-wrap + .bg-container .bg {
+    #lasr .index__page .portal-wrap + .bg-container .bg {
         background-size: 300%;
     }
 
-    #lasr .bud__nft.bg {
+    #lasr .index__page .bud__nft.bg {
         background-position: 0 -200px;
     }
 
-    #lasr .astronaut__nft.bg {
+    #lasr .index__page .astronaut__nft.bg {
         background-position: -1500px -3000px;
     }
 }

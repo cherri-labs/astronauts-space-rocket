@@ -18,12 +18,6 @@ export function PortalTag(props) {
 }
 
 export class PortalButton extends React.Component {
-  componentDidMount() {
-    VanillaTilt.init(document.querySelectorAll('.portal-wrap'), {
-      max: 25,
-    });
-  }
-
   render() {
     const mover = this.props.mover;
     const zoom = this.props.zoom;
@@ -66,10 +60,18 @@ export function PortalContainer(props) {
   );
 }
 
-export default function Portal(props) {
-  return (
-    <div className={"portal-wrap " + props.className}>
-      {props.children}
-    </div>
-  );
+export default class Portal extends React.Component {
+  componentDidMount() {
+    VanillaTilt.init(document.querySelectorAll('.portal-wrap'), {
+      max: 5,
+    });
+  }
+
+  render() {
+    return (
+      <div className={"portal-wrap " + this.props.className}>
+        {this.props.children}
+      </div>
+    );
+  }
 }

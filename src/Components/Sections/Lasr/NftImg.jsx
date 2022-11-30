@@ -37,8 +37,7 @@ export default function NftImg(props) {
             <div className="glitch__item"></div>
             <div className="glitch__text">
               {props.children}
-              <span className="rendering"></span>
-              <span className="progress dots"></span>
+              <span className="rendering" />
             </div>
           </> : '')}
         </div>

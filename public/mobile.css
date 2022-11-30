@@ -172,12 +172,12 @@
         margin-left: 5px;
     }
 
-    #lasr .bud__nft.bg {
+    #lasr .index__page .bud__nft.bg {
         background-position: 0 -2000px;
         background-size: 750%;
     }
 
-    #lasr .astronaut__nft.bg {
+    #lasr .index__page .astronaut__nft.bg {
         background-position: -500px 0;
         background-size: 300%;
     }
