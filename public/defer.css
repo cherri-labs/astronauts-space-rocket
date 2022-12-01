@@ -1262,11 +1262,6 @@ strong.buds {
     overflow: hidden;
 }
 
-#navbar .btn-container:hover {
-    border-radius: 5px;
-    border: 1px solid #b4f4ee;
-}
-
 #navbar ul {
     max-width: 100%;
     margin: 0;
@@ -1291,14 +1286,19 @@ strong.buds {
     transition: border-radius .2s ease, height .2s ease, opacity .4s ease;
 }
 
-#navbar .btn-container,
-#navbar .btn-container ul button:last-of-type {
-    transition: padding .4s ease, border-radius .4s ease;
+#navbar .btn-container:hover {
+    border-radius: 7px;
+    border: 1px solid #b4f4ee;
 }
 
 #navbar .btn-container ul button:hover,
 #navbar .btn-container:hover ul button:last-of-type {
-    border-radius: 2px;
+    border-radius: 3px;
+}
+
+#navbar .btn-container,
+#navbar .btn-container ul button:last-of-type {
+    transition: padding .4s ease, border-radius .4s ease;
 }
 
 #navbar .btn-container ul:hover,
