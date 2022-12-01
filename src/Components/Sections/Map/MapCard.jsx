@@ -7,11 +7,17 @@ export default function MapCard(props) {
           bg={props.bg}
           color={props.color}
           area={props.area}
-          empty={!props.children}>
+          center={props.center}
+          nav={props.nav}
+          bar={props.bar}
+          forward={!(props.nav && props.continue !== 'true') &&
+                   props.continue !== 'false'}
+          next={props.next}
+          empty={!props.children || props.nav}>
       <article>
         {props.children}
       </article>
-      <div className="move-nav__container">
+      <div className={"move-nav__container " + (props.nav ? 'hidden ' : '')}>
         <span className="next arrow right" />
       </div>
     </Card>

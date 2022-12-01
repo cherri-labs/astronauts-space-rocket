@@ -47,8 +47,8 @@ class SideMenu extends React.Component {
     };
 
     /* move and close menu */
-    menu.move = function(moverId, section) {
-      move(moverId + "-mover", "move-section-" + section);
+    menu.move = function(moverId, section, index = 0) {
+      move(moverId + "-mover", "move-section-" + section, index);
       menu.hide();
     };
 

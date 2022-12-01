@@ -116,7 +116,7 @@
         text-decoration: underline;
     }
 
-    #cyberverse h3 {
+    #cyber h3 {
         font-size: 6vw;
     }
 
@@ -184,6 +184,14 @@
 
     #cyber .buds.bg {
         background-position: -500px 0;
+    }
+
+    .card-container {
+        padding: 15px;
+    }
+
+    #cyber .map .card-wrap.center .card.nav article .nav-container {
+        flex-flow: column nowrap;
     }
 
     .move-arrow {

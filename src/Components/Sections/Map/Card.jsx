@@ -28,32 +28,45 @@ class Card extends React.Component {
     this.myRef.current.classList.remove('closed');
   }
 
-  onClick() {
-    moveNext('cyber-mover');
-  }
-
   render() {
     if (this.props.bg)
       activeBg = this.props.bg;
-
     const area = this.props.area;
+
+    const forward = this.props.forward;
+
+    function onClick(e) {
+      if (forward) {
+        const tag = e.target.tagName.toLowerCase();
+        if (tag !== 'button' && tag !== 'a')
+          moveNext('cyber-mover');
+      }
+    }
 
     return (
       <div ref={this.myRef} className={'card-wrap '
                                      + (this.props.active ? 'active ' : '')
-                                     + (this.props.closed ? '' : 'closed')}
-           onClick={this.onClick}>
+                                     + (this.props.center ? 'center ' : '')
+                                     + (this.props.nav ? 'nav ' : '')
+                                     + (this.props.bar ? 'bar ' : '')
+                                     + (this.props.forward ? 'forward ' : '')
+                                     + (this.props.next ? 'next ' : '')
+                                     + (this.props.closed ? '' : 'closed ')}
+           onClick={function(e) {onClick(e)}}>
         <div className={activeBg ? 'bg-container' : ''}>
           <div className={(activeBg ?
                            activeBg + ' bg '
                            + (area ? 'area ' + area : '')
                          : '')} />
         </div>
-        <div className={'card '
-                      + (this.props.color ? 'color__' + this.props.color : '')
-                      + (this.props.locked ? ' locked ' : '')
-                      + (this.props.empty ? ' empty ' : '')}>
-          {this.props.children}
+        <div className="card-container">
+          <div className={'card '
+                        + (this.props.color ? 'color__' + this.props.color : '')
+                        + (this.props.locked ? ' locked ' : '')
+                        + (this.props.nav ? ' nav ' : '')
+                        + (this.props.empty ? ' empty ' : '')}>
+            {this.props.children}
+          </div>
         </div>
       </div>
     );

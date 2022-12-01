@@ -3,11 +3,20 @@ import Mover, { MoveSection } from '../Move/Mover';
 import { Container, Content, Text } from './Section';
 import Lasr from '../Icons/Lasr';
 import MoveButton from '../Move/MoveButton';
-import move from '../Move/move';
+import move, { moveNext } from '../Move/move';
 
-import World from './Roadmap/World';
-import Vision from './Roadmap/Vision';
-import Path from './Roadmap/Path';
+import Explore from './Map/Explore';
+import Vision from './Map/Vision';
+import Path from './Map/Path';
+
+function goBack() {
+  document.getElementById("cyber").classList.remove('fullscreen');
+  move('cyber-mover');
+}
+
+function goForward() {
+  moveNext('cyber-mover');
+}
 
 const Txt = () => {
   return (
@@ -42,7 +51,7 @@ function Nav() {
          }}>
       <MoveButton id="move-button-nav-explore"
                   mover="cyber"
-                  goto="world"
+                  goto="explore_neotowns"
                   menu>
         Explore
       </MoveButton>
@@ -74,20 +83,20 @@ function Index() {
   );
 }
 
-function goBack() {
-  document.getElementById("cyber").classList.remove('fullscreen');
-  move('cyber');
-}
-
 function CyberMover() {
   return (
     <Mover id="cyber">
-      <button className="pointer-arrow left" onClick={goBack} />
       <Index />
       <div className="map">
-        <World />
+        <Explore />
         <Vision />
         <Path />
+        <button id="map__esc"
+                className="map__pointer pointer-arrow left"
+                onClick={goBack} />
+        <button id="map__forward"
+                className="map__pointer pointer-arrow right"
+                onClick={goForward} />
       </div>
     </Mover>
   );

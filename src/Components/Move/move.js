@@ -2,8 +2,8 @@ import { menu } from './SideMenu';
 import navMove from './navMove';
 import glitchTrans from '../../glitchTransition';
 
-const wrapperClassName = "card-wrap"; // class of containers to move
-const glitchSelector = "#roadmap .bg-container"; // element to glitch on transition
+const wrapperClassName = 'card-wrap'; // class of containers to move
+const glitchSelector = '#roadmap .bg-container'; // element to glitch on transition
 
 /* mover containers */
 let movers = [];
@@ -28,7 +28,7 @@ titles['cyber']['index'] = 'Cyberverse';
 /* returns current active section node element */
 export function activeSection() {
   /* get all sections */
-  const sections = document.getElementsByClassName("section");
+  const sections = document.getElementsByClassName('section');
   let activeSection;
 
   /* fetch active section element */
@@ -82,7 +82,7 @@ function moveDefault(moverId) {
     movers[moverId]['currentIndex'] = 0;
 
     /* get all sections */
-    movers[moverId]['sections'] = mover.getElementsByClassName("move-section");
+    movers[moverId]['sections'] = mover.getElementsByClassName('move-section');
 
     /* first section */
     const first = movers[moverId]['sections'][0];
@@ -138,9 +138,9 @@ export default function move(moverId, sectionId = 'move-section-index', index = 
   /* get move container */
   const mover = movers[moverId]['mover'];
   /* get all sections */
-  const sections = mover.getElementsByClassName("move-section");
+  const sections = mover.getElementsByClassName('move-section');
   /* move section */
-  const moveSection = mover.querySelector("#" + sectionId);
+  const moveSection = mover.querySelector('#' + sectionId);
 
   /* nav to mover */
   navMove(moverId);
@@ -150,16 +150,16 @@ export default function move(moverId, sectionId = 'move-section-index', index = 
 
   if (moveSection) {
     /* run default transition if mover has transition type */
-    if (mover.classList.contains("transition"))
+    if (mover.classList.contains('transition'))
       moveTransition(moverId, sectionId, index);
 
     if (moveSection) {
       /* reset sections */
       [...sections].forEach(function(s) {
-        s.classList.remove("active");
+        s.classList.remove('active');
       });
       /* activate selected section */
-      moveSection.classList.add("active");
+      moveSection.classList.add('active');
 
       /* get card containers */
       const cards = moveSection.getElementsByClassName(wrapperClassName);
@@ -168,9 +168,15 @@ export default function move(moverId, sectionId = 'move-section-index', index = 
         /* activate selected article */
         [...cards].forEach(function (c) {
           if (index !== i++) {
-            c.classList.remove("active");
+            c.classList.remove('active');
+            moveSection.classList.remove('next__screen');
           } else {
-            c.classList.add("active");
+            c.classList.add('active');
+
+            /* check if nav next screen card */
+            if (c.classList.contains('next')) {
+              moveSection.classList.add('next__screen');
+            }
           }
         });
       }
@@ -191,7 +197,7 @@ export default function move(moverId, sectionId = 'move-section-index', index = 
       }
 
       /* update last section */
-      lastSection = mover.querySelector("#" + s.id);
+      lastSection = mover.querySelector('#' + s.id);
     });
 
     /* wrap-around first section */
@@ -201,7 +207,7 @@ export default function move(moverId, sectionId = 'move-section-index', index = 
 
     /* fetch last index of the section */
     const lastIndex = mover
-      .querySelector("#" + previousSectionId)
+      .querySelector('#' + previousSectionId)
       .getElementsByClassName(wrapperClassName)
       .length - 1;
 
@@ -223,7 +229,7 @@ export default function move(moverId, sectionId = 'move-section-index', index = 
       }
 
       /* update last section */
-      lastSection = mover.querySelector("#" + s.id);
+      lastSection = mover.querySelector('#' + s.id);
     });
 
     /* wrap-around last section */

@@ -215,8 +215,16 @@
         margin: 0 5px;
     }
 
-    .card {
+    .card-container {
+        padding: 30px 40px;
+    }
+
+    .card-wrap:not(.bar) .card {
         max-width: 50%;
+    }
+
+    #cyber .map .card:not(.bar) {
+        width: 500px;
     }
 
     .move-arrow {
