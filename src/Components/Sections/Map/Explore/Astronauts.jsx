@@ -1,6 +1,6 @@
 import React from 'react';
-import { MoveSection } from '../../Move/Mover';
-import MapCard from './MapCard';
+import { MoveSection } from '../../../Move/Mover';
+import MapCard from '../MapCard';
 
 const mover = "cyber";
 
@@ -25,7 +25,7 @@ export default function Astronauts() {
           middle of nowhere. Nothing for billions and billions of light years.
         </p>
       </MapCard>
-      <MapCard mover={mover}>
+      <MapCard mover={mover} section="explore_index">
         <p>
           After a thousand years in the freezer, you could still wake
           up and see nothing ahead.

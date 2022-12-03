@@ -1,7 +1,6 @@
 import React from 'react';
-import { MoveSection } from '../../Move/Mover';
-import MoveButton from '../../Move/MoveButton';
-import MapCard from './MapCard';
+import { MoveSection } from '../../../Move/Mover';
+import MapCard from '../MapCard';
 
 const mover = "cyber";
 
@@ -23,26 +22,10 @@ export default function Neotowns() {
     and neon signs light up the dark city alleys.
         </p>
       </MapCard>
-      <MapCard mover={mover}>
+      <MapCard mover={mover} section="explore_index">
         <p>
           It's the birth of <b>a new era</b>, are you just going to watch?
         </p>
-      </MapCard>
-      <MapCard mover={mover} nav bar>
-        <div className="taskbar">
-          <nav className="nav-container blocks">
-            <MoveButton mover="cyber"
-                        goto="explore_buds"
-                        menu>
-              Space Buds
-            </MoveButton>
-            <MoveButton mover="cyber"
-                        goto="explore_astronauts"
-                        menu>
-              Lonely Astronauts
-            </MoveButton>
-          </nav>
-        </div>
       </MapCard>
     </MoveSection>
   );

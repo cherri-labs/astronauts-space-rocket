@@ -223,6 +223,20 @@
         max-width: 50%;
     }
 
+    #cyber #move-section-explore_index {
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: 0 9vw;
+    }
+
+    #cyber #move-section-explore_index .nav-container {
+        margin: 5vh 0;
+    }
+
+    #cyber #move-section-explore_index .nav-container button {
+        min-width: 600px;
+    }
+
     #cyber .map .card:not(.bar) {
         width: 500px;
     }

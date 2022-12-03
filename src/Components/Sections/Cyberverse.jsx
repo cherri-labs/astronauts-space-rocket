@@ -3,20 +3,12 @@ import Mover, { MoveSection } from '../Move/Mover';
 import { Container, Content, Text } from './Section';
 import Lasr from '../Icons/Lasr';
 import MoveButton from '../Move/MoveButton';
-import move, { moveNext } from '../Move/move';
+import Pointer from './Map/Pointer';
+import move from '../Move/move';
 
-import Explore from './Map/Explore';
+import Explore from './Map/Explore/Explore';
 import Vision from './Map/Vision';
 import Path from './Map/Path';
-
-function goBack() {
-  document.getElementById("cyber").classList.remove('fullscreen');
-  move('cyber-mover');
-}
-
-function goForward() {
-  moveNext('cyber-mover');
-}
 
 const Txt = () => {
   return (
@@ -51,7 +43,7 @@ function Nav() {
          }}>
       <MoveButton id="move-button-nav-explore"
                   mover="cyber"
-                  goto="explore_neotowns"
+                  goto="explore_index"
                   menu>
         Explore
       </MoveButton>
@@ -91,12 +83,7 @@ function CyberMover() {
         <Explore />
         <Vision />
         <Path />
-        <button id="map__esc"
-                className="map__pointer pointer-arrow left"
-                onClick={goBack} />
-        <button id="map__forward"
-                className="map__pointer pointer-arrow right"
-                onClick={goForward} />
+        <Pointer id="map" to="esc" dir="left" mover="cyber" />
       </div>
     </Mover>
   );

@@ -1,3 +1,9 @@
+:root {
+    --grey: #2d3236;
+    --fg-blue: #b4f4ee;
+    --bg-blue: #b6f6f0;
+}
+
 /* preload images */
 body:after {
     /* hide imgs */
@@ -9,16 +15,12 @@ body:after {
 
     /* load imgs */
     content: url('img/buds/1.gif')
-             url('img/astronauts/1.gif')
-             url('img/roadmap/world1.jpg')
-             url('img/roadmap/world4.jpg')
-             url('img/roadmap/vision.jpg')
-             url('img/roadmap/path.jpg');
+             url('img/astronauts/1.gif');
 }
 
 h1, h2, h3, h4 {
     display: inline-block;
-    color: #b6f6f0;
+    color: var(--bg-blue);
     cursor: default;
 }
 
@@ -263,7 +265,7 @@ a:hover .arrow.logo.full {
 }
 
 i.screen, .icon .screen, .icon.screen {
-    border: 2px solid #b6f6f0;
+    border: 2px solid var(--bg-blue);
     border-radius: 5px;
     margin: 0;
     padding: 0 10px;
@@ -275,7 +277,7 @@ i.screen, .icon .screen, .icon.screen {
 
 i.screen:hover, .icon:hover .screen, .icon.screen:hover,
 button:hover .icon .screen, button:hover .icon.screen {
-    border-color: #2d3236;
+    border-color: var(--grey);
 }
 
 /* --< pointer arrows >-- */
@@ -287,15 +289,15 @@ button:hover .icon .screen, button:hover .icon.screen {
     height: var(--outer-size);
     padding: 0;
     border-radius: 50px;
-    border: 1px solid #b4f4ee;
-    color: #b6f6f0;
+    border: 1px solid var(--fg-blue);
+    color: var(--bg-blue);
     transition: all .25s ease;
 }
 
 .pointer-arrow:hover {
-    color: #2d3236;
-    background-color: #b4f4ee;
-    border-color: #b4f4ee;
+    color: var(--grey);
+    background-color: var(--fg-blue);
+    border-color: var(--fg-blue);
 }
 
 .pointer-arrow:after, .pointer-arrow:before {
@@ -349,7 +351,7 @@ button:hover .icon .screen, button:hover .icon.screen {
 }
 
 .pointer-arrow:not(:hover):before {
-    background-color: #b4f4ee;
+    background-color: var(--fg-blue);
     opacity: 0;
 }
 
@@ -363,7 +365,7 @@ button:hover .icon .screen, button:hover .icon.screen {
 
 .pointer-arrow:hover:before {
     width: 32px;
-    background-color: #2d3236;
+    background-color: var(--grey);
 }
 
 .pointer-arrow.left:hover:before {
@@ -843,7 +845,7 @@ strong.buds {
 }
 
 .bank button {
-    color: #b4f4ee;
+    color: var(--fg-blue);
     font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-size: 18px;
     font-weight: 600;
@@ -889,8 +891,8 @@ strong.buds {
 }
 
 .bank:not(.disabled) button:not([disabled]).submit:active {
-    color: #2d3236;
-    background-color: #b4f4ee;
+    color: var(--grey);
+    background-color: var(--fg-blue);
 }
 
 .bank button:disabled,
@@ -1004,25 +1006,105 @@ strong.buds {
     overflow: hidden;
 }
 
+#cyber #move-section-explore_index .nav-container {
+    gap: 18px;
+}
+
+#cyber #move-section-explore_index .nav-container button {
+    --btn-padding: 16px;
+    --ltr-spacing: 8px;
+    --bdr-width: 2px;
+    position: relative;
+    font-size: 36px;
+    letter-spacing: var(--ltr-spacing);
+    text-transform: uppercase;
+    padding: var(--btn-padding);
+    padding-left: calc(var(--btn-padding) + var(--ltr-spacing)/2);
+    border-radius: 10px;
+    border: var(--bdr-width) solid transparent;
+    background-color: var(--grey);
+    transition: color .2s ease, background-color .2s ease, border .2s ease;
+}
+
+#cyber #move-section-explore_index .nav-container button.disabled {
+    color: #b4f4ee33;
+    background-image: linear-gradient(30deg, transparent, var(--grey));
+    opacity: .3;
+    cursor: default;
+}
+
+#cyber #move-section-explore_index .nav-container button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: calc(-2*var(--bdr-width));
+    border-radius: inherit;
+    background-image: linear-gradient(30deg, var(--fg-blue), #696969);
+    transition: opacity .2s;
+}
+
+#cyber #move-section-explore_index .nav-container button.disabled:before {
+    background-image: linear-gradient(30deg, transparent, var(--bg-blue));
+    opacity: .3;
+}
+
+#cyber #move-section-explore_index .nav-container button.disabled span {
+    background-image: linear-gradient(to bottom, var(--fg-blue), #69696900);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#cyber #move-section-explore_index .nav-container button:hover {
+    border-color: var(--bg-blue);
+}
+
+#cyber #move-section-explore_index .nav-container button:not(.disabled):hover {
+    color: var(--grey);
+    background-image: linear-gradient(30deg, transparent, var(--bg-blue));
+}
+
+#cyber #move-section-explore_index .nav-container button:hover:before {
+    opacity: 0;
+}
+
+#cyber #move-section-explore_index .nav-container button:nth-of-type(2) {
+    --ltr-spacing: 16px;
+}
+
+#cyber #move-section-explore_index .nav-container button:last-of-type {
+    --ltr-spacing: 6px;
+}
+
+.sub-section {
+    height: 100%;
+}
+
 .map__pointer {
+    display: none;
     z-index: 10;
     position: fixed;
     right: 20px;
 }
 
-#map__esc {
+.map__pointer.esc {
     top: 20px;
 }
 
-#map__forward {
+.map__pointer.forward {
     bottom: 20px;
 }
 
-/* hide esc */
-#cyber .map .move-section.active.next__screen ~ #map__esc,
-/* hide forward */
-#cyber .map .move-section.active:not(.next__screen) ~ #map__forward {
-    display: none;
+/* display forward */
+.map > .move-section.active.next__screen ~ #map__forward,
+.sub-section > .move-section.active.next__screen ~ #explore__forward,
+/* display esc */
+.map > .move-section.active:not(.next__screen) ~ #map__esc,
+.sub-section > .move-section.active:not(.next__screen) ~ #explore__esc {
+    display: block;
 }
 
 /* --< bg >-- */
@@ -1060,26 +1142,26 @@ strong.buds {
     background-image: url('img/astronauts/1.gif');
 }
 
+#cyber .explore.bg {
+    background-image: url('img/map/explore/explore-bg.png');
+}
+
+#cyber .neotowns.bg {
+    background-image: url('img/map/explore/neotowns-bg.jpg');
+}
+
 #lasr .buds.bg,
 #cyber .buds.bg {
-    background-image: url('img/roadmap/world/buds.jpg');
+    background-image: url('img/map/explore/buds-bg.jpg');
 }
 
 #lasr .astronauts.bg,
 #cyber .astronauts.bg {
-    background-image: url('img/roadmap/world/astronauts.jpg');
-}
-
-.tmp.bg {
-    background-image: url('img/tmp.jpg');
+    background-image: url('img/map/explore/astronauts-bg.jpg');
 }
 
 #lasr .astronauts.bg {
     background-position: 100px 0;
-}
-
-#cyber .neotowns.bg {
-    background-image: url('img/roadmap/world/neotowns.jpg');
 }
 
 /* --< focus__area >-- */
@@ -1112,17 +1194,19 @@ strong.buds {
 }
 
 .taskbar .nav-container button {
-    max-height: 40px;
-    color: #2d3236;
+    min-width: 150px;
+    max-height: 45px;
+    padding: 18px !important;
+    color: var(--grey);
     border-radius: 2px !important;
-    border-color: #2d3236 !important;
+    border-color: var(--grey) !important;
     background-color: transparent;
     white-space: nowrap;
 }
 
 .taskbar .nav-container button:hover {
-    color: #b6f6f0 !important;
-    background-color: #2d3236 !important;
+    color: var(--bg-blue) !important;
+    background-color: var(--grey) !important;
 }
 
 /* --< footer >-- */
@@ -1186,6 +1270,11 @@ strong.buds {
     gap: 20px;
 }
 
+.nav-container.vertical {
+    flex-flow: column nowrap;
+    align-items: stretch;
+}
+
 #navbar,
 #navbar nav {
     display: flex;
@@ -1215,16 +1304,17 @@ strong.buds {
     justify-content: center;
     align-items: center;
     border: none;
-    color: #b6f6f0;
+    color: var(--bg-blue);
     font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 48px;
     border-radius: 4px;
+    transition: color .2s, background-color .2s;
 }
 
 .nav-container.blocks button {
-    border: 2px solid #b4f4ee;
+    border: 2px solid var(--fg-blue);
     border-radius: 0;
     padding: 0 25px;
     height: 48px;
@@ -1232,8 +1322,8 @@ strong.buds {
 }
 
 .nav-container.blocks button:hover {
-    color: #2d3236;
-    background-color: #b4f4ee;
+    color: var(--grey);
+    background-color: var(--fg-blue);
 }
 
 #navbar button {
@@ -1288,7 +1378,7 @@ strong.buds {
 
 #navbar .btn-container:hover {
     border-radius: 7px;
-    border: 1px solid #b4f4ee;
+    border: 1px solid var(--fg-blue);
 }
 
 #navbar .btn-container ul button:hover,
@@ -1340,8 +1430,8 @@ strong.buds {
 
 #navbar .btn-container:hover ul > button:last-of-type,
 #navbar :not(ul) button:not([disabled]):not(.home):not(.icon):hover {
-    color: #2d3236;
-    background-color: #b4f4ee;
+    color: var(--grey);
+    background-color: var(--fg-blue);
 }
 
 #navbar button:disabled:hover {
@@ -1777,7 +1867,7 @@ strong.buds {
     justify-content: center;
     padding: 8px;
     border-radius: 0px;
-    color: #b6f6f0;
+    color: var(--bg-blue);
 }
 
 #tabs-bar button:first-child {
@@ -2014,8 +2104,8 @@ strong.buds {
 .menu button:not(:hover),
 .menu button:active,
 .menu button.disabled {
-    color: #b6f6f0;
-    border: 1px solid #b4f4ee;
+    color: var(--bg-blue);
+    border: 1px solid var(--fg-blue);
 }
 
 .menu button.sticky:hover {
@@ -2024,8 +2114,8 @@ strong.buds {
 
 .menu button:hover:not(.disabled):not(:active),
 .menu .quicklaunch button.sticky.active {
-    color: #2d3236;
-    background-color: #b4f4ee;
+    color: var(--grey);
+    background-color: var(--fg-blue);
 }
 
 .menu:not(.hidden) .icon {
@@ -2120,8 +2210,8 @@ button.portal:not(.anchor) {
 
     font-size: 18px;
     line-height: 0;
-    color: #b6f6f0;
-    border: 1px solid #b4f4ee;
+    color: var(--bg-blue);
+    border: 1px solid var(--fg-blue);
 
     text-transform: uppercase;
     white-space: nowrap;
@@ -2132,9 +2222,9 @@ button.portal:not(.disabled) {
 }
 
 button.portal:not(.disabled):not(.anchor):hover {
-    color: #2d3236;
-    background-color: #b4f4ee;
-    outline: 2px solid #b4f4ee;
+    color: var(--grey);
+    background-color: var(--fg-blue);
+    outline: 2px solid var(--fg-blue);
 }
 
 #gate button.portal:not(.anchor):hover {
@@ -2340,7 +2430,7 @@ button.portal:not(.disabled) + .portal-tag,
     --shadow-primary: #b4f4ee33;
     --primary-hue: 0;
     --primary-lightness: 50;
-    --color: #2d3236;
+    --color: var(--grey);
     --font-size: 18px;
     --label-size: 6px;
     --shadow-secondary-hue: 60;
@@ -2374,7 +2464,7 @@ button.portal:not(.disabled) + .portal-tag,
 
 .cybr-btn:hover {
     --primary: #0495ae99;
-    --color: #b6f6f0;
+    --color: var(--bg-blue);
 }
 
 .cybr-btn:after,
@@ -3195,8 +3285,8 @@ button.portal:not(.disabled) + .portal-tag,
 }
 
 noscript span {
-    color: #b6f6f0;
-    text-shadow: 0 0 2px #b4f4ee;
+    color: var(--bg-blue);
+    text-shadow: 0 0 2px var(--fg-blue);
     -webkit-text-stroke: 1px #2d323633;
 
     letter-spacing: 1px;
@@ -3232,7 +3322,7 @@ noscript span:hover {
         transform: none;
     }
     0%, 79.5%, 81%, 100% {
-        text-shadow: 0 0 2px #b4f4ee;
+        text-shadow: 0 0 2px var(--fg-blue);
     }
 }
 

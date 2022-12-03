@@ -5,6 +5,8 @@ export default function MapCard(props) {
   return (
     <Card active={props.active}
           bg={props.bg}
+          mover={props.mover}
+          section={props.section}
           color={props.color}
           area={props.area}
           center={props.center}
@@ -13,6 +15,7 @@ export default function MapCard(props) {
           forward={!(props.nav && props.continue !== 'true') &&
                    props.continue !== 'false'}
           next={props.next}
+          esc={props.esc}
           empty={!props.children || props.nav}>
       <article>
         {props.children}

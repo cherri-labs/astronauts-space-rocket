@@ -194,6 +194,18 @@
         flex-flow: column nowrap;
     }
 
+    @media screen and (max-width: 600px) {
+        #cyber #move-section-explore_index .nav-container button {
+            min-width: 90vw;
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        #cyber #move-section-explore_index .nav-container button {
+            min-width: 500px;
+        }
+    }
+
     .move-arrow {
         --move-arrow-margin: 20px;
     }

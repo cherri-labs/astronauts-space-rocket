@@ -1,5 +1,5 @@
 import React from 'react';
-import { moveNext } from '../../Move/move';
+import move, { moveNext } from '../../Move/move';
 
 let activeBg;
 
@@ -29,6 +29,9 @@ class Card extends React.Component {
   }
 
   render() {
+    const mover = this.props.mover;
+    const section = this.props.section;
+
     if (this.props.bg)
       activeBg = this.props.bg;
     const area = this.props.area;
@@ -38,8 +41,12 @@ class Card extends React.Component {
     function onClick(e) {
       if (forward) {
         const tag = e.target.tagName.toLowerCase();
-        if (tag !== 'button' && tag !== 'a')
-          moveNext('cyber-mover');
+        if (tag !== 'button' && tag !== 'a') {
+          if (section)
+            move(mover + '-mover', 'move-section-' + section);
+          else
+            moveNext(mover + '-mover');
+        }
       }
     }
 
@@ -51,6 +58,7 @@ class Card extends React.Component {
                                      + (this.props.bar ? 'bar ' : '')
                                      + (this.props.forward ? 'forward ' : '')
                                      + (this.props.next ? 'next ' : '')
+                                     + (this.props.esc ? 'esc ' : '')
                                      + (this.props.closed ? '' : 'closed ')}
            onClick={function(e) {onClick(e)}}>
         <div className={activeBg ? 'bg-container' : ''}>
