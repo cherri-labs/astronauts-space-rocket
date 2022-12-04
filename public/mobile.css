@@ -198,6 +198,10 @@
         #cyber #move-section-explore_index .nav-container button {
             min-width: 90vw;
         }
+
+        #cyber #move-section-explore_index .nav-container button:last-of-type {
+            --ltr-spacing: 3px !important;
+        }
     }
 
     @media screen and (min-width: 600px) {

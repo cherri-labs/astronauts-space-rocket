@@ -9,10 +9,6 @@
         font-size: 60px;
     }
 
-    #container {
-        padding: 60px;
-    }
-
     #content {
         gap: 5vw;
         margin: 0 3vw;
@@ -224,17 +220,12 @@
     }
 
     #cyber #move-section-explore_index {
-        justify-content: flex-end;
-        align-items: flex-start;
-        padding: 0 9vw;
-    }
-
-    #cyber #move-section-explore_index .nav-container {
-        margin: 5vh 0;
+        justify-content: stretch;
+        align-items: stretch;
     }
 
     #cyber #move-section-explore_index .nav-container button {
-        min-width: 600px;
+        min-width: 400px;
     }
 
     #cyber .map .card:not(.bar) {
@@ -255,5 +246,10 @@
 
     #lasr .index__page .astronaut__nft.bg {
         background-position: -1500px -3000px;
+    }
+
+    #move-section-explore_index .explore.bg {
+        background-size: 80%;
+        background-position: 25vw -10vh;
     }
 }

@@ -67,7 +67,7 @@ function Index() {
   return (
     <MoveSection className="index__page" id="index" active>
       <Content>
-        <Lasr type="full" />
+        <Lasr />
         <Txt />
         <Nav />
       </Content>
