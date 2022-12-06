@@ -946,16 +946,8 @@ strong.buds {
     margin: 0;
 }
 
-#cyber .index__page {
-    filter: hue-rotate(20deg) saturate(180%) brightness(120%) contrast(120%);
-}
-
 #cyber #container {
     padding-bottom: 50px;
-}
-
-#cyber .index__page article {
-    gap: 10px;
 }
 
 #cyber .index__page h1 {
@@ -968,6 +960,10 @@ strong.buds {
     text-align: center;
     letter-spacing: .7em;
     margin-top: 20px;
+}
+
+#cyber .index__page article {
+    gap: 10px;
 }
 
 #cyber .index__page .logo {
@@ -988,6 +984,21 @@ strong.buds {
     padding: 22px 28px;
     font-size: 18px;
     pointer-events: auto;
+}
+
+#cyber .index__page .nav-container button.disabled {
+    transition: all .3s;
+}
+
+#cyber .index__page .nav-container button.disabled:hover {
+    color: #696969;
+    background-color: transparent;
+    border-color: #696969;
+    cursor: default;
+}
+
+#cyber .index__page .nav-container button.disabled:active {
+    opacity: .5;
 }
 
 /* --< map >-- */

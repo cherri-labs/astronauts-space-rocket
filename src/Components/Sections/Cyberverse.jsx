@@ -38,8 +38,9 @@ const Txt = () => {
 function Nav() {
   return (
     <nav className="nav-container blocks"
-         onClick={function(){
-           document.getElementById("cyber").classList.add('fullscreen');
+         onClick={function(e) {
+           if (!e.target.classList.contains('disabled'))
+             document.getElementById("cyber").classList.add('fullscreen');
          }}>
       <MoveButton id="move-button-nav-explore"
                   mover="cyber"
@@ -50,13 +51,13 @@ function Nav() {
       <MoveButton id="move-button-nav-vision"
                   mover="cyber"
                   goto="vision_index"
-                  menu>
+                  menu disabled>
         Vision
       </MoveButton>
       <MoveButton id="move-button-nav-goals"
                   mover="cyber"
                   goto="goals_index"
-                  menu>
+                  menu disabled>
         Goals
       </MoveButton>
     </nav>
