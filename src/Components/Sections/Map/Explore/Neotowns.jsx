@@ -9,26 +9,26 @@ export default function Neotowns() {
     <MoveSection id="explore_neotowns">
       <MapCard mover={mover} bg="neotowns" position="top">
         <p>
-          At the <strong>Horizon Centre</strong>
-          <span className="prog-dots glitch" />
-        </p>
-      </MapCard>
-      <MapCard mover={mover} bg="neotowns" position="top">
-        <p>
-          Dense degraded circuitry under the gradient twilight stars
-          <span className="prog-dots glitch" />
-        </p>
-      </MapCard>
-      <MapCard mover={mover} bg="neotowns" position="top">
-        <p>
-          Glimpsed into a world where shadow obstructs and clutters with uneven
-          machinery the metropolis' skyline.
+          <strong>Neotowns</strong> blur the boundaries between fantasy
+          and reality, merging elements from both places for deeper levels
+          of immersion within their world.
         </p>
       </MapCard>
       <MapCard mover={mover} position="top">
         <p>
-          As the night lurks in the <strong>Underground</strong> awakes
-          <span className="prog-dots" />
+          Dense degraded circuitry rots under the gradient twilight stars
+          seen through the <strong>H.O.R.I.Z.O.N.</strong> buildings.
+        </p>
+      </MapCard>
+      <MapCard mover={mover} position="top">
+        <p>
+          A glimpse into a world where shadow obstructs and clutters with
+          uneven machinery the metropolis' skyline.
+        </p>
+      </MapCard>
+      <MapCard mover={mover} position="top">
+        <p>
+          Now, as the night lurks in the <strong>Underground</strong> awakes...
         </p>
       </MapCard>
       <MapCard mover={mover} position="top">

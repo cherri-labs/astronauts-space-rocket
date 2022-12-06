@@ -385,12 +385,12 @@ button:hover .icon .screen, button:hover .icon.screen {
 
 /* --< components >-- */
 .prog-dots:after {
-    content: '...';
-    animation: prog-dots-anim 2s linear infinite;
+    content: '';
+    animation: prog-dots-anim 4s linear infinite;
 }
 
 .prog-dots.glitch:after {
-    animation: prog-dots-anim-glitch 2s linear infinite;
+    animation: prog-dots-anim-glitch 4s ease-in infinite;
 }
 
 .what-is-this {
@@ -991,9 +991,9 @@ strong.buds {
 }
 
 #cyber .index__page .nav-container button.disabled:hover {
-    color: #696969;
+    color: #50545899;
+    border-color: #50545899;
     background-color: transparent;
-    border-color: #696969;
     cursor: default;
 }
 
@@ -1261,12 +1261,13 @@ strong.buds {
     background-position: 50% 25%;
 }
 
-#cyber .map .neotowns {
+#cyber .map .neotowns.img {
     background-image: url('img/map/explore/neotowns.png');
 }
 
 #cyber .map .neotowns.bg {
     background-position: center;
+    background-image: url('img/map/explore/neotowns-bg.jpg');
 }
 
 #cyber .map .spaceship {
@@ -1853,7 +1854,7 @@ strong.buds {
 #cyber .map .card:not(.nav),
 #cyber .map .card-wrap:not(.bar) .card.nav button:not(:hover) {
     color: var(--fg-blue);
-    background-color: #3333;
+    background-color: #2d323669;
     filter: brightness(80%) saturate(80%) contrast(120%);
 }
 
@@ -1889,13 +1890,6 @@ strong.buds {
 
 #cyber .map .card.nav article {
     margin: 0;
-}
-
-#cyber .prog-dots:after {
-    content: '';
-    animation-iteration-count: 1;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
 }
 
 .card h1 {
@@ -3484,15 +3478,17 @@ noscript span:hover {
 }
 
 @keyframes prog-dots-anim {
-    0% {content: '.';}
-    33% {content: '..';}
-    66%, 100% {content: '...';}
+    0% {content: '';}
+    25% {content: '.';}
+    50% {content: '..';}
+    75%, 100% {content: '...';}
 }
 
 @keyframes prog-dots-anim-glitch {
-    0%, 92% {content: '.';}
-    33% {content: '..';}
-    66%, 88%, 95%, 100% {content: '...';}
+    0%, 99% {content: '';}
+    25%, 92% {content: '.';}
+    50% {content: '..';}
+    75%, 88%, 94%, 98%, 100% {content: '...';}
 }
 
 @keyframes lasr-ring {

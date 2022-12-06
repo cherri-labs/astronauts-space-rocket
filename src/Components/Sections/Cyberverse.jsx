@@ -25,7 +25,7 @@ const Txt = () => {
         a dinamically growing ever-expanding
         digital reality.{" "}
         <a className="strong"
-           onClick={function(){move('lasr');}}>
+           onClick={function(){move('lasr-mover');}}>
           LASR NFTs
         </a>{" "}
         are your all-access pass. They allow you to freely explore
