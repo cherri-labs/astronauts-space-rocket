@@ -53,13 +53,13 @@ class Card extends React.Component {
     return (
       <div ref={this.myRef} className={'card-wrap '
                                      + (this.props.active ? 'active ' : '')
-                                     + (this.props.center ? 'center ' : '')
                                      + (this.props.nav ? 'nav ' : '')
                                      + (this.props.bar ? 'bar ' : '')
                                      + (this.props.forward ? 'forward ' : '')
                                      + (this.props.next ? 'next ' : '')
                                      + (this.props.esc ? 'esc ' : '')
-                                     + (this.props.closed ? '' : 'closed ')}
+                                     + (this.props.closed ? '' : 'closed ')
+                                     + (this.props.position ? this.props.position : '')}
            onClick={function(e) {onClick(e)}}>
         <div className={activeBg ? 'bg-container' : ''}>
           <div className={(activeBg ?

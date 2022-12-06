@@ -1,13 +1,13 @@
 import React from 'react';
-import { MoveSection } from '../../Move/Mover';
-import { MoveAnchor } from '../../Move/MoveButton';
-import MapCard from './MapCard';
+import { MoveSection } from '../../../Move/Mover';
+import { MoveAnchor } from '../../../Move/MoveButton';
+import MapCard from '../MapCard';
 
 const mover = "cyber";
 
 function Landing() {
   return (
-    <MapCard mover={mover} title="Landing" bg="landing">
+    <MapCard mover={mover} bg="goals" center>
       <p>
         Landing phase is going to be minting for both initial
         collections.
@@ -31,7 +31,7 @@ function Landing() {
 
 function Stardust() {
   return (
-    <MapCard mover={mover} title="Stardust" bg="stardust">
+    <MapCard mover={mover} center>
       <p>
         We are planning to launch our very token after both mints.
       </p>
@@ -51,7 +51,7 @@ function Stardust() {
 
 function Terraforming() {
   return (
-    <MapCard mover={mover} title="Terra / forming" bg="terraforming">
+    <MapCard mover={mover} center>
       <p>
         We work nonstop to produce more extensive
         documentation about the project. We plan to
@@ -67,7 +67,7 @@ function Terraforming() {
 
 function LonelySpace() {
   return (
-    <MapCard mover={mover} title="Lonely Space" bg="lonely-space">
+    <MapCard mover={mover} center>
       <p>
         The <strong>Lonely Orbiting Space Hideout</strong> opens its doors.
       </p>
@@ -77,9 +77,9 @@ function LonelySpace() {
       </p>
       <p>
         No rules, so you do you.
-        </p>
+      </p>
       <p>
-        <b>Holders only //</b>
+        <strong>Holders only //</strong>
       </p>
     </MapCard>
   );
@@ -87,7 +87,7 @@ function LonelySpace() {
 
 function Staking() {
   return (
-    <MapCard mover={mover} title="Staking" bg="staking">
+    <MapCard mover={mover} center>
       <p>
         After mint implementation for
         the <strong>staking portal</strong> begins.
@@ -105,7 +105,7 @@ function Staking() {
 
 function Expansion() {
   return (
-    <MapCard mover={mover} title="Expansion" bg="expansion">
+    <MapCard mover={mover} center>
       <p>
         That's not all!
         The <strong>LASR</strong> universe is intricate and complex.
@@ -134,7 +134,7 @@ function Expansion() {
 
 function QuestToFaraway() {
   return (
-    <MapCard mover={mover} title="Quest To Faraway" bg="quest-to-faraway">
+    <MapCard mover={mover} center>
       <p>
         We've planned the route just ahead of us, but there's no finish line.
       </p>
@@ -155,9 +155,9 @@ function QuestToFaraway() {
   );
 }
 
-export default function Path() {
+export default function Goals() {
   return (
-    <MoveSection id="path">
+    <MoveSection id="goals">
       <Landing />
       <Stardust />
       <Terraforming />

@@ -136,12 +136,10 @@ a {
 }
 
 .retro {
-    -webkit-filter: var(--retro);
     filter: var(--retro);
 }
 
 .lights-out {
-    -webkit-filter: var(--lights__out);
     filter: var(--lights__out);
 }
 

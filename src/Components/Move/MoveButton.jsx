@@ -62,6 +62,7 @@ export default function MoveButton(props) {
   return (
     <button id={props.id}
             className={props.className
+                     + ' move-button '
                      + (glitch ? ' glitch ' : '')
                      + (disabled ? ' disabled ' : '')}
             onClick={function() {

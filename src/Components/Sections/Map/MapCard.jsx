@@ -9,7 +9,7 @@ export default function MapCard(props) {
           section={props.section}
           color={props.color}
           area={props.area}
-          center={props.center}
+          position={props.position}
           nav={props.nav}
           bar={props.bar}
           forward={!(props.nav && props.continue !== 'true') &&

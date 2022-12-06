@@ -55,7 +55,6 @@
         padding: 20% 0;
         width: 100%;
         text-align: center;
-        -webkit-backdrop-filter: blur(1px) invert(80%);
         backdrop-filter: blur(1px) invert(80%);
     }
 
@@ -224,8 +223,13 @@
         align-items: stretch;
     }
 
-    #cyber #move-section-explore_index .nav-container button {
+    #cyber #move-section-explore_index .nav-container {
+        display: grid;
         min-width: 400px;
+    }
+
+    #cyber #move-section-explore_index .nav-container button {
+        padding-left: calc(var(--btn-padding) + var(--ltr-spacing) - 2vw);
     }
 
     #cyber .map .card:not(.bar) {

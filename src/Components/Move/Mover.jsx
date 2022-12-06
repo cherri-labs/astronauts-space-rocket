@@ -7,7 +7,7 @@ function pad(num, size) {
   return num;
 }
 
-function MoveButton(props) {
+function CybrBtn(props) {
   const mover = props.mover + '-mover';
   const index = moveIndex() + (props.dir === 'back' ? -1 : 1);
 
@@ -29,8 +29,8 @@ export function MoveNav(props) {
   return (
     <nav className={"move-nav "
                   + ((props.focus !== false) ? 'focus ' : '')}>
-      <MoveButton mover={props.mover} dir="back" />
-      <MoveButton mover={props.mover} dir="next" />
+      <CybrBtn mover={props.mover} dir="back" />
+      <CybrBtn mover={props.mover} dir="next" />
     </nav>
   );
 }

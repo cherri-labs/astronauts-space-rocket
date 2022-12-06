@@ -154,11 +154,19 @@ export default function move(moverId, sectionId = 'move-section-index', index = 
       moveTransition(moverId, sectionId, index);
 
     if (moveSection) {
-      /* reset sections */
+      /* parse move-sections */
       [...sections].forEach(function(s) {
+        /* disable parent sub-section */
+        if (s.parentElement.classList.contains('sub-section'))
+          s.parentElement.classList.remove('active');
+        /* disable selected move-section */
         s.classList.remove('active');
       });
-      /* activate selected section */
+
+      /* enable parent sub-section */
+      if (moveSection.parentElement.classList.contains('sub-section'))
+        moveSection.parentElement.classList.add('active');
+      /* activate selected move-section */
       moveSection.classList.add('active');
 
       /* get card containers */

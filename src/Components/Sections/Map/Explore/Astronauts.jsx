@@ -7,25 +7,25 @@ const mover = "cyber";
 export default function Astronauts() {
   return (
     <MoveSection id="explore_astronauts">
-      <MapCard mover={mover} bg="astronauts">
+      <MapCard mover={mover} bg="astronauts" position="top">
         <p>
           Rogue spaceships cross the borders of{" "}
           <strong>Sypharpunk</strong> in an attempt to fetch
           dark matter at a cheaper price.
         </p>
       </MapCard>
-      <MapCard mover={mover}>
+      <MapCard mover={mover} position="top">
         <p>
           But not all these spacecrafts are as solid as they're meant to be.
         </p>
       </MapCard>
-      <MapCard mover={mover}>
+      <MapCard mover={mover} position="top">
         <p>
           Even a tiny shift in the navigator can take you right in the
           middle of nowhere. Nothing for billions and billions of light years.
         </p>
       </MapCard>
-      <MapCard mover={mover} section="explore_index">
+      <MapCard mover={mover} section="explore_index" position="top">
         <p>
           After a thousand years in the freezer, you could still wake
           up and see nothing ahead.

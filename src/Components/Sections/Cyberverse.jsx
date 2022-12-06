@@ -7,8 +7,8 @@ import Pointer from './Map/Pointer';
 import move from '../Move/move';
 
 import Explore from './Map/Explore/Explore';
-import Vision from './Map/Vision';
-import Path from './Map/Path';
+import Vision from './Map/Vision/Vision';
+import Goals from './Map/Goals/Goals';
 
 const Txt = () => {
   return (
@@ -49,13 +49,13 @@ function Nav() {
       </MoveButton>
       <MoveButton id="move-button-nav-vision"
                   mover="cyber"
-                  goto="vision"
+                  goto="vision_index"
                   menu>
         Vision
       </MoveButton>
       <MoveButton id="move-button-nav-goals"
                   mover="cyber"
-                  goto="path"
+                  goto="goals_index"
                   menu>
         Goals
       </MoveButton>
@@ -82,7 +82,7 @@ function CyberMover() {
       <div className="map">
         <Explore />
         <Vision />
-        <Path />
+        <Goals />
         <Pointer id="map" to="esc" dir="left" mover="cyber" />
       </div>
     </Mover>
