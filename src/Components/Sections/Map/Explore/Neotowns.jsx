@@ -16,19 +16,14 @@ export default function Neotowns() {
       </MapCard>
       <MapCard mover={mover} position="top">
         <p>
-          Dense degraded circuitry rots under the gradient twilight stars
-          seen through the <strong>H.O.R.I.Z.O.N.</strong> buildings.
+          In the city shadow obstructs and clutters with uneven machinery
+          the metropolis' skyline, letting in but a glimpse of light
+          all through the day.
         </p>
       </MapCard>
       <MapCard mover={mover} position="top">
         <p>
-          A glimpse into a world where shadow obstructs and clutters with
-          uneven machinery the metropolis' skyline.
-        </p>
-      </MapCard>
-      <MapCard mover={mover} position="top">
-        <p>
-          Now, as the night lurks in the <strong>Underground</strong> awakes...
+          Now, as the night lurks in the <strong>Underground</strong> awakes.
         </p>
       </MapCard>
       <MapCard mover={mover} position="top">

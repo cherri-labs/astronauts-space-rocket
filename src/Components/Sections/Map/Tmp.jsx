@@ -1,10 +1,10 @@
 //// ??? ////
 
-      <p>
-        The{" "}
+<p>
+The{" "}
 <a className="strong"
-   onClick={function(){move('cyber-mover','move-section-cyber_main');}}>
-  Cyberverse
+onClick={function(){move('cyber-mover','move-section-cyber_main');}}>
+Cyberverse
 </a>
 <i className="arrow left"></i>
 {" "}is a type of virtual world which allows
@@ -16,21 +16,28 @@ storylines and outcomes. Interactivity between different denizens
 of the metaverse results in an emergent narrative as participants
 engage with each other through gameplay or programmed elements,
 allowing for persistent individual and collective stories.
-      </p>
+                                                   </p>
 
 ///
 
-      function Believe() {
-      return (
-      <>
-        <MapCard mover={mover} center>
-          <p>
-            We're building the content that's going to make up
-            our <strong>future</strong>. That's a privilege we won't throw away.
-          </p>
-        </MapCard>
-      </>
-      );
+<MapCard mover={mover} position="top">
+<p>
+Dense degraded circuitry rots under the gradient twilight stars
+seen through the <strong>H.O.R.I.Z.O.N.</strong> buildings.
+                                                  </p>
+</MapCard>
+
+function Believe() {
+return (
+<>
+  <MapCard mover={mover} center>
+    <p>
+      We're building the content that's going to make up
+      our <strong>future</strong>. That's a privilege we won't throw away.
+    </p>
+  </MapCard>
+</>
+);
 }
 
 //// goals ////
