@@ -11,10 +11,20 @@ function Page() {
   return (
     <Container>
       <Content>
-        <h1>
-          Select Player
-        </h1>
-        <PortalContainer className="focus">
+        <div className="title-container">
+          <h1>
+            Select
+          </h1>
+          <h1>
+            Player
+          </h1>
+        </div>
+        <PortalContainer
+          className="focus"
+          onClick={function(e) {
+            if (!e.target.classList.contains('disabled'))
+              document.getElementById("lasr").classList.remove('fullscreen');
+          }}>
           <Portal disabled>
             <BudImg portal opaque />
             <PortalTag center>

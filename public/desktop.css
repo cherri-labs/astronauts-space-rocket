@@ -14,6 +14,10 @@
         margin: 0 3vw;
     }
 
+    #lasr .index__page .title-container {
+        --title-offset: 8%;
+    }
+
     #lasr .index__page h1 {
         word-spacing: 26px;
     }
@@ -229,7 +233,7 @@
     }
 
     #cyber #move-section-explore_index .nav-container button {
-        padding-left: calc(var(--btn-padding) + var(--ltr-spacing) - 2vw);
+        padding-left: var(--btn-padding);
     }
 
     #cyber .map .card:not(.bar) {

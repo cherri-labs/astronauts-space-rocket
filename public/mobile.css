@@ -171,6 +171,10 @@
         margin-left: 5px;
     }
 
+    #lasr .index__page .title-container {
+        --title-offset: 0;
+    }
+
     #lasr .index__page .bud__nft.bg {
         background-position: 0 -2000px;
         background-size: 750%;

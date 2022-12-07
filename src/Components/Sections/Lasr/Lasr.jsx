@@ -22,7 +22,7 @@ function LasrMover() {
 
 export default function Lasr() {
   return (
-    <div className="section retro focus" id="lasr">
+    <div className="section retro focus fullscreen" id="lasr">
       <LasrMover />
     </div>
   );

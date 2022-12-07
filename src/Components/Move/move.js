@@ -264,6 +264,11 @@ export default function move(moverId, sectionId = 'move-section-index', index = 
                        btnSection);
     }
 
+    /* reset default state */
+    if (moverTag === 'home') {
+      document.getElementById("lasr").classList.add('fullscreen');
+    }
+
     /* update our page title */
     let title = titles['main'];
 

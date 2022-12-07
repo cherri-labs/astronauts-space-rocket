@@ -2,9 +2,13 @@
     --grey: #2d3236;
     --fg-blue: #b4f4ee;
     --bg-blue: #b6f6f0;
+    --purple: #e9d7f7;
     --magenta: #f4146e;
     --red: #f4545e;
+    --orange: #f9945e;
     --pink: #f9a;
+    --astr: #7ed7f9;
+    --bud: #f9d77e;
 }
 
 /* preload images */
@@ -670,7 +674,7 @@ button:hover .icon .screen, button:hover .icon.screen {
     --nft-inside-size: var(--nft-size);
     --nft-outside-size: var(--nft-size);
     --nft-max-inside-size: 400px;
-    --nft-max-outside-size: 435px;
+    --nft-max-outside-size: 415px;
 }
 
 #lasr h3 {
@@ -684,16 +688,94 @@ button:hover .icon .screen, button:hover .icon.screen {
 /* --< index >-- */
 #lasr .index__page #container,
 #lasr .index__page #content {
-    margin-top: -2%;
     width: 100vw;
 }
 
+#lasr .index__page #content {
+    gap: 2vh;
+}
+
+#lasr .index__page .title-container {
+    z-index: 5;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: -10px;
+    padding: 20px 20px 0 30px;
+}
+
 #lasr .index__page h1 {
-    background: linear-gradient(to right, #f98 50%, #a9f 50%);
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 36px;
+    margin: 0;
+    padding-left: 4px;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    letter-spacing: 12px;
-    padding-left: 4px;
+    filter: brightness(80%) saturate(90%) contrast(90%) opacity(80%);
+}
+
+#lasr .index__page h1:first-of-type:before,
+#lasr .index__page h1:first-of-type:after,
+#lasr .index__page h1:nth-of-type(2):before,
+#lasr .index__page h1:nth-of-type(2):after {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+}
+
+#lasr .index__page h1:first-of-type {
+    margin-right: var(--title-offset);
+    background-image: linear-gradient(30deg, transparent, var(--red) 10%, var(--red) 90%, transparent);
+}
+
+#lasr .index__page h1:nth-of-type(2) {
+    margin-left: var(--title-offset);
+    background-image: linear-gradient(30deg, transparent, var(--purple) 5%, var(--astr) 10%, var(--astr) 80%, transparent);
+}
+
+#lasr .index__page h1:first-of-type:before,
+#lasr .index__page h1:first-of-type:after {
+    content: 'Select';
+}
+
+#lasr .index__page h1:nth-of-type(2):before,
+#lasr .index__page h1:nth-of-type(2):after {
+    content: 'Player';
+}
+
+#lasr .index__page h1:before {
+    animation: gr 4s infinite;
+}
+
+@keyframes gr {
+    0%, 98%, 100% {padding-right: 0;}
+    99% {padding-right: 2px;}
+}
+
+#lasr .index__page h1:after {
+    animation: gl 6s infinite .4s;
+}
+
+@keyframes gl {
+    0%, 45%, 48%, 50%, 79%, 81%, 98%, 100% {
+        left: 0;
+        width: 100%;
+        opacity: .5;
+    }
+    47% {width: 102%;}
+    49%, 80% {opacity: 0;}
+    99% {
+        left: 2px;
+    }
 }
 
 #lasr .index__page .portal-wrap {
@@ -1210,14 +1292,6 @@ strong.buds {
     background-attachment: fixed;
 }
 
-#lasr .bud__nft.bg {
-    background-image: url('img/buds/1.gif');
-}
-
-#lasr .astronaut__nft.bg {
-    background-image: url('img/astronauts/1.gif');
-}
-
 #cyber .map .explore.bg {
     background-image: url('img/map/explore/ghost-girl.png');
 }
@@ -1268,6 +1342,7 @@ strong.buds {
 #cyber .map .neotowns.bg {
     background-position: center;
     background-image: url('img/map/explore/neotowns-bg.jpg');
+    filter: brightness(80%) saturate(90%) contrast(90%);
 }
 
 #cyber .map .spaceship {
@@ -2833,12 +2908,9 @@ button.portal:not(.disabled) + .portal-tag,
 .nft.img {
     --color-text: #fff;
     --color-bg: #000;
-    --color-link: #f9d77e;
+    --color-link: var(--bud);
     --color-link-hover: #fff;
     --color-info: #efc453;
-    --color-astr: #e9d7f7;
-    --color-astr: #7ed7f9;
-    --color-bud: var(--color-link);
     --glitch-width: 100vw;
     --glitch-height: 100vh;
     --gap-horizontal: 10px;
@@ -2865,16 +2937,16 @@ button.portal:not(.disabled) + .portal-tag,
     filter: saturate(108%) contrast(92%) brightness(108%) sepia(25%) grayscale(10%);
 }
 
-.nft .img.astronaut,
-.nft.img.astronaut,
-.glitch__img.astronaut .glitch__item {
-    background: url('img/astronauts/1.gif') no-repeat 50% 50%/cover;
-}
-
 .nft .img.bud,
 .nft.img.bud,
 .glitch__img.bud .glitch__item {
     background: url('img/buds/1.gif') no-repeat 50% 50%/cover;
+}
+
+.nft .img.astronaut,
+.nft.img.astronaut,
+.glitch__img.astronaut .glitch__item {
+    background: url('img/astronauts/1.gif') no-repeat 50% 50%/cover;
 }
 
 .nft .img,
@@ -2944,6 +3016,52 @@ button.portal:not(.disabled) + .portal-tag,
     height: var(--nft-inside-size);
     max-width: var(--nft-max-inside-size);
     max-height: var(--nft-max-inside-size);
+}
+
+#lasr .index__page .nft-wrap {
+    clip-path: polygon(
+        0 0,
+        0 12%,
+
+        0.1% 10.5%,
+        0.2% 9.2%,
+        0.5% 8.7%,
+        1% 8.5%,
+        1.5% 7.6%,
+        1.7% 7.2%,
+        2% 6.7%,
+        2.5% 6.2%,
+        2.7% 5.6%,
+        3% 5.4%,
+        4% 5%,
+        4.8% 4.8%,
+        5.5% 4.5%,
+        7% 4.2%,
+        8% 4%,
+
+        45% 4%,
+        48% 0,
+        89% 0,
+        92% 4%,
+
+        93% 4.2%,
+        94.5% 4.6%,
+        95.2% 4.7%,
+        96% 4.8%,
+        97% 5.2%,
+        97.3% 5.6%,
+        97.5% 5.7%,
+        98% 6.8%,
+        98.3% 7.2%,
+        98.5% 7.5%,
+        99% 8.3%,
+        99.5% 8.5%,
+        99.8% 9%,
+        99.9% 10%,
+        100% 12%,
+        100% 100%,
+        0 100%);
+    border-radius: 50px 50px 25px 25px;
 }
 
 .index__page .zoom:not(.full),
@@ -3349,12 +3467,12 @@ button.portal:not(.disabled) + .portal-tag,
 
 .astronaut .rendering {
     --content: 'lonely astronauts';
-    color: var(--color-astr);
+    color: var(--astr);
 }
 
 .bud .rendering {
     --content: 'space buds';
-    color: var(--color-bud);
+    color: var(--bud);
 }
 
 @keyframes rendering {
