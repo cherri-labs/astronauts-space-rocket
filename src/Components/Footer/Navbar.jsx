@@ -5,16 +5,11 @@ import Wallet from '../Wallet/Wallet';
 import navMove from '../Move/navMove';
 import move from '../Move/move';
 
-function openCurtain(name) {
+function toggleCurtain(name) {
   const curtain = document.getElementById(name + '-curtain')
-  if (curtain)
-    curtain.classList.remove('closed');
-}
-
-function pullCurtain(name) {
-  const curtain = document.getElementById(name + '-curtain')
-  if (curtain)
-    curtain.classList.toggle('closed');
+  if (curtain) {
+    curtain.classList.toggle('open');
+  }
 }
 
 function Curtain(props) {
@@ -22,8 +17,8 @@ function Curtain(props) {
 
   return (
     <button className={props.className}
-            onMouseEnter={function(){openCurtain(name)}}>
-      {props.children}
+            onClick={function(){toggleCurtain(name)}}>
+      <span>{props.children}</span>
     </button>
   );
 }
@@ -31,19 +26,27 @@ function Curtain(props) {
 function CurtainNav(props) {
   return (
     <button className={props.className}
-    onClick={function() {
-      if (!props.disabled) {
-        pullCurtain(props.mover);
-        move(props.mover, 'move-section-' + (props.section || 'index'));
-      }
-    }}
-    disabled={props.disabled}>
-    {(props.alone ?
-      props.children :
-      <span>{props.children}</span>)}
+            onClick={function() {
+              if (!props.disabled) {
+                toggleCurtain(props.mover);
+                move(props.mover, 'move-section-' + (props.section || 'index'));
+              }
+            }}
+            disabled={props.disabled}>
+      {(props.alone ?
+        props.children :
+        <span>{props.children}</span>)}
     </button>
   );
-    }
+}
+
+function BtnContainer(props) {
+  return (
+    <div className="btn-container">
+      {props.children}
+    </div>
+  );
+}
 
 export default function Navbar() {
   return (
@@ -52,7 +55,7 @@ export default function Navbar() {
         <button className="home" onClick={function(){navMove();}}>
           <Lasr />
         </button>
-        <div className="btn-container">
+        <BtnContainer>
           <ul id="lasr-curtain">
             <CurtainNav mover="lasr" section="buds">
               Space Buds
@@ -62,23 +65,24 @@ export default function Navbar() {
             </CurtainNav>
             <Curtain name="lasr">
               Choose Player
+              <i className="arrow right" />
             </Curtain>
           </ul>
-        </div>
-        <div className="btn-container">
+        </BtnContainer>
+        <BtnContainer>
           <ul id="gate-curtain">
             <CurtainNav mover="gate" section="bank" alone>
               Open Portal
             </CurtainNav>
           </ul>
-        </div>
-        <div className="btn-container">
+        </BtnContainer>
+        <BtnContainer>
           <ul>
             <CurtainNav mover="cyber" alone>
               Cyberverse
             </CurtainNav>
           </ul>
-        </div>
+        </BtnContainer>
       </nav>
       <CurtainNav className="exit" mover="home" alone>
         Exit

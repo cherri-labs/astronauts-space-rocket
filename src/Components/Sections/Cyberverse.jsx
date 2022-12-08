@@ -46,19 +46,7 @@ function Nav() {
                   mover="cyber"
                   goto="explore_index"
                   menu>
-        Explore
-      </MoveButton>
-      <MoveButton id="move-button-nav-vision"
-                  mover="cyber"
-                  goto="vision_index"
-                  menu disabled>
-        Vision
-      </MoveButton>
-      <MoveButton id="move-button-nav-goals"
-                  mover="cyber"
-                  goto="goals_index"
-                  menu disabled>
-        Goals
+        <span>Explore</span><span>⬆</span>
       </MoveButton>
     </nav>
   );

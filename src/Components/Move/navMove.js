@@ -17,6 +17,12 @@ export default function navMove(href) {
          e.target.tagName.toLowerCase() !== 'i')) {
       /* hide dropdown */
       nav.classList.remove("dropdown");
+
+      /* close curtains */
+      const curtains = nav.querySelectorAll('ul');
+      [...curtains].forEach(function (c) {
+        c.classList.remove('open');
+      });
     }
   });
 

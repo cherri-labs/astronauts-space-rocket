@@ -196,6 +196,10 @@ button::selection, input::selection {
     transform: rotate(-45deg);
 }
 
+.arrow.rombus {
+    border-width: 2px;
+}
+
 .move-arrow,
 .arrow.nav,
 .arrow.double:after {
@@ -696,22 +700,22 @@ button:hover .icon .screen, button:hover .icon.screen {
 }
 
 #lasr .index__page .title-container {
+    --ltr-space: 36px;
     z-index: 5;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     gap: -10px;
-    padding: 20px 20px 0 30px;
+    padding: 20px 20px 0 calc(40px + var(--ltr-space)/2);
 }
 
 #lasr .index__page h1 {
     position: relative;
     display: inline-block;
     text-transform: uppercase;
-    letter-spacing: 36px;
+    letter-spacing: var(--ltr-space);
     margin: 0;
-    padding-left: 4px;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     filter: brightness(80%) saturate(90%) contrast(90%) opacity(80%);
@@ -1063,9 +1067,22 @@ strong.buds {
 }
 
 #cyber .index__page .nav-container button {
+    justify-content: space-evenly;
     padding: 22px 28px;
     font-size: 18px;
     pointer-events: auto;
+}
+
+#cyber .index__page .nav-container button > span + span {
+    padding: 2px 0 0 5px;
+    margin-right: -5px;
+    transition: font-size .2s, padding .2s, margin .2s;
+}
+
+#cyber .index__page .nav-container button:hover > span + span {
+    padding: 0 0 0 2px;
+    margin-right: calc(-5px - .1em);
+    font-size: 1.1em;
 }
 
 #cyber .index__page .nav-container button.disabled {
@@ -1130,13 +1147,13 @@ strong.buds {
 
 #cyber .map .map_index .nav-container button {
     --btn-padding: 36px;
-    --ltr-spacing: 8px;
+    --ltr-space: 8px;
     --bdr-width: 2px;
     position: relative;
     flex-grow: 1;
     justify-content: flex-start;
     font-size: 52px;
-    letter-spacing: var(--ltr-spacing);
+    letter-spacing: var(--ltr-space);
     text-align: left;
     text-transform: uppercase;
     min-height: 2.8em;
@@ -1205,11 +1222,11 @@ strong.buds {
 }
 
 #cyber #move-section-explore_index .nav-container button:nth-of-type(2) {
-    --ltr-spacing: 16px;
+    --ltr-space: 16px;
 }
 
 #cyber #move-section-explore_index .nav-container button:last-of-type {
-    --ltr-spacing: 6px;
+    --ltr-space: 6px;
 }
 
 #cyber .map .map_index .nav-container button.disabled {
@@ -1428,8 +1445,17 @@ strong.buds {
     cursor: pointer;
 }
 
+#footer,
+#footer .nav-container,
+#footer #navbar,
 .section.fullscreen.transition#cyber ~ #footer #navbar button {
     pointer-events: none;
+}
+
+#footer > *,
+#footer .nav-container > *,
+#footer #navbar > * {
+    pointer-events: auto;
 }
 
 .section.fullscreen.active:not(.transition) ~ #footer,
@@ -1496,6 +1522,7 @@ strong.buds {
 
 .nav-container button {
     display: flex;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     border: none;
@@ -1522,7 +1549,6 @@ strong.buds {
 }
 
 #navbar button {
-    flex-flow: column nowrap;
     padding: 0 24px;
     margin: 2px;
     height: 50px;
@@ -1560,20 +1586,13 @@ strong.buds {
     display: none;
 }
 
-#navbar .btn-container:not(:hover) ul > button:not(:last-of-type) {
-    height: 0;
-    opacity: 0;
-    visibility: hidden;
+#navbar .btn-container:hover {
+    border-radius: 7px;
 }
 
 #navbar .btn-container ul > button:not(:last-of-type) {
     border-radius: 20px;
     transition: border-radius .2s, height .2s, opacity .4s;
-}
-
-#navbar .btn-container:hover {
-    border-radius: 7px;
-    border: 1px solid var(--fg-blue);
 }
 
 #navbar .btn-container ul button:hover,
@@ -1586,7 +1605,6 @@ strong.buds {
     transition: padding .4s, border-radius .4s;
 }
 
-#navbar .btn-container ul:hover,
 #navbar .btn-container ul > button:not(:last-of-type):not(:hover),
 #navbar .btn-container ul > button:not(:last-of-type):disabled {
     background-color: #141823;
@@ -1601,14 +1619,6 @@ strong.buds {
     opacity: .5 !important;
 }
 
-#navbar .btn-container ul > button {
-    position: relative;
-}
-
-#navbar .btn-container ul > button > span {
-    position: absolute;
-}
-
 #navbar .btn-container:hover ul:not(.closed) button:last-of-type:not(:only-of-type) {
     cursor: grab;
 }
@@ -1618,13 +1628,7 @@ strong.buds {
     border-radius: 5px;
 }
 
-#navbar button:nth-child(3):hover:after {
-    width: 130px;
-    transform: translate(-2.5%, 0%);
-}
-
-#navbar .btn-container:hover ul > button:last-of-type,
-#navbar :not(ul) button:not([disabled]):not(.home):not(.icon):hover {
+#navbar *:not(ul) button:not([disabled]):not(.home):not(.icon):hover {
     color: var(--grey);
     background-color: var(--fg-blue);
 }
@@ -1653,11 +1657,16 @@ strong.buds {
     display: block !important;
 }
 
-.dropdown #navbar *:not(:first-child) {
-    float: none;
-    display: block;
-    text-align: left;
-    margin-left: 6px;
+#navbar .btn-container i {
+    margin: 2px -10px 0 10px;
+    transition: all .2s, transform .4s;
+}
+
+#navbar .btn-container:hover i {
+    transform: rotate(-135deg);
+    margin: 5px -5px 0 10px;
+    border-color: var(--grey);
+    border-width: 0 3px 3px 0;
 }
 
 #navbar .home {
@@ -2037,11 +2046,6 @@ strong.buds {
     max-height: 0;
     min-height: 0;
     visibility: hidden;
-}
-
-#cyber .map .card-wrap .move-nav.focus:not(.space):hover > *:not(:hover) {
-    filter: invert(40%) contrast(200%);
-    opacity: .3;
 }
 
 .card-wrap,
@@ -2471,31 +2475,6 @@ button.portal.disabled:hover {
 button.portal:not(.disabled) + .portal-tag,
 .portal-btn-wrap:not(.disabled) + .portal-tag {
     transition: opacity .4s;
-}
-
-/* --< focus >-- */
-.focus {
-    --focus-off-opacity: .5;
-    pointer-events: none !important;
-}
-
-.focus > *:not(.focus):not(:disabled):not(.disabled) {
-    pointer-events: auto;
-}
-
-.focus > :disabled,
-.focus > .disabled {
-    pointer-events: none;
-}
-
-.focus:not(.space):hover > *:not(.focus__on):not(:hover),
-.focus.off > *:not(.focus__on):not(:hover) {
-    opacity: var(--focus-off-opacity);
-}
-
-/* --< focus__clue >-- */
-.focus:hover > *:not(:hover) .focus__clue {
-    display: none;
 }
 
 /* --< transitions >-- */

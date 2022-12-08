@@ -135,6 +135,23 @@
         display: block;
     }
 
+    #navbar .btn-container ul:not(.open) > button:not(:last-of-type) {
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    #navbar .btn-container ul.open i {
+        transform: rotate(-135deg);
+        margin: 5px -5px 0 10px;
+        border-color: var(--grey);
+        border-width: 0 3px 3px 0;
+    }
+
+    .nav-container.dropdown #lasr-curtain > button:last-of-type > span {
+        margin-left: -22px;
+    }
+
     .dropdown .icons {
         padding-right: calc(var(--bottom-bar-padding) * 1.3);
     }

@@ -3,7 +3,10 @@ import React from 'react';
 export function CaptionRow(props) {
   return (
     <p>
-      <span className="caption__icon">{props.icon}</span>
+      <span className={'caption__icon '
+                      + (props.arrow ? 'arrow ' + props.arrow : '')}>
+        {props.icon}
+      </span>
       <b>{props.title}</b>
       <span>{props.children}</span>
       {
