@@ -2,12 +2,11 @@
 
 <p>
 The{" "}
-<a className="strong"
-onClick={function(){move('cyber-mover','move-section-cyber_main');}}>
-Cyberverse
+<a className="strong">
+2
 </a>
 <i className="arrow left"></i>
-{" "}is a type of virtual world which allows
+{" "} cyberspace is a type of virtual world which allows
 users to interact and influence each other in a shared virtual
 environment. This immersive experience seeks to replicate the
 dystopian slate of science fiction stories, creating an open-ended

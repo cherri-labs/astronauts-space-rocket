@@ -58,6 +58,7 @@ export default function MoveButton(props) {
   const index = props.index;
   const glitch = props.glitch;
   const disabled = props.disabled;
+  const click = props.onClick;
 
   return (
     <button id={props.id}
@@ -65,12 +66,15 @@ export default function MoveButton(props) {
                      + ' move-button '
                      + (glitch ? ' glitch ' : '')
                      + (disabled ? ' disabled ' : '')}
+            disabled={disabled}
             onClick={function() {
               if (glitch)
                 setGlitch('.menu button.glitch', 400, 1, true, 6, 2000, false,);
-              if (!disabled)
+              if (!disabled) {
                 /* call move to section */
                 callMove(props, mover, goto, index);
+                if (click) click();
+              }
             }}>
       {props.children}
     </button>

@@ -1,11 +1,21 @@
 import React from 'react';
 import move, { moveNext } from '../../Move/move';
+import fragNav from '../../Move/fragNav';
 
 let pointer = [];
 
-pointer.esc = function(mover, section='index', full=false) {
+function toggleFull(full, mover) {
   if (!full)
     document.getElementById(mover).classList.remove('fullscreen');
+}
+
+pointer.frag = function(fragSect, to='nav', full=true, mover) {
+  toggleFull(full, (mover || fragSect));
+  fragNav(fragSect, to);
+}
+
+pointer.esc = function(mover, section='index', full=false) {
+  toggleFull(full, mover);
   move(mover + '-mover', 'move-section-' + section);
 }
 
@@ -17,12 +27,16 @@ export default function Pointer(props) {
   const tag = props.name || props.to;
 
   return (
-    <button id={props.id + '__' + tag}
+    <button id={(props.id || props.frag) + '__' + tag}
             className={'map__pointer pointer-arrow '
                      + props.dir + ' '
+                     + (props.only ? 'only ' : '')
                      + tag}
             onClick={function() {
-              pointer[props.to](props.mover, props.section, props.fullscreen)}
-            } />
+              if (props.frag)
+                pointer[props.to](props.frag, props.dest, props.fullscreen, props.mover);
+              else
+                pointer[props.to](props.mover, props.section, props.fullscreen)
+            }} />
   );
 }

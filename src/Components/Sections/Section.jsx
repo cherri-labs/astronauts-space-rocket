@@ -2,9 +2,9 @@ import React from 'react';
 
 export function Text(props) {
   return (
-    <div className={"text focus space "
-                  + (props.card ? "card " : "")}>
-      <article className="focus space">
+    <div className={'text '
+                  + (props.card ? 'card ' : '')}>
+      <article>
         {props.children}
       </article>
     </div>
@@ -13,8 +13,7 @@ export function Text(props) {
 
 export function Content(props) {
   return (
-    <div id="content"
-         className={(props.focus ? "focus " : "")}>
+    <div id="content">
       {props.children}
     </div>
   );
@@ -22,8 +21,7 @@ export function Content(props) {
 
 export function Container(props) {
   return (
-    <div id="container"
-         className={(props.focus ? "focus " : "")}>
+    <div id="container">
       {props.children}
     </div>
   );

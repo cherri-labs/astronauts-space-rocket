@@ -3,12 +3,10 @@ import Mover, { MoveSection } from '../Move/Mover';
 import { Container, Content, Text } from './Section';
 import Lasr from '../Icons/Lasr';
 import MoveButton from '../Move/MoveButton';
-import Pointer from './Map/Pointer';
 import move from '../Move/move';
-
+import fragNav from '../Move/fragNav';
+//-sect
 import Explore from './Map/Explore/Explore';
-import Vision from './Map/Vision/Vision';
-import Goals from './Map/Goals/Goals';
 
 const Txt = () => {
   return (
@@ -45,8 +43,16 @@ function Nav() {
       <MoveButton id="move-button-nav-explore"
                   mover="cyber"
                   goto="explore_index"
+                  onClick={function() {fragNav('explore', 'nav');}}
                   menu>
         <span>Explore</span><span>⬆</span>
+      </MoveButton>
+      <MoveButton id="move-button-nav-gallery"
+                  mover="cyber"
+                  goto="gallery_index"
+                  onClick={function() {fragNav('gallery', 'nav');}}
+                  menu disabled>
+        <span>Gallery</span><span>🖼</span>
       </MoveButton>
     </nav>
   );
@@ -70,9 +76,6 @@ function CyberMover() {
       <Index />
       <div className="map">
         <Explore />
-        <Vision />
-        <Goals />
-        <Pointer id="map" to="esc" dir="left" mover="cyber" />
       </div>
     </Mover>
   );

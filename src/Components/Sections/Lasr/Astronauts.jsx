@@ -39,7 +39,7 @@ const Nft = () => {
 const Txt = () => {
   return (
     <Text>
-      <h3 className="separator">Lonely<br/>Astronauts</h3>
+      <h3 className="sep h">Lonely<br/>Astronauts</h3>
       <p>
         A collection of <a>Lonely Astronaut</a> NFTs
         inspired by <span className="neon more">vaporwave</span> and{" "}

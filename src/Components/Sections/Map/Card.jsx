@@ -1,5 +1,6 @@
 import React from 'react';
 import move, { moveNext } from '../../Move/move';
+import fragNav from '../../Move/fragNav';
 
 let activeBg;
 
@@ -32,6 +33,10 @@ class Card extends React.Component {
     const mover = this.props.mover;
     const section = this.props.section;
 
+    const frag = this.props.fragment;
+    const by = this.props.by;
+    const to = this.props.to;
+
     if (this.props.bg)
       activeBg = this.props.bg;
     const area = this.props.area;
@@ -39,10 +44,12 @@ class Card extends React.Component {
     const forward = this.props.forward;
 
     function onClick(e) {
-      if (forward) {
+      if ((mover && forward) || (frag && by && to)) {
         const tag = e.target.tagName.toLowerCase();
         if (tag !== 'button' && tag !== 'a') {
-          if (section)
+          if (frag)
+            fragNav(frag, to, by);
+          else if (section)
             move(mover + '-mover', 'move-section-' + section);
           else
             moveNext(mover + '-mover');

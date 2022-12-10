@@ -3,7 +3,7 @@
     /* horizontal */
     @media screen and (orientation: landscape) {
         .section .title {
-            font-size: 10vw;
+            font-size: 8vw;
         }
     }
 
@@ -119,19 +119,20 @@
         font-size: 6vw;
     }
 
-    #nav-container.dropdown {
+    .nav-container.dropdown {
         pointer-events: auto !important;
     }
 
-    .dropdown #navbar {
+    .nav-container.dropdown #navbar {
         width: 80%;
     }
 
-    *:not(.dropdown) #navbar *:not(:first-child) {
+    .nav-container:not(.dropdown) #navbar *:not(:first-child) {
         display: none;
+        color: red !important;
     }
 
-    .dropdown #navbar *:not(:first-child) {
+    .nav-container.dropdown #navbar *:not(:first-child) {
         display: block;
     }
 
@@ -139,6 +140,10 @@
         height: 0;
         opacity: 0;
         visibility: hidden;
+    }
+
+    #navbar .btn-container ul.open > button:not(:last-of-type) {
+        border-radius: 7px;
     }
 
     #navbar .btn-container ul.open i {
@@ -210,15 +215,31 @@
         padding: 15px;
     }
 
+    #cyber #move-section-explore_index .nav-container button {
+        min-width: 50vw;
+    }
+
+    @media screen and (max-width: 700px) {
+        #cyber #explore_nav.fragment.active {
+            align-self: center;
+        }
+
+        #cyber .map .card:not(.bar) {
+            max-width: 380px;
+        }
+    }
+
     #cyber .map .card-wrap.center .card.nav article .nav-container {
         flex-flow: column nowrap;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 800px) {
         #cyber #move-section-explore_index .nav-container button {
             min-width: 90vw;
         }
+    }
 
+    @media screen and (max-width: 600px) {
         #cyber #move-section-explore_index .nav-container button:last-of-type {
             --ltr-spacing: 3px !important;
         }

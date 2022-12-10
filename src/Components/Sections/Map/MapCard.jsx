@@ -7,6 +7,9 @@ export default function MapCard(props) {
           bg={props.bg}
           mover={props.mover}
           section={props.section}
+          fragment={props.fragment}
+          by={props.by}
+          to={props.to}
           color={props.color}
           area={props.area}
           position={props.position}
@@ -20,9 +23,6 @@ export default function MapCard(props) {
       <article>
         {props.children}
       </article>
-      <div className={"move-nav__container " + (props.nav ? 'hidden ' : '')}>
-        <span className="next arrow right" />
-      </div>
     </Card>
   );
 }

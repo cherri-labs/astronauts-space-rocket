@@ -264,26 +264,9 @@
         padding: 30px 40px;
     }
 
-    .card-wrap:not(.bar) .card {
-        max-width: 50%;
-    }
-
-    #cyber #move-section-explore_index {
-        justify-content: stretch;
-        align-items: stretch;
-    }
-
-    #cyber #move-section-explore_index .nav-container {
-        display: grid;
-        min-width: 400px;
-    }
-
     #cyber #move-section-explore_index .nav-container button {
+        min-width: 700px;
         padding-left: var(--btn-padding);
-    }
-
-    #cyber .map .card:not(.bar) {
-        width: 500px;
     }
 
     .move-arrow {

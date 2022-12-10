@@ -12,12 +12,13 @@ function Page() {
     <Container>
       <Content>
         <div className="title-container">
-          <h1>
+          <h3>
             Select
-          </h1>
-          <h1>
+          </h3>
+          <div className="sep v" />
+          <h3>
             Player
-          </h1>
+          </h3>
         </div>
         <PortalContainer
           className="focus"

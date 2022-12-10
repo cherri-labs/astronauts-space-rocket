@@ -39,7 +39,7 @@ const Nft = () => {
 const Txt = () => {
   return (
     <Text>
-      <h3 className="separator">Space Buds</h3>
+      <h3 className="sep h">Space Buds</h3>
       <p>
         777 generative <a>Space Buds</a> cruisin'
         thru the cyber world. Created with the conjunction
