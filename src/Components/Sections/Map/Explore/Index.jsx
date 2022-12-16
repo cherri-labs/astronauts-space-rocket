@@ -10,16 +10,16 @@ import Stardust from './Stardust';
 function ExploreNav() {
   return (
     <nav id="explore_nav" className="nav-container vertical fragment active">
-      <button onClick={function() {fragNav('explore', 'neotowns', 'nav');}}>
+      <button onClick={function() {fragNav('explore', 'neotowns');}}>
         <div className="neotowns img" />
         <span>Neotowns</span>
       </button>
-      <button onClick={function() {fragNav('explore', 'two', 'nav');}}>
+      <button onClick={function() {fragNav('explore', 'two');}}>
         <div className="planet img" />
         <span>2</span>
       </button>
-      <button onClick={function() {fragNav('explore', 'stardust', 'nav');}}>
-        <div className="space img" />
+      <button disabled>
+        <div className="stardust img" />
         <span>STARDUST</span>
       </button>
     </nav>

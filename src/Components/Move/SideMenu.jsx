@@ -4,6 +4,7 @@ import SubMenu from './SubMenu';
 import move from './move';
 import fullscreen from '../../fullscreen';
 
+const homeMoverId = "home";
 const lasrMoverId = "lasr";
 const gateMoverId = "gate";
 const cyberMoverId = "cyber";
@@ -105,6 +106,10 @@ class SideMenu extends React.Component {
             ☰
           </button>
         </div>
+
+        <SubMenu name="home">
+          <MenuButton mover={homeMoverId} index active />
+        </SubMenu>
 
         <SubMenu name="lasr">
           <MenuButton mover={lasrMoverId} index active />

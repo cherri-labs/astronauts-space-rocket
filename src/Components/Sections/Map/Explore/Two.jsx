@@ -1,17 +1,16 @@
 import React from 'react';
 import MapCard from '../MapCard';
 import ExploreTitle from './ExploreTitle';
-import fragNav from '../../../Move/fragNav';
 
 export default function Two() {
   return (
     <div id="explore_two" className="fragment">
-      <MapCard fragment="explore" by="two" to="nav">
+      <MapCard className="cybr" fragment="explore" by="two" to="nav">
         <p>
           <ExploreTitle>
             2
           </ExploreTitle>
-          {" "}is a type of virtual world which allows users to interact
+          {" "}is a type of dynamic world which allows users to interact
           and influence each other in a shared virtual environment.
         </p>
         <p>
@@ -28,27 +27,25 @@ export default function Two() {
         </p>
         <p>
           At its core <strong>2</strong> is an urban fantasy world that is
-          inspired by hi-tech and lo-life science-fiction works. It is set
-          in an alternate out-of-time era where people can build their own
-          spaces, interact with each other and even live there if they choose.
+          inspired by lo-life sci-fi. It is set
+          in an uchronic era that allows players to easily transform the
+          environment around them, interact with each other and explore
+          together a new exciting digital realm.
           The city has a unique look where it blends elements from both reality
           and fantasy with underground and futuristic characteristics.
-        </p>
-        <p>
-          Our vision is that <strong>2</strong> will be an open
-          platform for developers to create unique content. It will be
-          entirely owned by the community and regulated through the{" "}
-          <a className="strong"
-             onClick={function() {fragNav('explore', 'stardust');}}>
+          Our vision is that <strong>2</strong> be an open
+          platform for developers and players alike to create anything
+          they can think of within its boundaries &#8212; from games and
+          d-apps to full-fledged social realities.
+          It will be entirely owned by the community and regulated
+          through the{" "}
+          <strong>
             STARDUST
-          </a>
-          {" "}token.
+          </strong>
+          {" "}token, allowing users to expand its limits even further up
+          to what they can imagine.
         </p>
-        <p>
-          Our goal is to build an open-source platform that allows creators
-          and players alike to create anything they want within its boundaries
-          - from games or d-apps to full-fledged social realities.
-        </p>
+        <span className="cybr__tag">E002</span>
       </MapCard>
     </div>
   );

@@ -1,5 +1,14 @@
-import React from 'react';
-import { moveIndex, moveBack, moveNext } from './move';
+import React, { useEffect, useCallback } from 'react';
+import move, { moveIndex, moveBack, moveNext, navNext, navBack } from './move';
+
+/* amount of wheel events before trigger (length of scroll) */
+const wheelSensitivity = 8;
+/* sensitivity multiplication factor for horizontal/vertical scrolling */
+const verticalMultiplier = 1;
+const horizontalMultiplier = 1;
+const wheelDelay = 500; // ms delay between wheel event triggers
+let wheelTrack = 0; // wheel event delta tracker
+let aborted = false; // wheel listener state tracker
 
 function pad(num, size) {
   num = num.toString();
@@ -36,8 +45,93 @@ export function MoveNav(props) {
 }
 
 export function MoveSection(props) {
+  const sectionId = "move-section-" + (props.id ? props.id : 'index');
+  let section;
+
+  function wheelListener(toggle = true) {
+    if (toggle)
+      section.addEventListener('wheel', wheelCallback, true);
+    else
+      section.removeEventListener('wheel', wheelCallback, true);
+  }
+
+  function wheelReset(callback) {
+    if (!aborted) {
+      wheelTrack = 0;
+      aborted = true;
+      wheelListener(false);
+
+      /* override callback function with props.mover */
+      if (props.mover) {
+        move(props.mover, 'move-section-' + props.to);
+      } else {
+        callback();
+      }
+
+      setTimeout(()=>{
+        wheelListener(true);
+        aborted = false;
+      }, wheelDelay); // reset event listener after interval
+    }
+  }
+
+  /* move section mouse handler */
+  const mouseCallback = useCallback(() => {
+    wheelTrack = 0;
+  });
+
+  /* move section wheel handler */
+  const wheelCallback = useCallback((e) => {
+    if (e.deltaY > 0) { /* to top */
+      if (!props.dir || props.dir === 'up' || props.dir === 'vertical') {
+        const sens =  wheelSensitivity * verticalMultiplier;
+        if (wheelTrack < 1 || wheelTrack > sens) {
+          wheelTrack = 1;
+        } else if (++wheelTrack >= sens) {
+          wheelReset(navNext);
+        }
+      }
+    } else if (e.deltaY < 0) { /* to bottom */
+      if (!props.dir || props.dir === 'down' || props.dir === 'vertical') {
+        const sens =  wheelSensitivity * verticalMultiplier;
+        if (wheelTrack > -1 || wheelTrack < -1*sens) {
+          wheelTrack = -1;
+        } else if (--wheelTrack <= -1*sens) {
+          wheelReset(navBack);
+        }
+      }
+    } else if (e.deltaX > 0) { /* to left */
+      if (!props.dir || props.dir === 'left' || props.dir === 'horizontal') {
+        const sens =  wheelSensitivity * horizontalMultiplier;
+        if (wheelTrack > -1*sens-1 || wheelTrack < -2*sens) {
+          wheelTrack = -1*sens-1;
+        } else if (--wheelTrack <= -2*sens) {
+          wheelReset(moveNext);
+        }
+      }
+    } else if (e.deltaX < 0) { /* to right */
+      if (!props.dir || props.dir === 'right' || props.dir === 'horizontal') {
+        const sens =  wheelSensitivity * horizontalMultiplier;
+        if (wheelTrack < sens+1 || wheelTrack > 2*sens) {
+          wheelTrack = sens+1;
+        } else if (++wheelTrack >= 2*sens) {
+          wheelReset(moveBack);
+        }
+      }
+    }
+  });
+
+  if (props.wheel) {
+    useEffect(() => {
+      section = document.getElementById(sectionId);
+
+      section.addEventListener('mousemove', mouseCallback);
+      wheelListener();
+    }, []);
+  }
+
   return (
-    <div id={"move-section-" + (props.id ? props.id : 'index')}
+    <div id={sectionId}
          className={"move-section "
                   + (props.active ? 'active ' : '')
                   + (props.className)}>

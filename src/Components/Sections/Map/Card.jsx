@@ -79,12 +79,13 @@ class Card extends React.Component {
                         + (this.props.color ? 'color__' + this.props.color : '')
                         + (this.props.locked ? ' locked ' : '')
                         + (this.props.nav ? ' nav ' : '')
-                        + (this.props.empty ? ' empty ' : '')}>
+                        + (this.props.empty ? ' empty ' : '')
+                        + (this.props.className)}>
             {this.props.children}
           </div>
         </div>
       </div>
     );
-  }
+}
 }
 export default Card;

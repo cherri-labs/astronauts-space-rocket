@@ -35,11 +35,7 @@ const Txt = () => {
 
 function Nav() {
   return (
-    <nav className="nav-container blocks"
-         onClick={function(e) {
-           if (!e.target.classList.contains('disabled'))
-             document.getElementById("cyber").classList.add('fullscreen');
-         }}>
+    <nav className="nav-container blocks">
       <MoveButton id="move-button-nav-explore"
                   mover="cyber"
                   goto="explore_index"

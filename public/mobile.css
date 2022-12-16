@@ -20,14 +20,25 @@
         font-weight: bold;
     }
 
+    .sep.v.flex {
+        border-image: linear-gradient(90deg, transparent 5%, var(--sep-color) 30%, var(--sep-color) 70%, transparent 95%) 30;
+        border-right-style: none;
+        border-bottom-style: solid;
+    }
+
+    div.sep.v.flex {
+        width: auto;
+        height: 1px;
+    }
+
     #container {
-        margin: 80px 0px;
-        padding: 60px 0 90px 0;
+        padding: 60px 0;
     }
 
     #content {
         flex-flow: column nowrap;
         margin: 0;
+        padding: 0 2vw;
     }
 
     .text article {
@@ -42,14 +53,15 @@
         order: -1;
     }
 
+    #lasr .index__page .title-container {
+        flex-flow: column nowrap;
+        background-image: linear-gradient(180deg, var(--orange) 50%, var(--purple) 50%) !important;
+    }
+
     #lasr .index__page .nft .img.bud,
     #lasr .index__page .nft.img.bud,
     #lasr .index__page .glitch__img.bud .glitch__item {
         background-position: -35px 0;
-    }
-
-    #lasr .index__page h1 {
-        word-spacing: -6px;
     }
 
     #lasr .index__page .portal-container {
@@ -193,6 +205,10 @@
         margin-left: 5px;
     }
 
+    #lasr {
+        --nft-max-inside-size: 95vw;
+    }
+
     #lasr .index__page .title-container {
         --title-offset: 0;
     }
@@ -216,7 +232,17 @@
     }
 
     #cyber #move-section-explore_index .nav-container button {
+        justify-content: center;
         min-width: 50vw;
+    }
+
+    #cyber #move-section-explore_index .nav-container button > span {
+        padding-left: 1.5vw;
+    }
+
+    #cyber .map .map_index > .nav-container {
+        justify-content: center;
+        max-width: 98vw;
     }
 
     @media screen and (max-width: 700px) {
@@ -251,8 +277,21 @@
         }
     }
 
+    #cyber .map .card-wrap {
+        margin: 1vh 0;
+    }
+
+    #cyber .map .card-wrap,
+    #cyber .map .card article {
+        overflow: scroll;
+    }
+
+    #cyber .map .card article > .cybr__tag {
+        display: none;
+    }
+
     .move-arrow {
-        --move-arrow-margin: 20px;
+        --move-arrow-margin: 10px;
     }
 
     .menu:not(.hidden) button:not(:hover),

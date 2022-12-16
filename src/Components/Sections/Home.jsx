@@ -1,4 +1,5 @@
 import React from 'react';
+import Mover, { MoveSection } from '../Move/Mover';
 import { MoveAnchor } from '../Move/MoveButton';
 
 function Container() {
@@ -25,7 +26,11 @@ class Home extends React.Component {
   render() {
     return (
       <div className="section fullscreen active" id="home">
-        <Container />
+        <Mover id="home">
+          <MoveSection className="index__page" id="home" active>
+            <Container />
+          </MoveSection>
+        </Mover>
       </div>
     );
   }

@@ -15,7 +15,7 @@ function Page() {
           <h3>
             Select
           </h3>
-          <div className="sep v" />
+          <div className="sep v flex" />
           <h3>
             Player
           </h3>

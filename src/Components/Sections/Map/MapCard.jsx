@@ -19,7 +19,8 @@ export default function MapCard(props) {
                    props.continue !== 'false'}
           next={props.next}
           esc={props.esc}
-          empty={!props.children || props.nav}>
+          empty={!props.children || props.nav}
+          className={props.className}>
       <article>
         {props.children}
       </article>

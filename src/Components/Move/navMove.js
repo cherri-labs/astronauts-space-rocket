@@ -1,31 +1,17 @@
 import { moveReset } from './move';
 
 /* current mover */
-let curMover;
+let curMover = 'home';
+
+/* returns current mover id */
+export function activeMover() {
+  return curMover;
+}
 
 /* toggle navbar drodown and display sections */
 export default function navMove(href) {
   /* bar container */
   const nav = document.getElementById("footer-nav");
-
-  /* listen for mouse click */
-  window.addEventListener('click', function(e) {
-    /* click outside nav menu */
-    if (!nav.contains(e.target) ||
-        (e.target.tagName.toLowerCase() !== 'button' &&
-         e.target.tagName.toLowerCase() !== 'a' &&
-         e.target.tagName.toLowerCase() !== 'span' &&
-         e.target.tagName.toLowerCase() !== 'i')) {
-      /* hide dropdown */
-      nav.classList.remove("dropdown");
-
-      /* close curtains */
-      const curtains = nav.querySelectorAll('ul');
-      [...curtains].forEach(function (c) {
-        c.classList.remove('open');
-      });
-    }
-  });
 
   if (!href)
     /* toggle dropdown */

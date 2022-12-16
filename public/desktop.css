@@ -12,6 +12,16 @@
     #content {
         gap: 5vw;
         margin: 0 3vw;
+        padding: 0 5vw;
+    }
+
+    #content .text {
+        align-items: center;
+        max-width: 60vw;
+    }
+
+    #lasr {
+        --nft-max-inside-size: 400px;
     }
 
     #lasr .index__page .title-container {
@@ -267,6 +277,10 @@
     #cyber #move-section-explore_index .nav-container button {
         min-width: 700px;
         padding-left: var(--btn-padding);
+    }
+
+    #cyber .map .map_index .nav-container button {
+        padding: var(--btn-padding);
     }
 
     .move-arrow {

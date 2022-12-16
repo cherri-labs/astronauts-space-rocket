@@ -10,11 +10,11 @@ function LasrMover() {
       <MoveSection className="index__page" id="index" active>
         <Index />
       </MoveSection>
-      <MoveSection id="astronauts">
-        <Astronauts />
-      </MoveSection>
-      <MoveSection id="buds">
+      <MoveSection id="buds" dir="left" mover="lasr" to="astronauts" wheel>
         <Buds />
+      </MoveSection>
+      <MoveSection id="astronauts" dir="right" mover="lasr" to="buds" wheel>
+        <Astronauts />
       </MoveSection>
     </Mover>
   );
