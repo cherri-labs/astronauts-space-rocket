@@ -5,7 +5,9 @@ import ExploreTitle from './ExploreTitle';
 export default function Two() {
   return (
     <div id="explore_two" className="fragment">
-      <MapCard className="cybr" fragment="explore" by="two" to="nav">
+      <MapCard wrapperClass="glitched__container"
+               fragment="explore" by="two" to="nav">
+        <div className="glitched__text" id="glitch__this">2</div>
         <p>
           <ExploreTitle>
             2

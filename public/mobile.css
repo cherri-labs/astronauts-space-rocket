@@ -277,11 +277,6 @@
         }
     }
 
-    #cyber .map .card-wrap {
-        margin: 1vh 0;
-    }
-
-    #cyber .map .card-wrap,
     #cyber .map .card article {
         overflow: scroll;
     }

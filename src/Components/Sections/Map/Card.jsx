@@ -66,24 +66,25 @@ class Card extends React.Component {
                                      + (this.props.next ? 'next ' : '')
                                      + (this.props.esc ? 'esc ' : '')
                                      + (this.props.closed ? '' : 'closed ')
-                                     + (this.props.position ? this.props.position : '')}
-           onClick={function(e) {onClick(e)}}>
-        <div className={activeBg ? 'bg-container' : ''}>
-          <div className={(activeBg ?
-                           activeBg + ' bg '
-                           + (area ? 'area ' + area : '')
-                         : '')} />
+                                     + (this.props.position ? this.props.position : '')
+                                     + ' ' + (this.props.wrapperClass)}
+      onClick={function(e) {onClick(e)}}>
+      <div className={activeBg ? 'bg-container' : ''}>
+        <div className={(activeBg ?
+                         activeBg + ' bg '
+                         + (area ? 'area ' + area : '')
+                       : '')} />
+      </div>
+      <div className="card-container">
+        <div className={'card '
+                      + (this.props.color ? 'color__' + this.props.color : '')
+                      + (this.props.locked ? ' locked ' : '')
+                      + (this.props.nav ? ' nav ' : '')
+                      + (this.props.empty ? ' empty ' : '')
+                      + (this.props.className)}>
+          {this.props.children}
         </div>
-        <div className="card-container">
-          <div className={'card '
-                        + (this.props.color ? 'color__' + this.props.color : '')
-                        + (this.props.locked ? ' locked ' : '')
-                        + (this.props.nav ? ' nav ' : '')
-                        + (this.props.empty ? ' empty ' : '')
-                        + (this.props.className)}>
-            {this.props.children}
-          </div>
-        </div>
+      </div>
       </div>
     );
 }

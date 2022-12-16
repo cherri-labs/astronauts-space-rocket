@@ -20,7 +20,8 @@ export default function MapCard(props) {
           next={props.next}
           esc={props.esc}
           empty={!props.children || props.nav}
-          className={props.className}>
+          className={props.className}
+          wrapperClass={props.wrapperClass}>
       <article>
         {props.children}
       </article>

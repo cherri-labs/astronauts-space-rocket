@@ -6,7 +6,9 @@ import fragNav from '../../../Move/fragNav';
 export default function Stardust() {
   return (
     <div id="explore_stardust" className="fragment">
-      <MapCard className="cybr" fragment="explore" by="stardust" to="nav">
+      <MapCard wrapperClass="glitched__container"
+               fragment="explore" by="stardust" to="nav">
+        <div className="glitched__text" id="glitch__this">Stardust</div>
         <p>
           <ExploreTitle>
             STARDUST

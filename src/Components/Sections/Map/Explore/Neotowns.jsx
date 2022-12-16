@@ -5,7 +5,9 @@ import ExploreTitle from './ExploreTitle';
 export default function Neotowns() {
   return (
     <div id="explore_neotowns" className="fragment">
-      <MapCard className="cybr" fragment="explore" by="neotowns" to="nav">
+      <MapCard wrapperClass="glitched__container"
+               fragment="explore" by="neotowns" to="nav">
+        <div className="glitched__text" id="glitch__this">Neotowns</div>
         <p>
           <ExploreTitle>
             Neotowns
