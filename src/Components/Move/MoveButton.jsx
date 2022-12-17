@@ -39,15 +39,20 @@ export function MoveAnchor(props) {
   const mover = props.mover;
   const goto = props.goto;
   const index = props.index;
+  const click = props.onClick;
+  const disabled = props.disabled;
 
   return (
     <a id={props.id}
-       className={props.className}
-       onClick={function() {
-         /* call move to section */
-         callMove(props, mover, goto, index);
-       }}>
-      {props.children}
+    className={props.className}
+    onClick={function() {
+      if (!disabled) {
+        /* call move to section */
+        callMove(props, mover, goto, index);
+        if (click) click();
+      }
+    }}>
+    {props.children}
     </a>
   );
 }
@@ -57,8 +62,8 @@ export default function MoveButton(props) {
   const goto = props.goto;
   const index = props.index;
   const glitch = props.glitch;
-  const disabled = props.disabled;
   const click = props.onClick;
+  const disabled = props.disabled;
 
   return (
     <button id={props.id}

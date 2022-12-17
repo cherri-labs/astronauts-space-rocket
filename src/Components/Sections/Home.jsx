@@ -1,6 +1,7 @@
 import React from 'react';
 import Mover, { MoveSection } from '../Move/Mover';
 import { MoveAnchor } from '../Move/MoveButton';
+import writeTitle from './Lasr/writeTitle';
 
 function Container() {
   return (
@@ -10,7 +11,8 @@ function Container() {
           WELCOME ABOARD
         </span>
         <br/>
-        <MoveAnchor mover="lasr">
+        <MoveAnchor mover="lasr"
+                    onClick={writeTitle}>
           <span>
             LASR
           </span>

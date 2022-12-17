@@ -12,12 +12,12 @@ function Page() {
     <Container>
       <Content>
         <div className="title-container">
-          <h3>
-            Select
+          <h3 id="lasr-title-select" className="gw cursor hidden">
+            T
           </h3>
-          <div className="sep v flex" />
-          <h3>
-            Player
+          <div id="lasr-title-sep" className="sep v flex hidden" />
+          <h3 id="lasr-title-player" className="gw hidden">
+            R
           </h3>
         </div>
         <PortalContainer

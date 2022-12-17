@@ -20,6 +20,10 @@
         font-weight: bold;
     }
 
+    .sep {
+        transition: transform .4s, max-width 1s ease-out, max-height 10s ease-out, opacity .2s;
+    }
+
     .sep.v.flex {
         border-image: linear-gradient(90deg, transparent 5%, var(--sep-color) 30%, var(--sep-color) 70%, transparent 95%) 30;
         border-right-style: none;
@@ -56,6 +60,12 @@
     #lasr .index__page .title-container {
         flex-flow: column nowrap;
         background-image: linear-gradient(180deg, var(--orange) 50%, var(--purple) 50%) !important;
+    }
+
+    /* block cursor */
+    #lasr .index__page .title-container > h3.cursor:after,
+    #lasr .index__page .title-container > h3:last-of-type:after {
+        right: -.1em;
     }
 
     #lasr .index__page .nft .img.bud,

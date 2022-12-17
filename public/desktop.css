@@ -5,6 +5,10 @@
         font-weight: bold;
     }
 
+    .sep {
+        transition: transform .4s, max-width 10s ease-out, max-height 10s ease-out, opacity .2s;
+    }
+
     .section .title {
         font-size: 60px;
     }
@@ -285,6 +289,12 @@
 
     .move-arrow {
         --move-arrow-margin: 50px;
+    }
+
+    /* block cursor */
+    #lasr .index__page .title-container > h3.cursor:after,
+    #lasr .index__page .title-container > h3:last-of-type:after {
+        right: -.55em;
     }
 
     #lasr .index__page .portal-wrap + .bg-container .bg {

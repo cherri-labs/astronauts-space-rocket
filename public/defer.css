@@ -178,6 +178,8 @@ button::selection, input::selection {
 /* --< modules >-- */
 .sep {
     --sep-color: #b4f4de;
+    max-height: 100vh;
+    max-width: 100vw;
     border-width: 1px;
 }
 
@@ -197,6 +199,13 @@ div.sep.v {
 
 div.sep.h {
     height: 1px;
+}
+
+.sep.hidden {
+    transform: scale(0);
+    max-height: 0;
+    max-width: 0;
+    opacity: 0;
 }
 
 .clickable {
@@ -798,6 +807,7 @@ button:hover .icon .screen, button:hover .icon.screen {
 #lasr .index__page .title-container {
     --ltr-space: 1px;
     z-index: 2;
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
@@ -807,6 +817,9 @@ button:hover .icon .screen, button:hover .icon.screen {
 }
 
 #lasr .index__page .title-container > h3 {
+    display: flex;
+    flew-flow: row nowrap;
+    justify-content: center;
     position: relative;
     flex-basis: 0;
     margin: 0;
@@ -817,14 +830,17 @@ button:hover .icon .screen, button:hover .icon.screen {
     text-transform: uppercase;
     -webkit-text-fill-color: transparent;
     filter: brightness(90%) saturate(90%) contrast(90%) opacity(95%);
+    word-break: keep-all;
+    transition: opacity .04s;
 }
 
+/* block cursor */
+#lasr .index__page .title-container > h3.cursor:after,
 #lasr .index__page .title-container > h3:last-of-type:after {
     content: '';
     display: inline-block;
     position: absolute;
     top: .3em;
-    right: -.55em;
     width: .35em;
     height: .75em;
     background-color: var(--purple);
@@ -832,10 +848,16 @@ button:hover .icon .screen, button:hover .icon.screen {
     animation: blink 1s step-end infinite;
 }
 
+#lasr .index__page .title-container > h3.hidden {
+    opacity: 0;
+}
+
 #lasr .index__page .title-container .sep {
     --sep-color: var(--bud-sep) !important;
+    position: relative;
+    top: 10px;
     border-width: 2px;
-    margin: 3px 0;
+    margin: 10px 0;
 }
 
 #lasr .index__page .portal-wrap {
@@ -2655,6 +2677,11 @@ button.portal:not(.disabled) + .portal-tag,
 }
 
 /* --< glitched-writer >-- */
+.gw {
+	height: 60px;
+	will-change: contents;
+}
+
 .glitched__container * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -2702,7 +2729,7 @@ button.portal:not(.disabled) + .portal-tag,
 }
 
 .glitched__text {
-    --glitched-padding: 15px 10px;
+    --glitched-padding: 15px 8px;
     position: relative;
     padding: var(--glitched-padding);
     margin: 10px;
