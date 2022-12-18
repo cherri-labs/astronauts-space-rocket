@@ -22,7 +22,8 @@ export default function Neotowns() {
           Each city is a world of art, creativity and imagination,
           designed with the use of powerful AI tools and heuristic
           generative algorithms that take into account all meaningful
-          combinations and discard ones that look 'off'.
+          combinations and discard ones that look <i>off</i>{","} for
+          a uniqueness and diversity never seen before.
         </p>
         <p>
           We're creating an immersive environment that people can explore
@@ -46,7 +47,9 @@ export default function Neotowns() {
           <span className="prog-dots glitch" />{" "}
           are you just going to watch?
         </p>
-        <span className="cybr__tag">E001</span>
+        <div className="container for__ct">
+          <span className="cybr__tag">E001</span>
+        </div>
       </MapCard>
     </div>
   );

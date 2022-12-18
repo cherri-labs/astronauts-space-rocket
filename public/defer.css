@@ -176,6 +176,15 @@ button::selection, input::selection {
 }
 
 /* --< modules >-- */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 0;
+    height: 0;
+}
+
 .sep {
     --sep-color: #b4f4de;
     max-height: 100vh;
@@ -855,9 +864,9 @@ button:hover .icon .screen, button:hover .icon.screen {
 #lasr .index__page .title-container .sep {
     --sep-color: var(--bud-sep) !important;
     position: relative;
-    top: 10px;
+    top: 12px;
     border-width: 2px;
-    margin: 10px 0;
+    margin: 14px 0;
 }
 
 #lasr .index__page .portal-wrap {
@@ -2134,6 +2143,10 @@ strong.buds {
                 max-height .1s;
 }
 
+#cyber .map article .container.for__ct {
+    align-self: flex-end;
+}
+
 /* --< tabs >-- */
 #tabs-container {
     position: absolute;
@@ -2732,7 +2745,7 @@ button.portal:not(.disabled) + .portal-tag,
     --glitched-padding: 15px 8px;
     position: relative;
     padding: var(--glitched-padding);
-    margin: 10px;
+    margin: 5px 0;
     font-size: 35px;
     color: #a5e5d4;
     will-change: contents, width;

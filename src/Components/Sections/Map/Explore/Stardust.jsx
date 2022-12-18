@@ -30,7 +30,9 @@ export default function Stardust() {
           Solana blockchain,
           which grants its flexibility, efficiency and close to none gas fees.
         </p>
-        <span className="cybr__tag">E003</span>
+        <div className="container for__ct">
+          <span className="cybr__tag">E003</span>
+        </div>
       </MapCard>
     </div>
   );

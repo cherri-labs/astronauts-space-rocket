@@ -47,7 +47,9 @@ export default function Two() {
           {" "}token, allowing users to expand its limits even further up
           to what they can imagine.
         </p>
-        <span className="cybr__tag">E002</span>
+        <div className="container for__ct">
+          <span className="cybr__tag">E002</span>
+        </div>
       </MapCard>
     </div>
   );
