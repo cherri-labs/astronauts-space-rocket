@@ -1,4 +1,5 @@
 :root {
+    --grab: url(img/icons/grab.png), auto;
     --grey: #2d3236;
     --metal: #262931;
     --fg-blue: #b4f4ee;
@@ -31,7 +32,7 @@ body:after {
 h1, h2, h3, h4 {
     display: inline-block;
     color: var(--bg-blue);
-    cursor: default;
+    cursor: var(--cursor);
 }
 
 h1 {
@@ -51,7 +52,7 @@ h2, h3, h4 {
     text-transform: uppercase;
 
     border-radius: 1px 1px 0 0;
-    cursor: default;
+    cursor: var(--cursor);
 }
 
 h2 {
@@ -140,7 +141,7 @@ button, input[type=button], input[type=submit], input[type=reset] {
     font-size: 16px;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
+    cursor: var(--pointer);
 }
 
 /* coming soon */
@@ -254,7 +255,7 @@ div.sep.h {
     height: 17px;
     opacity: 1;
     box-sizing: border-box;
-    cursor: pointer;
+    cursor: var(--pointer);
 }
 
 .close:before, .close:after {
@@ -650,7 +651,7 @@ button:hover .icon .screen, button:hover .icon.screen {
     font-size: 18px;
 
     overflow: hidden;
-    cursor: default;
+    cursor: var(--cursor);
 }
 
 #content p a:not(.strong),
@@ -711,13 +712,13 @@ button:hover .icon .screen, button:hover .icon.screen {
 
 #content a.inactive {
     color: rgba(0,120,90,1);
-    cursor: default;
+    cursor: var(--cursor);
     transition: all .1s;
 }
 
 #content input[type=text]:not(:focus),
 #content input[type=number]:not(:focus) {
-    cursor: default;
+    cursor: var(--cursor);
 }
 
 #content .more {
@@ -867,6 +868,10 @@ button:hover .icon .screen, button:hover .icon.screen {
     top: 12px;
     border-width: 2px;
     margin: 14px 0;
+}
+
+#lasr .index__page .title-container .gw-letter::selection {
+    background-color: transparent;
 }
 
 #lasr .index__page .portal-wrap {
@@ -1066,7 +1071,7 @@ strong.buds {
 
 .bank button:disabled,
 .bank.disabled button {
-    cursor: default;
+    cursor: var(--cursor);
 }
 
 .bank button:disabled + label,
@@ -1130,7 +1135,7 @@ strong.buds {
     border-width: 0 9px 9px 0;
     border-radius: 50%;
     border-color: rgba(235,205,185,.8);
-    cursor: default;
+    cursor: var(--cursor);
 }
 
 #cyber .index__page .nav-container {
@@ -1161,7 +1166,7 @@ strong.buds {
 #cyber .index__page .nav-container button.disabled:hover,
 #cyber .index__page .nav-container button:disabled:hover {
     background-color: #50545899;
-    cursor: default;
+    cursor: var(--cursor);
 }
 
 #cyber .index__page .nav-container button.disabled:active,
@@ -1312,7 +1317,7 @@ strong.buds {
 
 #cyber .map .map_index .nav-container button.disabled,
 #cyber .map .map_index .nav-container button:disabled {
-    cursor: default;
+    cursor: var(--cursor);
 }
 
 #cyber .map .map_index .nav-container button span {
@@ -1534,7 +1539,7 @@ strong.buds {
 }
 
 .section.fullscreen.transition#cyber ~ #footer #navbar .btn-container {
-    cursor: pointer;
+    cursor: var(--pointer);
 }
 
 #footer,
@@ -1712,7 +1717,7 @@ strong.buds {
 }
 
 #navbar .btn-container:hover ul:not(.closed) button:last-of-type:not(:only-of-type) {
-    cursor: grab;
+    cursor: var(--grab);
 }
 
 #navbar .btn-container.mono,
@@ -1726,7 +1731,7 @@ strong.buds {
 }
 
 #navbar button:disabled:hover {
-    cursor: default;
+    cursor: var(--cursor);
 }
 
 #navbar *:not(#bottom-bar) .lasr {
@@ -1839,7 +1844,7 @@ strong.buds {
     gap: var(--icons-gap);
     flex-grow: 1;
 
-    cursor: default;
+    cursor: var(--cursor);
 }
 
 .dropdown .icons {
@@ -2263,7 +2268,7 @@ strong.buds {
     color: var(--move-color);
     border-color: var(--move-color);
     font-size: 20px;
-    cursor: pointer;
+    cursor: var(--pointer);
 }
 
 .move .move-nav__container {
@@ -2479,7 +2484,7 @@ strong.buds {
 
 .menu button.disabled {
     opacity: .5;
-    cursor: default;
+    cursor: var(--cursor);
 }
 
 /* --< portal button >-- */
@@ -2542,7 +2547,7 @@ button.portal.disabled + .portal-tag {
 }
 
 button.portal.disabled {
-    cursor: default;
+    cursor: var(--cursor);
 }
 
 button.portal.disabled:hover {
@@ -2553,7 +2558,7 @@ button.portal.disabled:hover {
     display: flex;
     justify-content: center;
     pointer-events: none;
-    cursor: pointer;
+    cursor: var(--pointer);
 }
 
 .portal-tag.center {
@@ -4288,7 +4293,7 @@ noscript span:hover {
     border: 2px ridge #b4f4ee99;
     outline: 1px solid #b4f4ee66;
 
-    cursor: pointer;
+    cursor: var(--pointer);
 
     animation: noscript-glitch .8s cubic-bezier(0, 0, 1, 0.03) 2;
 }

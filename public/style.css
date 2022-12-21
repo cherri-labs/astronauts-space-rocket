@@ -1,11 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
+:root {
+    --cursor: url(img/icons/cursor.png), auto;
+    --pointer: url(img/icons/pointer.svg), auto;
+    --retro: brightness(120%) saturate(120%) grayscale(20%) contrast(120%);
+    --lights__out: invert(10%) hue-rotate(-40deg) brightness(80%) saturate(120%) hue-rotate(45deg) contrast(140%);
+    --lights__on: brightness(150%) saturate(250%) contrast(150%);
+}
+
 html, body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+html {
+    cursor: var(--cursor);
 }
 
 html::-webkit-scrollbar,
@@ -29,7 +41,7 @@ body {
 a {
     color: #b4f4ee;
     text-decoration: none;
-    cursor: pointer;
+    cursor: var(--pointer);
 }
 
 .arrow,
@@ -75,7 +87,7 @@ a {
     font-weight: 300;
     letter-spacing: 10px;
     text-transform: uppercase;
-    cursor: default;
+    cursor: var(--cursor);
 }
 
 .section .title span::selection {
@@ -130,10 +142,8 @@ a {
     transition: all 1s, top .5s;
 }
 
-:root {
-    --retro: brightness(120%) saturate(120%) grayscale(20%) contrast(120%);
-    --lights__out: invert(10%) hue-rotate(-40deg) brightness(80%) saturate(120%) hue-rotate(45deg) contrast(140%);
-    --lights__on: brightness(150%) saturate(250%) contrast(150%);
+#home a span {
+    cursor: var(--pointer);
 }
 
 .retro {
