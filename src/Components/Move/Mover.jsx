@@ -121,14 +121,14 @@ export function MoveSection(props) {
     }
   });
 
-  if (props.wheel) {
-    useEffect(() => {
+  useEffect(() => {
+    if (props.wheel) {
       section = document.getElementById(sectionId);
 
       section.addEventListener('mousemove', mouseCallback);
       wheelListener();
-    }, []);
-  }
+    }
+  }, []);
 
   return (
     <div id={sectionId}
