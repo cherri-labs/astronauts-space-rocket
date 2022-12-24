@@ -451,7 +451,7 @@ button:hover .icon .screen, button:hover .icon.screen {
 .pointer-arrow:not(.close):before {
     top: 50%;
     width: 0;
-    height: .5px;
+    height: 1px;
 }
 
 .pointer-arrow.left:not(.close):before {
@@ -477,7 +477,7 @@ button:hover .icon .screen, button:hover .icon.screen {
 
 .pointer-arrow:hover:not(.close):before {
     width: 32px;
-    background-color: var(--grey);
+    background-image: linear-gradient(0deg, transparent, var(--grey), transparent);
 }
 
 .pointer-arrow.left:hover:not(.close):before {
