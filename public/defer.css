@@ -468,15 +468,15 @@ button:hover .icon .screen, button:hover .icon.screen {
 }
 
 .pointer-arrow.left:not(:hover):not(.close):before {
-    transform: translate(-6px, 6px) rotate(45deg);
+    transform: translate(-8px, 7px) rotate(45deg);
 }
 
 .pointer-arrow.right:not(:hover):not(.close):before {
-    transform: translate(6px, 6px) rotate(-45deg);
+    transform: translate(8px, 7px) rotate(-45deg);
 }
 
 .pointer-arrow:hover:not(.close):before {
-    width: 32px;
+    width: 33px;
     background-image: linear-gradient(0deg, transparent, var(--grey), transparent);
 }
 
