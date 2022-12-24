@@ -379,7 +379,7 @@ button:hover .icon .screen, button:hover .icon.screen {
 .pointer-arrow {
     --outer-size: 50px;
     --inner-size: 20px;
-    --hover-offset: 8px;
+    --hover-offset: 6px;
     --pointer-width: 1px;
     width: var(--outer-size);
     height: var(--outer-size);
@@ -451,7 +451,7 @@ button:hover .icon .screen, button:hover .icon.screen {
 .pointer-arrow:not(.close):before {
     top: 50%;
     width: 0;
-    height: 1px;
+    height: .5px;
 }
 
 .pointer-arrow.left:not(.close):before {
