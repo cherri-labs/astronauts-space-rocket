@@ -548,6 +548,10 @@ button:hover .icon .screen, button:hover .icon.screen {
     animation: lasr-ring 1.2s .3s;
 }
 
+#home .arrow.logo.run-once {
+    animation: lasr-ring 1.2s 1s;
+}
+
 /* --< backgrounds / images >-- */
 .bg, .img {
     background-repeat: no-repeat;

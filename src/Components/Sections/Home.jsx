@@ -17,7 +17,7 @@ function Container() {
             LASR
           </span>
           <br/>
-          <i className="arrow logo"></i>
+          <i className="arrow logo run-once"></i>
         </MoveAnchor>
       </div>
     </div>
@@ -25,6 +25,14 @@ function Container() {
 }
 
 class Home extends React.Component {
+  componentDidMount() {
+    const logo = document.querySelector('.arrow.logo.run-once');
+    if (logo)
+      setTimeout(() => {
+        logo.classList.remove('run-once');
+      }, '2300');
+  }
+
   render() {
     return (
       <div className="section fullscreen active" id="home">
