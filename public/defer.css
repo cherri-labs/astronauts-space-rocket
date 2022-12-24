@@ -832,7 +832,7 @@ button:hover .icon .screen, button:hover .icon.screen {
 
 #lasr .index__page .title-container > h3 {
     display: flex;
-    flew-flow: row nowrap;
+    flex-flow: row nowrap;
     justify-content: center;
     position: relative;
     flex-basis: 0;
@@ -846,6 +846,18 @@ button:hover .icon .screen, button:hover .icon.screen {
     filter: brightness(90%) saturate(90%) contrast(90%) opacity(95%);
     word-break: keep-all;
     transition: opacity .04s;
+}
+
+#lasr .index__page .title-container > h3 {
+    -webkit-background-clip: text;
+}
+
+#lasr .index__page .title-container > h3:first-of-type {
+    background-color: var(--orange);
+}
+
+#lasr .index__page .title-container > h3:last-of-type {
+    background-color: var(--purple);
 }
 
 /* block cursor */
