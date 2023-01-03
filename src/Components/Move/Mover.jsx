@@ -46,15 +46,7 @@ export function MoveNav(props) {
 
 export function MoveSection(props) {
   const sectionId = "move-section-" + (props.id ? props.id : 'index');
-  let section;
-
-  function wheelListener(toggle = true) {
-    if (toggle) {
-      section.addEventListener('wheel', wheelCallback, true);
-    } else {
-      section.removeEventListener('wheel', wheelCallback, true);
-    }
-  }
+  let section, downX, downY;
 
   function wheelReset(callback) {
     if (!aborted) {
@@ -83,8 +75,8 @@ export function MoveSection(props) {
 
   /* move section wheel handler */
   const wheelCallback = useCallback((e) => {
-    if (e.deltaY > 0) { /* to top */
-      if (!props.dir || props.dir === 'up' || props.dir === 'vertical') {
+    if (e.deltaY > 0) { /* to bottom */
+      if (!props.dir || props.dir === 'bottom' || props.dir === 'vertical') {
         const sens =  wheelSensitivity * verticalMultiplier;
         if (wheelTrack < 1 || wheelTrack > sens) {
           wheelTrack = 1;
@@ -92,8 +84,8 @@ export function MoveSection(props) {
           wheelReset(navNext);
         }
       }
-    } else if (e.deltaY < 0) { /* to bottom */
-      if (!props.dir || props.dir === 'down' || props.dir === 'vertical') {
+    } else if (e.deltaY < 0) { /* to top */
+      if (!props.dir || props.dir === 'up' || props.dir === 'vertical') {
         const sens =  wheelSensitivity * verticalMultiplier;
         if (wheelTrack > -1 || wheelTrack < -1*sens) {
           wheelTrack = -1;
@@ -101,8 +93,8 @@ export function MoveSection(props) {
           wheelReset(navBack);
         }
       }
-    } else if (e.deltaX > 0) { /* to left */
-      if (!props.dir || props.dir === 'left' || props.dir === 'horizontal') {
+    } else if (e.deltaX > 0) { /* to right */
+      if (!props.dir || props.dir === 'right' || props.dir === 'horizontal') {
         const sens =  wheelSensitivity * horizontalMultiplier;
         if (wheelTrack > -1*sens-1 || wheelTrack < -2*sens) {
           wheelTrack = -1*sens-1;
@@ -110,8 +102,8 @@ export function MoveSection(props) {
           wheelReset(moveNext);
         }
       }
-    } else if (e.deltaX < 0) { /* to right */
-      if (!props.dir || props.dir === 'right' || props.dir === 'horizontal') {
+    } else if (e.deltaX < 0) { /* to left */
+      if (!props.dir || props.dir === 'left' || props.dir === 'horizontal') {
         const sens =  wheelSensitivity * horizontalMultiplier;
         if (wheelTrack < sens+1 || wheelTrack > 2*sens) {
           wheelTrack = sens+1;
@@ -121,6 +113,59 @@ export function MoveSection(props) {
       }
     }
   });
+
+  function getTouches(e) {
+    return e.touches || // browser API
+           e.originalEvent.touches; // jQuery
+  }
+
+  function touchStartCallback(e) {
+    const firstTouch = getTouches(e)[0];
+    downX = firstTouch.clientX;
+    downY = firstTouch.clientY;
+  }
+
+  function touchMoveCallback(e) {
+    if (!downX || !downY) return;
+
+    let upX = e.touches[0].clientX;
+    let upY = e.touches[0].clientY;
+
+    let deltaX = downX - upX;
+    let deltaY = downY - upY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) { // if most significant delta X
+      if (deltaX > 0) { // right swipe
+        if (!props.dir || props.dir === 'right' || props.dir === 'horizontal') {
+          wheelReset(moveNext);
+        }
+      } else { // left swipe
+        if (!props.dir || props.dir === 'left' || props.dir === 'horizontal') {
+          wheelReset(moveBack);
+        }
+      }
+    } else { // else most significant delta Y
+      if (deltaY > 0) { // down swipe
+        if (!props.dir || props.dir === 'down' || props.dir === 'vertical') {
+          wheelReset(navNext);
+        }
+      } else { // up swipe
+        if (!props.dir || props.dir === 'up' || props.dir === 'vertical') {
+          wheelReset(navBack);
+        }
+      }
+    }
+  }
+
+  function wheelListener(toggle = true) {
+    if (toggle) {
+      section.addEventListener('wheel', wheelCallback, true);
+      section.addEventListener('touchstart', touchStartCallback, true);
+      section.addEventListener('touchmove', touchMoveCallback, true);
+    } else {
+      section.removeEventListener('wheel', wheelCallback, true);
+    }
+  }
 
   useEffect(() => {
     if (props.wheel) {

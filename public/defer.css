@@ -802,7 +802,7 @@ button:hover .icon .screen, button:hover .icon.screen {
 }
 
 #lasr h3.sep {
-    padding-bottom: 15px;
+    padding: 15px 0;
 }
 
 #lasr .move-arrow {
