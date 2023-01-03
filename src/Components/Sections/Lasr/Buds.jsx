@@ -1,5 +1,5 @@
 import React from 'react';
-import { MoveArrow } from '../../Move/MoveButton';
+import MoveButton, { MoveArrow } from '../../Move/MoveButton';
 import NftImg from './NftImg';
 import NftCaption from './NftCaption';
 import { Container, Content, Text } from '../Section';
@@ -36,10 +36,30 @@ const Nft = () => {
   );
 };
 
+function Nav() {
+  return (
+    <nav className="nav-container blocks sub-nav">
+      <MoveButton id="move-button-buds-nav-mint"
+                  mover="lasr"
+                  goto="mint"
+                  menu>
+        <span>Mint</span><span></span>
+      </MoveButton>
+      <MoveButton id="move-button-buds-nav-gallery"
+                  mover="lasr"
+                  goto="gallery_buds"
+                  menu disabled>
+        <span>Gallery</span><span>🖼</span>
+      </MoveButton>
+    </nav>
+  );
+}
+
 const Txt = () => {
   return (
     <Text>
       <h3 className="sep h">Space Buds</h3>
+      <Nav />
       <p>
         777 generative <a>Space Buds</a> cruising
         through the cyber world. Created with the conjunction

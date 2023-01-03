@@ -1150,39 +1150,54 @@ strong.buds {
     cursor: var(--cursor);
 }
 
-#cyber .index__page .nav-container {
+.nav-container.sub-nav {
+    justify-content: center;
+}
+
+#lasr .nav-container.sub-nav {
+    margin: 15px 0 -10px 0;
+}
+
+#cyber .index__page .nav-container.sub-nav {
     margin-top: -10px;
     pointer-events: none;
 }
 
-#cyber .index__page .nav-container button {
-    justify-content: space-evenly;
+.nav-container.sub-nav button {
+    justify-content: center;
     max-width: 100%;
     padding: 22px 28px;
     font-size: 18px;
     pointer-events: auto;
 }
 
-#cyber .index__page .nav-container button > span + span {
+#lasr .nav-container.sub-nav button {
+    padding: 16px 28px;
+    min-height: 15px;
+    min-width: 115px;
+}
+
+.nav-container.sub-nav button > span + span {
     padding: 2px 0 0 8px;
     margin-right: -8px;
 }
 
-#cyber .index__page .nav-container button.disabled,
-#cyber .index__page .nav-container button:disabled {
+.nav-container.sub-nav button.disabled,
+.nav-container.sub-nav button:disabled {
     transition: all .3s;
     color: #50545899;
     border-color: #50545899;
 }
 
-#cyber .index__page .nav-container button.disabled:hover,
-#cyber .index__page .nav-container button:disabled:hover {
+.nav-container.sub-nav button.disabled:hover,
+.nav-container.sub-nav button:disabled:hover {
     background-color: #50545899;
     cursor: var(--cursor);
 }
 
-#cyber .index__page .nav-container button.disabled:active,
-#cyber .index__page .nav-container button:disabled:active {
+.nav-container.sub-nav button.disabled:active,
+.nav-container.sub-nav button:disabled:active {
+    color: #50545899;
     background-color: #50545844;
     opacity: .5;
 }

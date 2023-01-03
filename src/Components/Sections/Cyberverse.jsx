@@ -35,18 +35,17 @@ const Txt = () => {
 
 function Nav() {
   return (
-    <nav className="nav-container blocks">
-      <MoveButton id="move-button-nav-explore"
+    <nav className="nav-container blocks sub-nav">
+      <MoveButton id="move-button-cyber-nav-explore"
                   mover="cyber"
                   goto="explore_index"
                   onClick={function() {fragNav('explore', 'nav');}}
                   menu>
         <span>Explore</span><span>⬆</span>
       </MoveButton>
-      <MoveButton id="move-button-nav-gallery"
-                  mover="cyber"
-                  goto="gallery_index"
-                  onClick={function() {fragNav('gallery', 'nav');}}
+      <MoveButton id="move-button-cyber-nav-gallery"
+                  mover="lasr"
+                  goto="gallery_buds"
                   menu disabled>
         <span>Gallery</span><span>🖼</span>
       </MoveButton>
