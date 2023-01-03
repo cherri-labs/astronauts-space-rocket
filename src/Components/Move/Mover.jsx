@@ -49,10 +49,11 @@ export function MoveSection(props) {
   let section;
 
   function wheelListener(toggle = true) {
-    if (toggle)
+    if (toggle) {
       section.addEventListener('wheel', wheelCallback, true);
-    else
+    } else {
       section.removeEventListener('wheel', wheelCallback, true);
+    }
   }
 
   function wheelReset(callback) {

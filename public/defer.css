@@ -842,22 +842,18 @@ button:hover .icon .screen, button:hover .icon.screen {
     font-weight: 700;
     letter-spacing: var(--ltr-space);
     text-transform: uppercase;
-    -webkit-text-fill-color: transparent;
     filter: brightness(90%) saturate(90%) contrast(90%) opacity(95%);
     word-break: keep-all;
+    pointer-events: none;
     transition: opacity .04s;
 }
 
-#lasr .index__page .title-container > h3 {
-    -webkit-background-clip: text;
-}
-
 #lasr .index__page .title-container > h3:first-of-type {
-    background-color: var(--orange);
+    color: var(--orange);
 }
 
 #lasr .index__page .title-container > h3:last-of-type {
-    background-color: var(--purple);
+    color: var(--purple);
 }
 
 /* block cursor */

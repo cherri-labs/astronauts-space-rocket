@@ -3,6 +3,7 @@ import Mover, { MoveSection } from '../../Move/Mover';
 import Index from './Index';
 import Astronauts from './Astronauts';
 import Buds from './Buds';
+import Mint from './Mint';
 
 function LasrMover() {
   return (
@@ -15,6 +16,9 @@ function LasrMover() {
       </MoveSection>
       <MoveSection id="astronauts" dir="right" mover="lasr" to="buds" wheel>
         <Astronauts />
+      </MoveSection>
+      <MoveSection id="mint">
+        <Mint />
       </MoveSection>
     </Mover>
   );

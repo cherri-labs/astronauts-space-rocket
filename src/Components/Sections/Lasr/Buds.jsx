@@ -41,8 +41,8 @@ const Txt = () => {
     <Text>
       <h3 className="sep h">Space Buds</h3>
       <p>
-        777 generative <a>Space Buds</a> cruisin'
-        thru the cyber world. Created with the conjunction
+        777 generative <a>Space Buds</a> cruising
+        through the cyber world. Created with the conjunction
         of AI and Python, <strong>Space Buds</strong> pioneer the
         technological advancement that is key to our rapidly
         evolving way of life.
