@@ -792,7 +792,7 @@ button:hover .icon .screen, button:hover .icon.screen {
     --nft-size: 60vh;
     --nft-inside-size: var(--nft-size);
     --nft-outside-size: var(--nft-size);
-    --nft-max-outside-size: 415px;
+    --nft-max-outside-size: 500px;
     --astr-sep: #c4a4fe;
     --bud-sep: #f4b49e;
 }
@@ -837,8 +837,8 @@ button:hover .icon .screen, button:hover .icon.screen {
     position: relative;
     flex-basis: 0;
     margin: 0;
-    padding-bottom: 5px;
-    font-size: 64px;
+    padding-bottom: 5vh;
+    font-size: 5vw;
     font-weight: 700;
     letter-spacing: var(--ltr-space);
     text-transform: uppercase;
@@ -981,6 +981,7 @@ strong.buds {
 .bank {
     display: flex;
     flex-flow: column nowrap;
+    justify-content: space-evenly;
     align-items: center;
     gap: 10px;
 
@@ -1155,7 +1156,7 @@ strong.buds {
 }
 
 #lasr .nav-container.sub-nav {
-    margin: 15px 0 -10px 0;
+    margin: 9px 0 -18px 0;
 }
 
 #cyber .index__page .nav-container.sub-nav {
@@ -1174,6 +1175,7 @@ strong.buds {
 #lasr .nav-container.sub-nav button {
     padding: 16px 28px;
     min-height: 15px;
+    max-height: 42px;
     min-width: 115px;
 }
 
@@ -1192,6 +1194,7 @@ strong.buds {
 .nav-container.sub-nav button.disabled:hover,
 .nav-container.sub-nav button:disabled:hover {
     background-color: #50545899;
+    border-color: transparent;
     cursor: var(--cursor);
 }
 
@@ -1199,6 +1202,7 @@ strong.buds {
 .nav-container.sub-nav button:disabled:active {
     color: #50545899;
     background-color: #50545844;
+    border-color: #50545899;
     opacity: .5;
 }
 
@@ -1251,7 +1255,8 @@ strong.buds {
     position: relative;
     flex-grow: 1;
     justify-content: flex-start;
-    font-size: 52px;
+    font-size: 10vh;
+    line-height: 10vh;
     letter-spacing: var(--ltr-space);
     text-align: left;
     text-transform: uppercase;
@@ -1281,6 +1286,10 @@ strong.buds {
 
 #cyber #move-section-explore_index .nav-container button:not(:disabled):hover {
     border-color: var(--bg-blue);
+}
+
+#cyber #move-section-explore_index .nav-container button:disabled:hover {
+    border-color: transparent;
 }
 
 #cyber #move-section-explore_index .nav-container button:hover {
@@ -2059,7 +2068,7 @@ strong.buds {
 
 @media screen and (min-width: 700px) {
     #cyber #move-section-explore_index .nav-container {
-        display: grid;
+        display: flex;
         min-width: 400px;
     }
 
@@ -2227,10 +2236,12 @@ strong.buds {
 .tab.active {
     display: flex;
     flex-flow: column nowrap;
-    gap: inherit;
+    justify-content: space-evenly;
+    gap: 1.2vh;
     position: relative;
     top: 16px;
     padding: 0px 5px;
+    min-height: 200px;
 }
 
 .tab .note {
@@ -2746,8 +2757,7 @@ button.portal:not(.disabled) + .portal-tag,
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #1d1e22;
-    background-image: radial-gradient(rgba(66, 195, 200, 0.2), #1d1e22 120%);
+    background-color: rgba(66, 195, 200, 0.2);
     overflow: hidden;
 }
 .glitched__container::after {

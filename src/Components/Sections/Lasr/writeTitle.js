@@ -14,6 +14,8 @@ export default async function writeTitle() {
                                       html: true,
                                       letterize: true});
 
+  const sep = document.getElementById('lasr-title-sep');
+
   await wait(200);
   document.getElementById('lasr-title-select').classList.remove('hidden');
   await Select.write("Select");
@@ -24,5 +26,7 @@ export default async function writeTitle() {
   await Player.write("Player");
 
   await wait(800);
-  document.getElementById('lasr-title-sep').classList.remove('hidden');
+  if (sep) {
+    sep.classList.remove('hidden');
+  }
 }

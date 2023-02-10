@@ -23,7 +23,7 @@ const Txt = () => {
         a dinamically growing ever-expanding
         digital reality.{" "}
         <a className="strong"
-           onClick={function(){move('lasr-mover');}}>
+           onClick={function(){move('lasr');}}>
           LASR NFTs
         </a>{" "}
         are your all-access pass. They allow you to freely explore
@@ -56,11 +56,9 @@ function Nav() {
 function Index() {
   return (
     <MoveSection className="index__page" id="index" active>
-      <Content>
-        <Lasr />
-        <Txt />
-        <Nav />
-      </Content>
+      <Lasr />
+      <Txt />
+      <Nav />
     </MoveSection>
   );
 }

@@ -15,7 +15,7 @@
 
     #content {
         gap: 5vw;
-        margin: 0 3vw;
+        margin: 0 5vw;
         padding: 0 5vw;
     }
 
@@ -88,6 +88,7 @@
 
     .bank {
         min-width: 24vw;
+        min-height: 25vh;
         padding: 75px 2vw;
     }
 
@@ -163,8 +164,7 @@
 
     #lasr :not(.index__page) .zoom:hover .img,
     #lasr :not(.index__page) .zoom:hover .glitch__img .glitch__item {
-        width: 50vw;
-        background-position: 2.5vw 5vh;
+        background-position: 25px 25px;
     }
 
     .caption {
@@ -276,6 +276,10 @@
 
     .card-container {
         padding: 30px 40px;
+    }
+
+    #cyber #move-section-explore_index .nav-container {
+        max-width: 1000px;
     }
 
     #cyber #move-section-explore_index .nav-container button {

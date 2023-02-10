@@ -15,7 +15,6 @@ function Page() {
           <h3 id="lasr-title-select" className="gw cursor hidden">
             T
           </h3>
-          <div id="lasr-title-sep" className="sep v flex hidden" />
           <h3 id="lasr-title-player" className="gw hidden">
             R
           </h3>

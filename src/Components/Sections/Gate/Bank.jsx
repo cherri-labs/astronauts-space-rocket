@@ -63,7 +63,7 @@ function BankSpace(props) {
   const disabled = props.disabled;
 
   return (
-    <div className={'bank focus space ' +
+    <div className={'bank ' +
                                 (disabled ? 'disabled' : '')}>
       <div id="tabs-container">
         <div id="tabs-bar">
