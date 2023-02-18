@@ -59,7 +59,6 @@ const Txt = () => {
   return (
     <Text>
       <h3 className="sep h">Space Buds</h3>
-      <Nav />
       <p>
         777 generative <a>Space Buds</a> cruising
         through the cyber world. Created with the conjunction
@@ -67,6 +66,7 @@ const Txt = () => {
         technological advancement that is key to our rapidly
         evolving way of life.
       </p>
+      <Nav />
     </Text>
   );
 };

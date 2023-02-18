@@ -71,9 +71,19 @@ export default function Navbar() {
         </BtnContainer>
         <BtnContainer>
           <ul id="gate-curtain">
-            <CurtainNav mover="gate" section="bank" alone>
-              Open Portal
+            <CurtainNav disabled>
+              Staking Portal
             </CurtainNav>
+            <CurtainNav mover="gate" section="bank">
+              Astro Gate
+            </CurtainNav>
+            <CurtainNav mover="gate" section="asol">
+              Astro SOL
+            </CurtainNav>
+            <Curtain name="gate">
+              Open Portal
+              <i className="arrow right" />
+            </Curtain>
           </ul>
         </BtnContainer>
         <BtnContainer>

@@ -9,8 +9,13 @@
         transition: transform .4s, max-width 10s ease-out, max-height 10s ease-out, opacity .2s;
     }
 
-    .section .title {
-        font-size: 60px;
+    #home .title {
+        font-size: 3.5vw;
+        transform: translateY(.3em);
+    }
+
+    #container {
+        padding: 0 3vw;
     }
 
     #content {
@@ -30,6 +35,10 @@
 
     #lasr .index__page .title-container {
         --title-offset: 8%;
+    }
+
+    #lasr .index__page .title-container > h3 {
+        font-size: 5vw;
     }
 
     #lasr .index__page h1 {
@@ -87,8 +96,8 @@
     }
 
     .bank {
-        min-width: 24vw;
-        min-height: 25vh;
+        min-width: 22vw;
+        min-height: 26vh;
         padding: 75px 2vw;
     }
 

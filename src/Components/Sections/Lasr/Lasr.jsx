@@ -1,5 +1,6 @@
 import React from "react";
 import Mover, { MoveSection } from '../../Move/Mover';
+import Pointer from '../Map/Pointer';
 import Index from './Index';
 import Astronauts from './Astronauts';
 import Buds from './Buds';
@@ -19,6 +20,7 @@ function LasrMover() {
       </MoveSection>
       <MoveSection id="mint">
         <Mint />
+        <Pointer mover="lasr" section="buds" id="buds" to="esc" dir="left" only />
       </MoveSection>
     </Mover>
   );

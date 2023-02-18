@@ -5,9 +5,11 @@ const Txt = () => {
   return (
     <Text>
       <h3 className="sep h">Candy Machine</h3>
-      <p>
-        Just connect your wallet and mint.
-      </p>
+      <div id="candy-machine">
+        <p>
+          Just connect your wallet and mint.
+        </p>
+      </div>
     </Text>
   );
 };

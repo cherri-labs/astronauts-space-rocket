@@ -119,6 +119,7 @@ class SideMenu extends React.Component {
           <MenuButton mover={gateMoverId} index active />
           <MenuButton goto="stake" mover={gateMoverId} glitch disabled>Stake</MenuButton>
           <MenuButton goto="bank" mover={gateMoverId}>Gate</MenuButton>
+          <MenuButton goto="asol" mover={gateMoverId}>$ASOL</MenuButton>
         </SubMenu>
 
         <SubMenu name="cyber" hidden>

@@ -8,6 +8,7 @@ import DepositButton from './Buttons/DepositButton';
 import MaxButton from './Buttons/MaxButton';
 import WithdrawButton from './Buttons/WithdrawButton';
 import tab from '../../../tabs';
+import move from '../../Move/move';
 import setGlitch from '../../../glitchTransition';
 
 const Txt = () => {
@@ -17,11 +18,13 @@ const Txt = () => {
         Astro Gate
       </h3>
       <p>
-        Here you can withdraw your
-        {" "}<a target="_blank" rel="noreferrer"
-                href="https://github.com/cherri-labs/astrobank#mint">
-        rewards</a>, all you need is
-    a <strong>LASR NFT</strong> and your wallet.
+        Here you can swiftly swap between{" "}
+        <a className="strong"
+           onClick={function(){move('gate-mover','move-section-asol');}}>
+          $ASOL
+        </a>{" "}
+        and <strong>$SOL</strong>{","} with only one click. All you need is
+        a <strong>Solana</strong> wallet and a mouse.
       </p>
     </Text>
   );
@@ -32,9 +35,9 @@ function TabButton(props) {
   const disabled = props.disabled;
 
   return (
-    <button className={(props.active ? 'active ' : '') +
-             (props.comingSoon ? 'coming-soon ' : '') +
-             (disabled ? 'disabled ' : '')}
+    <button className={(props.active ? 'active ' : '')
+                     + (props.comingSoon ? 'coming-soon ' : '')
+                     + (disabled ? 'disabled ' : '')}
             id={id + '-btn'}
             onMouseOver={function() {
               if (disabled)
@@ -63,8 +66,7 @@ function BankSpace(props) {
   const disabled = props.disabled;
 
   return (
-    <div className={'bank ' +
-                                (disabled ? 'disabled' : '')}>
+    <div className={'bank ' + (disabled ? 'disabled' : '')}>
       <div id="tabs-container">
         <div id="tabs-bar">
           <TabButton id="deposit" comingSoon disabled>
@@ -111,7 +113,7 @@ function BankSpace(props) {
       <span className="footnote">
         <a target="_blank" rel="noreferrer"
            className="what-is-this"
-           href="https://github.com/cherri-labs/astrobank">
+           href="https://github.com/cherri-labs/astrobank#astro-gate">
           <span className="hover" />
         </a>
       </span>

@@ -11,6 +11,7 @@ let movers = [];
 /* page titles */
 let titles = [];
 titles['main'] = 'LASR NFT';
+titles['separator'] = ' | ';
 /* home */
 titles['home'] = [];
 titles['home']['index'] = titles['main'];
@@ -18,6 +19,7 @@ titles['home']['index'] = titles['main'];
 titles['lasr'] = [];
 titles['lasr']['astronauts'] = 'Lonely Astronauts';
 titles['lasr']['buds'] = 'Space Buds';
+titles['lasr']['mint'] = 'Candy Machine';
 /* gate */
 titles['gate'] = [];
 titles['gate']['bank'] = 'Astro Gate';
@@ -350,7 +352,7 @@ export default function move(moverId=activeMover(),
                 titles['main'];
         /* if not default */
         if (title !== titles['main'])
-          title += ' / ' + titles['main'];
+          title += titles['separator'] + titles['main'];
       }
 
       /* set title */
