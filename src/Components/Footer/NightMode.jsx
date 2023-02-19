@@ -197,9 +197,9 @@ class Slider extends React.Component {
       <div className="night-mode">
         <YesCookies />
         <NoCookies />
-        <div id="night-mode-slider">
+        <div id="night-mode-slider-container">
           <img src="img/icons/moon.svg" className="icon" alt="night" />
-          <input type="range" min="0" max={ceil}
+          <input id="night-mode-slider" className="slider" type="range" min="0" max={ceil}
                  value={this.state ? this.state.value : init}
                  onChange={this.handleChange} />
           <img src="img/icons/sun.svg" className="icon" alt="day" />

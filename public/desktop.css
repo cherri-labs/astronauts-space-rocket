@@ -167,11 +167,60 @@
         padding-right: calc(var(--bottom-bar-padding) * 1.8);
     }
 
-    .night-mode {
+    .night-mode,
+    #night-mode-slider-container {
         display: flex;
         flex-flow: row nowrap;
+    }
+
+    .night-mode {
         align-items: flex-start;
         gap: 10px;
+    }
+
+    #night-mode-slider-container {
+        align-items: center;
+        gap: 2px;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        height: 6px;
+        padding: 2px;
+        border-radius: 5px;
+        background-color: var(--bg-blue);
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s, background .2s;
+        cursor: var(--pointer);
+    }
+
+    .slider:hover {
+        background-color: #2d5256;
+        opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 23px;
+        height: 24px;
+        border: 0;
+        border-radius: 15px;
+        background-color: var(--fg-blue);
+        background-image: url('img/icons/contrast.svg');
+        cursor: var(--pointer);
+    }
+
+    .slider::-moz-range-thumb {
+        width: 23px;
+        height: 24px;
+        border: 0;
+        border-radius: 15px;
+        background-color: var(--fg-blue);
+        background-image: url('img/icons/contrast.svg');
+        cursor: var(--pointer);
     }
 
     .nft {
