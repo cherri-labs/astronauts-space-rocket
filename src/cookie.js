@@ -1,5 +1,17 @@
 export function setCookie(key, value, scope) {
-  document.cookie = key + "=" + value + "; SameSite=" + scope + ";";
+  // create set-cookie string with key-value, samesite and path
+  let cookie_string = key + "=" + value + "; SameSite=" + scope + "; path=/;";
+
+  // build the expiration date string
+  let expiration_date = new Date();
+  // set expiration one year ahead
+  expiration_date.setFullYear(expiration_date.getFullYear() + 1);
+
+  // append expiration date to set-cookie string
+  cookie_string += "expires=" + expiration_date.toUTCString();
+
+  // create or update the cookie
+  document.cookie = cookie_string;
 }
 
 export function setCookieStrict(key, value) {
