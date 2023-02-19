@@ -1270,7 +1270,7 @@ strong.buds {
 
 #cyber .map .map_index > .nav-container {
     justify-content: space-around;
-    gap: 18px;
+    gap: 22px;
     height: 100%;
     margin: 45px;
     transition: margin .2s;
@@ -1288,7 +1288,7 @@ strong.buds {
     letter-spacing: var(--ltr-space);
     text-align: left;
     text-transform: uppercase;
-    min-height: 33%;
+    min-height: 32%;
     max-height: 200px;
     border: var(--bdr-width) solid transparent;
     transition: all .2s ease-in,
@@ -1301,7 +1301,7 @@ strong.buds {
 }
 
 #cyber #move-section-explore_index .nav-container button {
-    border-radius: 15px;
+    border-radius: 40px;
 }
 
 #cyber #move-section-explore_index .nav-container button .img {
@@ -2129,13 +2129,12 @@ wallet-adapter-button-start-icon {
 }
 
 #cyber .map .card-wrap {
-    --board-line: #232a35;
+    --board-line: #131a25cc;
     height: 100vh;
     background-color: rgba(66, 195, 200, 0.2);
     background-image: linear-gradient(var(--board-line) 1px, transparent 50px);
     background-size: 100% 10px;
     animation: background-scroll 45s linear infinite;
-
 }
 
 @keyframes background-scroll {
