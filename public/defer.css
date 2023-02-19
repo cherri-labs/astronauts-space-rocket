@@ -1857,6 +1857,10 @@ strong.buds {
     overflow: hidden;
 }
 
+wallet-adapter-button-start-icon {
+    display: none;
+}
+
 .wallet-adapter-button:hover {
     min-width: 150px;
 }
@@ -1951,13 +1955,6 @@ strong.buds {
 .icons a:hover img,
 .icons a:hover i {
     backdrop-filter: invert(80%) sepia(60%) saturate(180%) hue-rotate(126deg) brightness(95%) contrast(95%);
-}
-
-.night-mode {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: flex-start;
-    gap: 10px;
 }
 
 .hidden-popup:not(.active) {

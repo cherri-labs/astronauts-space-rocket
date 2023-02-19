@@ -12,6 +12,16 @@ var cur = getCookie('cur').split(', ') || def.slice();
 const init = 1;
 const ceil = 6;
 
+const nopes = ["Not as of now", "Not exactly"];
+
+function getRandomInt(ceil) {
+  return Math.floor(Math.random() * ceil);
+}
+
+function randomNope() {
+  return nopes[getRandomInt(2)];
+}
+
 function hidePopup() {
   // hide popup
   document.getElementById('yes-cookies').classList.remove('active');
@@ -47,7 +57,7 @@ function NoCookies() {
           Do you want to delete all your <b>cookies</b>?
         </p>
         <div className="nav-container">
-          <button onClick={yesIWantCookies}>Not as of now</button>
+          <button onClick={yesIWantCookies}>{randomNope()}</button>
           <button onClick={noIDontWantCookies}>Yes, right away</button>
         </div>
       </div>

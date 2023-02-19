@@ -167,6 +167,13 @@
         padding-right: calc(var(--bottom-bar-padding) * 1.8);
     }
 
+    .night-mode {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
     .nft {
         width: 350px;
     }
