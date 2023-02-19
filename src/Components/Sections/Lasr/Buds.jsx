@@ -43,7 +43,7 @@ function Nav() {
                   mover="lasr"
                   goto="mint"
                   menu>
-        <span>Mint</span><span></span>
+        <span>Mint</span><span>🍬</span>
       </MoveButton>
       <MoveButton id="move-button-buds-nav-gallery"
                   mover="lasr"

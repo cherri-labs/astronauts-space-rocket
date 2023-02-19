@@ -12,14 +12,14 @@ var cur = getCookie('cur').split(', ') || def.slice();
 const init = 1;
 const ceil = 6;
 
-const nopes = ["Not as of now", "Not exactly"];
+const nopes = ["Not as of now", "No not really", "Not exactly"];
 
 function getRandomInt(ceil) {
   return Math.floor(Math.random() * ceil);
 }
 
 function randomNope() {
-  return nopes[getRandomInt(2)];
+  return nopes[getRandomInt(nopes.length)];
 }
 
 function hidePopup() {
