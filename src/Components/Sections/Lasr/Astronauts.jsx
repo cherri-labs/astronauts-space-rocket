@@ -1,5 +1,5 @@
 import React from 'react';
-import { MoveArrow } from '../../Move/MoveButton';
+import MoveButton, { MoveArrow } from '../../Move/MoveButton';
 import NftImg from './NftImg';
 import NftCaption from './NftCaption';
 import { Container, Content, Text } from '../Section';
@@ -36,6 +36,25 @@ const Nft = () => {
   );
 };
 
+function Nav() {
+  return (
+    <nav className="nav-container blocks sub-nav">
+      <MoveButton id="move-button-astronauts-nav-mint"
+                  mover="lasr"
+                  goto="mint"
+                  menu disabled>
+        <span>Mint</span><span className="svg ext-link"></span>
+      </MoveButton>
+      <MoveButton id="move-button-astronauts-nav-gallery"
+                  mover="lasr"
+                  goto="gallery_astronauts"
+                  menu disabled>
+        <span>Gallery</span><span>🖼</span>
+      </MoveButton>
+    </nav>
+  );
+}
+
 const Txt = () => {
   return (
     <Text>
@@ -53,6 +72,7 @@ const Txt = () => {
         bring building power to creators and a full-fledged
         immersive experience to everyone.
       </p>
+      <Nav />
     </Text>
   );
 };

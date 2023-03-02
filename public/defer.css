@@ -391,6 +391,15 @@ div.hex {
     transition: font-size .1s;
 }
 
+.ext-link {
+    width: 1.2em;
+    height: 1.2em;
+    transform: scale(1.1);
+    background-image: url('img/icons/external-link.svg');
+    background-position: center;
+    background-size: cover;
+}
+
 /* --< pointer arrows >-- */
 .pointer-arrow {
     --outer-size: 50px;
@@ -1194,21 +1203,29 @@ strong.buds {
     min-height: 15px;
     max-height: 42px;
     min-width: 115px;
+    gap: 5px;
 }
 
 .nav-container.sub-nav button > span + span {
-    padding: 2px 0 0 8px;
+    padding: 2px 0 0 0;
     margin-right: -8px;
+    transition: filter .2s;
 }
 
-#move-button-buds-nav-mint > span + span {
-    filter: brightness(250%) contrast(80%);
-    transition: .2s filter;
+.nav-container.sub-nav button:not(:disabled):not(.disabled):not(:hover) > span + .svg {
+    -webkit-filter: opacity(80%) contrast(10%) brightness(300%);
+    filter: opacity(80%) contrast(10%) brightness(300%);
 }
 
-#move-button-buds-nav-mint:hover > span + span {
-    transform: scale(1.1);
-    filter: brightness(60%) contrast(250%) saturate(150%);
+.nav-container.sub-nav button:disabled:not(:hover) > span + .svg,
+.nav-container.sub-nav button.disabled:not(:hover) > span + .svg {
+    -webkit-filter: opacity(80%) contrast(40%);
+    filter: opacity(80%) contrast(40%);
+}
+
+.nav-container.sub-nav button:hover > span + .svg {
+    -webkit-filter: opacity(90%) contrast(63%);
+    filter: opacity(90%) contrast(63%);
 }
 
 .nav-container.sub-nav button.disabled,
