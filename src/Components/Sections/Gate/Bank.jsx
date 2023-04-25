@@ -18,13 +18,13 @@ const Txt = () => {
         Astro Gate
       </h3>
       <p>
-        Here you can swiftly swap between{" "}
+        You can swiftly swap between{" "}
         <a className="strong"
            onClick={function(){move('gate-mover','move-section-asol');}}>
           $ASOL
         </a>{" "}
-        and <strong>$SOL</strong>{","} with only one click. All you need is
-        a <strong>Solana</strong> wallet and a mouse.
+        and <strong>$SOL</strong>. You just need
+        a <strong>Solana</strong> wallet.
       </p>
     </Text>
   );
