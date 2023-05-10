@@ -60,9 +60,9 @@ const Txt = () => {
     <Text>
       <h3 className="sep h">Space Buds</h3>
       <p>
-        777 generative <a>Space Buds</a> cruising
+        777 generative Space Buds cruising
         through the cyber world. Created with the conjunction
-        of AI and Python, <strong>Space Buds</strong> pioneer the
+        of AI and Python, Space Buds pioneer the
         technological advancement that is key to our rapidly
         evolving way of life.
       </p>

@@ -60,7 +60,7 @@ const Txt = () => {
     <Text>
       <h3 className="sep h">Lonely<br/>Astronauts</h3>
       <p>
-        A collection of <a>Lonely Astronaut</a> NFTs
+        A collection of Lonely Astronaut NFTs
         inspired by <span className="neon more">vaporwave</span> and{" "}
         <span className="stack" style={{"--stacks": 3}}>
           <span className="more" style={{"--index": 0}}>cyberpunk</span>

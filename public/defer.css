@@ -1217,8 +1217,8 @@ strong.buds {
     filter: opacity(80%) contrast(10%) brightness(300%);
 }
 
-.nav-container.sub-nav button:disabled:not(:hover) > span + .svg,
-.nav-container.sub-nav button.disabled:not(:hover) > span + .svg {
+.nav-container.sub-nav button:disabled:not(:active) > span + .svg,
+.nav-container.sub-nav button.disabled:not(:active) > span + .svg {
     -webkit-filter: opacity(80%) contrast(40%);
     filter: opacity(80%) contrast(40%);
 }
@@ -1237,17 +1237,62 @@ strong.buds {
 
 .nav-container.sub-nav button.disabled:hover,
 .nav-container.sub-nav button:disabled:hover {
-    background-color: #50545899;
-    border-color: transparent;
+    color: #90546d39 !important;
     cursor: var(--cursor);
 }
 
-.nav-container.sub-nav button.disabled:active,
-.nav-container.sub-nav button:disabled:active {
-    color: #50545899;
-    background-color: #50545844;
+.nav-container.sub-nav button.disabled:hover,
+.nav-container.sub-nav button:disabled:hover,
+.nav-container.sub-nav.rt-brdr button:hover {
+    position: relative;
+    background-color: transparent;
     border-color: #50545899;
-    opacity: .5;
+    overflow: hidden;
+}
+
+.nav-container.sub-nav.rt-brdr button.disabled:hover:not(:active),
+.nav-container.sub-nav.rt-brdr button:disabled:hover:not(:active) {
+    color: var(--fg-blue);
+}
+
+.nav-container.sub-nav.rt-brdr button:hover:before {
+	box-sizing: border-box;
+    content: '';
+    z-index: -2;
+    position: absolute;
+    left: calc(-1*var(--border-width));
+    top: calc(-1*var(--border-width));
+    width: calc(100% + var(--border-width)*2);
+    height: calc(100% + var(--border-width)*2);
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(transparent, transparent), linear-gradient(var(--bg-blue), #50545899), linear-gradient(transparent, transparent);
+    border-radius: 0;
+    animation: rotate 4s linear infinite;
+}
+
+.nav-container.sub-nav.rt-brdr button:hover:after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: var(--border-width);
+    left: var(--border-width);
+    right: var(--border-width);
+    bottom: var(--border-width);
+    width: calc(100% - var(--border-width)*2);
+    height: calc(100% - var(--border-width)*2);
+    border-radius: inherit;
+}
+
+.nav-container.sub-nav.rt-brdr button:not(.disabled):hover:after,
+.nav-container.sub-nav.rt-brdr button:not(:disabled):hover:after {
+    background: var(--bg-blue);
+}
+
+.nav-container.sub-nav.rt-brdr button.disabled:hover:after,
+.nav-container.sub-nav.rt-brdr button:disabled:hover:after {
+    background: var(--main-bg);
 }
 
 /* --< map >-- */
@@ -1296,7 +1341,7 @@ strong.buds {
 #cyber .map .map_index .nav-container button {
     --btn-padding: 36px;
     --ltr-space: .8vw;
-    --bdr-width: 2px;
+    --border-width: 2px;
     position: relative;
     flex-grow: 1;
     justify-content: flex-start;
@@ -1307,7 +1352,7 @@ strong.buds {
     text-transform: uppercase;
     min-height: 32%;
     max-height: 200px;
-    border: var(--bdr-width) solid transparent;
+    border: var(--border-width) solid transparent;
     transition: all .2s ease-in,
                 background-size .6s ease-in;
 }
@@ -1383,7 +1428,7 @@ strong.buds {
     bottom: 0;
     left: 0;
     z-index: -1;
-    padding: calc(-2*var(--bdr-width));
+    padding: calc(-2*var(--border-width));
     border-radius: inherit;
     transition: opacity .2s;
 }
@@ -1480,12 +1525,6 @@ strong.buds {
 .bg-container:not(.flex) .bg {
     background-size: cover;
     background-attachment: fixed;
-}
-
-#cyber .map .explore.bg {
-    position: fixed;
-    background-attachment: fixed;
-    background-image: url('img/map/explore/ghost-girl.png');
 }
 
 #cyber .map .img {
@@ -1695,8 +1734,9 @@ strong.buds {
 }
 
 .nav-container.blocks button {
-    border: 2px solid var(--fg-blue);
-    border-radius: 0;
+    --border-width: 2px;
+    border: var(--border-width) solid var(--fg-blue);
+    border-radius: 10px;
     padding: 0 25px;
     height: 48px;
     transition: color .4s, background-color .4s;
@@ -2834,8 +2874,8 @@ button.portal:not(.disabled) + .portal-tag,
 
 /* --< glitched-writer >-- */
 .gw {
-	height: 60px;
-	will-change: contents;
+    height: 60px;
+    will-change: contents;
 }
 
 .glitched__container * {
@@ -4454,6 +4494,12 @@ noscript span:hover {
 }
 
 /* --< keyframes >-- */
+@keyframes rotate {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
 @keyframes blink {
     50% {opacity: 0;}
 }

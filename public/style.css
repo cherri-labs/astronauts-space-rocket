@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
 :root {
+/*  --main-bg: #131a25; */
+    --main-bg: #152326;
     --cursor: url(img/icons/cursor.png), auto;
     --pointer: url(img/icons/pointer.svg), auto;
     --retro: brightness(120%) saturate(120%) grayscale(20%) contrast(120%);
@@ -30,7 +32,7 @@ body {
     color: #fff;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'Arial', 'Helvetica', sans-serif;
     font-size: 17px;
-    background-color: #131a25;
+    background-color: var(--main-bg);
     background-repeat: no-repeat;
     background-attachment: fixed;
 }

@@ -29,9 +29,6 @@ function ExploreNav() {
 export default function Index() {
   return (
     <MoveSection id="explore_index" className="map_index fragment__index">
-      <div className="bg-container">
-        <div className="explore bg" />
-      </div>
       <ExploreNav />
       <Neotowns />
       <Two />

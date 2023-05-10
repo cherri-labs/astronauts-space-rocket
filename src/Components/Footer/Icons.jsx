@@ -1,5 +1,4 @@
 import React from 'react';
-import Slider from './NightMode';
 
 export default function Icons() {
   return (
@@ -18,7 +17,6 @@ export default function Icons() {
           <img src="img/icons/github.svg" alt="Github" />
         </a>
       </div>
-      <Slider />
     </div>
   );
 }

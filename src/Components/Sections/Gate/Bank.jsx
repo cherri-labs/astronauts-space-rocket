@@ -19,12 +19,12 @@ const Txt = () => {
       </h3>
       <p>
         You can swiftly swap between{" "}
-        <a className="strong"
+        <a
            onClick={function(){move('gate-mover','move-section-asol');}}>
           $ASOL
         </a>{" "}
-        and <strong>$SOL</strong>. You just need
-        a <strong>Solana</strong> wallet.
+        and $SOL. You just need
+        a Solana wallet.
       </p>
     </Text>
   );

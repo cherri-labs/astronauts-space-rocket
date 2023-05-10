@@ -35,7 +35,7 @@ const Txt = () => {
 
 function Nav() {
   return (
-    <nav className="nav-container blocks sub-nav">
+    <nav className="nav-container blocks sub-nav rt-brdr">
       <MoveButton id="move-button-cyber-nav-explore"
                   mover="cyber"
                   goto="explore_index"
