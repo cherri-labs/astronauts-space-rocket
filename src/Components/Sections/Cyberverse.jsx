@@ -40,7 +40,7 @@ function Nav() {
                   mover="cyber"
                   goto="explore_index"
                   onClick={function() {fragNav('explore', 'nav');}}
-                  menu>
+                  menu disabled>
         <span>Explore</span><span>⬆</span>
       </MoveButton>
       <MoveButton id="move-button-cyber-nav-gallery"

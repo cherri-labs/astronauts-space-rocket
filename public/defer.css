@@ -170,7 +170,7 @@ button.coming-soon.disabled:hover:before {
 }
 
 /* --< text selection >-- */
-::selection,
+*::selection,
 a::selection,
 button::selection, input::selection {
     color: #212d3b;
@@ -734,7 +734,7 @@ div.hex {
 #content .more {
     height: 20px;
     line-height: 1em;
-    border-bottom: 1px dotted #333;
+    border-bottom: 1px dotted var(--fg-blue);
 }
 
 #content label.data {
@@ -795,16 +795,11 @@ div.hex {
 
 /* --< lasr >-- */
 #lasr {
-    --nft-size: 60vh;
     --nft-inside-size: var(--nft-size);
-    --nft-outside-size: var(--nft-size);
+    --nft-max-inside-size: 400px;
     --nft-max-outside-size: 500px;
     --astr-sep: #c4a4fe;
     --bud-sep: #f4b49e;
-}
-
-#lasr h3 {
-    font-size: 2.5em;
 }
 
 #lasr h3.sep {
@@ -826,7 +821,7 @@ div.hex {
 }
 
 #lasr .index__page .title-container {
-    --ltr-space: 1px;
+    --ltr-space: 5px;
     z-index: 2;
     position: relative;
     display: flex;
@@ -846,8 +841,10 @@ div.hex {
     margin: 0;
     padding-bottom: 5vh;
     font-weight: 700;
+    font-size: 5em;
     letter-spacing: var(--ltr-space);
     text-transform: uppercase;
+    color: var(--text-color);
     filter: brightness(90%) saturate(90%) contrast(90%) opacity(95%);
     word-break: keep-all;
     pointer-events: none;
@@ -1183,33 +1180,28 @@ strong.buds {
 
 .nav-container.sub-nav {
     justify-content: center;
-    margin-top: -3px;
-}
-
-#cyber .index__page .nav-container.sub-nav {
     pointer-events: none;
 }
 
 .nav-container.sub-nav button {
     justify-content: center;
     max-width: 100%;
-    padding: 22px 28px;
-    font-size: 18px;
+    min-height: 2.5em;
+    padding: .6vh .5vw;
+    font-size: 1.1em;
+    letter-spacing: .18vw;
+    text-transform: uppercase;
     pointer-events: auto;
-}
-
-#lasr .nav-container.sub-nav button {
-    padding: 16px 28px;
-    min-height: 15px;
-    max-height: 42px;
-    min-width: 115px;
-    gap: 5px;
 }
 
 .nav-container.sub-nav button > span + span {
     padding: 2px 0 0 0;
-    margin-right: -8px;
+    margin-right: -6px;
     transition: filter .2s;
+}
+
+.nav-container.sub-nav button > span + span.svg {
+    margin-right: 0;
 }
 
 .nav-container.sub-nav button:not(:disabled):not(.disabled):not(:hover) > span + .svg {
@@ -1217,8 +1209,8 @@ strong.buds {
     filter: opacity(80%) contrast(10%) brightness(300%);
 }
 
-.nav-container.sub-nav button:disabled:not(:active) > span + .svg,
-.nav-container.sub-nav button.disabled:not(:active) > span + .svg {
+.nav-container.sub-nav button:disabled:not(:hover):not(:active) > span + .svg,
+.nav-container.sub-nav button.disabled:not(:hover):not(:active) > span + .svg {
     -webkit-filter: opacity(80%) contrast(40%);
     filter: opacity(80%) contrast(40%);
 }
@@ -1333,7 +1325,6 @@ strong.buds {
 #cyber .map .map_index > .nav-container {
     justify-content: space-around;
     gap: 22px;
-    height: 100%;
     margin: 45px;
     transition: margin .2s;
 }
@@ -1341,7 +1332,7 @@ strong.buds {
 #cyber .map .map_index .nav-container button {
     --btn-padding: 36px;
     --ltr-space: .8vw;
-    --border-width: 2px;
+    --border-width: 0;
     position: relative;
     flex-grow: 1;
     justify-content: flex-start;
@@ -1353,8 +1344,7 @@ strong.buds {
     min-height: 32%;
     max-height: 200px;
     border: var(--border-width) solid transparent;
-    transition: all .2s ease-in,
-                background-size .6s ease-in;
+    transition: all .2s ease-in, background-size .6s ease-in;
 }
 
 #cyber #move-section-explore_index {
@@ -1388,11 +1378,6 @@ strong.buds {
 
 #cyber .map .map_index .nav-container button:disabled:hover .img,
 #cyber .map .map_index .nav-container button:disabled:hover span {
-    opacity: .5;
-}
-
-#cyber .map .map_index .nav-container button.disabled:active,
-#cyber .map .map_index .nav-container button:disabled:active {
     opacity: .5;
 }
 
@@ -1727,7 +1712,6 @@ strong.buds {
     color: var(--bg-blue);
     font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 16px;
-    font-weight: 600;
     line-height: 48px;
     border-radius: 4px;
     transition: color .2s, background-color .2s;
@@ -1737,8 +1721,7 @@ strong.buds {
     --border-width: 2px;
     border: var(--border-width) solid var(--fg-blue);
     border-radius: 10px;
-    padding: 0 25px;
-    height: 48px;
+    min-height: 48px;
     transition: color .4s, background-color .4s;
 }
 
@@ -1752,6 +1735,7 @@ strong.buds {
     margin: 2px;
     height: 50px;
     border-radius: 50px;
+    font-weight: 600;
 }
 
 #navbar button,
@@ -1901,17 +1885,20 @@ strong.buds {
 .wallet-adapter-button {
     display: flex;
     justify-content: stretch;
+    border: 1px solid transparent !important;
     border-radius: 6px !important;
     white-space: nowrap;
     overflow: hidden;
+    transition: color .2s, background-color .2s, border-color .2s !important;
 }
 
-wallet-adapter-button-start-icon {
-    display: none;
+.wallet-adapter-button-start-icon {
+    display: none !important;
 }
 
 .wallet-adapter-button:hover {
     min-width: 150px;
+    border-color: #314f6e40 !important;
 }
 
 .dropdown #navbar .wallet-adapter-button {
@@ -1920,12 +1907,19 @@ wallet-adapter-button-start-icon {
 }
 
 .wallet-adapter-dropdown-list {
-    right: 5% !important;
     top: -100% !important;
 }
 
 .wallet-adapter-dropdown-list-active {
     transform: translateY(-110px) !important;
+}
+
+.wallet-adapter-dropdown-list li {
+    border: 1px solid transparent !important;
+}
+
+.wallet-adapter-dropdown-list li:hover {
+    border-color: var(--grey) !important;
 }
 
 /* --< bottom bar >-- */
@@ -2125,6 +2119,10 @@ wallet-adapter-button-start-icon {
     content: ':';
 }
 
+.caption__icon {
+    user-select: none;
+}
+
 .caption.no-icons .caption__icon {
     display: none;
 }
@@ -2291,8 +2289,7 @@ wallet-adapter-button-start-icon {
 #gate .card p,
 #cyber .card p {
     line-height: 1.5em;
-    font-family: "JetBrains Mono", "Roboto Mono", "Lato",
-                 "Helvetica Neue", "Helvetica", "Arial", sans;
+    font-family: "JetBrains Mono", "Roboto Mono", "Lato", "Helvetica Neue", "Helvetica", "Arial", sans;
 }
 
 #gate .card p,
@@ -3860,6 +3857,12 @@ button.cybr .cybr__tag {
 .nft.img.bud,
 .glitch__img.bud .glitch__item {
     background: url('img/buds/1.gif') no-repeat 50% 50%/cover;
+}
+
+.nft .img.rebel,
+.nft.img.rebel,
+.glitch__img.rebel .glitch__item {
+    background: url('img/rebels/1.jpg') no-repeat 50% 50%/cover;
 }
 
 .nft .img.astronaut,

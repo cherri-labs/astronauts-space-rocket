@@ -20,8 +20,7 @@ const Txt = () => {
         redundancy and complexity—all boiled down into a pithy gem.
       </p>
       <p>
-        The easier it is to fully grasp something the wider the audience it can reach. That's
-        the core idea behind this project rebranding.
+        That's the main concept behind this project.
         You can find more detailed information about $ASOL and Astro Gate on
         {" "}<a target="_blank" rel="noreferrer"
                 href="https://github.com/cherri-labs/astrobank#astro-gate">

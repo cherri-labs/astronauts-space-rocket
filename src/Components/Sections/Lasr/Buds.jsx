@@ -38,11 +38,11 @@ const Nft = () => {
 
 function Nav() {
   return (
-    <nav className="nav-container blocks sub-nav">
+    <nav className="nav-container blocks sub-nav rt-brdr">
       <MoveButton id="move-button-buds-nav-mint"
                   mover="lasr"
                   goto="mint"
-                  menu>
+                  menu disabled>
         <span>Mint</span><span className="svg ext-link"></span>
       </MoveButton>
       <MoveButton id="move-button-buds-nav-gallery"

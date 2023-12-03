@@ -29,8 +29,17 @@
         max-width: 60vw;
     }
 
+    #content article {
+        max-width: 42vw;
+    }
+
     #lasr {
-        --nft-max-inside-size: 400px;
+        --nft-size: 60vh;
+        --nft-outside-size: var(--nft-size);
+    }
+
+    #lasr h3 {
+        font-size: 2.5em;
     }
 
     #lasr .index__page .title-container {
@@ -344,6 +353,7 @@
     }
 
     #cyber #move-section-explore_index .nav-container {
+        flex-flow: row nowrap;
         width: 55em;
     }
 

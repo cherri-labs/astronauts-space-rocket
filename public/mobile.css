@@ -3,18 +3,22 @@
     /* horizontal */
     @media screen and (orientation: landscape) {
         #home .title {
-            font-size: 8vw;
+            font-size: 2rem;
         }
     }
 
     /* vertical */
     @media screen and (orientation: portrait) {
         #home .title {
-            font-size: 12vw;
+            font-size: 4rem;
         }
 
         #lasr .index__page .title-container > h3 {
-            font-size: 16vw;
+            font-size: 4rem;
+        }
+
+        #cyber h3 {
+            font-size: 5.5vw;
         }
     }
 
@@ -53,8 +57,17 @@
         padding: 0 2vw;
     }
 
+    #content article {
+        max-width: 80vw;
+    }
+
     .text article {
         max-width: 100vw;
+    }
+
+    #lasr {
+        --nft-size: 60vw;
+        --nft-outside-size: 50vh;
     }
 
     #lasr .text {
@@ -139,10 +152,6 @@
         margin: -10% 0%;
         padding: 5px;
         text-decoration: underline;
-    }
-
-    #cyber h3 {
-        font-size: 6vw;
     }
 
     .nav-container.dropdown {
@@ -247,6 +256,10 @@
 
     .card-container {
         padding: 15px;
+    }
+
+    #cyber #move-section-explore_index .nav-container {
+        height: 100%;
     }
 
     #cyber #move-section-explore_index .nav-container button {

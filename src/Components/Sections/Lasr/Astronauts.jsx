@@ -38,7 +38,7 @@ const Nft = () => {
 
 function Nav() {
   return (
-    <nav className="nav-container blocks sub-nav">
+    <nav className="nav-container blocks sub-nav rt-brdr">
       <MoveButton id="move-button-astronauts-nav-mint"
                   mover="lasr"
                   goto="mint"
